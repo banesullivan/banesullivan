@@ -2,7 +2,8 @@
 News
 ====
 
-Keep up with with my latest activities!
+Keep up with with my latest activities! I use this as a place to track all
+the places I appear online.
 
 
 
@@ -30,6 +31,34 @@ Keep up with with my latest activities!
    :hidden:
 
    Future of geovisualization: discussion with Seequent <https://www.seequent.com/blog/modern-geovisualisation>
+
+
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Here I appear in an informative video about the new Subsurface Frontiers Project.">
+
+.. only:: html
+
+    .. figure:: ./_static/news/subsurface-frontiers.png
+       :target: https://youtu.be/5zrFU2-cgPo
+
+       Introducing the Subsurface Frontiers Project
+
+
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   Introducing the Subsurface Frontiers Project <https://youtu.be/5zrFU2-cgPo>
 
 
 

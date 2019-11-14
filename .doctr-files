@@ -20,6 +20,7 @@
 ./_images/sphx_glr_numerical-integration_007.png
 ./_images/sphx_glr_numerical-integration_008.png
 ./_images/sphx_glr_numerical-integration_thumb.png
+./_images/subsurface-frontiers.png
 ./_images/undersampled.png
 ./_sources/gallery/index.rst.txt
 ./_sources/gallery/intro-to-pyvista.rst.txt
@@ -127,6 +128,7 @@
 ./_static/news/presenting-b.jpg
 ./_static/news/senior-reflections.png
 ./_static/news/simpeg-meeting.png
+./_static/news/subsurface-frontiers.png
 ./_static/news/undersampled.png
 ./_static/no_image.png
 ./_static/omfvista-logo.png
