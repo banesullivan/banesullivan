@@ -32,7 +32,7 @@ script:
 # Deploy the built HTML to Github pages
 deploy:
     - provider: script
-      script: doctr deploy . --built-docs site/_build/html --key-path ./github_deploy_key_pyvista_website.enc
+      script: doctr deploy . --built-docs site/_build/html --key-path ./github_deploy_key_banesullivan_mywebsite.enc
       skip_cleanup: true
       on:
           branch: master
