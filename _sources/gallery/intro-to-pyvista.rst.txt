@@ -1,10 +1,10 @@
 .. note::
     :class: sphx-glr-download-link-note
 
-    Click :ref:`here <sphx_glr_download_gallery_sample.py>` to download the full example code
+    Click :ref:`here <sphx_glr_download_gallery_intro-to-pyvista.py>` to download the full example code
 .. rst-class:: sphx-glr-example-title
 
-.. _sphx_glr_gallery_sample.py:
+.. _sphx_glr_gallery_intro-to-pyvista.py:
 
 
 Intro to PyVista
@@ -30,6 +30,7 @@ If you really want to learn more about PyVista, head over to its
 
 .. code-block:: default
 
+    # sphinx_gallery_thumbnail_number = 2
     import pyvista as pv
     from pyvista import examples
 
@@ -50,7 +51,7 @@ If you really want to learn more about PyVista, head over to its
 
 
 
-.. image:: /gallery/images/sphx_glr_sample_001.png
+.. image:: /gallery/images/sphx_glr_intro-to-pyvista_001.png
     :class: sphx-glr-single-img
 
 
@@ -70,7 +71,7 @@ elevation in this case:
 
 
 
-.. image:: /gallery/images/sphx_glr_sample_002.png
+.. image:: /gallery/images/sphx_glr_intro-to-pyvista_002.png
     :class: sphx-glr-single-img
 
 
@@ -79,10 +80,10 @@ elevation in this case:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.191 seconds)
+   **Total running time of the script:** ( 0 minutes  8.980 seconds)
 
 
-.. _sphx_glr_download_gallery_sample.py:
+.. _sphx_glr_download_gallery_intro-to-pyvista.py:
 
 
 .. only :: html
@@ -94,13 +95,13 @@ elevation in this case:
 
   .. container:: sphx-glr-download
 
-     :download:`Download Python source code: sample.py <sample.py>`
+     :download:`Download Python source code: intro-to-pyvista.py <intro-to-pyvista.py>`
 
 
 
   .. container:: sphx-glr-download
 
-     :download:`Download Jupyter notebook: sample.ipynb <sample.ipynb>`
+     :download:`Download Jupyter notebook: intro-to-pyvista.ipynb <intro-to-pyvista.ipynb>`
 
 
 .. only:: html

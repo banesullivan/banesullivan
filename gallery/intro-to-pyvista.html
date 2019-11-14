@@ -21,8 +21,8 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="News" href="../news.html" />
-    <link rel="prev" title="Numerical Integration" href="numerical-integration.html" />
+    <link rel="next" title="Numerical Integration" href="numerical-integration.html" />
+    <link rel="prev" title="Bane’s Python Gallery" href="index.html" />
 
     
 <meta charset='utf-8'>
@@ -85,10 +85,10 @@
     
         <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-gallery-sample-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-gallery-intro-to-pyvista-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="intro-to-pyvista">
-<span id="sphx-glr-gallery-sample-py"></span><h1>Intro to PyVista</h1>
+<span id="sphx-glr-gallery-intro-to-pyvista-py"></span><h1>Intro to PyVista</h1>
 <p>I don’t have all that many posts in the gallery yet, so I thought I’d put this
 very basic introduction to PyVista in here.</p>
 <p>PyVista is 3D mesh analysis and visualizaton library in Python. It is capable
@@ -101,7 +101,8 @@ basic - I’ll get back to updating this later!).</p>
 <p>If you really want to learn more about PyVista, head over to its
 <a class="reference external" href="https://docs.pyvista.org/examples/index.html">gallery</a>
 (I have created many of those examples).</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 2</span>
+<span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">from</span> <span class="nn">pyvista</span> <span class="k">import</span> <span class="n">examples</span>
 
 <span class="n">mesh</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_st_helens</span><span class="p">()</span>
@@ -111,7 +112,7 @@ basic - I’ll get back to updating this later!).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_sample_001.png" class="sphx-glr-single-img" src="../_images/sphx_glr_sample_001.png" />
+<img alt="../_images/sphx_glr_intro-to-pyvista_001.png" class="sphx-glr-single-img" src="../_images/sphx_glr_intro-to-pyvista_001.png" />
 <p>Here we can apply a filter to alter the mesh: warp it by a scalar attribute,
 elevation in this case:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">topo</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">warp_by_scalar</span><span class="p">()</span>
@@ -121,14 +122,14 @@ elevation in this case:</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_sample_002.png" class="sphx-glr-single-img" src="../_images/sphx_glr_sample_002.png" />
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  9.191 seconds)</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-gallery-sample-py">
+<img alt="../_images/sphx_glr_intro-to-pyvista_002.png" class="sphx-glr-single-img" src="../_images/sphx_glr_intro-to-pyvista_002.png" />
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.980 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-gallery-intro-to-pyvista-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../_downloads/1fe4b4c2b0658851c6e545f5cffca563/sample.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">sample.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../_downloads/72f5438dd3f96fc440e919340e42d3fb/intro-to-pyvista.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">intro-to-pyvista.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../_downloads/a10120f75fe879fd0c236d145b0b80f9/sample.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">sample.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../_downloads/f1e9b4e7f5fcc4150c0c8c38ac9b0687/intro-to-pyvista.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">intro-to-pyvista.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>

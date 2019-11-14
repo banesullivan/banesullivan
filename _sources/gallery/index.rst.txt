@@ -11,6 +11,26 @@ Bane's Python Gallery
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="I don&#x27;t have all that many posts in the gallery yet, so I thought I&#x27;d put this very basic intro...">
+
+.. only:: html
+
+    .. figure:: /gallery/images/thumb/sphx_glr_intro-to-pyvista_thumb.png
+
+        :ref:`sphx_glr_gallery_intro-to-pyvista.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /gallery/intro-to-pyvista
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Here is an introduction to Numerical Integration with Python! ">
 
 .. only:: html
@@ -28,26 +48,6 @@ Bane's Python Gallery
    :hidden:
 
    /gallery/numerical-integration
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="I don&#x27;t have all that many posts in the gallery yet, so I thought I&#x27;d put this very basic intro...">
-
-.. only:: html
-
-    .. figure:: /gallery/images/thumb/sphx_glr_sample_thumb.png
-
-        :ref:`sphx_glr_gallery_sample.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /gallery/sample
 .. raw:: html
 
     <div style='clear:both'></div>

@@ -19,6 +19,7 @@ If you really want to learn more about PyVista, head over to its
 (I have created many of those examples).
 
 """
+# sphinx_gallery_thumbnail_number = 2
 import pyvista as pv
 from pyvista import examples
 
