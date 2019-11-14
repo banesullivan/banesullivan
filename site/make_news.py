@@ -56,6 +56,10 @@ articles = dict(
                 "visualization and open-source software space.",
         link="https://www.seequent.com/blog/modern-geovisualisation",
         image="presenting-b.jpg"),
+    subsurface_frontiers=News(title="Introducing the Subsurface Frontiers Project",
+        description="Here I appear in an informative video about the new Subsurface Frontiers Project.",
+        link="https://youtu.be/5zrFU2-cgPo",
+        image="subsurface-frontiers.png"),
     undersampled=News(title="Featured on Undersampled Radio",
         description="I joined Matt and Gram on Undersampled Radio to talk about my work building next generation geoscience visualization technology. Tune in to the episode to hear us discuss viz, and more specifically geoviz.",
         link="https://youtu.be/FRHMDy37MPc",
@@ -95,9 +99,12 @@ def make_news_gallery():
 News
 ====
 
-Keep up with with my latest activities!
+Keep up with with my latest activities! I use this as a place to track all
+the places I appear online.
 
 
 """)
         for news in articles.values():
             f.write(news.format())
+
+    return
