@@ -1,0 +1,11 @@
+
+:orphan:
+
+.. _sphx_glr_gallery_sg_execution_times:
+
+Computation times
+=================
+**00:17.568** total execution time for **gallery** files:
+
+- **00:13.780**: :ref:`sphx_glr_gallery_sample.py` (``sample.py``)
+- **00:03.788**: :ref:`sphx_glr_gallery_numerical-integration.py` (``numerical-integration.py``)

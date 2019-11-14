@@ -1,0 +1,203 @@
+
+News
+====
+
+Keep up with with my latest activities!
+
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="I recently sat down with Seequent to discuss the future of geovisualization and how I became involved in the 3D visualization and open-source software space.">
+
+.. only:: html
+
+    .. figure:: ./_static/news/presenting-b.jpg
+       :target: https://www.seequent.com/blog/modern-geovisualisation
+
+       Future of geovisualization: discussion with Seequent
+
+
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   Future of geovisualization: discussion with Seequent <https://www.seequent.com/blog/modern-geovisualisation>
+
+
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="I joined Matt and Gram on Undersampled Radio to talk about my work building next generation geoscience visualization technology. Tune in to the episode to hear us discuss viz, and more specifically geoviz.">
+
+.. only:: html
+
+    .. figure:: ./_static/news/undersampled.png
+       :target: https://youtu.be/FRHMDy37MPc
+
+       Featured on Undersampled Radio
+
+
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   Featured on Undersampled Radio <https://youtu.be/FRHMDy37MPc>
+
+
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The Global Mining Guidelines Group recently interviewed me about efforts around the Open Mining Format. It's a neat article highlighting my work and the importance of open-source software in the geosciences!">
+
+.. only:: html
+
+    .. figure:: ./_static/news/omfvista-demo.gif
+       :target: https://gmggroup.org/omf-viewer-bane-sullivan/
+
+       Interview with Global Mining Guidelines Group
+
+
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   Interview with Global Mining Guidelines Group <https://gmggroup.org/omf-viewer-bane-sullivan/>
+
+
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="I lead a team that placed 2nd in the U.S. Department of Energy’s 2019 Geothermal Student Competition.">
+
+.. only:: html
+
+    .. figure:: ./_static/news/gsc_banner.jpg
+       :target: https://www.energy.gov/eere/articles/and-winners-2019-geothermal-student-competition-are
+
+       2019 Geothermal Student Competition
+
+
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   2019 Geothermal Student Competition <https://www.energy.gov/eere/articles/and-winners-2019-geothermal-student-competition-are>
+
+
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="I briefly share some of my work bringing geophysical data into Virtual Reality for communication of findings.">
+
+.. only:: html
+
+    .. figure:: ./_static/news/agu-profile.png
+       :target: https://youtu.be/IKYfCoTBA0E
+
+       AGU Profile on the Mines Geophysics Department
+
+
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   AGU Profile on the Mines Geophysics Department <https://youtu.be/IKYfCoTBA0E>
+
+
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="I share my work on PVGeo, an open-source platform for visualizing geoscientific information and demo how this software is interoperable with the SimPEG projects.">
+
+.. only:: html
+
+    .. figure:: ./_static/news/simpeg-meeting.png
+       :target: https://youtu.be/35w1IWJtRAw
+
+       SimPEG Meeting, 6 Nov. 2018
+
+
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   SimPEG Meeting, 6 Nov. 2018 <https://youtu.be/35w1IWJtRAw>
+
+
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="As a Colorado School of Mines senior, I reflect on my time at Mines, and give some insight into where I will go next.">
+
+.. only:: html
+
+    .. figure:: ./_static/news/senior-reflections.png
+       :target: https://youtu.be/m_wH_lK1FpE
+
+       Mines 2018 Undergraduate Reflections
+
+
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   Mines 2018 Undergraduate Reflections <https://youtu.be/m_wH_lK1FpE>
+
+
+
