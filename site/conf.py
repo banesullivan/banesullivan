@@ -125,6 +125,11 @@ html_context = {
             "Email",
             "mailto:banesullivan@gmail.com",
         ),
+        (
+            '<i class="fab fa-twitter"></i>',
+            "Email",
+            "https://twitter.com/banesullivan",
+        ),
     ],
     "url": "https://www.pyvista.org",
     "last_updated": str(datetime.date.today()),
