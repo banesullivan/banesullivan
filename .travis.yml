@@ -24,7 +24,9 @@ install:
 
 
 script:
+  - cd site
   - make html
+  - cd ..
 
 
 # Deploy the built HTML to Github pages
