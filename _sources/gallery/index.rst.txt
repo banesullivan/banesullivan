@@ -31,7 +31,7 @@ Bane's Python Gallery
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This is some stuff, yo!">
+    <div class="sphx-glr-thumbcontainer" tooltip="I don&#x27;t have all that many posts in the gallery yet, so I thought I&#x27;d put this very basic intro...">
 
 .. only:: html
 

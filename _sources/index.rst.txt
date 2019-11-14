@@ -27,7 +27,6 @@
 
     <div class="container-fluid front-block front-block-dark">
     <div class="row text-center">
-      <h2>About Me</h2>
       <div class="col-sm-4">
          <h2><i class="fas fa-school fa-2x"></i></h2>
          <b>Education</b>
@@ -56,7 +55,7 @@
         <h1>Notable Projects</h1>
 
         <center>
-        <p>I am a co-creator of the <a href="https://pyvista.org">PyVista project</a> - a
+        <p>I am a co-creator of the <a href="http://pyvista.org">PyVista project</a> - a
         project devoted to making 3D visualization and analysis tools more accesible
         to researchers. I am also the founder of
         <a href="http://opengeovis.org/">OpenGeoVis</a>, a similar, offshoot
@@ -69,7 +68,7 @@
 
       <div class="col-sm-6 project">
 
-         <a href="https://pyvista.org/">
+         <a href="http://pyvista.org/">
             <img class="project-logo center-block" src="_static/pyvista-logo.png">
          </a>
 
