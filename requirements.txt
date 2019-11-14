@@ -1,0 +1,6 @@
+Sphinx
+sphinx-autobuild
+sphinxcontrib-websupport
+sphinx-notfound-page>=0.3.0
+doctr
+sphinx_bootstrap_theme
