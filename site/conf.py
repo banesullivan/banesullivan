@@ -127,7 +127,7 @@ html_context = {
         ),
         (
             '<i class="fab fa-twitter"></i>',
-            "Email",
+            "Twitter",
             "https://twitter.com/banesullivan",
         ),
     ],
