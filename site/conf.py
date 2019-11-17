@@ -67,8 +67,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_title = project
 html_short_title = ""
-# html_logo = "_static/gmt-logo.png"
-# html_favicon = "_static/favicon.png"
+html_favicon = "_static/favicon.jpg"
 html_extra_path = [".nojekyll"] #TODO: "CNAME",
 html_use_smartypants = True
 pygments_style = "friendly"

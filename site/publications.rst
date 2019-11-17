@@ -20,3 +20,9 @@ Presentations
 * **SAGEEP 2018** - Presenter at the Symposium on the Application of Geophysics to Engineering and Environmental Problems in March 2018. *Title: Illuminating the Value of Geophysical Imaging Through Visualization and Virtual Reality*
 
 * **CASERM 2017** - Poster Presentation at the Center for Advanced Subsurface Earth Resource Models in September 2017. *Title: Illuminating the Value of Geophysical Imaging Through Visualization and Virtual Reality*
+
+
+
+Workshops
+=========
+* **3D Geotechnical Site Investigation and BIM** - Co-instructed a workshop on visualizing geotechnical site investigation data in a 3D environment for the *Tunneling Fundamentals, Practice and Innovations Workshop* at the Colorado School of Mines. October 2018 and 2019.
