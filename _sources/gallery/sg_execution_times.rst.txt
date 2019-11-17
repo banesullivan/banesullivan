@@ -5,7 +5,7 @@
 
 Computation times
 =================
-**00:12.424** total execution time for **gallery** files:
+**00:12.469** total execution time for **gallery** files:
 
-- **00:08.641**: :ref:`sphx_glr_gallery_intro-to-pyvista.py` (``intro-to-pyvista.py``)
-- **00:03.783**: :ref:`sphx_glr_gallery_numerical-integration.py` (``numerical-integration.py``)
+- **00:08.689**: :ref:`sphx_glr_gallery_intro-to-pyvista.py` (``intro-to-pyvista.py``)
+- **00:03.779**: :ref:`sphx_glr_gallery_numerical-integration.py` (``numerical-integration.py``)
