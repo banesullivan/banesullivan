@@ -246,6 +246,7 @@ blockquote {
     margin-top: 20px;
     margin-bottom: 30px;
     height: 100px;
+    width: 100%;
 }
 
 .project-icons {
