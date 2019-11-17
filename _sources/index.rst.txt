@@ -20,6 +20,8 @@
                 <center>
                 <h2><i>At the intersection of geoscience and 3D visualization</i></h2>
                 <h3>Geophysicist  •  Open Source Developer</h3>
+                <a class="github-button" href="https://github.com/banesullivan" data-size="large" data-show-count="true" aria-label="Follow @banesullivan on GitHub">Follow @banesullivan</a>
+                <script async defer src="https://buttons.github.io/buttons.js"></script>
                 </center>
             </div>
         </div>
