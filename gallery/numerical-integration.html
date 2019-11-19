@@ -108,6 +108,10 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>1.7071067811865475
+</pre></div>
+</div>
 <p>We can visualize this as the area under the curve - which is all a numerical
 integral is; an approximation of the area under the curve.
 To do a numerical integration, we simply discretize our x space and then
@@ -196,6 +200,10 @@ approximation of the area under the curve (the integral)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">yy</span><span class="p">)</span> <span class="o">*</span> <span class="n">dy</span><span class="p">)</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>1.7156985903219493
+</pre></div>
+</div>
 <p>Now that’s much better! as we decrease the <span class="math notranslate nohighlight">\(\Delta x\)</span> value, we see the
 apprximationm start to converge on the analtical answer for the integral.
 The rectangles appear to be consistently overestimating the integral.</p>
@@ -246,6 +254,10 @@ Then find the maximum and see what interval of <span class="math notranslate noh
 in behavior.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">subset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
 <span class="n">subset</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">subset</span><span class="p">))]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>1.9999924576268395
 </pre></div>
 </div>
 <p>Aha! It appears that the x value of <span class="math notranslate nohighlight">\(\frac{2}{\pi}\)</span> marks the start of
@@ -302,16 +314,36 @@ there.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mf">3.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>0.8660254037844386
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mf">3.</span><span class="o">/</span><span class="p">(</span><span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>0.8660254037844387
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mf">2.</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>-1.0
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mf">2.</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>-2.4492935982947064e-16
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mf">2.</span><span class="o">/</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>1.0
 </pre></div>
 </div>
 <p>So this is interesting. I’m seeing a weird pattern where <span class="math notranslate nohighlight">\(\frac{2}{n \pi}\)</span>
@@ -412,6 +444,10 @@ constant this time, so well need to compute an array of all of our
 <span class="n">right</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2.1014656967879217
+</pre></div>
+</div>
 <p>The right side there is pretty good
 (<a class="reference external" href="https://www.wolframalpha.com/input/?i=integrate+sin+1%2Fx+dx+from+x%3D2%2Fpi+to+2pi">check with wolfram alpha</a>)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_left</span><span class="p">(</span><span class="n">dn</span><span class="p">,</span> <span class="n">nn</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
@@ -424,6 +460,10 @@ constant this time, so well need to compute an array of all of our
 <span class="n">left</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>0.17968499172741753
+</pre></div>
+</div>
 <p>Well that’s not very good as we know the true value for the left side to be
 0.164619 <a class="reference external" href="https://www.wolframalpha.com/input/?i=integrate+sin+1%2Fx+dx+from+x%3D0+to+2%2Fpi+">from Wolfram Alpha</a>.
 Let’s see if incresing the discretization helps.</p>
@@ -431,14 +471,22 @@ Let’s see if incresing the discretization helps.</p>
 <span class="n">left</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>0.16463442561346053
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">left</span><span class="o">+</span><span class="n">right</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2.266100122401382
 </pre></div>
 </div>
 <p>The full integral is known to be 2.26277 from <a class="reference external" href="https://www.wolframalpha.com/input/?i=integrate+sin+1%2Fx+dx+from+x%3D0+to+2pi">Wolfram Alpha</a>
 so that’s not too bad of an approximation!</p>
 <p>And there you have it! The integral of <span class="math notranslate nohighlight">\(\sin(\frac{1}{x})\)</span> has been
 numerically integrated!</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.157 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.785 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-gallery-numerical-integration-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/e674a0039a223fe0abcedeea74c459f0/numerical-integration.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">numerical-integration.py</span></code></a></p>
@@ -465,7 +513,7 @@ numerically integrated!</p>
             </p>
             <p>
                 
-                    Last updated on 2019-11-17.
+                    Last updated on 2019-11-19.
                 
             </p>
 

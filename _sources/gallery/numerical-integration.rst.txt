@@ -25,6 +25,7 @@ Here is an introduction to Numerical Integration with Python!
 
 
 
+
 Let's look at a simple function:
 
 .. math::
@@ -52,6 +53,15 @@ and let's integrate that from 0 to :math:`\frac{5\pi}{4}`. Analytically, this is
 
 
 
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    1.7071067811865475
 
 
 
@@ -123,6 +133,7 @@ solve for the area under this curve.
 
 
 
+
 So now we can sum the areas of all of those rectangles to get an
 approximation of the area under the curve (the integral)
 
@@ -175,6 +186,7 @@ approximation of the area under the curve (the integral)
 
 
 
+
 .. code-block:: default
 
 
@@ -183,6 +195,15 @@ approximation of the area under the curve (the integral)
 
 
 
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    1.7156985903219493
 
 
 
@@ -209,6 +230,7 @@ analytically integrating that.
 
 
     f = lambda x: np.sin(1/x)
+
 
 
 
@@ -258,6 +280,7 @@ lower boound must be some small value, not 0: we'll use :math:`10^{-9}`.
 
 
 
+
 Huh, that's weird. The function behaves quite different from a typical :math:`\sin`
 function and we appear to see some sort of decay - let's look into that a bit
 more. *At what x value are we seeing a change from oscillatory behavior to
@@ -278,6 +301,15 @@ in behavior.
 
 
 
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    1.9999924576268395
 
 
 
@@ -310,6 +342,7 @@ decay. This makes sense becasue :math:`\sin(1/2/\pi) = \sin(\pi/2) = 1`
 
     /home/travis/build/banesullivan/mywebsite/gallery/numerical-integration.py:178: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
       plt.show()
+
 
 
 
@@ -353,6 +386,7 @@ values and see how the function behaves as x approaches zero.
 
 
 
+
 Now that's cool! :math:`f(x)` appears to have increasing frequency as x
 approaches zero. This is quite different from a normal :math:`\sin` function where
 we don't see any frequency change at all. This frequency variation will
@@ -379,6 +413,15 @@ there.
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    0.8660254037844386
+
 
 
 
@@ -390,6 +433,15 @@ there.
 
 
 
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    0.8660254037844387
 
 
 
@@ -403,6 +455,15 @@ there.
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    -1.0
+
 
 
 
@@ -415,6 +476,15 @@ there.
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    -2.4492935982947064e-16
+
 
 
 
@@ -425,6 +495,15 @@ there.
 
 
 
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    1.0
 
 
 
@@ -463,6 +542,7 @@ appears to oscillate :math:`f(x)` between -1 and 1. Let's test this out.
 
     /home/travis/build/banesullivan/mywebsite/gallery/numerical-integration.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
       plt.show()
+
 
 
 
@@ -514,6 +594,7 @@ function.
 
 
 
+
 .. code-block:: default
 
 
@@ -539,6 +620,7 @@ function.
 
     /home/travis/build/banesullivan/mywebsite/gallery/numerical-integration.py:295: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
       plt.show()
+
 
 
 
@@ -576,6 +658,7 @@ between the cross overs and the min/max
 
 
 
+
 Now that looks pretty darn good! How about we try integrating :math:`f(x)` now!
 To do so, we simply take our values and multiply by the :math:`\Delta x` value
 (the rectangle widths). It's important to note here that :math:`\Delta x` is not a
@@ -594,6 +677,15 @@ constant this time, so well need to compute an array of all of our
 
 
 
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    2.1014656967879217
 
 
 
@@ -618,6 +710,15 @@ The right side there is pretty good
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    0.17968499172741753
+
 
 
 Well that's not very good as we know the true value for the left side to be
@@ -637,6 +738,15 @@ Let's see if incresing the discretization helps.
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    0.16463442561346053
+
 
 
 
@@ -647,6 +757,15 @@ Let's see if incresing the discretization helps.
 
 
 
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    2.266100122401382
 
 
 
@@ -659,7 +778,7 @@ numerically integrated!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.157 seconds)
+   **Total running time of the script:** ( 0 minutes  3.785 seconds)
 
 
 .. _sphx_glr_download_gallery_numerical-integration.py:

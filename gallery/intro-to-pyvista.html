@@ -110,10 +110,35 @@ basic - I’ll get back to updating this later!).</p>
 <span class="n">mesh</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+<table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+<table>
+<tr><th>UniformGrid</th><th>Information</th></tr>
+<tr><td>N Cells</td><td>151916</td></tr>
+<tr><td>N Points</td><td>152709</td></tr>
+<tr><td>X Bounds</td><td>5.579e+05, 5.677e+05</td></tr>
+<tr><td>Y Bounds</td><td>5.108e+06, 5.122e+06</td></tr>
+<tr><td>Z Bounds</td><td>6.820e+02, 6.820e+02</td></tr>
+<tr><td>Dimensions</td><td>327, 467, 1</td></tr>
+<tr><td>Spacing</td><td>3.000e+01, 3.000e+01, 1.000e+00</td></tr>
+<tr><td>N Arrays</td><td>1</td></tr>
+</table>
+
+</td><td>
+<table>
+<tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
+<tr><td><b>Elevation</b></td><td>Points</td><td>float32</td><td>1</td><td>6.820e+02</td><td>2.543e+03</td></tr>
+</table>
+
+</td></tr> </table>
+<br />
+<br /><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_intro-to-pyvista_001.png" class="sphx-glr-single-img" src="../_images/sphx_glr_intro-to-pyvista_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(562835.0, 5114981.5, 33641.94828749365), (562835.0, 5114981.5, 682.0), (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
 <p>Here we can apply a filter to alter the mesh: warp it by a scalar attribute,
 elevation in this case:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">topo</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">warp_by_scalar</span><span class="p">()</span>
@@ -124,7 +149,11 @@ elevation in this case:</p>
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_intro-to-pyvista_002.png" class="sphx-glr-single-img" src="../_images/sphx_glr_intro-to-pyvista_002.png" />
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.866 seconds)</p>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(581977.3046422418, 5134123.804642241, 21436.804642241805), (562835.0, 5114981.5, 2294.5), (0.0, 0.0, 1.0)]
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.939 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-gallery-intro-to-pyvista-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/72f5438dd3f96fc440e919340e42d3fb/intro-to-pyvista.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">intro-to-pyvista.py</span></code></a></p>
@@ -150,7 +179,7 @@ elevation in this case:</p>
             </p>
             <p>
                 
-                    Last updated on 2019-11-17.
+                    Last updated on 2019-11-19.
                 
             </p>
 

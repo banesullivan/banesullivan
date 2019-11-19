@@ -15,9 +15,9 @@ Bane's Python Gallery
 
 .. only:: html
 
-    .. figure:: /gallery/images/thumb/sphx_glr_intro-to-pyvista_thumb.png
+ .. figure:: /gallery/images/thumb/sphx_glr_intro-to-pyvista_thumb.png
 
-        :ref:`sphx_glr_gallery_intro-to-pyvista.py`
+     :ref:`sphx_glr_gallery_intro-to-pyvista.py`
 
 .. raw:: html
 
@@ -35,9 +35,9 @@ Bane's Python Gallery
 
 .. only:: html
 
-    .. figure:: /gallery/images/thumb/sphx_glr_numerical-integration_thumb.png
+ .. figure:: /gallery/images/thumb/sphx_glr_numerical-integration_thumb.png
 
-        :ref:`sphx_glr_gallery_numerical-integration.py`
+     :ref:`sphx_glr_gallery_numerical-integration.py`
 
 .. raw:: html
 
@@ -50,7 +50,7 @@ Bane's Python Gallery
    /gallery/numerical-integration
 .. raw:: html
 
-    <div style='clear:both'></div>
+    <div class="sphx-glr-clear"></div>
 
 
 
