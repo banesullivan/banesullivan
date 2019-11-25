@@ -5,10 +5,10 @@
 
 Computation times
 =================
-**00:13.307** total execution time for **gallery** files:
+**00:12.667** total execution time for **gallery** files:
 
 +---------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_gallery_intro-to-pyvista.py` (``intro-to-pyvista.py``)           | 00:09.103 | 0.0 MB |
+| :ref:`sphx_glr_gallery_intro-to-pyvista.py` (``intro-to-pyvista.py``)           | 00:08.905 | 0.0 MB |
 +---------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_gallery_numerical-integration.py` (``numerical-integration.py``) | 00:04.204 | 0.0 MB |
+| :ref:`sphx_glr_gallery_numerical-integration.py` (``numerical-integration.py``) | 00:03.762 | 0.0 MB |
 +---------------------------------------------------------------------------------+-----------+--------+

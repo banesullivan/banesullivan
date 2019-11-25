@@ -778,7 +778,7 @@ numerically integrated!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.204 seconds)
+   **Total running time of the script:** ( 0 minutes  3.762 seconds)
 
 
 .. _sphx_glr_download_gallery_numerical-integration.py:
