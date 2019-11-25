@@ -2,6 +2,6 @@ _build
 *.swp
 *.DS_Store
 site/news.rst
-site/gallery
+site/python-blog
 *.pyc
 **/*__pycache__

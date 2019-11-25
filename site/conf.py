@@ -82,7 +82,7 @@ html_theme_options = {
     "navbar_site_name": "Site",
     "navbar_links": [
         ("Home", "index"),
-        ("Gallery", "gallery/index"),
+        ("Python", "python-blog/index"),
         ("News", "news"),
         ("Publications", "publications"),
     ],
@@ -147,10 +147,10 @@ from sphinx_gallery.sorting import FileNameSortKey
 sphinx_gallery_conf = {
     # path to your examples scripts
     "examples_dirs": [
-        "../gallery/",
+        "../python-blog/",
     ],
     # path where to save gallery generated examples
-    "gallery_dirs": ["gallery"],
+    "gallery_dirs": ["python-blog"],
     # Patter to search for example files
     "filename_pattern": r"\.py",
     # Remove the "Download all examples" button from the top level gallery

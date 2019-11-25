@@ -188,6 +188,6 @@
 .. toctree::
    :hidden:
 
-   gallery/index.rst
+   python-blog/index.rst
    news.rst
    publications.rst
