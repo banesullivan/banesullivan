@@ -58,7 +58,7 @@
 
         <center>
         <p>I am a co-creator of the <a href="http://www.pyvista.org">PyVista project</a> - an
-        effort devoted to making 3D visualization and analysis tools more accesible
+        effort devoted to making 3D visualization and analysis tools more accessible
         to researchers. I am also the founder of
         <a href="http://opengeovis.org/">OpenGeoVis</a>, a similar, offshoot
         project focusing on geoscience applications.
@@ -159,7 +159,7 @@
 
          <p>
          A PyVista (and VTK) interface for the Open Mining Format package (omf)
-         providing Python 3D visualization and useable mesh data structures
+         providing Python 3D visualization and usable mesh data structures
          for processing datasets in the OMF specification.
          </p>
 

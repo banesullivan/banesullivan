@@ -34,7 +34,7 @@ np.sqrt(2)/2 + 1
 # integral is; an approximation of the area under the curve.
 # To do a numerical integration, we simply discretize our x space and then
 # evaluate our function. Once we have that, we can sum the evaluation and
-# multiply by the discretization factor to yeild the effective area under the
+# multiply by the discretization factor to yield the effective area under the
 # curve.
 #
 # So let's discretize :math:`g(x)` into several rectangles which we can use to
@@ -168,7 +168,7 @@ subset[np.argmax(f(subset))] * np.pi
 
 ###############################################################################
 # Aha! It appears that the x value of :math:`\frac{2}{\pi}` marks the start of
-# decay. This makes sense becasue :math:`\sin(1/2/\pi) = \sin(\pi/2) = 1`
+# decay. This makes sense because :math:`\sin(1/2/\pi) = \sin(\pi/2) = 1`
 
 plt.plot(x, f(x), label="$f(x)$")
 plt.plot(2./np.pi, f(2./np.pi), 'ro', label=r"$x=\frac{2}{\pi}$")
@@ -180,7 +180,7 @@ plt.show()
 ###############################################################################
 # So now we know that have a speration point in our function - this might come
 # in handy later. as we may have to treat those two regions of the function
-# seperately when numerically integrating.
+# separately when numerically integrating.
 #
 # Now, let's explore the jumbled up portion of the plot for very low x values.
 # There appears to be some high frequency oscillation between -1 and 1, but we
@@ -209,7 +209,7 @@ plt.show()
 #
 # First, let's evaluate our function between integer changes in :math:`\pi` to see
 # how :math:`f(x)` oscilates between -1 and 1. We know from above that the last
-# value of 1 occured at :math:`\frac{2}{\pi}`, so let's use decreasing values from
+# value of 1 occurred at :math:`\frac{2}{\pi}`, so let's use decreasing values from
 # there.
 
 f(3./np.pi)
@@ -251,13 +251,13 @@ plt.show()
 # It appears that the equation :math:`\frac{2}{n \pi}` captures the oscilatory
 # behavior of :math:`f(x)` quite well! We see that it marks the minimums, maximums,
 # and zero-cross points for every period of :math:`f(x)`. This is just what we need
-# to efectively integrate :math:`f(x)`.
+# to effectively integrate :math:`f(x)`.
 #
 # To start integrating this function, we simply need to sample several times
 # between values of :math:`n`. Doing so is as simple as bumping up the number of
 # setting a step size in ``numpy``'s ``arange`` method. Let's use a step size of
 # 0.25 as that will give us 4 values between each cross-over and the min/max
-# point. Let's see iif that gives us a visually pleasing approximation of our
+# point. Let's see if that gives us a visually pleasing approximation of our
 # function.
 
 def plot_f():
