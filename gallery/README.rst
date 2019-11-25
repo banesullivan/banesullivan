@@ -1,5 +1,5 @@
-Bane's Python Gallery
-=====================
+Fun with Python
+===============
 
 I recently revamped my personal website and thought it would be fun to start
 a Python based blog - this page is my attempt at that!
