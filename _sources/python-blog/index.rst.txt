@@ -2,10 +2,10 @@
 
 
 
-.. _sphx_glr_gallery:
+.. _sphx_glr_python-blog:
 
-Bane's Python Gallery
-=====================
+Fun with Python
+===============
 
 I recently revamped my personal website and thought it would be fun to start
 a Python based blog - this page is my attempt at that!
@@ -21,9 +21,9 @@ up my thesis.
 
 .. only:: html
 
- .. figure:: /gallery/images/thumb/sphx_glr_intro-to-pyvista_thumb.png
+ .. figure:: /python-blog/images/thumb/sphx_glr_intro-to-pyvista_thumb.png
 
-     :ref:`sphx_glr_gallery_intro-to-pyvista.py`
+     :ref:`sphx_glr_python-blog_intro-to-pyvista.py`
 
 .. raw:: html
 
@@ -33,7 +33,7 @@ up my thesis.
 .. toctree::
    :hidden:
 
-   /gallery/intro-to-pyvista
+   /python-blog/intro-to-pyvista
 
 .. raw:: html
 
@@ -41,9 +41,9 @@ up my thesis.
 
 .. only:: html
 
- .. figure:: /gallery/images/thumb/sphx_glr_numerical-integration_thumb.png
+ .. figure:: /python-blog/images/thumb/sphx_glr_numerical-integration_thumb.png
 
-     :ref:`sphx_glr_gallery_numerical-integration.py`
+     :ref:`sphx_glr_python-blog_numerical-integration.py`
 
 .. raw:: html
 
@@ -53,7 +53,7 @@ up my thesis.
 .. toctree::
    :hidden:
 
-   /gallery/numerical-integration
+   /python-blog/numerical-integration
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

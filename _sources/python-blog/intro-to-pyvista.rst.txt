@@ -1,10 +1,10 @@
 .. note::
     :class: sphx-glr-download-link-note
 
-    Click :ref:`here <sphx_glr_download_gallery_intro-to-pyvista.py>` to download the full example code
+    Click :ref:`here <sphx_glr_download_python-blog_intro-to-pyvista.py>` to download the full example code
 .. rst-class:: sphx-glr-example-title
 
-.. _sphx_glr_gallery_intro-to-pyvista.py:
+.. _sphx_glr_python-blog_intro-to-pyvista.py:
 
 
 Intro to PyVista
@@ -77,7 +77,7 @@ If you really want to learn more about PyVista, head over to its
 
 
 
-.. image:: /gallery/images/sphx_glr_intro-to-pyvista_001.png
+.. image:: /python-blog/images/sphx_glr_intro-to-pyvista_001.png
     :class: sphx-glr-single-img
 
 
@@ -106,7 +106,7 @@ elevation in this case:
 
 
 
-.. image:: /gallery/images/sphx_glr_intro-to-pyvista_002.png
+.. image:: /python-blog/images/sphx_glr_intro-to-pyvista_002.png
     :class: sphx-glr-single-img
 
 
@@ -124,10 +124,10 @@ elevation in this case:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.905 seconds)
+   **Total running time of the script:** ( 0 minutes  9.077 seconds)
 
 
-.. _sphx_glr_download_gallery_intro-to-pyvista.py:
+.. _sphx_glr_download_python-blog_intro-to-pyvista.py:
 
 
 .. only :: html
