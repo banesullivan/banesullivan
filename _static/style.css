@@ -9,7 +9,7 @@ body {
     font-family: "Open Sans",Arial,sans-serif !important;
     font-size: 1.8em;
     line-height: 1.8em;
-    /* Margin bottom by footer height with a little room to accomodate small screens */
+    /* Margin bottom by footer height with a little room to accommodate small screens */
     margin-bottom: 600px;
     scroll-behavior: smooth;
 }

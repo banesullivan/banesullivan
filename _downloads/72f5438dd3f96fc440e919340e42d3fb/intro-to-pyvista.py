@@ -6,7 +6,7 @@ I don't have all that many posts in the gallery yet, so I thought I'd put this
 very basic introduction to PyVista in here.
 
 PyVista is 3D mesh analysis and visualizaton library in Python. It is capable
-of handle 3D finite difference/volume spatial data strucutres with arbitrary
+of handle 3D finite difference/volume spatial data structures with arbitrary
 geometries. As such, it is capable of representing just about any 3D spatially
 referenced data set.
 

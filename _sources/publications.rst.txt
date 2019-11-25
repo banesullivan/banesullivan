@@ -13,7 +13,7 @@ Publications
 Presentations
 =============
 
-* **AGU 2018** - Poster presentaion and lightning talk at the American Geophysical Union's Fall 2018 Meeting. *Title:* `PVGeo: an open-source Python package for geoscientific visualization in VTK and ParaView <https://www.essoar.org/doi/abs/10.1002/essoar.10500751.1>`_
+* **AGU 2018** - Poster presentation and lightning talk at the American Geophysical Union's Fall 2018 Meeting. *Title:* `PVGeo: an open-source Python package for geoscientific visualization in VTK and ParaView <https://www.essoar.org/doi/abs/10.1002/essoar.10500751.1>`_
 
 * **GRADS 2018** - 1st Place Oral Presenter in the Geophysics Session of the Graduate Research and Discovery Symposium @ Mines in April 2018. *Title: Illuminating the Value of Geophysical Imaging Through Visualization and Virtual Reality*
 

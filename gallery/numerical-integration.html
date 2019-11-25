@@ -116,7 +116,7 @@
 integral is; an approximation of the area under the curve.
 To do a numerical integration, we simply discretize our x space and then
 evaluate our function. Once we have that, we can sum the evaluation and
-multiply by the discretization factor to yeild the effective area under the
+multiply by the discretization factor to yield the effective area under the
 curve.</p>
 <p>So let’s discretize <span class="math notranslate nohighlight">\(g(x)\)</span> into several rectangles which we can use to
 solve for the area under this curve.</p>
@@ -261,7 +261,7 @@ in behavior.</p>
 </pre></div>
 </div>
 <p>Aha! It appears that the x value of <span class="math notranslate nohighlight">\(\frac{2}{\pi}\)</span> marks the start of
-decay. This makes sense becasue <span class="math notranslate nohighlight">\(\sin(1/2/\pi) = \sin(\pi/2) = 1\)</span></p>
+decay. This makes sense because <span class="math notranslate nohighlight">\(\sin(1/2/\pi) = \sin(\pi/2) = 1\)</span></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$f(x)$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mf">2.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="mf">2.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$x=\frac</span><span class="si">{2}</span><span class="s2">{\pi}$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -278,7 +278,7 @@ decay. This makes sense becasue <span class="math notranslate nohighlight">\(\si
 </div>
 <p>So now we know that have a speration point in our function - this might come
 in handy later. as we may have to treat those two regions of the function
-seperately when numerically integrating.</p>
+separately when numerically integrating.</p>
 <p>Now, let’s explore the jumbled up portion of the plot for very low x values.
 There appears to be some high frequency oscillation between -1 and 1, but we
 can’t really tell. To do this, let’s create an exponentially varying x
@@ -309,7 +309,7 @@ variation as something we can use to build out our values that we will use
 for the numerical integration.</p>
 <p>First, let’s evaluate our function between integer changes in <span class="math notranslate nohighlight">\(\pi\)</span> to see
 how <span class="math notranslate nohighlight">\(f(x)\)</span> oscilates between -1 and 1. We know from above that the last
-value of 1 occured at <span class="math notranslate nohighlight">\(\frac{2}{\pi}\)</span>, so let’s use decreasing values from
+value of 1 occurred at <span class="math notranslate nohighlight">\(\frac{2}{\pi}\)</span>, so let’s use decreasing values from
 there.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mf">3.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
 </pre></div>
@@ -370,12 +370,12 @@ appears to oscillate <span class="math notranslate nohighlight">\(f(x)\)</span> 
 <p>It appears that the equation <span class="math notranslate nohighlight">\(\frac{2}{n \pi}\)</span> captures the oscilatory
 behavior of <span class="math notranslate nohighlight">\(f(x)\)</span> quite well! We see that it marks the minimums, maximums,
 and zero-cross points for every period of <span class="math notranslate nohighlight">\(f(x)\)</span>. This is just what we need
-to efectively integrate <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+to effectively integrate <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
 <p>To start integrating this function, we simply need to sample several times
 between values of <span class="math notranslate nohighlight">\(n\)</span>. Doing so is as simple as bumping up the number of
 setting a step size in <code class="docutils literal notranslate"><span class="pre">numpy</span></code>’s <code class="docutils literal notranslate"><span class="pre">arange</span></code> method. Let’s use a step size of
 0.25 as that will give us 4 values between each cross-over and the min/max
-point. Let’s see iif that gives us a visually pleasing approximation of our
+point. Let’s see if that gives us a visually pleasing approximation of our
 function.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_f</span><span class="p">():</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
@@ -486,7 +486,7 @@ Let’s see if incresing the discretization helps.</p>
 so that’s not too bad of an approximation!</p>
 <p>And there you have it! The integral of <span class="math notranslate nohighlight">\(\sin(\frac{1}{x})\)</span> has been
 numerically integrated!</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.854 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.204 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-gallery-numerical-integration-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/e674a0039a223fe0abcedeea74c459f0/numerical-integration.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">numerical-integration.py</span></code></a></p>

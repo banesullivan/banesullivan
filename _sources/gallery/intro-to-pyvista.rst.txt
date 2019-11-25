@@ -14,7 +14,7 @@ I don't have all that many posts in the gallery yet, so I thought I'd put this
 very basic introduction to PyVista in here.
 
 PyVista is 3D mesh analysis and visualizaton library in Python. It is capable
-of handle 3D finite difference/volume spatial data strucutres with arbitrary
+of handle 3D finite difference/volume spatial data structures with arbitrary
 geometries. As such, it is capable of representing just about any 3D spatially
 referenced data set.
 
@@ -124,7 +124,7 @@ elevation in this case:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.862 seconds)
+   **Total running time of the script:** ( 0 minutes  9.103 seconds)
 
 
 .. _sphx_glr_download_gallery_intro-to-pyvista.py:
