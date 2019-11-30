@@ -49,6 +49,7 @@ release = '0.0.0'
 extensions = [
     'sphinx_gallery.gen_gallery',
     'sphinx.ext.mathjax',
+    'notfound.extension'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -166,6 +167,11 @@ sphinx_gallery_conf = {
                             "from pyvista import set_plot_theme\n"
                             "set_plot_theme('document')"),
 }
+
+
+
+# -- Custom 404 page
+notfound_no_urls_prefix = True
 
 
 # Load the custom CSS files (needs sphinx >= 1.6 for this to work)
