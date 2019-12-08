@@ -41,7 +41,7 @@
          <h2><i class="fas fa-laptop-code fa-2x"></i></h2>
          <b>Professional Passions</b>
          <br>
-         Python, open-source software development, & Reproducibility
+         Python, open-source software development, & reproducibile research
       </div>
       <div class="col-sm-4">
          <h2><i class="fas fa-mountain fa-2x"></i></h2>
