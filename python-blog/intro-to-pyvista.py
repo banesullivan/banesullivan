@@ -80,3 +80,5 @@ p.show()
 ###############################################################################
 # And just like that, we have a 3D rendering of all that data!
 # Isn't PyVista awesome?!
+
+pv.Report(omfvista)
