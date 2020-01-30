@@ -7,8 +7,8 @@ Build Status: [![Build Status](https://travis-ci.org/banesullivan/mywebsite.svg?
 
 ## Gallery
 
-If you are searching for the source code for an example in my [gallery](https://banesullivan.com/gallery/index.html),
-head into [the gallery directory](https://github.com/banesullivan/mywebsite/tree/master/gallery)
+If you are searching for the source code for an example in my [gallery](https://banesullivan.com/python-blog/index.html),
+head into [the gallery directory](https://github.com/banesullivan/mywebsite/tree/master/python-blog)
 
 ## Building the Site Locally
 
