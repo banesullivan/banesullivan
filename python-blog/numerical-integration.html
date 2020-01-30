@@ -22,7 +22,7 @@
     <link rel="shortcut icon" href="../_static/favicon.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="News" href="../news.html" />
+    <link rel="next" title="Using PyPIstats" href="using-pypistats.html" />
     <link rel="prev" title="Intro to PyVista" href="intro-to-pyvista.html" />
 
     
@@ -157,11 +157,6 @@ solve for the area under this curve.</p>
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_numerical-integration_001.png" class="sphx-glr-single-img" src="../_images/sphx_glr_numerical-integration_001.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/travis/build/banesullivan/mywebsite/python-blog/numerical-integration.py:77: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
-  plt.show()
-</pre></div>
-</div>
 <p>So now we can sum the areas of all of those rectangles to get an
 approximation of the area under the curve (the integral)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">yy</span><span class="o">-</span><span class="p">(</span><span class="n">dy</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">dy</span><span class="p">)</span>
@@ -192,11 +187,6 @@ approximation of the area under the curve (the integral)</p>
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_numerical-integration_002.png" class="sphx-glr-single-img" src="../_images/sphx_glr_numerical-integration_002.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/travis/build/banesullivan/mywebsite/python-blog/numerical-integration.py:106: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
-  plt.show()
-</pre></div>
-</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">yy</span><span class="p">)</span> <span class="o">*</span> <span class="n">dy</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -239,11 +229,6 @@ lower boound must be some small value, not 0: we’ll use <span class="math notr
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_numerical-integration_003.png" class="sphx-glr-single-img" src="../_images/sphx_glr_numerical-integration_003.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/travis/build/banesullivan/mywebsite/python-blog/numerical-integration.py:153: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
-  plt.show()
-</pre></div>
-</div>
 <p>Huh, that’s weird. The function behaves quite different from a typical <span class="math notranslate nohighlight">\(\sin\)</span>
 function and we appear to see some sort of decay - let’s look into that a bit
 more. <em>At what x value are we seeing a change from oscillatory behavior to
@@ -271,11 +256,6 @@ decay. This makes sense because <span class="math notranslate nohighlight">\(\si
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_numerical-integration_004.png" class="sphx-glr-single-img" src="../_images/sphx_glr_numerical-integration_004.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/travis/build/banesullivan/mywebsite/python-blog/numerical-integration.py:178: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
-  plt.show()
-</pre></div>
-</div>
 <p>So now we know that have a speration point in our function - this might come
 in handy later. as we may have to treat those two regions of the function
 separately when numerically integrating.</p>
@@ -294,11 +274,6 @@ values and see how the function behaves as x approaches zero.</p>
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_numerical-integration_005.png" class="sphx-glr-single-img" src="../_images/sphx_glr_numerical-integration_005.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/travis/build/banesullivan/mywebsite/python-blog/numerical-integration.py:197: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
-  plt.show()
-</pre></div>
-</div>
 <p>Now that’s cool! <span class="math notranslate nohighlight">\(f(x)\)</span> appears to have increasing frequency as x
 approaches zero. This is quite different from a normal <span class="math notranslate nohighlight">\(\sin\)</span> function where
 we don’t see any frequency change at all. This frequency variation will
@@ -362,11 +337,6 @@ appears to oscillate <span class="math notranslate nohighlight">\(f(x)\)</span> 
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_numerical-integration_006.png" class="sphx-glr-single-img" src="../_images/sphx_glr_numerical-integration_006.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/travis/build/banesullivan/mywebsite/python-blog/numerical-integration.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
-  plt.show()
-</pre></div>
-</div>
 <p>It appears that the equation <span class="math notranslate nohighlight">\(\frac{2}{n \pi}\)</span> captures the oscilatory
 behavior of <span class="math notranslate nohighlight">\(f(x)\)</span> quite well! We see that it marks the minimums, maximums,
 and zero-cross points for every period of <span class="math notranslate nohighlight">\(f(x)\)</span>. This is just what we need
@@ -411,11 +381,6 @@ function.</p>
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_numerical-integration_007.png" class="sphx-glr-single-img" src="../_images/sphx_glr_numerical-integration_007.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/travis/build/banesullivan/mywebsite/python-blog/numerical-integration.py:295: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
-  plt.show()
-</pre></div>
-</div>
 <p>That looks decent, but I think we can do better. Let’s try 0.1 for 10 samples
 between the cross overs and the min/max</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dn</span> <span class="o">=</span> <span class="mf">0.1</span>
@@ -428,11 +393,6 @@ between the cross overs and the min/max</p>
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_numerical-integration_008.png" class="sphx-glr-single-img" src="../_images/sphx_glr_numerical-integration_008.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/travis/build/banesullivan/mywebsite/python-blog/numerical-integration.py:307: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
-  plt.show()
-</pre></div>
-</div>
 <p>Now that looks pretty darn good! How about we try integrating <span class="math notranslate nohighlight">\(f(x)\)</span> now!
 To do so, we simply take our values and multiply by the <span class="math notranslate nohighlight">\(\Delta x\)</span> value
 (the rectangle widths). It’s important to note here that <span class="math notranslate nohighlight">\(\Delta x\)</span> is not a
@@ -486,7 +446,7 @@ Let’s see if incresing the discretization helps.</p>
 so that’s not too bad of an approximation!</p>
 <p>And there you have it! The integral of <span class="math notranslate nohighlight">\(\sin(\frac{1}{x})\)</span> has been
 numerically integrated!</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.177 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.089 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-python-blog-numerical-integration-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/e74e1ef8c40373e44d9cb547d39537bc/numerical-integration.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">numerical-integration.py</span></code></a></p>

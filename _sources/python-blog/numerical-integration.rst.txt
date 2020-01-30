@@ -122,15 +122,6 @@ solve for the area under this curve.
     :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/travis/build/banesullivan/mywebsite/python-blog/numerical-integration.py:77: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
-      plt.show()
-
 
 
 
@@ -173,15 +164,6 @@ approximation of the area under the curve (the integral)
 .. image:: /python-blog/images/sphx_glr_numerical-integration_002.png
     :class: sphx-glr-single-img
 
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/travis/build/banesullivan/mywebsite/python-blog/numerical-integration.py:106: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
-      plt.show()
 
 
 
@@ -269,15 +251,6 @@ lower boound must be some small value, not 0: we'll use :math:`10^{-9}`.
     :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/travis/build/banesullivan/mywebsite/python-blog/numerical-integration.py:153: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
-      plt.show()
-
 
 
 
@@ -334,15 +307,6 @@ decay. This makes sense because :math:`\sin(1/2/\pi) = \sin(\pi/2) = 1`
     :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/travis/build/banesullivan/mywebsite/python-blog/numerical-integration.py:178: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
-      plt.show()
-
 
 
 
@@ -374,15 +338,6 @@ values and see how the function behaves as x approaches zero.
 .. image:: /python-blog/images/sphx_glr_numerical-integration_005.png
     :class: sphx-glr-single-img
 
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/travis/build/banesullivan/mywebsite/python-blog/numerical-integration.py:197: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
-      plt.show()
 
 
 
@@ -534,15 +489,6 @@ appears to oscillate :math:`f(x)` between -1 and 1. Let's test this out.
     :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/travis/build/banesullivan/mywebsite/python-blog/numerical-integration.py:247: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
-      plt.show()
-
 
 
 
@@ -612,15 +558,6 @@ function.
     :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/travis/build/banesullivan/mywebsite/python-blog/numerical-integration.py:295: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
-      plt.show()
-
 
 
 
@@ -646,15 +583,6 @@ between the cross overs and the min/max
 .. image:: /python-blog/images/sphx_glr_numerical-integration_008.png
     :class: sphx-glr-single-img
 
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/travis/build/banesullivan/mywebsite/python-blog/numerical-integration.py:307: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
-      plt.show()
 
 
 
@@ -778,7 +706,7 @@ numerically integrated!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.177 seconds)
+   **Total running time of the script:** ( 0 minutes  3.089 seconds)
 
 
 .. _sphx_glr_download_python-blog_numerical-integration.py:

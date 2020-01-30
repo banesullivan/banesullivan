@@ -3,7 +3,7 @@ News
 ====
 
 Keep up with with my latest activities! I use this as a place to track all
-the places I appear online.
+the places I appear online, mainly for my own archives.
 
 
 
@@ -229,4 +229,17 @@ the places I appear online.
    Mines 2018 Undergraduate Reflections <https://youtu.be/m_wH_lK1FpE>
 
 
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+A few extra
+-----------
+
+* `A Call to Accelerate Geothermal Innovation <https://www.innovationchallenge.com/challenges/from-the-us-department-of-energys-idaho-national-labs-a-call-to-accelerate-geothermal-innovation>`_
+
+* `GMG’s Open Mining Format gaining traction in 2019 <https://im-mining.com/2019/02/01/gmgs-open-mining-format-gaining-traction-2019/>`_
 

@@ -54,6 +54,26 @@ up my thesis.
    :hidden:
 
    /python-blog/numerical-integration
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Not too long ago, I made a `pull request &lt;https://github.com/hugovk/pypistats/pull/74&gt;`_ to `Py...">
+
+.. only:: html
+
+ .. figure:: /python-blog/images/thumb/sphx_glr_using-pypistats_thumb.png
+
+     :ref:`sphx_glr_python-blog_using-pypistats.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /python-blog/using-pypistats
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

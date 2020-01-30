@@ -13,66 +13,126 @@ Intro to PyVista
 I don't have all that many posts in the gallery yet, so I thought I'd put this
 very basic introduction to PyVista in here.
 
-PyVista is 3D mesh analysis and visualizaton library in Python. It is capable
-of handle 3D finite difference/volume spatial data structures with arbitrary
-geometries. As such, it is capable of representing just about any 3D spatially
-referenced data set.
-
-In this brief example, I'm going to load a few example meshes, maybe create
-one from scratch, and visualize them in 3D. (at the moment, this is super
-basic - I'll get back to updating this later!).
+`PyVista <https://www.pyvista.org>`_ is a 3D data management, visualization,
+and mesh analysis framework in Python, and yours truly is one of its creators!
+PyVista is capable of handling 3D spatial data structures with arbitrary
+geometries. As such, it is able to represent just about any 3D spatially
+referenced data set, geoscientific or not!
 
 If you really want to learn more about PyVista, head over to its
 `gallery <https://docs.pyvista.org/examples/index.html>`_
 (I have created many of those examples).
 
+In this brief demo, I'm going to load data from the
+`FORGE Geothermal Research Site <https://utahforge.com/>`_ using a companion
+package, `omfvista <https://opengeovis.github.io/omfvista/>`_ for reading
+`Open Mining Format (OMF) <https://omf.readthedocs.io/en/latest/>`_ archives.
+
+Getting to it
+~~~~~~~~~~~~~
+
+So what is a "3D spatially referenced data"?...
+
+In PyVista, a "mesh" is a geometrical representation of a surface or volume
+in 3D space that can have any information associated to those locations/regions
+in space.
+We commonly refer to any spatially referenced dataset as a mesh, so often the
+distinction between a mesh, a grid, and a volume can get fuzzy - but that does
+not matter in PyVista as we have worked really hard to make working with these
+spatial data structures as simple as possible.
+For more details, check out:
+`What is a mesh? <https://docs.pyvista.org/getting-started/what-is-a-mesh.html>`_
+
+Anyways, let's look at some code and especially some 3D visualizations!
+
 
 
 .. code-block:: default
 
-    # sphinx_gallery_thumbnail_number = 2
     import pyvista as pv
-    from pyvista import examples
+    import omfvista
 
-    mesh = examples.download_st_helens()
-    mesh
+    # Load OMF archive as PyVista MulitBlock dataset
+    project = omfvista.download_forge_example()
+    project
 
 
 
 
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    Downloading FORGE data... Please be patient.
+    FORGE Data Downloaded!
 
 
 .. only:: builder_html
 
     .. raw:: html
 
-        <table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+        <table><tr><th>Information</th><th>Blocks</th></tr><tr><td>
         <table>
-        <tr><th>UniformGrid</th><th>Information</th></tr>
-        <tr><td>N Cells</td><td>151916</td></tr>
-        <tr><td>N Points</td><td>152709</td></tr>
-        <tr><td>X Bounds</td><td>5.579e+05, 5.677e+05</td></tr>
-        <tr><td>Y Bounds</td><td>5.108e+06, 5.122e+06</td></tr>
-        <tr><td>Z Bounds</td><td>6.820e+02, 6.820e+02</td></tr>
-        <tr><td>Dimensions</td><td>327, 467, 1</td></tr>
-        <tr><td>Spacing</td><td>3.000e+01, 3.000e+01, 1.000e+00</td></tr>
-        <tr><td>N Arrays</td><td>1</td></tr>
+        <tr><th>MultiBlock</th><th>Values</th></tr>
+        <tr><td>N Blocks</td><td>7</td></tr>
+        <tr><td>X Bounds</td><td>329924.988, 344152.930</td></tr>
+        <tr><td>Y Bounds</td><td>4252833.482, 4270951.098</td></tr>
+        <tr><td>Z Bounds</td><td>-2606.000, 2906.000</td></tr>
         </table>
 
         </td><td>
         <table>
-        <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
-        <tr><td><b>Elevation</b></td><td>Points</td><td>float32</td><td>1</td><td>6.820e+02</td><td>2.543e+03</td></tr>
+        <tr><th>Index</th><th>Name</th><th>Type</th></tr>
+        <tr><th>0</th><th>Terrain</th><th>UnstructuredGrid</th></tr>
+        <tr><th>1</th><th>Opal Mound Fault</th><th>UnstructuredGrid</th></tr>
+        <tr><th>2</th><th>Negro Mag Fault</th><th>UnstructuredGrid</th></tr>
+        <tr><th>3</th><th>Top of Basement</th><th>UnstructuredGrid</th></tr>
+        <tr><th>4</th><th>Site Boundary</th><th>PolyData</th></tr>
+        <tr><th>5</th><th>Observed Temperature</th><th>PolyData</th></tr>
+        <tr><th>6</th><th>Observed Gravity</th><th>PolyData</th></tr>
         </table>
 
         </td></tr> </table>
         <br />
         <br />
 
+Initial Inspection
+~~~~~~~~~~~~~~~~~~
+
+Now we can go ahead and create an integrated visualization of all of the
+data available to in the ``project`` :class:`pyvista.MultiBlock` container.
+All we have to do is index the ``project`` container by the name of the
+dataset that we want to acess. We can then pass those meshes to the
+:class:`pyvista.Plotter`'s ``add_mesh`` method with keyword arguments for how
+we want it displayed (e.g. color, opacity, etc.).
+
 
 .. code-block:: default
 
-    mesh.plot(cpos='xy')
+
+    p = pv.Plotter()
+    p.add_mesh(project["Site Boundary"],
+               color="yellow", render_lines_as_tubes=True)
+    p.add_mesh(project["Terrain"],
+               texture="geo_aer", opacity=0.7, lighting=False)
+    p.add_mesh(project["Opal Mound Fault"],
+               color="brown", opacity=0.7)
+    p.add_mesh(project["Negro Mag Fault"],
+               color="lightblue", opacity=0.7)
+    p.add_mesh(project["Observed Temperature"],
+               cmap="coolwarm", clim=[10,270], point_size=10,
+               render_points_as_spheres=True)
+
+    p.enable_anti_aliasing()
+    p.enable_depth_peeling()
+    p.camera_position = [(315661.9406719345, 4234675.528454831, 15167.291249498076),
+                         (337498.00521202036, 4260818.504034578, -1261.5688408692681),
+                         (0.2708862567924439, 0.3397398234107863, 0.9006650255615491)]
+    p.show()
 
 
 
@@ -88,43 +148,91 @@ If you really want to learn more about PyVista, head over to its
  .. code-block:: none
 
 
-    [(562835.0, 5114981.5, 33641.94828749365), (562835.0, 5114981.5, 682.0), (0.0, 1.0, 0.0)]
+    [(315661.9406719345, 4234675.528454831, 15167.291249498076),
+     (337498.00521202036, 4260818.504034578, -1261.5688408692681),
+     (0.2708862567924439, 0.3397398234107863, 0.9006650255615491)]
 
 
 
-Here we can apply a filter to alter the mesh: warp it by a scalar attribute,
-elevation in this case:
+And just like that, we have a 3D rendering of all that data!
+Isn't PyVista awesome?!
 
 
 .. code-block:: default
 
-    topo = mesh.warp_by_scalar()
 
-    p = pv.Plotter()
-    p.add_mesh(topo)
-    p.show()
+    pv.Report(omfvista)
 
 
 
-.. image:: /python-blog/images/sphx_glr_intro-to-pyvista_002.png
-    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
+.. only:: builder_html
 
- Out:
+    .. raw:: html
 
- .. code-block:: none
-
-
-    [(581977.3046422418, 5134123.804642241, 21436.804642241805), (562835.0, 5114981.5, 2294.5), (0.0, 0.0, 1.0)]
-
-
+        <table style='border: 3px solid #ddd;'>
+          <tr>
+             <td style='text-align: center; font-weight: bold; font-size: 1.2em; border: 2px solid #fff;' colspan='6'>Thu Jan 30 04:14:55 2020 UTC</td>
+          </tr>
+          <tr>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>Linux</td>
+            <td style='text-align: left; border: 2px solid #fff;'>OS</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>2</td>
+            <td style='text-align: left; border: 2px solid #fff;'>CPU(s)</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>x86_64</td>
+            <td style='text-align: left; border: 2px solid #fff;'>Machine</td>
+          </tr>
+          <tr>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>64bit</td>
+            <td style='text-align: left; border: 2px solid #fff;'>Architecture</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>Python</td>
+            <td style='text-align: left; border: 2px solid #fff;'>Environment</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>GPU Vendor</td>
+            <td style='text-align: left; border: 2px solid #fff;'>VMware, Inc.</td>
+          </tr>
+          <tr>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>GPU Renderer</td>
+            <td style='text-align: left; border: 2px solid #fff;'>llvmpipe (LLVM 6.0, 256 bits)</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>GPU Version</td>
+            <td style='text-align: left; border: 2px solid #fff;'>3.3 (Core Profile) Mesa 18.0.5</td>
+          </tr>
+          <tr>
+             <td style='text-align: center; border: 2px solid #fff;' colspan='6'>Python 3.6.7 (default, Nov 28 2018, 13:38:24) 
+        [GCC 5.4.0 20160609]</td>
+          </tr>
+          <tr>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>0.2.2</td>
+            <td style='text-align: left; border: 2px solid #fff;'>omfvista</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>0.23.0</td>
+            <td style='text-align: left; border: 2px solid #fff;'>pyvista</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>8.1.2</td>
+            <td style='text-align: left; border: 2px solid #fff;'>vtk</td>
+          </tr>
+          <tr>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>1.16.2</td>
+            <td style='text-align: left; border: 2px solid #fff;'>numpy</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>2.6.1</td>
+            <td style='text-align: left; border: 2px solid #fff;'>imageio</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>1.4.3</td>
+            <td style='text-align: left; border: 2px solid #fff;'>appdirs</td>
+          </tr>
+          <tr>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>0.5.0</td>
+            <td style='text-align: left; border: 2px solid #fff;'>scooby</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>3.1.2</td>
+            <td style='text-align: left; border: 2px solid #fff;'>matplotlib</td>
+            <td style= border: 2px solid #fff;'></td>
+            <td style= border: 2px solid #fff;'></td>
+          </tr>
+        </table>
+        <br />
+        <br />
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.952 seconds)
+   **Total running time of the script:** ( 0 minutes  58.735 seconds)
 
 
 .. _sphx_glr_download_python-blog_intro-to-pyvista.py:

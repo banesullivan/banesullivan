@@ -1,6 +1,8 @@
 ./404.html
+./_downloads/4c0575ff31974f2353c448da9f18b8c0/using-pypistats.ipynb
 ./_downloads/5fc9834f782308e4bf35a75d12ce7886/intro-to-pyvista.py
 ./_downloads/9f4f05e47c1c232223f31ae44d4f2eb1/numerical-integration.ipynb
+./_downloads/d01adf7773b47a8ee15b044083e927a4/using-pypistats.py
 ./_downloads/de2c60f011a317d7faf26bae368f8e77/intro-to-pyvista.ipynb
 ./_downloads/e74e1ef8c40373e44d9cb547d39537bc/numerical-integration.py
 ./_images/agu-profile.png
@@ -10,7 +12,6 @@
 ./_images/senior-reflections.png
 ./_images/simpeg-meeting.png
 ./_images/sphx_glr_intro-to-pyvista_001.png
-./_images/sphx_glr_intro-to-pyvista_002.png
 ./_images/sphx_glr_intro-to-pyvista_thumb.png
 ./_images/sphx_glr_numerical-integration_001.png
 ./_images/sphx_glr_numerical-integration_002.png
@@ -21,6 +22,15 @@
 ./_images/sphx_glr_numerical-integration_007.png
 ./_images/sphx_glr_numerical-integration_008.png
 ./_images/sphx_glr_numerical-integration_thumb.png
+./_images/sphx_glr_using-pypistats_001.png
+./_images/sphx_glr_using-pypistats_002.png
+./_images/sphx_glr_using-pypistats_003.png
+./_images/sphx_glr_using-pypistats_004.png
+./_images/sphx_glr_using-pypistats_005.png
+./_images/sphx_glr_using-pypistats_006.png
+./_images/sphx_glr_using-pypistats_007.png
+./_images/sphx_glr_using-pypistats_008.png
+./_images/sphx_glr_using-pypistats_thumb.png
 ./_images/subsurface-frontiers.png
 ./_images/undersampled.png
 ./_sources/index.rst.txt
@@ -30,6 +40,7 @@
 ./_sources/python-blog/intro-to-pyvista.rst.txt
 ./_sources/python-blog/numerical-integration.rst.txt
 ./_sources/python-blog/sg_execution_times.rst.txt
+./_sources/python-blog/using-pypistats.rst.txt
 ./_static/banner.jpg
 ./_static/basic.css
 ./_static/bootstrap-2.3.2/css/bootstrap-responsive.css
@@ -155,5 +166,6 @@
 ./python-blog/intro-to-pyvista.html
 ./python-blog/numerical-integration.html
 ./python-blog/sg_execution_times.html
+./python-blog/using-pypistats.html
 ./search.html
 ./searchindex.js
