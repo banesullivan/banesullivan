@@ -31,6 +31,14 @@ pyvista.set_plot_theme('document')
 pyvista.rcParams['window_size'] = np.array([1024, 768]) * 2
 
 
+import warnings
+warnings.filterwarnings(
+    "ignore",
+    category=UserWarning,
+    message='Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.',
+)
+
+
 # -- Project information -----------------------------------------------------
 year = datetime.date.today().year
 project = 'Bane Sullivan'
