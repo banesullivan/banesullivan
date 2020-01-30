@@ -75,7 +75,7 @@ blockquote {
 }
 
 .front-block img {
-    width: 90%;
+    width: 65%;
     /* Center the image */
     display: block;
     margin-left: auto;
@@ -119,7 +119,7 @@ blockquote {
 }
 
 .footer img {
-    width: 60%;
+    width: 35%;
     /* Center the image */
     display: block;
     margin-left: auto;
@@ -245,7 +245,6 @@ blockquote {
 .project-logo {
     margin-top: 20px;
     margin-bottom: 30px;
-    height: 100px;
     width: 100%;
 }
 
