@@ -9,3 +9,4 @@ numpy
 pyvista
 pandas
 matplotlib
+omfvista>=0.2.2
