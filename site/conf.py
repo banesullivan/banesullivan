@@ -91,6 +91,7 @@ html_theme_options = {
     "navbar_site_name": "Site",
     "navbar_links": [
         ("Home", "index"),
+        ("About", "about"),
         ("Python", "python-blog/index"),
         ("News", "news"),
         ("Publications", "publications"),

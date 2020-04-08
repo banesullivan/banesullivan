@@ -19,7 +19,7 @@
                 <h1>Bane Sullivan</h1>
                 <center>
                 <h2><i>At the intersection of geoscience and 3D visualization</i></h2>
-                <h3>Geophysicist  •  Open-Source Developer</h3>
+                <h3>R&D Engineer  •  Geophysicist  •  Open-Source Developer</h3>
                 <a class="github-button" href="https://github.com/banesullivan" data-size="large" data-show-count="true" aria-label="Follow @banesullivan on GitHub">Follow @banesullivan</a>
                 <script async defer src="https://buttons.github.io/buttons.js"></script>
                 <br><br>
@@ -35,7 +35,7 @@
          <h2><i class="fas fa-school fa-2x"></i></h2>
          <b>Education</b>
          <br>
-         B.Sc. in Geophysical Engineering from the Colorado School of Mines and continuing a M.Sc. in Hydrology 2020
+         B.Sc. in Geophysical Engineering and M.Sc. in Hydrology from the Colorado School of Mines
       </div>
       <div class="col-sm-4">
          <h2><i class="fas fa-laptop-code fa-2x"></i></h2>
