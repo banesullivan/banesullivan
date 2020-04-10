@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    
+        
+    <title>Numerical Integration &#8212; Bane Sullivan</title>
+    
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fontawesome/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.jpg"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using PyPIstats" href="002-using-pypistats.html" />
+    <link rel="prev" title="Intro to PyVista" href="000-intro-to-pyvista.html" />
+
+    
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://www.pyvista.org/_static/profile-square.jpg">
+    <meta name="twitter:title" content="Numerical Integration">
+    <meta name="twitter:description" content="Bane Sullivan">
+
+    <meta property="og:title" content="Numerical Integration">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.pyvista.org">
+    <meta property="og:site_name" content="Numerical Integration">
+    <meta property="og:image" content="https://www.pyvista.org/_static/profile-square.jpg">
+    <meta property="og:description" content="Bane Sullivan">
+
+    <!-- Include Google Fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+    <!-- Google Analytics tracking code -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
+            Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-115959679-2', 'auto', {'storage': 'none'});
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+
+  </head><body>
+    
+<div class="container-fluid menu text-center">
+    <div class="col-lg-12">
+        
+            <ul class="menu-list">
+                    <li><a href="../index.html"><strong>Home</strong></a></li>
+                    <li><a href="../about.html"><strong>About</strong></a></li>
+                    <li><a href="index.html"><strong>Python</strong></a></li>
+                    <li><a href="../news.html"><strong>News</strong></a></li>
+                    <li><a href="../publications.html"><strong>Publications</strong></a></li>
+                    <li><a href="https://github.com/banesullivan" title="GitHub"><i class="fab fa-github fa-lg"></i></a></li>
+                    <li><a href="mailto:banesullivan@gmail.com" title="Email"><i class="fas fa-envelope"></i></a></li>
+                    <li><a href="https://twitter.com/banesullivan" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+        
+    </div>
+</div>
+
+    
+    <div class="container">
+    
+        <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-python-blog-001-numerical-integration-py"><span class="std std-ref">here</span></a>     to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="numerical-integration">
+<span id="sphx-glr-python-blog-001-numerical-integration-py"></span><h1>Numerical Integration</h1>
+<p>Here is an introduction to Numerical Integration with Python!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+</pre></div>
+</div>
+<p>Let’s look at a simple function:</p>
+<div class="math notranslate nohighlight">
+\[g(x) = \sin(x)\]</div>
+<p>which we know the analytical integral as:</p>
+<div class="math notranslate nohighlight">
+\[G(x) = - \cos(x)\]</div>
+<p>and let’s integrate that from 0 to <span class="math notranslate nohighlight">\(\frac{5\pi}{4}\)</span>. Analytically, this is:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^{\frac{5\pi}{4}} g(x) \, dx = - \cos(x) |_0^{\frac{5\pi}{4}} = - \cos(\frac{5\pi}{4}) + \cos(0) = \frac{\sqrt{2}}{2} + 1 = 1.7071\]</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>1.7071067811865475
+</pre></div>
+</div>
+<p>We can visualize this as the area under the curve - which is all a numerical
+integral is; an approximation of the area under the curve.
+To do a numerical integration, we simply discretize our x space and then
+evaluate our function. Once we have that, we can sum the evaluation and
+multiply by the discretization factor to yield the effective area under the
+curve.</p>
+<p>So let’s discretize <span class="math notranslate nohighlight">\(g(x)\)</span> into several rectangles which we can use to
+solve for the area under this curve.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="n">dy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">16</span>
+<span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plot_rects</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">delta</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">xx</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;=</span> <span class="mf">0.0</span><span class="p">:</span>
+            <span class="n">loc</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">h</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">loc</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="n">h</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">value</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="n">v</span><span class="o">-</span><span class="n">delta</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">loc</span><span class="p">),</span>
+                                  <span class="n">width</span><span class="o">=</span><span class="n">delta</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">h</span><span class="p">,</span>
+                                  <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="k">return</span>
+
+<span class="k">def</span> <span class="nf">plot_g</span><span class="p">():</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">g</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yy</span><span class="p">,</span> <span class="n">g</span><span class="p">(</span><span class="n">yy</span><span class="p">),</span> <span class="s2">&quot;ro&quot;</span><span class="p">)</span>
+
+    <span class="n">plot_rects</span><span class="p">(</span><span class="n">yy</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x$&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$g(x)$&quot;</span><span class="p">)</span>
+
+<span class="n">plot_g</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/sphx_glr_001-numerical-integration_001.png" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_001.png" />
+<p>So now we can sum the areas of all of those rectangles to get an
+approximation of the area under the curve (the integral)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">yy</span><span class="o">-</span><span class="p">(</span><span class="n">dy</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">dy</span><span class="p">)</span>
+
+
+<span class="c1"># That&#39;s not too bad considering our rectangles do not perfectly follow the</span>
+<span class="c1"># curve. Let&#39;s now try choosing a :math:`\Delta x` value that will increase the</span>
+<span class="c1"># sampling creating finer spaced rectangles to improve our approximation.</span>
+
+<span class="n">dy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">32</span>
+<span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plot_g</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Area = </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">yy</span><span class="p">)</span> <span class="o">*</span> <span class="n">dy</span><span class="p">)))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">dy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">128</span>
+<span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+
+<span class="n">plot_g</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Area = </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">yy</span><span class="p">)</span> <span class="o">*</span> <span class="n">dy</span><span class="p">)))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/sphx_glr_001-numerical-integration_002.png" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_002.png" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">yy</span><span class="p">)</span> <span class="o">*</span> <span class="n">dy</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>1.7156985903219493
+</pre></div>
+</div>
+<p>Now that’s much better! as we decrease the <span class="math notranslate nohighlight">\(\Delta x\)</span> value, we see the
+apprximationm start to converge on the analtical answer for the integral.
+The rectangles appear to be consistently overestimating the integral.</p>
+<div class="section" id="integrating-a-complex-function">
+<h2>Integrating a Complex Function</h2>
+<p>Now let’s apply that concept to numerically integrate a more complex function
+such as:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \sin(\frac{1}{x})\]</div>
+<p>from 0 to <span class="math notranslate nohighlight">\(2\pi\)</span>. This allows us to really showcase where numerical
+integration benefits as I don’t even know where to begin when it comes to
+analytically integrating that.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To do so, we’ll need to define a range of x values on which to evaluate the
+function. Let’s try out a few different sets of x values to plot the values
+of <span class="math notranslate nohighlight">\(f(x)\)</span> to gain insight into how this function behaves.</p>
+<p>First, let’s see what happens when we plot this function at linear intervals
+between 0 and <span class="math notranslate nohighlight">\(2\pi\)</span> (note that we cannont have a division by zero, so our
+lower boound must be some small value, not 0: we’ll use <span class="math notranslate nohighlight">\(10^{-9}\)</span>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">100000</span>
+<span class="n">zero</span> <span class="o">=</span> <span class="mf">1e-9</span>
+
+<span class="c1"># Create an array of x values to evaluate</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">zero</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+
+<span class="c1"># Evaluate and plot the values</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$f(x)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/sphx_glr_001-numerical-integration_003.png" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_003.png" />
+<p>Huh, that’s weird. The function behaves quite different from a typical <span class="math notranslate nohighlight">\(\sin\)</span>
+function and we appear to see some sort of decay - let’s look into that a bit
+more. <em>At what x value are we seeing a change from oscillatory behavior to
+a decay?</em></p>
+<p>From visual inspection, it looks like some value above <span class="math notranslate nohighlight">\(\frac{1}{\pi}\)</span>
+(0.318). Let’s reevaluate the function from that x value onward.
+Then find the maximum and see what interval of <span class="math notranslate nohighlight">\(\pi\)</span> is causing the change
+in behavior.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">subset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+<span class="n">subset</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">subset</span><span class="p">))]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>1.9999924576268395
+</pre></div>
+</div>
+<p>Aha! It appears that the x value of <span class="math notranslate nohighlight">\(\frac{2}{\pi}\)</span> marks the start of
+decay. This makes sense because <span class="math notranslate nohighlight">\(\sin(1/2/\pi) = \sin(\pi/2) = 1\)</span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$f(x)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mf">2.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="mf">2.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$x=\frac</span><span class="si">{2}</span><span class="s2">{\pi}$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$f(x)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/sphx_glr_001-numerical-integration_004.png" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_004.png" />
+<p>So now we know that have a speration point in our function - this might come
+in handy later. as we may have to treat those two regions of the function
+separately when numerically integrating.</p>
+<p>Now, let’s explore the jumbled up portion of the plot for very low x values.
+There appears to be some high frequency oscillation between -1 and 1, but we
+can’t really tell. To do this, let’s create an exponentially varying x
+space to evaluate our function which will bring out finer sampling for lower
+values and see how the function behaves as x approaches zero.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">geomspace</span><span class="p">(</span><span class="mf">1e-2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$f(x)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/sphx_glr_001-numerical-integration_005.png" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_005.png" />
+<p>Now that’s cool! <span class="math notranslate nohighlight">\(f(x)\)</span> appears to have increasing frequency as x
+approaches zero. This is quite different from a normal <span class="math notranslate nohighlight">\(\sin\)</span> function where
+we don’t see any frequency change at all. This frequency variation will
+definitely pose a challenge for our numerical integration as we will need to
+make sure we properly sample this signal without aliasing.</p>
+<p>Let’s see if we can come up with an equation for capturing that frequency
+variation as something we can use to build out our values that we will use
+for the numerical integration.</p>
+<p>First, let’s evaluate our function between integer changes in <span class="math notranslate nohighlight">\(\pi\)</span> to see
+how <span class="math notranslate nohighlight">\(f(x)\)</span> oscilates between -1 and 1. We know from above that the last
+value of 1 occurred at <span class="math notranslate nohighlight">\(\frac{2}{\pi}\)</span>, so let’s use decreasing values from
+there.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mf">3.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>0.8660254037844386
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mf">3.</span><span class="o">/</span><span class="p">(</span><span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>0.8660254037844387
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mf">2.</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>-1.0
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mf">2.</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>-2.4492935982947064e-16
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mf">2.</span><span class="o">/</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+<p>So this is interesting. I’m seeing a weird pattern where <span class="math notranslate nohighlight">\(\frac{2}{n \pi}\)</span>
+appears to oscillate <span class="math notranslate nohighlight">\(f(x)\)</span> between -1 and 1. Let’s test this out.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">nn</span> <span class="o">=</span> <span class="mi">65</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nn</span><span class="p">)</span>
+<span class="n">xn</span> <span class="o">=</span> <span class="n">xx</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xn</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">xn</span><span class="p">),</span> <span class="s2">&quot;ro&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$f(x)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/sphx_glr_001-numerical-integration_006.png" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_006.png" />
+<p>It appears that the equation <span class="math notranslate nohighlight">\(\frac{2}{n \pi}\)</span> captures the oscilatory
+behavior of <span class="math notranslate nohighlight">\(f(x)\)</span> quite well! We see that it marks the minimums, maximums,
+and zero-cross points for every period of <span class="math notranslate nohighlight">\(f(x)\)</span>. This is just what we need
+to effectively integrate <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<p>To start integrating this function, we simply need to sample several times
+between values of <span class="math notranslate nohighlight">\(n\)</span>. Doing so is as simple as bumping up the number of
+setting a step size in <code class="docutils literal notranslate"><span class="pre">numpy</span></code>’s <code class="docutils literal notranslate"><span class="pre">arange</span></code> method. Let’s use a step size of
+0.25 as that will give us 4 values between each cross-over and the min/max
+point. Let’s see if that gives us a visually pleasing approximation of our
+function.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_f</span><span class="p">():</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xn</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">xn</span><span class="p">),</span> <span class="s2">&quot;ro&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">xn</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">xn</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;=</span> <span class="mf">0.0</span><span class="p">:</span>
+            <span class="n">loc</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">h</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">loc</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="n">h</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">value</span>
+        <span class="n">delta</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">xn</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">xn</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="n">v</span> <span class="o">-</span> <span class="n">delta</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">loc</span><span class="p">),</span>
+                                  <span class="n">width</span><span class="o">=</span><span class="n">delta</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">h</span><span class="p">,</span>
+                                  <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x$&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$f(x)$&quot;</span><span class="p">)</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dx</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nn</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">dx</span><span class="p">)</span>
+<span class="n">xn</span> <span class="o">=</span> <span class="n">xx</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="n">plot_f</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/sphx_glr_001-numerical-integration_007.png" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_007.png" />
+<p>That looks decent, but I think we can do better. Let’s try 0.1 for 10 samples
+between the cross overs and the min/max</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dn</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="c1"># 1/np.pi**2</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nn</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">dn</span><span class="p">)</span>
+<span class="n">xn</span> <span class="o">=</span> <span class="n">xx</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="n">plot_f</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/sphx_glr_001-numerical-integration_008.png" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_008.png" />
+<p>Now that looks pretty darn good! How about we try integrating <span class="math notranslate nohighlight">\(f(x)\)</span> now!
+To do so, we simply take our values and multiply by the <span class="math notranslate nohighlight">\(\Delta x\)</span> value
+(the rectangle widths). It’s important to note here that <span class="math notranslate nohighlight">\(\Delta x\)</span> is not a
+constant this time, so well need to compute an array of all of our
+<span class="math notranslate nohighlight">\(\Delta x\)</span> values first.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="p">(</span><span class="mi">128</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">dx</span><span class="p">)</span>
+<span class="n">right</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">)</span>
+<span class="n">right</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2.1014656967879217
+</pre></div>
+</div>
+<p>The right side there is pretty good
+(<a class="reference external" href="https://www.wolframalpha.com/input/?i=integrate+sin+1%2Fx+dx+from+x%3D2%2Fpi+to+2pi">check with wolfram alpha</a>)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_left</span><span class="p">(</span><span class="n">dn</span><span class="p">,</span> <span class="n">nn</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nn</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">dn</span><span class="p">)</span>
+    <span class="n">xn</span> <span class="o">=</span> <span class="n">xx</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">xn</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">xn</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">dx</span><span class="p">)</span>
+
+<span class="n">left</span> <span class="o">=</span> <span class="n">compute_left</span><span class="p">(</span><span class="n">dn</span><span class="p">)</span>
+<span class="n">left</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>0.17968499172741753
+</pre></div>
+</div>
+<p>Well that’s not very good as we know the true value for the left side to be
+0.164619 <a class="reference external" href="https://www.wolframalpha.com/input/?i=integrate+sin+1%2Fx+dx+from+x%3D0+to+2%2Fpi+">from Wolfram Alpha</a>.
+Let’s see if incresing the discretization helps.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">left</span> <span class="o">=</span> <span class="n">compute_left</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">)</span>
+<span class="n">left</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>0.16463442561346053
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">left</span><span class="o">+</span><span class="n">right</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2.266100122401382
+</pre></div>
+</div>
+<p>The full integral is known to be 2.26277 from <a class="reference external" href="https://www.wolframalpha.com/input/?i=integrate+sin+1%2Fx+dx+from+x%3D0+to+2pi">Wolfram Alpha</a>
+so that’s not too bad of an approximation!</p>
+<p>And there you have it! The integral of <span class="math notranslate nohighlight">\(\sin(\frac{1}{x})\)</span> has been
+numerically integrated!</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.246 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-python-blog-001-numerical-integration-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/a0a68991e226f18074b56a9f222a60ec/001-numerical-integration.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">001-numerical-integration.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/de40e5396ca6382afa7ead9eb06958e8/001-numerical-integration.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">001-numerical-integration.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+    
+    </div>
+    
+
+
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+            <p>
+                &copy; Copyright 2020, Bane Sullivan.
+            </p>
+            <p>
+                
+                    Last updated on 2020-04-10.
+                
+            </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+  </body>
+</html>

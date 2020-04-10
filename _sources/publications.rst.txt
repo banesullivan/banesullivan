@@ -26,3 +26,14 @@ Presentations
 Workshops
 =========
 * **3D Geotechnical Site Investigation and BIM** - Co-instructed a workshop on visualizing geotechnical site investigation data in a 3D environment for the *Tunneling Fundamentals, Practice and Innovations Workshop* at the Colorado School of Mines. October 2018 and 2019.
+
+
+
+Honors, Awards, & Scholarships
+==============================
+
+* (2019-2020): Mendenhall Prize for outstanding graduating MSc student
+* (April 2019): 2nd Place Winner of 2019 Geothermal Student Competition
+* (Fall 2018 - Spring 2019): Chevron Blended Skill Set Scholarship
+* (Fall 2015 & Fall 2016 - Spring 2018) Dean's List
+* (Fall 2014 - Spring 2018): Mines President's Scholarship

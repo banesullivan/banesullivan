@@ -1,0 +1,326 @@
+.. only:: html
+
+    .. note::
+        :class: sphx-glr-download-link-note
+
+        Click :ref:`here <sphx_glr_download_python-blog_000-intro-to-pyvista.py>`     to download the full example code
+    .. rst-class:: sphx-glr-example-title
+
+    .. _sphx_glr_python-blog_000-intro-to-pyvista.py:
+
+
+Intro to PyVista
+----------------
+
+I don't have all that many posts in the gallery yet, so I thought I'd put this
+very basic introduction to PyVista in here.
+
+`PyVista <https://www.pyvista.org>`_ is a 3D data management, visualization,
+and mesh analysis framework in Python, and yours truly is one of its creators!
+PyVista is capable of handling 3D spatial data structures with arbitrary
+geometries. As such, it is able to represent just about any 3D spatially
+referenced data set, geoscientific or not!
+
+If you really want to learn more about PyVista, head over to its
+`gallery <https://docs.pyvista.org/examples/index.html>`_
+(I have created many of those examples).
+
+In this brief demo, I'm going to load some example data and demonstrate how to
+plot and filter the 3D meshes.
+
+Getting to it
+~~~~~~~~~~~~~
+
+So what is a "3D spatially referenced data"?...
+
+In PyVista, a "mesh" is a geometrical representation of a surface or volume
+in 3D space that can have any information associated to those locations/regions
+in space.
+We commonly refer to any spatially referenced dataset as a mesh, so often the
+distinction between a mesh, a grid, and a volume can get fuzzy - but that does
+not matter in PyVista as we have worked really hard to make working with these
+spatial data structures as simple as possible.
+For more details, check out:
+`What is a mesh? <https://docs.pyvista.org/getting-started/what-is-a-mesh.html>`_
+
+Anyways, let's look at some code and especially some 3D visualizations!
+
+
+
+.. code-block:: default
+
+    import pyvista as pv
+    from pyvista import examples
+
+    # Load OMF archive as PyVista MulitBlock dataset
+    model = examples.download_damavand_volcano()
+    model
+
+
+
+
+
+
+
+.. only:: builder_html
+
+    .. raw:: html
+
+        <table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+        <table>
+        <tr><th>UniformGrid</th><th>Information</th></tr>
+        <tr><td>N Cells</td><td>11003760</td></tr>
+        <tr><td>N Points</td><td>11156040</td></tr>
+        <tr><td>X Bounds</td><td>4.130e+05, 6.920e+05</td></tr>
+        <tr><td>Y Bounds</td><td>3.864e+06, 4.096e+06</td></tr>
+        <tr><td>Z Bounds</td><td>-5.479e+04, 5.302e+03</td></tr>
+        <tr><td>Dimensions</td><td>280, 233, 171</td></tr>
+        <tr><td>Spacing</td><td>1.000e+03, 1.000e+03, 3.535e+02</td></tr>
+        <tr><td>N Arrays</td><td>1</td></tr>
+        </table>
+
+        </td><td>
+        <table>
+        <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
+        <tr><td><b>data</b></td><td>Points</td><td>float32</td><td>1</td><td>9.782e-15</td><td>1.000e+02</td></tr>
+        </table>
+
+        </td></tr> </table>
+        <br />
+        <br />
+
+Initial Inspection
+~~~~~~~~~~~~~~~~~~
+
+Now we can go ahead and create a visualization of the 3D model of the region
+surrounding the Damavand Volcano.
+All we have to do is pass the mesh to the :class:`pyvista.Plotter`'s
+``add_mesh`` method with keyword arguments for how we want it displayed
+(e.g. color, opacity, etc.).
+
+Below, I define an opacity mapping and colorbar limits:
+
+
+.. code-block:: default
+
+
+    opacity = [0, 0.75, 0, 0.75, 1.0]
+    clim = [0, 100]
+
+
+
+
+
+
+
+
+Now I instantiate the ``Plotter`` and create the visualization.
+
+
+.. code-block:: default
+
+
+    p = pv.Plotter()
+    p.add_volume(model, cmap="magma", clim=clim,
+                 opacity=opacity, opacity_unit_distance=6000,)
+    p.show()
+
+
+
+
+.. image:: /python-blog/images/sphx_glr_000-intro-to-pyvista_001.png
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    [(962759.682893736, 4390399.944685736, 385481.9418857361),
+     (552532.741008, 3980173.0028, -24745.0),
+     (0.0, 0.0, 1.0)]
+
+
+
+And just like that, we have a 3D rendering of all that data!
+Isn't PyVista awesome?!
+
+But hold on, that’s a big volume! We probably don’t want to volume render the
+whole thing. So let’s extract a region of interest under the volcano.
+
+The region we will extract will be between nodes 175 and 200 on the x-axis,
+between nodes 105 and 132 on the y-axis, and between nodes 98 and 170 on the
+z-axis.
+
+
+.. code-block:: default
+
+
+    voi = model.extract_subset([175, 200, 105, 132, 98, 170])
+
+    p = pv.Plotter()
+    p.add_mesh(model.outline(), color="k")
+    p.add_mesh(voi, cmap="magma")
+    p.show()
+
+
+
+
+.. image:: /python-blog/images/sphx_glr_000-intro-to-pyvista_002.png
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    [(962759.6918857361, 4390399.941885736, 385481.9418857361),
+     (552532.75, 3980173.0, -24745.0),
+     (0.0, 0.0, 1.0)]
+
+
+
+Let’s now volume render that region of interest!
+
+
+.. code-block:: default
+
+
+    p = pv.Plotter()
+    p.add_volume(voi, cmap="magma", clim=clim, opacity=opacity,
+                 opacity_unit_distance=2000)
+    p.camera_position = [(531554.5542909054, 3944331.800171338, 26563.04809259223),
+     (599088.1433822059, 3982089.287834022, -11965.14728669936),
+     (0.3738545892415734, 0.244312810377319, 0.8947312427698892)]
+    p.show()
+
+
+
+
+
+.. image:: /python-blog/images/sphx_glr_000-intro-to-pyvista_003.png
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    [(531554.5542909054, 3944331.800171338, 26563.04809259223),
+     (599088.1433822059, 3982089.287834022, -11965.14728669936),
+     (0.37385458924157344, 0.24431281037731903, 0.8947312427698894)]
+
+
+
+
+.. code-block:: default
+
+    pv.Report()
+
+
+
+
+
+.. only:: builder_html
+
+    .. raw:: html
+
+        <table style='border: 3px solid #ddd;'>
+          <tr>
+             <td style='text-align: center; font-weight: bold; font-size: 1.2em; border: 2px solid #fff;' colspan='6'>Fri Apr 10 19:10:22 2020 UTC</td>
+          </tr>
+          <tr>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>OS</td>
+            <td style='text-align: left; border: 2px solid #fff;'>Linux</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>CPU(s)</td>
+            <td style='text-align: left; border: 2px solid #fff;'>2</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>Machine</td>
+            <td style='text-align: left; border: 2px solid #fff;'>x86_64</td>
+          </tr>
+          <tr>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>Architecture</td>
+            <td style='text-align: left; border: 2px solid #fff;'>64bit</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>Environment</td>
+            <td style='text-align: left; border: 2px solid #fff;'>Python</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>VMware, Inc.</td>
+            <td style='text-align: left; border: 2px solid #fff;'>GPU Vendor</td>
+          </tr>
+          <tr>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>llvmpipe (LLVM 6.0, 256 bits)</td>
+            <td style='text-align: left; border: 2px solid #fff;'>GPU Renderer</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>3.3 (Core Profile) Mesa 18.0.5</td>
+            <td style='text-align: left; border: 2px solid #fff;'>GPU Version</td>
+          </tr>
+          <tr>
+             <td style='text-align: center; border: 2px solid #fff;' colspan='6'>Python 3.6.7 (default, Nov 28 2018, 13:38:24) 
+        [GCC 5.4.0 20160609]</td>
+          </tr>
+          <tr>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>pyvista</td>
+            <td style='text-align: left; border: 2px solid #fff;'>0.24.1</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>vtk</td>
+            <td style='text-align: left; border: 2px solid #fff;'>8.1.2</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>numpy</td>
+            <td style='text-align: left; border: 2px solid #fff;'>1.16.2</td>
+          </tr>
+          <tr>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>imageio</td>
+            <td style='text-align: left; border: 2px solid #fff;'>2.8.0</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>appdirs</td>
+            <td style='text-align: left; border: 2px solid #fff;'>1.4.3</td>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>scooby</td>
+            <td style='text-align: left; border: 2px solid #fff;'>0.5.2</td>
+          </tr>
+          <tr>
+            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>matplotlib</td>
+            <td style='text-align: left; border: 2px solid #fff;'>3.2.1</td>
+            <td style= border: 2px solid #fff;'></td>
+            <td style= border: 2px solid #fff;'></td>
+            <td style= border: 2px solid #fff;'></td>
+            <td style= border: 2px solid #fff;'></td>
+          </tr>
+        </table>
+        <br />
+        <br />
+
+
+.. rst-class:: sphx-glr-timing
+
+   **Total running time of the script:** ( 0 minutes  37.889 seconds)
+
+
+.. _sphx_glr_download_python-blog_000-intro-to-pyvista.py:
+
+
+.. only :: html
+
+ .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-example
+
+
+
+  .. container:: sphx-glr-download sphx-glr-download-python
+
+     :download:`Download Python source code: 000-intro-to-pyvista.py <000-intro-to-pyvista.py>`
+
+
+
+  .. container:: sphx-glr-download sphx-glr-download-jupyter
+
+     :download:`Download Jupyter notebook: 000-intro-to-pyvista.ipynb <000-intro-to-pyvista.ipynb>`
+
+
+.. only:: html
+
+ .. rst-class:: sphx-glr-signature
+
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_

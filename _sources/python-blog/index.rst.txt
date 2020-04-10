@@ -21,9 +21,9 @@ up my thesis.
 
 .. only:: html
 
- .. figure:: /python-blog/images/thumb/sphx_glr_intro-to-pyvista_thumb.png
+ .. figure:: /python-blog/images/thumb/sphx_glr_000-intro-to-pyvista_thumb.png
 
-     :ref:`sphx_glr_python-blog_intro-to-pyvista.py`
+     :ref:`sphx_glr_python-blog_000-intro-to-pyvista.py`
 
 .. raw:: html
 
@@ -33,7 +33,7 @@ up my thesis.
 .. toctree::
    :hidden:
 
-   /python-blog/intro-to-pyvista
+   /python-blog/000-intro-to-pyvista
 
 .. raw:: html
 
@@ -41,9 +41,9 @@ up my thesis.
 
 .. only:: html
 
- .. figure:: /python-blog/images/thumb/sphx_glr_numerical-integration_thumb.png
+ .. figure:: /python-blog/images/thumb/sphx_glr_001-numerical-integration_thumb.png
 
-     :ref:`sphx_glr_python-blog_numerical-integration.py`
+     :ref:`sphx_glr_python-blog_001-numerical-integration.py`
 
 .. raw:: html
 
@@ -53,7 +53,7 @@ up my thesis.
 .. toctree::
    :hidden:
 
-   /python-blog/numerical-integration
+   /python-blog/001-numerical-integration
 
 .. raw:: html
 
@@ -61,9 +61,9 @@ up my thesis.
 
 .. only:: html
 
- .. figure:: /python-blog/images/thumb/sphx_glr_using-pypistats_thumb.png
+ .. figure:: /python-blog/images/thumb/sphx_glr_002-using-pypistats_thumb.png
 
-     :ref:`sphx_glr_python-blog_using-pypistats.py`
+     :ref:`sphx_glr_python-blog_002-using-pypistats.py`
 
 .. raw:: html
 
@@ -73,7 +73,7 @@ up my thesis.
 .. toctree::
    :hidden:
 
-   /python-blog/using-pypistats
+   /python-blog/002-using-pypistats
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

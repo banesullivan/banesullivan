@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    
+        
+    <title>Intro to PyVista &#8212; Bane Sullivan</title>
+    
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fontawesome/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.jpg"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Numerical Integration" href="001-numerical-integration.html" />
+    <link rel="prev" title="Fun with Python" href="index.html" />
+
+    
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://www.pyvista.org/_static/profile-square.jpg">
+    <meta name="twitter:title" content="Intro to PyVista">
+    <meta name="twitter:description" content="Bane Sullivan">
+
+    <meta property="og:title" content="Intro to PyVista">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.pyvista.org">
+    <meta property="og:site_name" content="Intro to PyVista">
+    <meta property="og:image" content="https://www.pyvista.org/_static/profile-square.jpg">
+    <meta property="og:description" content="Bane Sullivan">
+
+    <!-- Include Google Fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+    <!-- Google Analytics tracking code -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
+            Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-115959679-2', 'auto', {'storage': 'none'});
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+
+  </head><body>
+    
+<div class="container-fluid menu text-center">
+    <div class="col-lg-12">
+        
+            <ul class="menu-list">
+                    <li><a href="../index.html"><strong>Home</strong></a></li>
+                    <li><a href="../about.html"><strong>About</strong></a></li>
+                    <li><a href="index.html"><strong>Python</strong></a></li>
+                    <li><a href="../news.html"><strong>News</strong></a></li>
+                    <li><a href="../publications.html"><strong>Publications</strong></a></li>
+                    <li><a href="https://github.com/banesullivan" title="GitHub"><i class="fab fa-github fa-lg"></i></a></li>
+                    <li><a href="mailto:banesullivan@gmail.com" title="Email"><i class="fas fa-envelope"></i></a></li>
+                    <li><a href="https://twitter.com/banesullivan" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+        
+    </div>
+</div>
+
+    
+    <div class="container">
+    
+        <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-python-blog-000-intro-to-pyvista-py"><span class="std std-ref">here</span></a>     to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="intro-to-pyvista">
+<span id="sphx-glr-python-blog-000-intro-to-pyvista-py"></span><h1>Intro to PyVista</h1>
+<p>I don’t have all that many posts in the gallery yet, so I thought I’d put this
+very basic introduction to PyVista in here.</p>
+<p><a class="reference external" href="https://www.pyvista.org">PyVista</a> is a 3D data management, visualization,
+and mesh analysis framework in Python, and yours truly is one of its creators!
+PyVista is capable of handling 3D spatial data structures with arbitrary
+geometries. As such, it is able to represent just about any 3D spatially
+referenced data set, geoscientific or not!</p>
+<p>If you really want to learn more about PyVista, head over to its
+<a class="reference external" href="https://docs.pyvista.org/examples/index.html">gallery</a>
+(I have created many of those examples).</p>
+<p>In this brief demo, I’m going to load some example data and demonstrate how to
+plot and filter the 3D meshes.</p>
+<div class="section" id="getting-to-it">
+<h2>Getting to it</h2>
+<p>So what is a “3D spatially referenced data”?…</p>
+<p>In PyVista, a “mesh” is a geometrical representation of a surface or volume
+in 3D space that can have any information associated to those locations/regions
+in space.
+We commonly refer to any spatially referenced dataset as a mesh, so often the
+distinction between a mesh, a grid, and a volume can get fuzzy - but that does
+not matter in PyVista as we have worked really hard to make working with these
+spatial data structures as simple as possible.
+For more details, check out:
+<a class="reference external" href="https://docs.pyvista.org/getting-started/what-is-a-mesh.html">What is a mesh?</a></p>
+<p>Anyways, let’s look at some code and especially some 3D visualizations!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
+
+<span class="c1"># Load OMF archive as PyVista MulitBlock dataset</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_damavand_volcano</span><span class="p">()</span>
+<span class="n">model</span>
+</pre></div>
+</div>
+<table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+<table>
+<tr><th>UniformGrid</th><th>Information</th></tr>
+<tr><td>N Cells</td><td>11003760</td></tr>
+<tr><td>N Points</td><td>11156040</td></tr>
+<tr><td>X Bounds</td><td>4.130e+05, 6.920e+05</td></tr>
+<tr><td>Y Bounds</td><td>3.864e+06, 4.096e+06</td></tr>
+<tr><td>Z Bounds</td><td>-5.479e+04, 5.302e+03</td></tr>
+<tr><td>Dimensions</td><td>280, 233, 171</td></tr>
+<tr><td>Spacing</td><td>1.000e+03, 1.000e+03, 3.535e+02</td></tr>
+<tr><td>N Arrays</td><td>1</td></tr>
+</table>
+
+</td><td>
+<table>
+<tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
+<tr><td><b>data</b></td><td>Points</td><td>float32</td><td>1</td><td>9.782e-15</td><td>1.000e+02</td></tr>
+</table>
+
+</td></tr> </table>
+<br />
+<br /></div>
+<div class="section" id="initial-inspection">
+<h2>Initial Inspection</h2>
+<p>Now we can go ahead and create a visualization of the 3D model of the region
+surrounding the Damavand Volcano.
+All we have to do is pass the mesh to the <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code>’s
+<code class="docutils literal notranslate"><span class="pre">add_mesh</span></code> method with keyword arguments for how we want it displayed
+(e.g. color, opacity, etc.).</p>
+<p>Below, I define an opacity mapping and colorbar limits:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">opacity</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+<span class="n">clim</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Now I instantiate the <code class="docutils literal notranslate"><span class="pre">Plotter</span></code> and create the visualization.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_volume</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;magma&quot;</span><span class="p">,</span> <span class="n">clim</span><span class="o">=</span><span class="n">clim</span><span class="p">,</span>
+             <span class="n">opacity</span><span class="o">=</span><span class="n">opacity</span><span class="p">,</span> <span class="n">opacity_unit_distance</span><span class="o">=</span><span class="mi">6000</span><span class="p">,)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/sphx_glr_000-intro-to-pyvista_001.png" class="sphx-glr-single-img" src="../_images/sphx_glr_000-intro-to-pyvista_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(962759.682893736, 4390399.944685736, 385481.9418857361),
+ (552532.741008, 3980173.0028, -24745.0),
+ (0.0, 0.0, 1.0)]
+</pre></div>
+</div>
+<p>And just like that, we have a 3D rendering of all that data!
+Isn’t PyVista awesome?!</p>
+<p>But hold on, that’s a big volume! We probably don’t want to volume render the
+whole thing. So let’s extract a region of interest under the volcano.</p>
+<p>The region we will extract will be between nodes 175 and 200 on the x-axis,
+between nodes 105 and 132 on the y-axis, and between nodes 98 and 170 on the
+z-axis.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">voi</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">extract_subset</span><span class="p">([</span><span class="mi">175</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">132</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">170</span><span class="p">])</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">outline</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">voi</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;magma&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/sphx_glr_000-intro-to-pyvista_002.png" class="sphx-glr-single-img" src="../_images/sphx_glr_000-intro-to-pyvista_002.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(962759.6918857361, 4390399.941885736, 385481.9418857361),
+ (552532.75, 3980173.0, -24745.0),
+ (0.0, 0.0, 1.0)]
+</pre></div>
+</div>
+<p>Let’s now volume render that region of interest!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_volume</span><span class="p">(</span><span class="n">voi</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;magma&quot;</span><span class="p">,</span> <span class="n">clim</span><span class="o">=</span><span class="n">clim</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="n">opacity</span><span class="p">,</span>
+             <span class="n">opacity_unit_distance</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">531554.5542909054</span><span class="p">,</span> <span class="mf">3944331.800171338</span><span class="p">,</span> <span class="mf">26563.04809259223</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">599088.1433822059</span><span class="p">,</span> <span class="mf">3982089.287834022</span><span class="p">,</span> <span class="o">-</span><span class="mf">11965.14728669936</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">0.3738545892415734</span><span class="p">,</span> <span class="mf">0.244312810377319</span><span class="p">,</span> <span class="mf">0.8947312427698892</span><span class="p">)]</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/sphx_glr_000-intro-to-pyvista_003.png" class="sphx-glr-single-img" src="../_images/sphx_glr_000-intro-to-pyvista_003.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(531554.5542909054, 3944331.800171338, 26563.04809259223),
+ (599088.1433822059, 3982089.287834022, -11965.14728669936),
+ (0.37385458924157344, 0.24431281037731903, 0.8947312427698894)]
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pv</span><span class="o">.</span><span class="n">Report</span><span class="p">()</span>
+</pre></div>
+</div>
+<table style='border: 3px solid #ddd;'>
+  <tr>
+     <td style='text-align: center; font-weight: bold; font-size: 1.2em; border: 2px solid #fff;' colspan='6'>Fri Apr 10 19:10:22 2020 UTC</td>
+  </tr>
+  <tr>
+    <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>OS</td>
+    <td style='text-align: left; border: 2px solid #fff;'>Linux</td>
+    <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>CPU(s)</td>
+    <td style='text-align: left; border: 2px solid #fff;'>2</td>
+    <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>Machine</td>
+    <td style='text-align: left; border: 2px solid #fff;'>x86_64</td>
+  </tr>
+  <tr>
+    <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>Architecture</td>
+    <td style='text-align: left; border: 2px solid #fff;'>64bit</td>
+    <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>Environment</td>
+    <td style='text-align: left; border: 2px solid #fff;'>Python</td>
+    <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>VMware, Inc.</td>
+    <td style='text-align: left; border: 2px solid #fff;'>GPU Vendor</td>
+  </tr>
+  <tr>
+    <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>llvmpipe (LLVM 6.0, 256 bits)</td>
+    <td style='text-align: left; border: 2px solid #fff;'>GPU Renderer</td>
+    <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>3.3 (Core Profile) Mesa 18.0.5</td>
+    <td style='text-align: left; border: 2px solid #fff;'>GPU Version</td>
+  </tr>
+  <tr>
+     <td style='text-align: center; border: 2px solid #fff;' colspan='6'>Python 3.6.7 (default, Nov 28 2018, 13:38:24)
+[GCC 5.4.0 20160609]</td>
+  </tr>
+  <tr>
+    <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>pyvista</td>
+    <td style='text-align: left; border: 2px solid #fff;'>0.24.1</td>
+    <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>vtk</td>
+    <td style='text-align: left; border: 2px solid #fff;'>8.1.2</td>
+    <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>numpy</td>
+    <td style='text-align: left; border: 2px solid #fff;'>1.16.2</td>
+  </tr>
+  <tr>
+    <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>imageio</td>
+    <td style='text-align: left; border: 2px solid #fff;'>2.8.0</td>
+    <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>appdirs</td>
+    <td style='text-align: left; border: 2px solid #fff;'>1.4.3</td>
+    <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>scooby</td>
+    <td style='text-align: left; border: 2px solid #fff;'>0.5.2</td>
+  </tr>
+  <tr>
+    <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>matplotlib</td>
+    <td style='text-align: left; border: 2px solid #fff;'>3.2.1</td>
+    <td style= border: 2px solid #fff;'></td>
+    <td style= border: 2px solid #fff;'></td>
+    <td style= border: 2px solid #fff;'></td>
+    <td style= border: 2px solid #fff;'></td>
+  </tr>
+</table>
+<br />
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  37.889 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-python-blog-000-intro-to-pyvista-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/adbe16b33dd63696d122dc5b06b1d93e/000-intro-to-pyvista.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">000-intro-to-pyvista.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/3c630516454f7dbbb36ed221eedc0db4/000-intro-to-pyvista.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">000-intro-to-pyvista.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+    
+    </div>
+    
+
+
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+            <p>
+                &copy; Copyright 2020, Bane Sullivan.
+            </p>
+            <p>
+                
+                    Last updated on 2020-04-10.
+                
+            </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+  </body>
+</html>
