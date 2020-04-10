@@ -175,7 +175,7 @@ sphinx_gallery_conf = {
     'first_notebook_cell': ("%matplotlib inline\n"
                             "from pyvista import set_plot_theme\n"
                             "set_plot_theme('document')"),
-    "expected_failing_examples": True,
+    "expected_failing_examples": "*",
 }
 
 
@@ -186,5 +186,5 @@ notfound_no_urls_prefix = True
 
 # Load the custom CSS files (needs sphinx >= 1.6 for this to work)
 def setup(app):
-    app.add_stylesheet("style.css")
-    app.add_stylesheet("fontawesome/css/all.css")
+    app.add_css_file("style.css")
+    app.add_css_file("fontawesome/css/all.css")
