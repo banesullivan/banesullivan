@@ -9,5 +9,4 @@ numpy
 git+git://github.com/pyvista/pyvista@master
 pandas
 matplotlib
-omfvista>=0.2.2
 pypistats
