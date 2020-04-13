@@ -6,7 +6,6 @@ Through my graduate research, I explored the intersection of 3D visualization, g
 My focus has been helping geoscientists visualize their 3D/4D data, communicate their spatial findings, and enable data traceability in their research.
 These efforts lead me to create geovisualization and data management software to streamline reproducible computing workflows in the geosciences, particularly the `PyVista software <https://www.pyvista.org>`_.
 
-I consider myself a *"Pythoneer"*, and I enjoy pushing the limits of my computing skills in research settings.
 I am most proud of my contributions to `PyVista <https://www.pyvista.org>`_, an open-source Python package for 3D visualization and spatial data analysis.
 Beyond PyVista, I am an active contributor to many open-source geoscience software, and I am always looking for ways to make an impact in my work.
 I genuinely believe that scientific findings should be reproducible, not only by other researchers but also by stakeholders of the science at hand; I carry this sentiment in my efforts to develop research software.
