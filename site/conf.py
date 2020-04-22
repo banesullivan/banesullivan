@@ -132,7 +132,7 @@ html_context = {
         (
             '<i class="fas fa-envelope"></i>',
             "Email",
-            "mailto:banesullivan@gmail.com",
+            "mailto:bane.sullivan@kitware.com",
         ),
         (
             '<i class="fab fa-twitter"></i>',
