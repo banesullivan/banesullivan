@@ -4,6 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
         
     <title>Numerical Integration &#8212; Bane Sullivan</title>
@@ -20,7 +21,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.jpg"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -160,7 +161,7 @@ solve for the area under this curve.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_001-numerical-integration_001.png" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_001.png" />
+<img alt="001 numerical integration" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_001.png" />
 <p>So now we can sum the areas of all of those rectangles to get an
 approximation of the area under the curve (the integral)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">yy</span><span class="o">-</span><span class="p">(</span><span class="n">dy</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">dy</span><span class="p">)</span>
@@ -190,7 +191,7 @@ approximation of the area under the curve (the integral)</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_001-numerical-integration_002.png" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_002.png" />
+<img alt="Area = 1.740, Area = 1.716" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_002.png" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">yy</span><span class="p">)</span> <span class="o">*</span> <span class="n">dy</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -232,7 +233,7 @@ lower boound must be some small value, not 0: we’ll use <span class="math notr
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_001-numerical-integration_003.png" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_003.png" />
+<img alt="001 numerical integration" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_003.png" />
 <p>Huh, that’s weird. The function behaves quite different from a typical <span class="math notranslate nohighlight">\(\sin\)</span>
 function and we appear to see some sort of decay - let’s look into that a bit
 more. <em>At what x value are we seeing a change from oscillatory behavior to
@@ -259,7 +260,7 @@ decay. This makes sense because <span class="math notranslate nohighlight">\(\si
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_001-numerical-integration_004.png" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_004.png" />
+<img alt="001 numerical integration" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_004.png" />
 <p>So now we know that have a speration point in our function - this might come
 in handy later. as we may have to treat those two regions of the function
 separately when numerically integrating.</p>
@@ -277,7 +278,7 @@ values and see how the function behaves as x approaches zero.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_001-numerical-integration_005.png" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_005.png" />
+<img alt="001 numerical integration" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_005.png" />
 <p>Now that’s cool! <span class="math notranslate nohighlight">\(f(x)\)</span> appears to have increasing frequency as x
 approaches zero. This is quite different from a normal <span class="math notranslate nohighlight">\(\sin\)</span> function where
 we don’t see any frequency change at all. This frequency variation will
@@ -340,7 +341,7 @@ appears to oscillate <span class="math notranslate nohighlight">\(f(x)\)</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_001-numerical-integration_006.png" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_006.png" />
+<img alt="001 numerical integration" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_006.png" />
 <p>It appears that the equation <span class="math notranslate nohighlight">\(\frac{2}{n \pi}\)</span> captures the oscilatory
 behavior of <span class="math notranslate nohighlight">\(f(x)\)</span> quite well! We see that it marks the minimums, maximums,
 and zero-cross points for every period of <span class="math notranslate nohighlight">\(f(x)\)</span>. This is just what we need
@@ -384,7 +385,7 @@ function.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_001-numerical-integration_007.png" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_007.png" />
+<img alt="001 numerical integration" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_007.png" />
 <p>That looks decent, but I think we can do better. Let’s try 0.1 for 10 samples
 between the cross overs and the min/max</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dn</span> <span class="o">=</span> <span class="mf">0.1</span>
@@ -396,7 +397,7 @@ between the cross overs and the min/max</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_001-numerical-integration_008.png" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_008.png" />
+<img alt="001 numerical integration" class="sphx-glr-single-img" src="../_images/sphx_glr_001-numerical-integration_008.png" />
 <p>Now that looks pretty darn good! How about we try integrating <span class="math notranslate nohighlight">\(f(x)\)</span> now!
 To do so, we simply take our values and multiply by the <span class="math notranslate nohighlight">\(\Delta x\)</span> value
 (the rectangle widths). It’s important to note here that <span class="math notranslate nohighlight">\(\Delta x\)</span> is not a
@@ -450,7 +451,7 @@ Let’s see if incresing the discretization helps.</p>
 so that’s not too bad of an approximation!</p>
 <p>And there you have it! The integral of <span class="math notranslate nohighlight">\(\sin(\frac{1}{x})\)</span> has been
 numerically integrated!</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.139 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.170 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-python-blog-001-numerical-integration-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/a0a68991e226f18074b56a9f222a60ec/001-numerical-integration.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">001-numerical-integration.py</span></code></a></p>
@@ -477,8 +478,11 @@ numerically integrated!</p>
             </p>
             <p>
                 
-                    Last updated on 2020-04-29.
+                    Last updated on 2020-06-26.
                 
+            </p>
+            <p>
+                <a href="https://travis-ci.org/banesullivan/mywebsite">Build Status</a>
             </p>
 
             </div>

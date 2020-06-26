@@ -7,11 +7,9 @@
 Fun with Python
 ===============
 
-I recently revamped my personal website and thought it would be fun to start
-a Python based blog - this page is my attempt at that!
+I thought it would be fun to start a Python based blog - this page is my attempt at that!
 
-There is not a whole lot here, and that likely won't change until I finish
-up my thesis.
+This is quite dated and I haven't had a chance to update it... tune in soon (by soon, I mean like 2021 to be honest).
 
 
 
@@ -22,6 +20,7 @@ up my thesis.
 .. only:: html
 
  .. figure:: /python-blog/images/thumb/sphx_glr_000-intro-to-pyvista_thumb.png
+     :alt: Intro to PyVista
 
      :ref:`sphx_glr_python-blog_000-intro-to-pyvista.py`
 
@@ -42,6 +41,7 @@ up my thesis.
 .. only:: html
 
  .. figure:: /python-blog/images/thumb/sphx_glr_001-numerical-integration_thumb.png
+     :alt: Numerical Integration
 
      :ref:`sphx_glr_python-blog_001-numerical-integration.py`
 
@@ -62,6 +62,7 @@ up my thesis.
 .. only:: html
 
  .. figure:: /python-blog/images/thumb/sphx_glr_002-using-pypistats_thumb.png
+     :alt: Using PyPIstats
 
      :ref:`sphx_glr_python-blog_002-using-pypistats.py`
 

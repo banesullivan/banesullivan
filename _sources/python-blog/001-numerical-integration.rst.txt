@@ -121,6 +121,7 @@ solve for the area under this curve.
 
 
 .. image:: /python-blog/images/sphx_glr_001-numerical-integration_001.png
+    :alt: 001 numerical integration
     :class: sphx-glr-single-img
 
 
@@ -164,6 +165,7 @@ approximation of the area under the curve (the integral)
 
 
 .. image:: /python-blog/images/sphx_glr_001-numerical-integration_002.png
+    :alt: Area = 1.740, Area = 1.716
     :class: sphx-glr-single-img
 
 
@@ -250,6 +252,7 @@ lower boound must be some small value, not 0: we'll use :math:`10^{-9}`.
 
 
 .. image:: /python-blog/images/sphx_glr_001-numerical-integration_003.png
+    :alt: 001 numerical integration
     :class: sphx-glr-single-img
 
 
@@ -306,6 +309,7 @@ decay. This makes sense because :math:`\sin(1/2/\pi) = \sin(\pi/2) = 1`
 
 
 .. image:: /python-blog/images/sphx_glr_001-numerical-integration_004.png
+    :alt: 001 numerical integration
     :class: sphx-glr-single-img
 
 
@@ -338,6 +342,7 @@ values and see how the function behaves as x approaches zero.
 
 
 .. image:: /python-blog/images/sphx_glr_001-numerical-integration_005.png
+    :alt: 001 numerical integration
     :class: sphx-glr-single-img
 
 
@@ -488,6 +493,7 @@ appears to oscillate :math:`f(x)` between -1 and 1. Let's test this out.
 
 
 .. image:: /python-blog/images/sphx_glr_001-numerical-integration_006.png
+    :alt: 001 numerical integration
     :class: sphx-glr-single-img
 
 
@@ -557,6 +563,7 @@ function.
 
 
 .. image:: /python-blog/images/sphx_glr_001-numerical-integration_007.png
+    :alt: 001 numerical integration
     :class: sphx-glr-single-img
 
 
@@ -583,6 +590,7 @@ between the cross overs and the min/max
 
 
 .. image:: /python-blog/images/sphx_glr_001-numerical-integration_008.png
+    :alt: 001 numerical integration
     :class: sphx-glr-single-img
 
 
@@ -708,7 +716,7 @@ numerically integrated!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.139 seconds)
+   **Total running time of the script:** ( 0 minutes  3.170 seconds)
 
 
 .. _sphx_glr_download_python-blog_001-numerical-integration.py:
