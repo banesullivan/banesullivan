@@ -34,8 +34,8 @@ Around the Interweb
 Most of my output is available around the internet, usually through Github
 repositories. You can find me and my research, code, articles, and data at:
 
-* `GitHub <https://github.com/banesullivan>`_: *my biggest presennce is on GitHub, follow me and my projects there!*
+* `GitHub <https://github.com/banesullivan>`_: *my biggest presence is on GitHub, follow me and my projects there!*
 * `ORCID <https://orcid.org/0000-0001-8628-4566>`_ (0000-0001-8628-4566): *all of my scientific output with DOIs*
 * `Google Scholar <https://scholar.google.com/citations?hl=en&user=jslLe0cAAAAJ&scilu=&scisig=AMD79ooAAAAAXvVZvMFal5_HO-ThFOb-6f9LFraN-va0&gmla=AJsN-F4GmpwzCs151EoMS1Z3zPWub6IFKgOwjgk_Aa_nxv4iaf2mgpAP1P3JcTLz2LQ88DbquPeAAGJVeXvSbcX9coVvPAarWfRg0UOP-N1D2FFeKavRr8c&sciund=7142037744319316062>`_: *list of reserch content*
 * `Research Gate <https://www.researchgate.net/profile/Bane_Sullivan>`_: *academic social network*
-* `Twitter <https://twitter.com/banesullivan>`_: *I keep it professional (that is until I care about something)*
+* `Twitter <https://twitter.com/banesullivan>`_: *Follow me!*
