@@ -266,7 +266,7 @@ projects are getting lately.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.549 seconds)
+   **Total running time of the script:** ( 0 minutes  4.323 seconds)
 
 
 .. _sphx_glr_download_python-blog_002-using-pypistats.py:
