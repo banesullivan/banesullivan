@@ -62,32 +62,30 @@ Anyways, let's look at some code and especially some 3D visualizations!
 
 
 
-.. only:: builder_html
+.. raw:: html
 
-    .. raw:: html
+    <table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+    <table>
+    <tr><th>UniformGrid</th><th>Information</th></tr>
+    <tr><td>N Cells</td><td>11003760</td></tr>
+    <tr><td>N Points</td><td>11156040</td></tr>
+    <tr><td>X Bounds</td><td>4.130e+05, 6.920e+05</td></tr>
+    <tr><td>Y Bounds</td><td>3.864e+06, 4.096e+06</td></tr>
+    <tr><td>Z Bounds</td><td>-5.479e+04, 5.302e+03</td></tr>
+    <tr><td>Dimensions</td><td>280, 233, 171</td></tr>
+    <tr><td>Spacing</td><td>1.000e+03, 1.000e+03, 3.535e+02</td></tr>
+    <tr><td>N Arrays</td><td>1</td></tr>
+    </table>
 
-        <table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-        <table>
-        <tr><th>UniformGrid</th><th>Information</th></tr>
-        <tr><td>N Cells</td><td>11003760</td></tr>
-        <tr><td>N Points</td><td>11156040</td></tr>
-        <tr><td>X Bounds</td><td>4.130e+05, 6.920e+05</td></tr>
-        <tr><td>Y Bounds</td><td>3.864e+06, 4.096e+06</td></tr>
-        <tr><td>Z Bounds</td><td>-5.479e+04, 5.302e+03</td></tr>
-        <tr><td>Dimensions</td><td>280, 233, 171</td></tr>
-        <tr><td>Spacing</td><td>1.000e+03, 1.000e+03, 3.535e+02</td></tr>
-        <tr><td>N Arrays</td><td>1</td></tr>
-        </table>
+    </td><td>
+    <table>
+    <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
+    <tr><td><b>data</b></td><td>Points</td><td>float32</td><td>1</td><td>9.782e-15</td><td>1.000e+02</td></tr>
+    </table>
 
-        </td><td>
-        <table>
-        <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
-        <tr><td><b>data</b></td><td>Points</td><td>float32</td><td>1</td><td>9.782e-15</td><td>1.000e+02</td></tr>
-        </table>
-
-        </td></tr> </table>
-        <br />
-        <br />
+    </td></tr> </table>
+    <br />
+    <br />
 
 Initial Inspection
 ~~~~~~~~~~~~~~~~~~
@@ -233,72 +231,70 @@ Let’s now volume render that region of interest!
 
 
 
-.. only:: builder_html
+.. raw:: html
 
-    .. raw:: html
-
-        <table style='border: 3px solid #ddd;'>
-          <tr>
-             <td style='text-align: center; font-weight: bold; font-size: 1.2em; border: 2px solid #fff;' colspan='6'>Sat Aug 29 01:55:22 2020 UTC</td>
-          </tr>
-          <tr>
-            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>OS</td>
-            <td style='text-align: left; border: 2px solid #fff;'>Linux</td>
-            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>CPU(s)</td>
-            <td style='text-align: left; border: 2px solid #fff;'>2</td>
-            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>Machine</td>
-            <td style='text-align: left; border: 2px solid #fff;'>x86_64</td>
-          </tr>
-          <tr>
-            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>Architecture</td>
-            <td style='text-align: left; border: 2px solid #fff;'>64bit</td>
-            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>Environment</td>
-            <td style='text-align: left; border: 2px solid #fff;'>Python</td>
-            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>GPU Vendor</td>
-            <td style='text-align: left; border: 2px solid #fff;'>VMware, Inc.</td>
-          </tr>
-          <tr>
-            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>GPU Renderer</td>
-            <td style='text-align: left; border: 2px solid #fff;'>llvmpipe (LLVM 6.0, 256 bits)</td>
-            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>GPU Version</td>
-            <td style='text-align: left; border: 2px solid #fff;'>3.3 (Core Profile) Mesa 18.0.5</td>
-          </tr>
-          <tr>
-             <td style='text-align: center; border: 2px solid #fff;' colspan='6'>Python 3.6.7 (default, Jun 12 2019, 02:05:21) 
-        [GCC 5.4.0 20160609]</td>
-          </tr>
-          <tr>
-            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>pyvista</td>
-            <td style='text-align: left; border: 2px solid #fff;'>0.26.b0</td>
-            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>vtk</td>
-            <td style='text-align: left; border: 2px solid #fff;'>9.0.1</td>
-            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>numpy</td>
-            <td style='text-align: left; border: 2px solid #fff;'>1.19.0</td>
-          </tr>
-          <tr>
-            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>imageio</td>
-            <td style='text-align: left; border: 2px solid #fff;'>2.9.0</td>
-            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>appdirs</td>
-            <td style='text-align: left; border: 2px solid #fff;'>1.4.4</td>
-            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>scooby</td>
-            <td style='text-align: left; border: 2px solid #fff;'>0.5.6</td>
-          </tr>
-          <tr>
-            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>meshio</td>
-            <td style='text-align: left; border: 2px solid #fff;'>4.1.1</td>
-            <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>matplotlib</td>
-            <td style='text-align: left; border: 2px solid #fff;'>3.3.1</td>
-            <td style= border: 2px solid #fff;'></td>
-            <td style= border: 2px solid #fff;'></td>
-          </tr>
-        </table>
-        <br />
-        <br />
+    <table style='border: 3px solid #ddd;'>
+      <tr>
+         <td style='text-align: center; font-weight: bold; font-size: 1.2em; border: 2px solid #fff;' colspan='6'>Tue Sep 29 01:55:48 2020 UTC</td>
+      </tr>
+      <tr>
+        <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>OS</td>
+        <td style='text-align: left; border: 2px solid #fff;'>Linux</td>
+        <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>CPU(s)</td>
+        <td style='text-align: left; border: 2px solid #fff;'>2</td>
+        <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>Machine</td>
+        <td style='text-align: left; border: 2px solid #fff;'>x86_64</td>
+      </tr>
+      <tr>
+        <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>Architecture</td>
+        <td style='text-align: left; border: 2px solid #fff;'>64bit</td>
+        <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>Environment</td>
+        <td style='text-align: left; border: 2px solid #fff;'>Python</td>
+        <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>GPU Vendor</td>
+        <td style='text-align: left; border: 2px solid #fff;'>VMware, Inc.</td>
+      </tr>
+      <tr>
+        <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>GPU Renderer</td>
+        <td style='text-align: left; border: 2px solid #fff;'>llvmpipe (LLVM 6.0, 256 bits)</td>
+        <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>GPU Version</td>
+        <td style='text-align: left; border: 2px solid #fff;'>3.3 (Core Profile) Mesa 18.0.5</td>
+      </tr>
+      <tr>
+         <td style='text-align: center; border: 2px solid #fff;' colspan='6'>Python 3.6.7 (default, Jun 12 2019, 02:05:21) 
+    [GCC 5.4.0 20160609]</td>
+      </tr>
+      <tr>
+        <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>pyvista</td>
+        <td style='text-align: left; border: 2px solid #fff;'>0.26.0</td>
+        <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>vtk</td>
+        <td style='text-align: left; border: 2px solid #fff;'>9.0.1</td>
+        <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>numpy</td>
+        <td style='text-align: left; border: 2px solid #fff;'>1.19.0</td>
+      </tr>
+      <tr>
+        <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>imageio</td>
+        <td style='text-align: left; border: 2px solid #fff;'>2.9.0</td>
+        <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>appdirs</td>
+        <td style='text-align: left; border: 2px solid #fff;'>1.4.4</td>
+        <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>scooby</td>
+        <td style='text-align: left; border: 2px solid #fff;'>0.5.6</td>
+      </tr>
+      <tr>
+        <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>meshio</td>
+        <td style='text-align: left; border: 2px solid #fff;'>4.2.1</td>
+        <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>matplotlib</td>
+        <td style='text-align: left; border: 2px solid #fff;'>3.3.2</td>
+        <td style= border: 2px solid #fff;'></td>
+        <td style= border: 2px solid #fff;'></td>
+      </tr>
+    </table>
+    <br />
+    <br />
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  29.867 seconds)
+   **Total running time of the script:** ( 0 minutes  27.927 seconds)
 
 
 .. _sphx_glr_download_python-blog_000-intro-to-pyvista.py:
