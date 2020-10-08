@@ -47,7 +47,7 @@
          <h2><i class="fas fa-mountain fa-2x"></i></h2>
          <b>Interests</b>
          <br>
-         Hiking, rock climbing, running, & all things human-powered!
+         Trail running, rock climbing, & all things human-powered!
       </div>
 
    </div>
