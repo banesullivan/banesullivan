@@ -235,7 +235,7 @@ Let’s now volume render that region of interest!
 
     <table style='border: 3px solid #ddd;'>
       <tr>
-         <td style='text-align: center; font-weight: bold; font-size: 1.2em; border: 2px solid #fff;' colspan='6'>Thu Oct 29 02:42:48 2020 UTC</td>
+         <td style='text-align: center; font-weight: bold; font-size: 1.2em; border: 2px solid #fff;' colspan='6'>Sun Nov 29 01:56:33 2020 UTC</td>
       </tr>
       <tr>
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>OS</td>
@@ -265,7 +265,7 @@ Let’s now volume render that region of interest!
       </tr>
       <tr>
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>pyvista</td>
-        <td style='text-align: left; border: 2px solid #fff;'>0.27.dev0</td>
+        <td style='text-align: left; border: 2px solid #fff;'>0.28.dev0</td>
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>vtk</td>
         <td style='text-align: left; border: 2px solid #fff;'>9.0.1</td>
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>numpy</td>
@@ -281,9 +281,9 @@ Let’s now volume render that region of interest!
       </tr>
       <tr>
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>meshio</td>
-        <td style='text-align: left; border: 2px solid #fff;'>4.3.2</td>
+        <td style='text-align: left; border: 2px solid #fff;'>4.3.6</td>
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>matplotlib</td>
-        <td style='text-align: left; border: 2px solid #fff;'>3.3.2</td>
+        <td style='text-align: left; border: 2px solid #fff;'>3.3.3</td>
         <td style= border: 2px solid #fff;'></td>
         <td style= border: 2px solid #fff;'></td>
       </tr>
@@ -294,7 +294,7 @@ Let’s now volume render that region of interest!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  24.317 seconds)
+   **Total running time of the script:** ( 0 minutes  12.048 seconds)
 
 
 .. _sphx_glr_download_python-blog_000-intro-to-pyvista.py:

@@ -5,12 +5,12 @@
 
 Computation times
 =================
-**00:32.661** total execution time for **python-blog** files:
+**00:21.683** total execution time for **python-blog** files:
 
 +---------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_python-blog_000-intro-to-pyvista.py` (``000-intro-to-pyvista.py``)           | 00:24.317 | 0.0 MB |
+| :ref:`sphx_glr_python-blog_000-intro-to-pyvista.py` (``000-intro-to-pyvista.py``)           | 00:12.048 | 0.0 MB |
 +---------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_python-blog_002-using-pypistats.py` (``002-using-pypistats.py``)             | 00:04.869 | 0.0 MB |
+| :ref:`sphx_glr_python-blog_002-using-pypistats.py` (``002-using-pypistats.py``)             | 00:06.144 | 0.0 MB |
 +---------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_python-blog_001-numerical-integration.py` (``001-numerical-integration.py``) | 00:03.475 | 0.0 MB |
+| :ref:`sphx_glr_python-blog_001-numerical-integration.py` (``001-numerical-integration.py``) | 00:03.490 | 0.0 MB |
 +---------------------------------------------------------------------------------------------+-----------+--------+
