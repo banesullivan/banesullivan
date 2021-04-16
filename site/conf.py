@@ -140,9 +140,13 @@ sphinx_gallery_conf = {
     # path to your examples scripts
     "examples_dirs": [
         "../python-blog/",
+        "../pyvista-examples/",
     ],
     # path where to save gallery generated examples
-    "gallery_dirs": ["python-blog"],
+    "gallery_dirs": [
+        "python-blog",
+        "pyvista/examples",
+    ],
     # Patter to search for example files
     "filename_pattern": r"\.py",
     # Remove the "Download all examples" button from the top level gallery

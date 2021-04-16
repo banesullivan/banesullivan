@@ -10,3 +10,6 @@ git+git://github.com/pyvista/pyvista@master
 pandas
 matplotlib
 pypistats
+omfvista
+PVGeo
+gstools

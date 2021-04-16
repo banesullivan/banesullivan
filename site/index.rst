@@ -149,5 +149,6 @@ efforts with OpenGeoVis and PyVista.
 
    about
    python-blog/index.rst
+   pyvista/index
    news
    publications
