@@ -4,7 +4,6 @@
 # list see the documentation:
 # http://www.sphinx-doc.org/en/master/config
 import datetime
-import sphinx_bootstrap_theme
 
 # -- Path setup --------------------------------------------------------------
 
