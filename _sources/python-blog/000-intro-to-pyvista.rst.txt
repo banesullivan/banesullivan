@@ -54,7 +54,6 @@ For more details, check out:
 
 Anyways, let's look at some code and especially some 3D visualizations!
 
-
 .. GENERATED FROM PYTHON SOURCE LINES 39-47
 
 .. code-block:: default
@@ -263,7 +262,7 @@ Let’s now volume render that region of interest!
     <div class="output_subarea output_html rendered_html output_result">
     <table style='border: 3px solid #ddd;'>
       <tr>
-         <td style='text-align: center; font-weight: bold; font-size: 1.2em; border: 2px solid #fff;' colspan='6'>Sun Mar 28 01:58:21 2021 UTC</td>
+         <td style='text-align: center; font-weight: bold; font-size: 1.2em; border: 2px solid #fff;' colspan='6'>Fri Apr 16 21:13:42 2021 UTC</td>
       </tr>
       <tr>
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>OS</td>
@@ -279,17 +278,17 @@ Let’s now volume render that region of interest!
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>Environment</td>
         <td style='text-align: left; border: 2px solid #fff;'>Python</td>
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>GPU Vendor</td>
-        <td style='text-align: left; border: 2px solid #fff;'>VMware, Inc.</td>
+        <td style='text-align: left; border: 2px solid #fff;'>Mesa/X.org</td>
       </tr>
       <tr>
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>GPU Renderer</td>
-        <td style='text-align: left; border: 2px solid #fff;'>llvmpipe (LLVM 6.0, 256 bits)</td>
+        <td style='text-align: left; border: 2px solid #fff;'>llvmpipe (LLVM 11.0.0, 256 bits)</td>
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>GPU Version</td>
-        <td style='text-align: left; border: 2px solid #fff;'>3.3 (Core Profile) Mesa 18.0.5</td>
+        <td style='text-align: left; border: 2px solid #fff;'>4.5 (Core Profile) Mesa 20.2.6</td>
       </tr>
       <tr>
-         <td style='text-align: center; border: 2px solid #fff;' colspan='6'>Python 3.6.7 (default, Jun 12 2019, 02:05:21) 
-    [GCC 5.4.0 20160609]</td>
+         <td style='text-align: center; border: 2px solid #fff;' colspan='6'>Python 3.7.10 (default, Feb 16 2021, 12:01:19) 
+    [GCC 9.3.0]</td>
       </tr>
       <tr>
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>pyvista</td>
@@ -297,7 +296,7 @@ Let’s now volume render that region of interest!
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>vtk</td>
         <td style='text-align: left; border: 2px solid #fff;'>9.0.1</td>
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>numpy</td>
-        <td style='text-align: left; border: 2px solid #fff;'>1.19.0</td>
+        <td style='text-align: left; border: 2px solid #fff;'>1.20.2</td>
       </tr>
       <tr>
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>imageio</td>
@@ -305,13 +304,13 @@ Let’s now volume render that region of interest!
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>appdirs</td>
         <td style='text-align: left; border: 2px solid #fff;'>1.4.4</td>
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>scooby</td>
-        <td style='text-align: left; border: 2px solid #fff;'>0.5.6</td>
+        <td style='text-align: left; border: 2px solid #fff;'>0.5.7</td>
       </tr>
       <tr>
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>meshio</td>
-        <td style='text-align: left; border: 2px solid #fff;'>4.3.11</td>
+        <td style='text-align: left; border: 2px solid #fff;'>4.3.12</td>
         <td style='text-align: right; background-color: #ccc; border: 2px solid #fff;'>matplotlib</td>
-        <td style='text-align: left; border: 2px solid #fff;'>3.3.4</td>
+        <td style='text-align: left; border: 2px solid #fff;'>3.4.1</td>
         <td style= border: 2px solid #fff;'></td>
         <td style= border: 2px solid #fff;'></td>
       </tr>
@@ -323,7 +322,7 @@ Let’s now volume render that region of interest!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  11.429 seconds)
+   **Total running time of the script:** ( 0 minutes  8.009 seconds)
 
 
 .. _sphx_glr_download_python-blog_000-intro-to-pyvista.py:
