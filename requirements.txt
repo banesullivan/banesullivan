@@ -3,8 +3,8 @@ sphinx-autobuild
 sphinxcontrib-websupport
 sphinx-notfound-page>=0.3.0
 sphinx-gallery
-doctr
-sphinx_bootstrap_theme
+pydata-sphinx-theme
+sphinx-panels
 numpy
 git+git://github.com/pyvista/pyvista@master
 pandas

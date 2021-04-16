@@ -1,11 +1,3 @@
-.. mywebsite documentation master file
-
-.. title:: Bane Sullivan
-
-
-
-
-
 
 
 .. raw:: html
@@ -13,181 +5,141 @@
     <div class="container-fluid banner">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-sm-12 col-xs-12">
-                    <img class="banner-logo center-block" src="_static/profile-circle.png">
-                </div>
-                <h1>Bane Sullivan</h1>
                 <center>
                 <h2><i>At the intersection of geoscience and 3D visualization</i></h2>
-                <h3>R&D Engineer  •  Geophysicist  •  Open-Source Developer</h3>
-                <a class="github-button" href="https://github.com/banesullivan" data-size="large" data-show-count="true" aria-label="Follow @banesullivan on GitHub">Follow @banesullivan</a>
-                <script async defer src="https://buttons.github.io/buttons.js"></script>
-                <br><br>
-                <a href="https://twitter.com/banesullivan?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @banesullivan</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </center>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid front-block front-block-dark">
-    <div class="row text-center">
-      <div class="col-sm-4">
-         <h2><i class="fas fa-school fa-2x"></i></h2>
-         <b>Education</b>
-         <br>
-         B.Sc. in Geophysical Engineering and M.Sc. in Hydrology from the Colorado School of Mines
-      </div>
-      <div class="col-sm-4">
-         <h2><i class="fas fa-laptop-code fa-2x"></i></h2>
-         <b>Professional Passions</b>
-         <br>
-         Python, open-source software development, & reproducibile research
-      </div>
-      <div class="col-sm-4">
-         <h2><i class="fas fa-mountain fa-2x"></i></h2>
-         <b>Interests</b>
-         <br>
-         Trail running, rock climbing, & all things human-powered!
-      </div>
+.. panels::
+    :column: col-lg-6 col-md-6 col-sm-12 col-xs-12 p-3
 
-   </div>
-   </div>
+    .. raw:: html
+
+      <center><h2><i class="fas fa-school fa-2x"></i></h2></center>
+
+    *B.Sc.* in Geophysical Engineering and *M.Sc.* in Hydrology from the Colorado School of Mines
 
 
-    <div class="container-fluid front-block front-block-light">
-    <div class="row">
-        <h1>Software</h1>
+    ---
 
-        <center>
-        <p>
-        I build open-source software focusing around earth science, 3D visualization,
-        and reproducible science. These are some of my notable projects!
-        </p>
-        <p>
-        For the most up-to-date information, <a href="https://github.com/banesullivan"> follow me on GitHub</a>!
-        </p>
-        <p>I am a co-creator of the <a href="http://www.pyvista.org">PyVista project</a> - an
-        effort devoted to making 3D visualization and analysis tools more accessible
-        to researchers. I am also the founder of
-        <a href="http://opengeovis.org/">OpenGeoVis</a>, a similar, offshoot
-        project focusing on geoscience applications.
+    .. raw:: html
 
-        Much of my contributions to open-source projects are a part of my
-        efforts with OpenGeoVis and PyVista.
-        </p>
-        </center>
+      <center><h2><i class="fas fa-laptop-code fa-2x"></i></h2></center>
 
-      <div class="col-sm-6 project">
+    My profession passions include 3D visualization, open-source software development, & reproducibile research
 
-         <a href="http://www.pyvista.org/">
-            <img class="project-logo center-block" src="_static/pyvista-logo.png">
-         </a>
 
-         <p>
-         The PyVista project is a collection of Free Licensed Open Source
-         Software (FLOSS) around 3D visualization and mesh analysis in Python.
-         </p>
+Software
+--------
 
-         <ul class="fa-ul project-icons">
-            <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
-               <a href="https://github.com/pyvista/pyvista">pyvista/pyvista</a>
-            </li>
-            <li><i class="fa-li fa fa-book fa-fw" title="Documentation"></i>
-               <a href="https://docs.pyvista.org">docs.pyvista.org</a>
-            </li>
-            <li><i class="fa-li fas fa-bookmark fa-fw" title="Publication"></i>
-               doi: <a href="https://doi.org/10.21105/joss.01450">10.21105/joss.01450</a>
-            </li>
-            <li><i class="fa-li fa fa-check fa-fw" style="color: green" title="Project status"></i>
-               Stable and ready for use
-            </li>
-         </ul>
+I build open-source software focusing around earth science, 3D visualization,
+and reproducible science. These are some of my notable projects!
 
-      </div>
+For the most up-to-date information, `follow me on GitHub <https://github.com/banesullivan>`_!
+I am a co-creator of the `PyVista project <http://www.pyvista.org>`_ - an
+effort devoted to making 3D visualization and analysis tools more accessible
+to researchers. I am also the founder of
+`OpenGeoVis <http://opengeovis.org/>`_, a similar, offshoot
+project focusing on geoscience applications.
 
-      <div class="col-sm-6 project">
+Much of my contributions to open-source projects are a part of my
+efforts with OpenGeoVis and PyVista.
 
-         <a href="https://pvgeo.org/">
-            <img class="project-logo center-block" src="_static/pvgeo-logo.png">
-         </a>
 
-         <p>
-         PVGeo is an open-source Python package for geoscientific visualization
-         in VTK and ParaView, built on top of PyVista.
+.. panels::
 
-         </p>
+    ---
+    :img-top: _static/pyvista-logo.png
 
-         <ul class="fa-ul project-icons">
-            <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
-               <a href="https://github.com/OpenGeoVis/PVGeo">OpenGeoVis/PVGeo</a>
-            </li>
-            <li><i class="fa-li fa fa-book fa-fw" title="Documentation"></i>
-               <a href="https://pvgeo.org/">pvgeo.org</a>
-            </li>
-            <li><i class="fa-li fas fa-bookmark fa-fw" title="Publication"></i>
-               doi: <a href="https://doi.org/10.21105/joss.01451">10.21105/joss.01451</a>
-            </li>
-            <li><i class="fa-li fa fa-check fa-fw" style="color: green" title="Project status"></i>
-               Stable and ready for use
-            </li>
-         </ul>
+    The PyVista project is a collection of Free Licensed Open Source
+    Software (FLOSS) around 3D visualization and mesh analysis in Python.
 
-      </div>
+    .. raw:: html
 
-   </div>
+      <ul class="fa-ul project-icons">
+         <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
+            <a href="https://github.com/pyvista/pyvista">pyvista/pyvista</a>
+         </li>
+         <li><i class="fa-li fa fa-book fa-fw" title="Documentation"></i>
+            <a href="https://docs.pyvista.org">docs.pyvista.org</a>
+         </li>
+         <li><i class="fa-li fas fa-bookmark fa-fw" title="Publication"></i>
+            doi: <a href="https://doi.org/10.21105/joss.01450">10.21105/joss.01450</a>
+         </li>
+         <li><i class="fa-li fa fa-check fa-fw" style="color: green" title="Project status"></i>
+            Stable and ready for use
+         </li>
+      </ul>
 
-   <div class="row">
+    ---
+    :img-top: _static/pvgeo-logo.png
 
-      <div class="col-sm-6 project">
+    PVGeo is an open-source Python package for geoscientific visualization
+    in VTK and ParaView, built on top of PyVista.
 
-         <a href="https://github.com/banesullivan/scooby">
-            <img class="project-logo center-block" src="_static/scooby-logo.png">
-         </a>
+    .. raw:: html
 
-         <p>
-         Scooby is a lightweight toolset to easily report your Python
-         environment's package versions and hardware resources.
-         </p>
+      <ul class="fa-ul project-icons">
+         <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
+            <a href="https://github.com/OpenGeoVis/PVGeo">OpenGeoVis/PVGeo</a>
+         </li>
+         <li><i class="fa-li fa fa-book fa-fw" title="Documentation"></i>
+            <a href="https://pvgeo.org/">pvgeo.org</a>
+         </li>
+         <li><i class="fa-li fas fa-bookmark fa-fw" title="Publication"></i>
+            doi: <a href="https://doi.org/10.21105/joss.01451">10.21105/joss.01451</a>
+         </li>
+         <li><i class="fa-li fa fa-check fa-fw" style="color: green" title="Project status"></i>
+            Stable and ready for use
+         </li>
+      </ul>
 
-         <ul class="fa-ul project-icons">
-            <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
-               <a href="https://github.com/banesullivan/scooby">banesullivan/scooby</a>
-            </li>
-            <li><i class="fa-li fa fa-sync-alt fa-fw" style="color: green" title="Project status"></i>
-               Ready for use but still changing
-            </li>
-         </ul>
+    ---
 
-      </div>
+    Scooby
+    ^^^^^^
 
-      <div class="col-sm-6 project">
 
-         <a href="https://opengeovis.github.io/omfvista/">
-            <img class="project-logo center-block" src="_static/omfvista-logo.png">
-         </a>
+    Scooby is a lightweight toolset to easily report your Python
+    environment's package versions and hardware resources. This utility has
+    been adopted by a wide range of open source projects.
 
-         <p>
-         A PyVista (and VTK) interface for the Open Mining Format package (omf)
-         providing Python 3D visualization and usable mesh data structures
-         for processing datasets in the OMF specification.
-         </p>
+    .. raw:: html
 
-         <ul class="fa-ul project-icons">
-            <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
-               <a href="https://github.com/OpenGeoVis/omfvista">OpenGeoVis/omfvista</a>
-            </li>
-            <li><i class="fa-li fa fa-book fa-fw" title="Documentation"></i>
-               <a href="https://opengeovis.github.io/omfvista/">opengeovis.github.io/omfvista</a>
-            </li>
-            <li><i class="fa-li fa fa-sync-alt fa-fw" style="color: green" title="Project status"></i>
-               Ready for use but still changing
-            </li>
-         </ul>
+      <ul class="fa-ul project-icons">
+         <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
+            <a href="https://github.com/banesullivan/scooby">banesullivan/scooby</a>
+         </li>
+         <li><i class="fa-li fa fa-check fa-fw" style="color: green" title="Project status"></i>
+            Stable and ready for use
+         </li>
+      </ul>
 
-      </div>
+    ---
 
-   </div>
-   </div>
+    `omfvista`
+    ^^^^^^^^^^
+
+    A PyVista (and VTK) interface for the Open Mining Format package (omf)
+    providing Python 3D visualization and usable mesh data structures
+    for processing datasets in the OMF specification.
+
+    .. raw:: html
+
+      <ul class="fa-ul project-icons">
+         <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
+            <a href="https://github.com/OpenGeoVis/omfvista">OpenGeoVis/omfvista</a>
+         </li>
+         <li><i class="fa-li fa fa-book fa-fw" title="Documentation"></i>
+            <a href="https://opengeovis.github.io/omfvista/">opengeovis.github.io/omfvista</a>
+         </li>
+         <li><i class="fa-li fa fa-sync-alt fa-fw" style="color: green" title="Project status"></i>
+            Ready for use but still changing
+         </li>
+      </ul>
+
 
 
 
@@ -195,6 +147,7 @@
 .. toctree::
    :hidden:
 
+   about
    python-blog/index.rst
-   news.rst
-   publications.rst
+   news
+   publications

@@ -4,7 +4,6 @@
 # list see the documentation:
 # http://www.sphinx-doc.org/en/master/config
 import datetime
-import sphinx_bootstrap_theme
 
 # -- Path setup --------------------------------------------------------------
 
@@ -58,7 +57,8 @@ release = '0.0.0'
 extensions = [
     'sphinx_gallery.gen_gallery',
     'sphinx.ext.mathjax',
-    'notfound.extension'
+    'notfound.extension',
+    'sphinx_panels',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -84,66 +84,42 @@ pygments_style = "friendly"
 html_add_permalinks = ""
 
 # Theme config
-html_theme = "bootstrap"
-html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
-html_theme_options = {
-    "bootswatch_theme": "flatly",
-    "navbar_title": "",
-    "navbar_site_name": "Site",
-    "navbar_links": [
-        ("Home", "index"),
-        ("About", "about"),
-        ("Python", "python-blog/index"),
-        ("News", "news"),
-        ("Publications", "publications"),
-    ],
-    # Render the next and previous page links in navbar. (Default: true)
-    "navbar_sidebarrel": False,
-    # Render the current pages TOC in the navbar. (Default: true)
-    "navbar_pagenav": False,
-    # Tab name for the current pages TOC. (Default: "Page")
-    "navbar_pagenav_name": "This page",
-    # Global TOC depth for "site" navbar tab. (Default: 1)
-    # Switching to -1 shows all levels.
-    "globaltoc_depth": 1,
-    # Include hidden TOCs in Site navbar?
-    # Note: If this is "false", you cannot have mixed ``:hidden:`` and
-    # non-hidden ``toctree`` directives in the same page, or else the build
-    # will break.
-    # Values: "true" (default) or "false"
-    "globaltoc_includehidden": "false",
-    # HTML navbar class (Default: "navbar") to attach to <div> element.
-    # For black navbar, do "navbar navbar-inverse"
-    "navbar_class": "navbar navbar-default",
-    # Fix navigation bar to top of page?
-    # Values: "true" (default) or "false"
-    "navbar_fixed_top": "false",
-    # Location of link to source.
-    # Options are "nav" (default), "footer" or anything else to exclude.
-    "source_link_position": "footer",
-    "bootstrap_version": "3",
-}
+
+import pydata_sphinx_theme
+html_theme = "pydata_sphinx_theme"
+html_logo = None
+# html_theme_path = [pydata_sphinx_theme.get_html_theme_path()]
 html_context = {
-    "social_links": [
-        (
-            '<i class="fab fa-github fa-lg"></i>',
-            "GitHub",
-            "https://github.com/banesullivan",
-        ),
-        (
-            '<i class="fas fa-envelope"></i>',
-            "Email",
-            "mailto:banesullivan@gmail.com",
-        ),
-        (
-            '<i class="fab fa-twitter"></i>',
-            "Twitter",
-            "https://twitter.com/banesullivan",
-        ),
-    ],
-    "url": "https://www.pyvista.org",
+    "github_user": "banesullivan",
+    "github_repo": "mywebsite",
+    "github_version": "master",
+    "doc_path": "site",
     "last_updated": str(datetime.date.today()),
-    "repository": "pyvista/website",
+}
+html_theme_options = {
+    "google_analytics_id": "UA-115959679-2",
+    "show_prev_next": False,
+    "navigation_with_keys": False,
+    'github_url': 'https://github.com/banesullivan',
+    "icon_links": [
+        {
+            "name": "Email",
+            "url": "mailto:banesullivan@gmail.com",
+            "icon": "fas fa-envelope",
+        },
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/banesullivan",
+            "icon": "fab fa-twitter",
+        },
+    ],
+}
+
+html_sidebars = {
+    "index": ["home-sidebar.html"],
+    "about": ["home-sidebar.html"],
+    "publications": [],
+    "news": [],
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -186,5 +162,4 @@ notfound_no_urls_prefix = True
 
 # Load the custom CSS files (needs sphinx >= 1.6 for this to work)
 def setup(app):
-    app.add_css_file("style.css")
     app.add_css_file("fontawesome/css/all.css")
