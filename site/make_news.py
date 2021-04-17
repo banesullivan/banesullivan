@@ -3,37 +3,21 @@ import os
 
 
 def format_icon(title, description, link, image):
-    body = r"""
+    under = "+" * len(title)
+    body = f"""
 
-.. raw:: html
+    ---
+    :img-top: _static/news/{image}
 
-    <div class="sphx-glr-thumbcontainer" tooltip="{}">
+    {description}
 
-.. only:: html
-
-    .. figure:: ./_static/news/{}
-       :target: {}
-
-       {}
-
-
-
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   {} <{}>
-
-
+    .. link-button:: {link}
+        :type: url
+        :text: {title}
+        :classes: btn-outline-primary btn-block stretched-link
 
 """
-    content = body.format(description, image, link, title, title, link)
-    return content
+    return body
 
 
 class News:
@@ -50,6 +34,12 @@ class News:
 ###############################################################################
 
 articles = dict(
+    mendenhall=News(
+        title="Mendenhall Prize",
+        description="I received the Mendenhall Prize for outstanding MSc Student in Geophysics (May 2020).",
+        link="http://online.anyflip.com/vsibo/nqih/mobile/index.html",
+        image="award.png",
+    ),
     seequent=News(
         title="Future of geovisualization: discussion with Seequent",
         description="I recently sat down with Seequent to discuss the future of "
@@ -116,9 +106,10 @@ def make_news_gallery():
 News
 ====
 
-Keep up with with my latest activities! I use this as a place to track all
-the places I appear online, mainly for my own archives.
+Keep up with with my latest activities! I use this as a place to archive articles, features, awards, and more.
 
+
+.. panels::
 
 """
         )
@@ -127,10 +118,6 @@ the places I appear online, mainly for my own archives.
 
         f.write(
             """
-
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
 
 A few extra
 -----------

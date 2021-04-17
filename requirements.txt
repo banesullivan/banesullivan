@@ -1,5 +1,6 @@
 Sphinx
 sphinx-autobuild
+sphinxcontrib-bibtex
 sphinxcontrib-websupport
 sphinx-notfound-page>=0.3.0
 sphinx-gallery
@@ -13,3 +14,6 @@ pypistats
 omfvista
 PVGeo
 gstools
+gdal
+netcdf4
+rasterio
