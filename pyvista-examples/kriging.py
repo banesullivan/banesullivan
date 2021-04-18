@@ -51,7 +51,6 @@ p.add_mesh(
     render_points_as_spheres=True,
 )
 
-p.enable_anti_aliasing()
 p.enable_depth_peeling()
 p.camera_position = [
     (315661.9406719345, 4234675.528454831, 15167.291249498076),
@@ -196,7 +195,6 @@ def add_contents(p):
         stitle="Temperature (C)",
     )
 
-    p.enable_anti_aliasing()
     p.enable_depth_peeling(20)
     return
 
