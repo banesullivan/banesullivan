@@ -10,10 +10,13 @@ Seee also https://pvgeo.org/examples/filters-general/voxelize-points.html#voxeli
 """
 
 import pyvista as pv
+from pyvista import examples
 import numpy as np
 import PVGeo
 
-points = np.loadtxt("data/points3d.txt")
+path, _ = examples.downloads._download_file("points3d.txt")
+
+points = np.loadtxt(path)
 pc = pv.PolyData(points)
 
 ###############################################################################

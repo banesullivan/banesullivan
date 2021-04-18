@@ -9,11 +9,14 @@ Originally posted: https://github.com/pyvista/pyvista-support/issues/159
 """
 # sphinx_gallery_thumbnail_number = 2
 import pyvista as pv
+from pyvista import examples
 import numpy as np
 import xarray as xr
 
 ###############################################################################
-points = np.loadtxt("data/Sio020320.csv", skiprows=1, delimiter=",")[:, 1:]
+path, _ = examples.downloads._download_file("Sio020320.csv")
+
+points = np.loadtxt(path, skiprows=1, delimiter=",")[:, 1:]
 cloud = pv.PolyData(points)
 # Plot the point cloud with a special rendering technique
 cloud.plot(eye_dome_lighting=True)
@@ -27,7 +30,11 @@ surf = cloud.delaunay_2d(progress_bar=True)
 
 ###############################################################################
 # Open the GeoTIFF
-ds = xr.open_rasterio("data/Sio020320_transparent_mosaic_group1.tif")
+url = "https://dl.dropbox.com/s/pqgme8qsl95u9un/Sio020320_transparent_mosaic_group1.tif?dl=0"
+path, _ = examples.downloads._retrieve_file(
+    url, "Sio020320_transparent_mosaic_group1.tif.csv"
+)
+ds = xr.open_rasterio(path)
 
 # Fetch the texture as an image
 image = np.moveaxis(ds.values, 0, -1)

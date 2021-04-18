@@ -6,8 +6,10 @@ Pick a horizon along a 2.5D cross section of GPR imagery.
 
 """
 import pyvista as pv
+from pyvista import examples
 
-mesh = pv.read("data/gpr-line.vtu")
+path, _ = examples.downloads._download_file("gpr-line.vtu")
+mesh = pv.read(path)
 
 ###############################################################################
 p = pv.Plotter()

@@ -15,6 +15,7 @@ Originally posted: https://github.com/pyvista/pyvista-support/issues/272
 """
 
 import pyvista as pv
+from pyvista import examples
 import numpy as np
 
 ###############################################################################
@@ -81,7 +82,8 @@ surface.t_coords = t_coords
 
 ###############################################################################
 # Load the texture image
-texture = pv.Texture("data/geo-cross-section.png")
+path, _ = examples.downloads._download_file("geo-cross-section.png")
+texture = pv.Texture(path)
 
 ###############################################################################
 # Plot it up!

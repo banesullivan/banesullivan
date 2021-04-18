@@ -10,10 +10,11 @@ See also https://docs.pyvista.org/examples/02-plot/spherical.html
 import xarray as xr
 import numpy as np
 import pyvista as pv
+from pyvista import examples
 
-lsm = xr.open_dataarray(
-    "data/lsm_4x5.nc"
-)  # netCDF file is attached as a tar.gz archive
+path, _ = examples.downloads._download_file("lsm_4x5.nc")
+
+lsm = xr.open_dataarray(path)
 
 xx, yy, zz = np.meshgrid(
     np.radians(

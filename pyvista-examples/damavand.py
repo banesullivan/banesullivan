@@ -25,10 +25,14 @@ from pyvista import examples
 import numpy as np
 
 ###############################################################################
+a, _ = examples.downloads._download_file("gebco7510_49cl.stl")
+b, _ = examples.downloads._download_file("gebco7510_55cl.stl")
+c, _ = examples.downloads._download_file("AOI.Damavand.32639.vtp")
+
 gebco = examples.download_damavand_volcano()
-gebco_a = pv.read("data/gebco7510_49cl.stl")
-gebco_b = pv.read("data/gebco7510_55cl.stl")
-aoi = pv.read("data/AOI.Damavand.32639.vtp")
+gebco_a = pv.read(a)
+gebco_b = pv.read(b)
+aoi = pv.read(c)
 
 ###############################################################################
 opacity = [0, 0.75, 0, 0.75, 1.0]

@@ -8,12 +8,15 @@ Originally from: https://opengeovis.github.io/omfvista/examples/load-project.htm
 """
 # sphinx_gallery_thumbnail_number = 3
 import pyvista as pv
+from pyvista import examples
 import omfvista
 
 ###############################################################################
 # Load the project into an :class:`pyvista.MultiBlock` dataset
 
-project = omfvista.load_project("data/test_file.omf")
+path, _ = examples.downloads._download_file("test_file.omf")
+
+project = omfvista.load_project(path)
 print(project)
 
 ###############################################################################

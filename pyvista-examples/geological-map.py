@@ -12,17 +12,23 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 """
 # sphinx_gallery_thumbnail_number = 2
 import pyvista as pv
+from pyvista import examples
 import numpy as np
 from osgeo import gdal
 
 ###############################################################################
-# The data files for this example are quite large (~300MB) so I have them on my Dropbox here: https://www.dropbox.com/s/cgdgfrgojar14t3/pyvista-support%2314.zip?dl=0
-topo = pv.read("data/topo_clean.vtk")
+path, _ = examples.downloads._download_file("topo_clean.vtk")
+topo = pv.read(path)
 topo
 
 ###############################################################################
 # Load the GeoTIFF/texture
-filename = "data/Geologic_map_on_air_photo.tif"
+# https://dl.dropbox.com/s/emsg3h7hww1r779/Geologic_map_on_air_photo.tif?dl=0
+url = "https://dl.dropbox.com/s/emsg3h7hww1r779/Geologic_map_on_air_photo.tif?dl=0"
+filename, _ = examples.downloads._retrieve_file(url, "Geologic_map_on_air_photo.tif")
+filename
+
+###############################################################################
 
 
 def get_gcps(filename):

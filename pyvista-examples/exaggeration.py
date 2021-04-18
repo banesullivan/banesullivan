@@ -6,12 +6,16 @@ Originally posted: https://github.com/pyvista/pyvista-support/issues/8
 """
 # sphinx_gallery_thumbnail_number = 2
 import pyvista as pv
+from pyvista import examples
 import PVGeo
 
 ###############################################################################
 # Load data files using PVGeo
-gravi = PVGeo.ubc.GravObsReader().apply("data/gravi.txt")
-psurf = PVGeo.ubc.TopoReader().apply("data/surf.txt")
+gpath, _ = examples.downloads._download_file("gravi.txt")
+ppath, _ = examples.downloads._download_file("surf.txt")
+
+gravi = PVGeo.ubc.GravObsReader().apply(gpath)
+psurf = PVGeo.ubc.TopoReader().apply(ppath)
 
 # Filter points of topo to a surface
 surf = psurf.delaunay_2d()
