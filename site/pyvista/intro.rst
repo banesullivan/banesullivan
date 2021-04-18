@@ -5,7 +5,14 @@ Introducing PyVista
 Geoscientists rely on calibrating and integrating data with all types of subsurface information to further illuminate the value of modeling results and to gain insight into the research questions at hand. This software, PyVista, extends the functionality of the open-source visualization platform the Visualization Toolkit (VTK) :cite:p:`vtkbook` by `Kitware Inc. <https://kitware.com>`_ and makes it possible to integrate geoscientific information in a multidimensional rendering space much like :numref:`integrated-scene`, where viewers can relate geophysical and hydrological data/models to intuitive features like topography and well locations. The PyVista software is published in the `Journal of Open Source Software <https://joss.theoj.org>`_. This chapter provides an introduction to PyVista and an overview of applications in the geosciences. Similarly, the PVGeo companion software is published in the Journal of Open Source Software and is included in Appendix A.
 
 
-TODO: point to/embed the PyVista paper
+.. panels::
+    :column: col-lg-12 p-2
+
+    .. link-button:: https://doi.org/10.21105/joss.01450
+        :type: url
+        :text: See the paper on PyVista
+        :classes: btn-outline-primary btn-block stretched-link
+
 
 
 .. _forge-iso:
@@ -61,7 +68,6 @@ PyVista’s data structures make it possible to collect, manage, and track all o
 
     An example output of PyVista data containers in a Jupyter Python environment.
 
-# TODO: make above figure a code snippet
 
 .. _forge-all:
 .. figure:: ./images/forge-all.png
