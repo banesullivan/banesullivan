@@ -13,6 +13,8 @@ Publications
 Presentations
 =============
 
+* **AGU 2020** - Presentation at the American Geophysical Union's Fall 2020 Meeting. *Title:* `Resonant HPC: Open Source Pre- and Post-Processing in the HPC environment using Jupyter and ParaView <https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/768009>`_
+
 * **AGU 2018** - Poster presentation and lightning talk at the American Geophysical Union's Fall 2018 Meeting. *Title:* `PVGeo: an open-source Python package for geoscientific visualization in VTK and ParaView <https://www.essoar.org/doi/abs/10.1002/essoar.10500751.1>`_
 
 * **GRADS 2018** - 1st Place Oral Presenter in the Geophysics Session of the Graduate Research and Discovery Symposium @ Mines in April 2018. *Title: Illuminating the Value of Geophysical Imaging Through Visualization and Virtual Reality*
@@ -25,6 +27,7 @@ Presentations
 
 Workshops
 =========
+* **PyVista for Geoscientists** - Instructed a workshop introducing PyVista as a visualization toolkit for geoscientists for *Transform 2021*. https://www.youtube.com/watch?v=FmNmRBsEBHE
 * **3D Geotechnical Site Investigation and BIM** - Co-instructed a workshop on visualizing geotechnical site investigation data in a 3D environment for the *Tunneling Fundamentals, Practice and Innovations Workshop* at the Colorado School of Mines. October 2018 and 2019.
 
 

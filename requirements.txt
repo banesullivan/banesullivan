@@ -1,5 +1,6 @@
 Sphinx
 sphinx-autobuild
+sphinxcontrib-bibtex
 sphinxcontrib-websupport
 sphinx-notfound-page>=0.3.0
 sphinx-gallery
@@ -10,3 +11,10 @@ git+git://github.com/pyvista/pyvista@master
 pandas
 matplotlib
 pypistats
+omfvista
+PVGeo
+gstools
+netcdf4
+rasterio
+xarray
+tqdm

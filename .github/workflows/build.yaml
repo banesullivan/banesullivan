@@ -32,10 +32,18 @@ jobs:
           cd ./site;
           make html;
           cd ..;
+      - name: Get Notebooks
+        run: |
+          mkdir _notebooks
+          cp site/pyvista/examples/*.ipynb _notebooks/
       - uses: actions/upload-artifact@v2
         with:
           name: docs-build
           path: site/_build/html
+      - uses: actions/upload-artifact@v2
+        with:
+          name: pyvista-notebooks
+          path: _notebooks
   deploy:
     name: Publish Documentation
     runs-on: ubuntu-latest

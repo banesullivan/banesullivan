@@ -148,6 +148,6 @@ efforts with OpenGeoVis and PyVista.
    :hidden:
 
    about
-   python-blog/index.rst
+   pyvista/index
    news
    publications
