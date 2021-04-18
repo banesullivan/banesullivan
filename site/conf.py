@@ -94,8 +94,6 @@ html_add_permalinks = ""
 
 # Theme config
 
-import pydata_sphinx_theme
-
 html_theme = "pydata_sphinx_theme"
 html_logo = None
 # html_theme_path = [pydata_sphinx_theme.get_html_theme_path()]
@@ -144,12 +142,12 @@ from sphinx_gallery.sorting import FileNameSortKey
 sphinx_gallery_conf = {
     # path to your examples scripts
     "examples_dirs": [
-        "../python-blog/",
+        # "../python-blog/",
         "../pyvista-examples/",
     ],
     # path where to save gallery generated examples
     "gallery_dirs": [
-        "python-blog",
+        # "python-blog",
         "pyvista/examples",
     ],
     # Patter to search for example files
