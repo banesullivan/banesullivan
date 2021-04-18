@@ -14,7 +14,7 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 import pyvista as pv
 from pyvista import examples
 import numpy as np
-from osgeo import gdal
+import rasterio
 
 ###############################################################################
 path, _ = examples.downloads._download_file("topo_clean.vtk")
@@ -34,11 +34,11 @@ filename
 def get_gcps(filename):
     """This helper function retrieves the Ground Control
     Points of a GeoTIFF. Note that this requires gdal"""
-    get_point = lambda gcp: np.array([gcp.GCPX, gcp.GCPY, gcp.GCPZ])
+    get_point = lambda gcp: np.array([gcp.x, gcp.y, gcp.z])
     # Load a raster
-    ds = gdal.Open(filename)
+    src = rasterio.open(filename)
     # Grab the Groung Control Points
-    points = np.array([get_point(gcp) for gcp in ds.GetGCPs()])
+    points = np.array([get_point(gcp) for gcp in src.gcps[0]])
     # Now Grab the three corners of their bounding box
     # -- This guarantees we grab the right points
     bounds = pv.PolyData(points).bounds
