@@ -27,6 +27,8 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install -r requirements.txt
+      - name: PyVista Report
+        run: python -c "import pyvista;print(pyvista.Report())"
       - name: Build Site
         run: |
           cd ./site;

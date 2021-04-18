@@ -18,3 +18,4 @@ netcdf4
 rasterio
 xarray
 tqdm
+vtk==8.1.2
