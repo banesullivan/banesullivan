@@ -24,7 +24,7 @@ from gstools.covmodel.plot import plot_variogram
 #
 # For this project, we have two data archives in the `Open Mining Format (OMF) <https://github.com/gmggroup/omf>`_ specification and we will use one of PyVista's companion projects, `omfvista <https://opengeovis.github.io/omfvista/>`_ to load those data archives into PyVista a ``MultiBlock`` dataset.
 
-url = "https://www.dropbox.com/s/3cuxvurj8zubchb/FORGE.omf?dl=0"
+url = "https://dl.dropbox.com/s/3cuxvurj8zubchb/FORGE.omf?dl=0"
 path, _ = examples.downloads._retrieve_file(url, "FORGE.omf")
 
 project = omfvista.load_project(path)
