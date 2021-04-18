@@ -2,239 +2,120 @@
 News
 ====
 
-Keep up with with my latest activities! I use this as a place to track all
-the places I appear online, mainly for my own archives.
+Keep up with with my latest activities! I use this as a place to archive articles, features, awards, and more.
 
 
+.. panels::
 
 
-.. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="I recently sat down with Seequent to discuss the future of geovisualization and how I became involved in the 3D visualization and open-source software space.">
+    ---
+    :img-top: _static/news/award.png
 
-.. only:: html
+    I received the Mendenhall Prize for outstanding MSc Student in Geophysics (May 2020).
 
-    .. figure:: ./_static/news/presenting-b.jpg
-       :target: https://www.seequent.com/blog/modern-geovisualisation
+    .. link-button:: http://online.anyflip.com/vsibo/nqih/mobile/index.html
+        :type: url
+        :text: Mendenhall Prize
+        :classes: btn-outline-primary btn-block stretched-link
 
-       Future of geovisualization: discussion with Seequent
 
 
+    ---
+    :img-top: _static/news/presenting-b.jpg
 
+    I recently sat down with Seequent to discuss the future of geovisualization and how I became involved in the 3D visualization and open-source software space.
 
-.. raw:: html
+    .. link-button:: https://www.seequent.com/blog/modern-geovisualisation
+        :type: url
+        :text: Future of geovisualization: discussion with Seequent
+        :classes: btn-outline-primary btn-block stretched-link
 
-    </div>
 
 
-.. toctree::
-   :hidden:
+    ---
+    :img-top: _static/news/subsurface-frontiers.png
 
-   Future of geovisualization: discussion with Seequent <https://www.seequent.com/blog/modern-geovisualisation>
+    Here I appear in an informative video about the new Subsurface Frontiers Project.
 
+    .. link-button:: https://youtu.be/5zrFU2-cgPo
+        :type: url
+        :text: Introducing the Subsurface Frontiers Project
+        :classes: btn-outline-primary btn-block stretched-link
 
 
 
+    ---
+    :img-top: _static/news/undersampled.png
 
-.. raw:: html
+    I joined Matt and Gram on Undersampled Radio to talk about my work building next generation geoscience visualization technology. Tune in to the episode to hear us discuss viz, and more specifically geoviz.
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Here I appear in an informative video about the new Subsurface Frontiers Project.">
+    .. link-button:: https://youtu.be/FRHMDy37MPc
+        :type: url
+        :text: Featured on Undersampled Radio
+        :classes: btn-outline-primary btn-block stretched-link
 
-.. only:: html
 
-    .. figure:: ./_static/news/subsurface-frontiers.png
-       :target: https://youtu.be/5zrFU2-cgPo
 
-       Introducing the Subsurface Frontiers Project
+    ---
+    :img-top: _static/news/omfvista-demo.gif
 
+    The Global Mining Guidelines Group recently interviewed me about efforts around the Open Mining Format. It's a neat article highlighting my work and the importance of open-source software in the geosciences!
 
+    .. link-button:: https://gmggroup.org/omf-viewer-bane-sullivan/
+        :type: url
+        :text: Interview with Global Mining Guidelines Group
+        :classes: btn-outline-primary btn-block stretched-link
 
 
-.. raw:: html
 
-    </div>
+    ---
+    :img-top: _static/news/gsc_banner.jpg
 
+    I lead a team that placed 2nd in the U.S. Department of Energy’s 2019 Geothermal Student Competition.
 
-.. toctree::
-   :hidden:
+    .. link-button:: https://www.energy.gov/eere/articles/and-winners-2019-geothermal-student-competition-are
+        :type: url
+        :text: 2019 Geothermal Student Competition
+        :classes: btn-outline-primary btn-block stretched-link
 
-   Introducing the Subsurface Frontiers Project <https://youtu.be/5zrFU2-cgPo>
 
 
+    ---
+    :img-top: _static/news/agu-profile.png
 
+    I briefly share some of my work bringing geophysical data into Virtual Reality for communication of findings.
 
+    .. link-button:: https://youtu.be/IKYfCoTBA0E
+        :type: url
+        :text: AGU Profile on the Mines Geophysics Department
+        :classes: btn-outline-primary btn-block stretched-link
 
-.. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="I joined Matt and Gram on Undersampled Radio to talk about my work building next generation geoscience visualization technology. Tune in to the episode to hear us discuss viz, and more specifically geoviz.">
 
-.. only:: html
+    ---
+    :img-top: _static/news/simpeg-meeting.png
 
-    .. figure:: ./_static/news/undersampled.png
-       :target: https://youtu.be/FRHMDy37MPc
+    I share my work on PVGeo, an open-source platform for visualizing geoscientific information and demo how this software is interoperable with the SimPEG projects.
 
-       Featured on Undersampled Radio
+    .. link-button:: https://youtu.be/35w1IWJtRAw
+        :type: url
+        :text: SimPEG Meeting, 6 Nov. 2018
+        :classes: btn-outline-primary btn-block stretched-link
 
 
 
+    ---
+    :img-top: _static/news/senior-reflections.png
 
-.. raw:: html
+    As a Colorado School of Mines senior, I reflect on my time at Mines, and give some insight into where I will go next.
 
-    </div>
+    .. link-button:: https://youtu.be/m_wH_lK1FpE
+        :type: url
+        :text: Mines 2018 Undergraduate Reflections
+        :classes: btn-outline-primary btn-block stretched-link
 
 
-.. toctree::
-   :hidden:
-
-   Featured on Undersampled Radio <https://youtu.be/FRHMDy37MPc>
-
-
-
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="The Global Mining Guidelines Group recently interviewed me about efforts around the Open Mining Format. It's a neat article highlighting my work and the importance of open-source software in the geosciences!">
-
-.. only:: html
-
-    .. figure:: ./_static/news/omfvista-demo.gif
-       :target: https://gmggroup.org/omf-viewer-bane-sullivan/
-
-       Interview with Global Mining Guidelines Group
-
-
-
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   Interview with Global Mining Guidelines Group <https://gmggroup.org/omf-viewer-bane-sullivan/>
-
-
-
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="I lead a team that placed 2nd in the U.S. Department of Energy’s 2019 Geothermal Student Competition.">
-
-.. only:: html
-
-    .. figure:: ./_static/news/gsc_banner.jpg
-       :target: https://www.energy.gov/eere/articles/and-winners-2019-geothermal-student-competition-are
-
-       2019 Geothermal Student Competition
-
-
-
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   2019 Geothermal Student Competition <https://www.energy.gov/eere/articles/and-winners-2019-geothermal-student-competition-are>
-
-
-
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="I briefly share some of my work bringing geophysical data into Virtual Reality for communication of findings.">
-
-.. only:: html
-
-    .. figure:: ./_static/news/agu-profile.png
-       :target: https://youtu.be/IKYfCoTBA0E
-
-       AGU Profile on the Mines Geophysics Department
-
-
-
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   AGU Profile on the Mines Geophysics Department <https://youtu.be/IKYfCoTBA0E>
-
-
-
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="I share my work on PVGeo, an open-source platform for visualizing geoscientific information and demo how this software is interoperable with the SimPEG projects.">
-
-.. only:: html
-
-    .. figure:: ./_static/news/simpeg-meeting.png
-       :target: https://youtu.be/35w1IWJtRAw
-
-       SimPEG Meeting, 6 Nov. 2018
-
-
-
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   SimPEG Meeting, 6 Nov. 2018 <https://youtu.be/35w1IWJtRAw>
-
-
-
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="As a Colorado School of Mines senior, I reflect on my time at Mines, and give some insight into where I will go next.">
-
-.. only:: html
-
-    .. figure:: ./_static/news/senior-reflections.png
-       :target: https://youtu.be/m_wH_lK1FpE
-
-       Mines 2018 Undergraduate Reflections
-
-
-
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   Mines 2018 Undergraduate Reflections <https://youtu.be/m_wH_lK1FpE>
-
-
-
-
-
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
 
 A few extra
 -----------

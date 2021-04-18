@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introducing PyVista &#8212; Bane Sullivan</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fontawesome/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.jpg"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Reproducible Workflows" href="workflows.html" />
+    <link rel="prev" title="3D Geoscience" href="overview.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../index.html">
+<p class="title">Bane Sullivan</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../about.html">
+  About
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  PyVista
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../news.html">
+  News
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../publications.html">
+  Publications
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/banesullivan" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:banesullivan@gmail.com" rel="noopener" target="_blank" title="Email">
+            <span><i class="fas fa-envelope"></i></span>
+            <label class="sr-only">Email</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/banesullivan" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tldr.html">
+   TL;DR
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   3D Geoscience
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introducing PyVista
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="workflows.html">
+   Reproducible Workflows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wrapup.html">
+   Wrap Up
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="examples/index.html">
+   Examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/contouring.html">
+     Creating a Contour Map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/create-surface-draped.html">
+     Drape 2D Surface From Line
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/cross-section-simple.html">
+     Geological Cross Section
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/damavand.html">
+     Damavand Volcano
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/exaggeration.html">
+     Vertical Exaggeration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/extract-topography.html">
+     Extract Topography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/geological-map.html">
+     Geological Map on Topography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/horizon-picking.html">
+     Picking Horizons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/kriging.html">
+     Kriging with GSTools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/mine-pit.html">
+     Mine Pit Imagery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/raster.html">
+     Read a raster using xarray
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/spherical.html">
+     Spherical Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/terrain-mesh.html">
+     Terrain Following Mesh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/topo-map.html">
+     Topographic Map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/voxelize.html">
+     Voxelize Points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/wolf-creek.html">
+     Load OMF Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://doi.org/10.21105/joss.01450">
+   The Paper
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://docs.pyvista.org">
+   The Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="references.html">
+   References
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-management-visualization">
+   Data Management &amp; Visualization
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-structures">
+     Data Structures
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visual-data-fusion">
+     Visual Data Fusion
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="introducing-pyvista">
+<h1>Introducing PyVista<a class="headerlink" href="#introducing-pyvista" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://docs.pyvista.org">PyVista</a>, a 3D data management and visualization software, has been developed along with a suite of companion software, including <a class="reference external" href="https://pvgeo.org">PVGeo</a> and <a class="reference external" href="https://opengeovis.github.io/omfvista/">omfvista</a>, to manage, analyze, and visualize 3D geoscientific data and models in a common geo-referenced framework. This chapter provides a look into the PyVista software framework and how it is leveraged to manage and visualize geospatial data providing insight throughout Python geocomputing workflows.
+Geoscientists rely on calibrating and integrating data with all types of subsurface information to further illuminate the value of modeling results and to gain insight into the research questions at hand. This software, PyVista, extends the functionality of the open-source visualization platform the Visualization Toolkit (VTK) <span id="id1">[<a class="reference internal" href="references.html#id9">SLM04</a>]</span> by <a class="reference external" href="https://kitware.com">Kitware Inc.</a> and makes it possible to integrate geoscientific information in a multidimensional rendering space much like <a class="reference internal" href="overview.html#integrated-scene"><span class="std std-numref">Fig. 1</span></a>, where viewers can relate geophysical and hydrological data/models to intuitive features like topography and well locations. The PyVista software is published in the <a class="reference external" href="https://joss.theoj.org">Journal of Open Source Software</a>. This chapter provides an introduction to PyVista and an overview of applications in the geosciences. Similarly, the PVGeo companion software is published in the Journal of Open Source Software and is included in Appendix A.</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-outline-primary btn-block stretched-link reference external" href="https://doi.org/10.21105/joss.01450"><span>See the paper on PyVista</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="id3">
+<span id="forge-iso"></span><img alt="../_images/forge-iso.png" src="../_images/forge-iso.png" />
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">A visually integrated scene of geospatial data (FORGE Geothermal Site): left) view from upper south-west and right) view from lower north-west.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="data-management-visualization">
+<h2>Data Management &amp; Visualization<a class="headerlink" href="#data-management-visualization" title="Permalink to this headline">¶</a></h2>
+<p>The PyVista software package has two primary modules: 1) the core module, the fundamental data structures for managing spatially-referenced information, and 2) the plotting module, a comprehensive toolset for creating integrated 3D visualizations of the core data structures. The following sections outline how PyVista’s generalized data structures provide an extensible framework for managing geoscientific data and how PyVista’s data management approach to 3D visualization can be leveraged for insight throughout geocomputing workflows.</p>
+<div class="section" id="data-structures">
+<h3>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">¶</a></h3>
+<p>Geoscientific data and models are discrete, a fact arising from how we acquire and represent these data in digital form as geospatial data represents distinct points or regions in 3D space. The nature of spatial data requires that any computational framework for managing and analyzing those data have discretized structures for containing those data. VTK, and PyVista by extension, is a framework with discrete structures that can handle the majority of 3D data types found in subsurface science. As such, PyVista creates a platform for managing spatially-referenced data and visualizing those data in a robust 3D rendering platform aiming to make analysis and visualization routines more accessible in Python. PyVista implements spatial data structures to make creating, managing, and analyzing VTK data types more streamlined for domain scientists. These spatial data structures, commonly referred to as datasets, consist of <em>geometry</em>, <em>topology</em>, and <em>attributes</em> to which PyVista provides direct access over a NumPy interface.</p>
+<ul class="simple">
+<li><p>Geometry is the collection of points and cells in 2D or 3D space.</p></li>
+<li><p>Topology defines the structure of the dataset, or how the points are connected to form cells defining a surface or volume.</p></li>
+<li><p>Attributes are any data values that are associated with either the points (the nodes) or cells (regions between the nodes) of the dataset.</p></li>
+</ul>
+<p>As mentioned in Section 1.1, there is a wide variety of data types used in geoscientific research settings; all of the examples listed have a corresponding class (data structure) in PyVista. For instance, <a class="reference internal" href="#polydata"><span class="std std-numref">Fig. 4</span></a> shows how <code class="docutils literal notranslate"><span class="pre">PolyData</span></code> can represent a) point clouds, b) DEMs with overlain imagery, c) sparse observational data, d) geospatial line sets, and e) bounding surfaces within structural geology models. Furthermore, gridded volumes can be represented by either the <code class="docutils literal notranslate"><span class="pre">RectilinearGrid</span></code> or <code class="docutils literal notranslate"><span class="pre">UniformGrid</span></code> classes, meshed volumes and surfaces with a gridded structure can be represented by the <code class="docutils literal notranslate"><span class="pre">StructuredGrid</span></code> class, and meshed volumes and surfaces of arbitrary geometry can be represented by the <code class="docutils literal notranslate"><span class="pre">UnstructuredGrid</span></code> class.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PolyData</span></code>: Consists of any 1D or 2D geometries to construct vertices, lines, polygons, and triangles. Generally used for scattered points and closed/open surfaces (non-volumetric datasets</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RectilinearGrid</span></code>: Implicit geometries along the axes directions that are rectangular and regular.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UniformGrid</span></code>: Implicit geometries where cell sizes are uniformly assigned along each axis and the spatial reference is built out from an origin point.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">StructuredGrid</span></code>: A regular lattice of points aligned with an internal coordinate axes such that the connectivity can be defined by a grid ordering. Contains 2D Quads or 3D Hexahedrons.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UnstructuredGrid</span></code>: The most general dataset type that can hold any 1D, 2D, or 3D cell geometries. Typically generated by filtering routines and contain subsets or combi- nations of the above data types.</p></li>
+</ul>
+<div class="figure align-default" id="id4">
+<span id="polydata"></span><img alt="../_images/polydata.png" src="../_images/polydata.png" />
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Common forms of geoscientific data that can be represented as 1D and 2D geometries in 3D space via the PolyData class.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>Typically in subsurface geoscience, researchers leverage RectilinearGrid, UniformGrid, and StructuredGrid data structures for 3D modeling (shown in <a class="reference internal" href="#mesh-compare"><span class="std std-numref">Fig. 5</span></a>). A RectilinearGrid is commonly used when the volume is aligned with the cartesian axes and varying cell size
+is desired along each of the axes. The UniformGrid is used likewise when the volume is aligned with the cartesian axes, but when the cell size along a given axis is uniformly defined. The StructuredGrid class is also commonly used when dealing with meshed volumes of arbitrary rotation or curvilinear internal structures. The examples in <a class="reference internal" href="#mesh-compare"><span class="std std-numref">Fig. 5</span></a> show these three common mesh types in a simplified form, but these types are often used at a larger scale in extensive geophysical modeling frameworks like SimPEG <span id="id2">[<a class="reference internal" href="references.html#id15">CKH+15</a>]</span> where there are equivalent classes for the RectilinearGrid and StructuredGrid types.</p>
+<div class="figure align-default" id="id5">
+<span id="mesh-compare"></span><img alt="../_images/mesh-compare.png" src="../_images/mesh-compare.png" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Three commonly used mesh/volume types used in subsurface modeling applications.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>The data in <a class="reference internal" href="#forge-iso"><span class="std std-numref">Fig. 3</span></a> primarily utilizes PyVista’s PolyData type to represent the faulting planes, geospatial site boundary, terrain surface, and subsurface temperature measurements but also leverages PyVista’s UniformGrid type for the 3D temperature model that is iso-contoured. These data can be collected into a single PyVista MultiBlock composite structure, as shown in output 2 of <a class="reference internal" href="#multi-block"><span class="std std-numref">Fig. 6</span></a>, that is used to manage all of these spatial data in a computational environment. MultiBlock objects streamline accessing and managing each dataset as well as creating integrated visualizations. Any dataset for the project can be accessed by name from the container shown in <a class="reference internal" href="#multi-block"><span class="std std-numref">Fig. 6</span></a>, such as the Terrain mesh by the code project[‘Terrain’] yielding the PolyData mesh in output 3. Further, each dataset in this data structure can be utilized an visualized individually as shown in <a class="reference internal" href="#forge-all"><span class="std std-numref">Fig. 7</span></a>.</p>
+<p>PyVista’s data structures make it possible to collect, manage, and track all of the spatial information for a given subsurface investigation in a consistent and accessible framework. These data structures are each co-located in a shared geo-referenced coordinate system making interpretation and analysis a fluid and interactive process for researchers as well as providing straightforward routines to visually fuse datasets, combine attributes, and gain insight into the spatial relationships of the data before and during scientific processing.</p>
+<div class="figure align-default" id="id6">
+<span id="multi-block"></span><img alt="../_images/multi-block.png" src="../_images/multi-block.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">An example output of PyVista data containers in a Jupyter Python environment.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id7">
+<span id="forge-all"></span><img alt="../_images/forge-all.png" src="../_images/forge-all.png" />
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Several of the datasets from the data structure in <a class="reference internal" href="#multi-block"><span class="std std-numref">Fig. 6</span></a> shown individually.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>Once the data for a workflow are collected into PyVista data structures, aspects of the data like their bounding boxes, coordinates, center locations, etc. are accessible via properties directly bound to those objects. Likewise, further analysis routines are accessible as bound filtering methods available on all PyVista objects. For example, a subset can be extracted from a volumetric dataset via the code in <code class="xref std std-numref docutils literal notranslate"><span class="pre">threshold-code</span></code> to produce the mesh shown in <a class="reference internal" href="#threshold-example"><span class="std std-numref">Fig. 8</span></a>. PyVista’s immediate access to data information, attributes, and analysis routines provides a toolset for rapidly inspecting and gaining insight from spatial data in an interactive computing environment. Full documentation of the API for PyVista data structures and how users can interact with the bound properties and methods can be found within <a class="reference external" href="https://docs.pyvista.org">PyVista’s online documentation</a>.</p>
+<p>Example code to threshold a the Kriged Temperature Model creating an UnstructuredGrid mesh where the temperature is above 150 degrees C:</p>
+<div class="highlight-python notranslate" id="threshold-code"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">project</span> <span class="p">[</span> <span class="s2">&quot;Kriged Temperature Model&quot;</span> <span class="p">]</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure align-default" id="id8">
+<span id="threshold-example"></span><img alt="../_images/threshold-example.png" src="../_images/threshold-example.png" />
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">A threshold of the the Kriged Temperature Model produced from <code class="xref std std-numref docutils literal notranslate"><span class="pre">threshold-code</span></code> at 150 degrees C.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="visual-data-fusion">
+<h3>Visual Data Fusion<a class="headerlink" href="#visual-data-fusion" title="Permalink to this headline">¶</a></h3>
+<p>Visual data fusion is often used to gain insight into the spatial trends and relationships between several datasets, insights that can be achieved through visualization and exploration with PyVista. To explore the spatial relationships of several datasets, a researcher would visualize those data sources in a common geo-referenced scene for exploration. For example, <a class="reference internal" href="#fusion"><span class="std std-numref">Fig. 9</span></a> demonstrates visual data fusion between a resource model and borehole data in 3D (a and b) and in 2D (c). <a class="reference internal" href="#fusion"><span class="std std-numref">Fig. 9</span></a> shows the 3D resource model threshold at a value of interest (a) and sliced along a plane (b and c) with co-located borehole measurements in 3D (a and b) and projected to the same plane (c). The 2D scene in <a class="reference internal" href="#fusion"><span class="std std-numref">Fig. 9</span></a>-c shows the borehole data projected to the same viewing plane as the cross-section leading to visual differences between the model and the borehole data; this 2D representation of the data only partially represents the 3D variability of the model. Through leveraging PyVista’s data management framework, researchers have a toolset for accessing, filtering, and visually fusing all the spatial data for their workflow through an intuitive, programmatic interface: enabling the creation of sophisticated 3D visualizations in a reproducible fashion.</p>
+<p>Similarly, integrated 3D visualizations of the data listed in <a class="reference internal" href="#multi-block"><span class="std std-numref">Fig. 6</span></a> can be created in a few lines of code when managing the data via PyVista throughout a research workflow. PyVista’s plotting routines are built to directly handle the spatial data types such that these objects can be directly passed to a routine for rapid visual data fusion. In Listing 2.2, several of the datasets from the composite structure in <a class="reference internal" href="#multi-block"><span class="std std-numref">Fig. 6</span></a> are fetched and passed to a PyVista Plotter instance which creates a 3D rendering scene; each object is passed with a set of descriptive keyword arguments to define how that dataset is displayed (e.g., color, opacity, and point size). The code in <code class="xref std std-numref docutils literal notranslate"><span class="pre">multi-block-plot</span></code> produces the fully integrated scene shown in <a class="reference internal" href="#forge-iso"><span class="std std-numref">Fig. 3</span></a>. The contouring filter applied in Listing 2.2 as .contour([175, 225]) could changed to a thresholding filter as .threshold(150) from Listing 2.1 to extract the volumetric region where the scalar data is above those the given value: this result is shown in <a class="reference internal" href="#forge-2"><span class="std std-numref">Fig. 10</span></a>.</p>
+<div class="figure align-default" id="id9">
+<span id="fusion"></span><img alt="../_images/fusion.png" src="../_images/fusion.png" />
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Examples of visual fusion between two datasets: a 3D resource model and borehole measurements.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<p>The code to produce the 3D visualization shown in <a class="reference internal" href="#forge-iso"><span class="std std-numref">Fig. 3</span></a> from the MultiBlock dataset in <a class="reference internal" href="#multi-block"><span class="std std-numref">Fig. 6</span></a>:</p>
+<div class="highlight-python notranslate" id="multi-block-plot"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pyvista</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">project</span><span class="p">[</span><span class="s2">&quot;Site Boundary&quot;</span><span class="p">],</span>
+           <span class="n">color</span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span> <span class="p">,</span> <span class="n">render_lines_as_tubes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">project</span> <span class="p">[</span><span class="s2">&quot;Terrain&quot;</span><span class="p">]</span> <span class="p">,</span>
+           <span class="n">texture</span><span class="o">=</span><span class="s2">&quot;geo_aer&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">lighting</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">project</span><span class="p">[</span><span class="s2">&quot;Opal Mound Fault&quot;</span><span class="p">],</span>
+           <span class="n">color</span><span class="o">=</span><span class="s2">&quot;brown&quot;</span> <span class="p">,</span> <span class="n">opacity</span> <span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">project</span><span class="p">[</span><span class="s2">&quot;Negro Mag Fault&quot;</span><span class="p">],</span>
+           <span class="n">color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">project</span><span class="p">[</span><span class="s2">&quot;Kriged Temperature Model&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">contour</span><span class="p">([</span><span class="mi">175</span><span class="p">,</span> <span class="mi">225</span><span class="p">]),</span>
+           <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;coolwarm&quot;</span> <span class="p">,</span> <span class="n">clim</span> <span class="o">=</span><span class="p">[</span><span class="mi">10</span> <span class="p">,</span><span class="mi">270</span><span class="p">]</span> <span class="p">,</span> <span class="n">opacity</span> <span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">project</span> <span class="p">[</span><span class="s2">&quot;Observed Temperature&quot;</span><span class="p">]</span> <span class="p">,</span>
+           <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">,</span> <span class="n">clim</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">270</span><span class="p">],</span> <span class="n">point_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+           <span class="n">render_points_as_spheres</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="figure align-default" id="id10">
+<span id="forge-2"></span><img alt="../_images/forge-2.png" src="../_images/forge-2.png" />
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">The same geospatial data from <a class="reference internal" href="#forge-iso"><span class="std std-numref">Fig. 3</span></a> (FORGE Geothermal Site9) with a threshold temperature model as produced from Listing 2.1 and Listing 2.2.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-115959679-2', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Bane Sullivan.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

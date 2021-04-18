@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geological Cross Section &#8212; Bane Sullivan</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.jpg"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Damavand Volcano" href="damavand.html" />
+    <link rel="prev" title="Drape 2D Surface From Line" href="create-surface-draped.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../../index.html">
+<p class="title">Bane Sullivan</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../about.html">
+  About
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  PyVista
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../news.html">
+  News
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../publications.html">
+  Publications
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/banesullivan" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:banesullivan@gmail.com" rel="noopener" target="_blank" title="Email">
+            <span><i class="fas fa-envelope"></i></span>
+            <label class="sr-only">Email</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/banesullivan" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tldr.html">
+   TL;DR
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview.html">
+   3D Geoscience
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introducing PyVista
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workflows.html">
+   Reproducible Workflows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../wrapup.html">
+   Wrap Up
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Examples
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="contouring.html">
+     Creating a Contour Map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="create-surface-draped.html">
+     Drape 2D Surface From Line
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Geological Cross Section
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="damavand.html">
+     Damavand Volcano
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exaggeration.html">
+     Vertical Exaggeration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="extract-topography.html">
+     Extract Topography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="geological-map.html">
+     Geological Map on Topography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="horizon-picking.html">
+     Picking Horizons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="kriging.html">
+     Kriging with GSTools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mine-pit.html">
+     Mine Pit Imagery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="raster.html">
+     Read a raster using xarray
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="spherical.html">
+     Spherical Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="terrain-mesh.html">
+     Terrain Following Mesh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="topo-map.html">
+     Topographic Map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="voxelize.html">
+     Voxelize Points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="wolf-creek.html">
+     Load OMF Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://doi.org/10.21105/joss.01450">
+   The Paper
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://docs.pyvista.org">
+   The Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   References
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-pyvista-examples-cross-section-simple-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="geological-cross-section">
+<span id="sphx-glr-pyvista-examples-cross-section-simple-py"></span><h1>Geological Cross Section<a class="headerlink" href="#geological-cross-section" title="Permalink to this headline">¶</a></h1>
+<p>Plot a geological cross section in 3D space.</p>
+<p>We have a cross section PNG image and we know three coordinates along that section:
+* This section goes from +200m to -2000m in vertical extent
+* Coordinates of the start point: 32362837 5769796
+* Coordinates of the bend: 32368424 5765456 (the bending point is indicated with a * “K” at around half the section)
+* Coordinates of the end point: 32374114 5763507</p>
+<p>Originally posted: <a class="reference external" href="https://github.com/pyvista/pyvista-support/issues/272">https://github.com/pyvista/pyvista-support/issues/272</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>Parameters for cross section</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zrng</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>
+<span class="n">start</span> <span class="o">=</span> <span class="p">[</span><span class="mi">32362837</span><span class="p">,</span> <span class="mi">5769796</span><span class="p">]</span>
+<span class="n">bend</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mi">32368424</span><span class="p">,</span>
+    <span class="mi">5765456</span><span class="p">,</span>
+<span class="p">]</span>  <span class="c1"># (the bending point is indicated with a &quot;K&quot; at around half the section)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="p">[</span><span class="mi">32374114</span><span class="p">,</span> <span class="mi">5763507</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Make a surface mesh representing that coverage/ This mesh consists of 6 points. Generate them:</dt><dd><p>a—–b—–e
+|     |     |
+|     |     |
+d—–c—–f</p>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="p">[</span>
+    <span class="n">zrng</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+<span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">bend</span> <span class="o">+</span> <span class="p">[</span>
+    <span class="n">zrng</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+<span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">bend</span> <span class="o">+</span> <span class="p">[</span>
+    <span class="n">zrng</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="p">]</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="p">[</span>
+    <span class="n">zrng</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="p">]</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">end</span> <span class="o">+</span> <span class="p">[</span>
+    <span class="n">zrng</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+<span class="p">]</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">end</span> <span class="o">+</span> <span class="p">[</span>
+    <span class="n">zrng</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Now make a poly data mesh of these points</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">])</span>
+<span class="n">faces</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">surface</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">faces</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Map the texture to the mesh.
+- We know the tcoords of a, d, e, &amp; f, but not necessarily b &amp; c
+- to find them, scale by cell sizes:
+- Get the width of the two cells to find those coords</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">compute_cell_sizes</span><span class="p">()[</span><span class="s2">&quot;Area&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">ptp</span><span class="p">(</span><span class="n">zrng</span><span class="p">)</span>
+<span class="n">tw</span> <span class="o">=</span> <span class="p">(</span><span class="n">w</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">w</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Generate Tcoords now!</span>
+<span class="n">t_coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">tw</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">tw</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+<span class="n">surface</span><span class="o">.</span><span class="n">t_coords</span> <span class="o">=</span> <span class="n">t_coords</span>
+</pre></div>
+</div>
+<p>Load the texture image</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">path</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">downloads</span><span class="o">.</span><span class="n">_download_file</span><span class="p">(</span><span class="s2">&quot;geo-cross-section.png&quot;</span><span class="p">)</span>
+<span class="n">texture</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Texture</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Plot it up!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cpos</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mf">32361897.379640546</span><span class="p">,</span> <span class="mf">5777033.66791174</span><span class="p">,</span> <span class="mf">341.48314909204873</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">32366747.758752592</span><span class="p">,</span> <span class="mf">5766374.637744438</span><span class="p">,</span> <span class="o">-</span><span class="mf">1142.521946006218</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">0.047926147231751065</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.11631040130754997</span><span class="p">,</span> <span class="mf">0.9920559333823861</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">surface</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">texture</span><span class="o">=</span><span class="n">texture</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="n">cpos</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="cross section simple" class="sphx-glr-single-img" src="../../_images/sphx_glr_cross-section-simple_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(32361897.379640546, 5777033.66791174, 341.48314909204873),
+ (32366747.758752592, 5766374.637744438, -1142.521946006218),
+ (0.047926147231751065, -0.11631040130754997, 0.9920559333823861)]
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.375 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-cross-section-simple-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/385c8dafaa1739bb09b9c2ebc5733402/cross-section-simple.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">cross-section-simple.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/8fa356c5bb51c3e3d4abf4094c54cf3e/cross-section-simple.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">cross-section-simple.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-115959679-2', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Bane Sullivan.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

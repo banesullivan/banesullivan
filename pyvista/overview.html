@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Geoscience &#8212; Bane Sullivan</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fontawesome/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.jpg"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introducing PyVista" href="intro.html" />
+    <link rel="prev" title="TL;DR" href="tldr.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../index.html">
+<p class="title">Bane Sullivan</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../about.html">
+  About
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  PyVista
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../news.html">
+  News
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../publications.html">
+  Publications
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/banesullivan" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:banesullivan@gmail.com" rel="noopener" target="_blank" title="Email">
+            <span><i class="fas fa-envelope"></i></span>
+            <label class="sr-only">Email</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/banesullivan" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tldr.html">
+   TL;DR
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3D Geoscience
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introducing PyVista
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="workflows.html">
+   Reproducible Workflows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wrapup.html">
+   Wrap Up
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="examples/index.html">
+   Examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/contouring.html">
+     Creating a Contour Map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/create-surface-draped.html">
+     Drape 2D Surface From Line
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/cross-section-simple.html">
+     Geological Cross Section
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/damavand.html">
+     Damavand Volcano
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/exaggeration.html">
+     Vertical Exaggeration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/extract-topography.html">
+     Extract Topography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/geological-map.html">
+     Geological Map on Topography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/horizon-picking.html">
+     Picking Horizons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/kriging.html">
+     Kriging with GSTools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/mine-pit.html">
+     Mine Pit Imagery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/raster.html">
+     Read a raster using xarray
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/spherical.html">
+     Spherical Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/terrain-mesh.html">
+     Terrain Following Mesh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/topo-map.html">
+     Topographic Map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/voxelize.html">
+     Voxelize Points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/wolf-creek.html">
+     Load OMF Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://doi.org/10.21105/joss.01450">
+   The Paper
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://docs.pyvista.org">
+   The Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="references.html">
+   References
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-management-integration">
+   Data Management &amp; Integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#d-visualization-and-fusion">
+   3D Visualization and Fusion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-rise-of-python-based-research-software">
+   The Rise of Python-based Research Software
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="d-geoscience">
+<h1>3D Geoscience<a class="headerlink" href="#d-geoscience" title="Permalink to this headline">¶</a></h1>
+<p>Building three-dimensional (3D) subsurface models from field data and imaging techniques is a ubiquitous task in geological, hydrological, and resource estimation studies <span id="id1">[<a class="reference internal" href="references.html#id27">CCDLCdV+09</a>, <a class="reference internal" href="references.html#id2">WM18</a>]</span>. These created models and results often hold high significance to stakeholders, yet the availability of open software to build, integrate, and make decisions with these data and models remains limited. Geoscientists need an underlying framework that can handle a variety of 3D data structures and visualize complex geospatial data types in addition to the limited data types that current free software handle. Such a framework would need to act as a glue across existing geo-software, streamlining data management, visualization, and development of reproducible research workflows.</p>
+<p>Available free and open-source software to integrate subsurface information as well as to visualize those data in a 3D rendering space is limited. The limitations have arisen from disconnects between commercial software used across industry and a lack of open-source tooling within the research community. With little to no open software available, steep licensing fees for commercial software have created a barrier to entry for working in complex 3D environments. These high costs are arguably most relevant in academic and consulting settings, where research budgets are limited. Lack of software availability often leaves researchers without a toolset for integration across their different data types, such as pairing well locations, resource models, and geophysical images as shown in <a class="reference internal" href="#integrated-scene"><span class="std std-numref">Fig. 1</span></a>, which can hinder their ability to interpret the spatial relationships of varying data types. Here, I am proposing PyVista as a framework for managing and visualizing 3D geoscientific data to enhance how researchers explore, process, and communicate their data and spatial findings.</p>
+<div class="figure align-default" id="id14">
+<span id="integrated-scene"></span><img alt="../_images/integrated-scene.png" src="../_images/integrated-scene.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">An example of a typical subsurface study where data and models are co-located, including contextual information (DEM and satellite imagery), borehole measurements, a 3D structural geology model, and a 3D physical property model.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="data-management-integration">
+<h2>Data Management &amp; Integration<a class="headerlink" href="#data-management-integration" title="Permalink to this headline">¶</a></h2>
+<p>The subsurface models and data in typical hydrological or geophysical studies come in many forms, typically depending on available data, the expertise of the researcher, and the tooling to create and interpret such models. The value of these models is most significant when they can be co-located with other models, data, and site information in a unified environment for processing, modeling, and 3D visualization <span id="id2">[<a class="reference internal" href="references.html#id2">WM18</a>]</span>. A typical hydrogeophysical investigation, for instance, might include the data types shown in <a class="reference internal" href="#data-types"><span class="std std-numref">Fig. 2</span></a>: a) geospatial and site contextual information, b) digital elevation models (DEMs) and LiDAR scans, c) 2D geophysical image sections (produced by ground-penetrating radar or shallow seismic methods), d) sparse observational data (geochemical sampling, surface magnetic responses, etc.), e) 3D structural geology models, or even f) 3D geophysical models or images. Additional data types include well logs, hydrological pumping data, water table monitoring data, and more. There is a wide range of data types present in typical hydrogeophysical studies; being able to gather all of the data types for a given project into a single framework for co-interpretation and analysis is challenging and often unachievable at an affordable cost.</p>
+<div class="figure align-default" id="id15">
+<span id="data-types"></span><img alt="../_images/data-types.png" src="../_images/data-types.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Typical data types found in subsurface research.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+<p>There are packages available for geoscientific data integration and visualization, however, these software often handle a few proprietary data formats and are closed-source with licensing fees. Having the ability to fuse datasets, construct 3D models, or generate horizons within the visualizations can be what separates closed-source software from open-source software. To date, there is no underlying framework for managing data types with a spatial reference that is open and extensible for the diversity of data types in subsurface science. Notable efforts have succeeded in creating robust frameworks such as Xarray <span id="id3">[<a class="reference internal" href="references.html#id30">HH17</a>]</span> for regularly gridded data, GeoPandas <span id="id4">[<a class="reference internal" href="references.html#id31">Jor14</a>]</span> for geospatial feature data sets, or PyHSPF for hydrologic and water quality data integration <span id="id5">[<a class="reference internal" href="references.html#id32">LW15</a>]</span>. Many of the existing tools are limited in the types of 3D data and geometries they can store and lack a clear connection to other software for data exchange and visualization. These limitations present a need for a robust and general toolset for working with spatial data that brings interoperability across existing scientific research software.</p>
+</div>
+<div class="section" id="d-visualization-and-fusion">
+<h2>3D Visualization and Fusion<a class="headerlink" href="#d-visualization-and-fusion" title="Permalink to this headline">¶</a></h2>
+<p>The term visual fusion refers to the synthesis of spatial data from multiple sources to provide a single view of all of the points and attributes of those data sources. In the geosciences, researchers often need 3D and 4D (time-varying) visualizations to understand complex spatial and temporal relationships in data, relationships that are challenging to capture in 2D visualizations <span id="id6">[<a class="reference internal" href="references.html#id2">WM18</a>]</span>. Better perceptions or new understandings may arise from data when referenced in relation to intuitive features like topography, well locations, survey points, or other known information. Visualizing the spatial organization of the subsurface is necessary for geoscientists and stakeholders to be able to directly engage with their data and gain insight <span id="id7">[<a class="reference internal" href="references.html#id18">CBAH+97</a>, <a class="reference internal" href="references.html#id27">CCDLCdV+09</a>, <a class="reference internal" href="references.html#id2">WM18</a>]</span>. Current practices require skilled personnel to simultaneously evaluate data and models on various 2D planes: a qualitative and partial representation of complex subsurface data <span id="id8">[<a class="reference internal" href="references.html#id27">CCDLCdV+09</a>]</span>. These qualitative investigation techniques can lead to incorrect findings, but this can be mitigated through visual fusion in an integrated 3D environment <span id="id9">[<a class="reference internal" href="references.html#id27">CCDLCdV+09</a>, <a class="reference internal" href="references.html#id2">WM18</a>]</span>.</p>
+<p>While the availability of software for data integration and management is limited, there is a wide availability of 3D visualization software suitable for geoscientific data. However, it is important to note that many of the open-source packages are not capable of handling spatially-referenced datasets with complex geometries, and some are powerful yet have inherently complex application programming interfaces (APIs). <a class="reference internal" href="#viz-table"><span class="std std-numref">Table 1</span></a> provides a list of many free visualization software capable of integrating geoscience datasets with interpretation and model building in mind. <a class="reference internal" href="#viz-table"><span class="std std-numref">Table 1</span></a> compares: API Complexity (the software’s relative ease of use in a programming environment), Data Structures (describes whether the software has explicit spatial data structures for managing spatial data), and Scripting (describes whether the software can be incorporated into reproducible workflows).</p>
+<span id="viz-table"></span><table class="table" id="id16">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">List of free 3D visualization software capable of handling complex geoscientific data or models.</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 25%" />
+<col style="width: 27%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Softwre</p></th>
+<th class="head"><p>API Complexity</p></th>
+<th class="head"><p>Data Structures</p></th>
+<th class="head"><p>Scripting</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PyVista</p></td>
+<td><p>Low</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>LavaVu</p></td>
+<td><p>Low</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>Mayavi</p></td>
+<td><p>High</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>ParaView</p></td>
+<td><p>High</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>SGeMS</p></td>
+<td><p>High</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>plotly</p></td>
+<td><p>Low</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>SketchUp Free</p></td>
+<td><p>High</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>Blender</p></td>
+<td><p>High</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>Geoscience ANALYST</p></td>
+<td><p>N/A</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="the-rise-of-python-based-research-software">
+<h2>The Rise of Python-based Research Software<a class="headerlink" href="#the-rise-of-python-based-research-software" title="Permalink to this headline">¶</a></h2>
+<p>Development for the next generation of geoscience research software focuses on being widely available and approachable, achieved through the open-source model, and enabling anyone to contribute code and anyone to use those tools. Examples of emerging open software in the geosciences include implicit geological modeling software like GemPy <span id="id10">[<a class="reference internal" href="references.html#id28">dlVSW19</a>]</span> and geophysical simulation and inversion software like SimPEG <span id="id11">[<a class="reference internal" href="references.html#id15">CKH+15</a>]</span> and PyGIMLi <span id="id12">[<a class="reference internal" href="references.html#id29">RuckerGuntherW17</a>]</span> as well as larger efforts including the <a class="reference external" href="https://pangeo.io/">Pangeo Project</a>: all of these are built atop the Python data science ecosystem. Python’s popularity is rising because it is both relatively easy to learn and flexible, making consistent, well-tested tools that can be extended, adapted, and combined readily accessible to researchers <span id="id13">[<a class="reference internal" href="references.html#id15">CKH+15</a>]</span>. As an interpreted language, Python facilitates interactive development and visualization of results throughout research workflows. The interactive nature of Python has led to its rise as the central tool around emerging research topics where researchers can rapidly explore their data, gain insight, and make decisions in-situ.</p>
+<p>With the rapid growth of Python-based software, differences between data types have made the integration of data and workflows complicated and non-reproducible. This is especially relevant in the case of closed source software where scripting interfaces exist but are often sandboxed into a framework that makes it challenging to work with external software. Furthermore, geoscientists often use specific visualization software for different data processing routines, which can lead to using several different visualization and analysis environments for a single project: further fragmenting their workflows and decreasing reproducibility. The availability of software for interactive analysis of complex geospatial data is limited due in part to inconsistencies around data integration and exchange which make it challenging for researchers to work across many of the open software tools. The inconsistencies around data integration and exchange result from the wide variety of data types used in geoscientific research as well as differences in physical scale and properties that are represented by those data. The Python software ecosystem for geoscientific research needs an open and extensible framework for data management and visualization to mitigate these challenges.</p>
+</div>
+</div>
+
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-115959679-2', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Bane Sullivan.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
