@@ -16,3 +16,4 @@ PVGeo
 gstools
 netcdf4
 rasterio
+xarray
