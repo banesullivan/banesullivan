@@ -33,10 +33,33 @@ There are packages available for geoscientific data integration and visualizatio
 
 The term visual fusion refers to the synthesis of spatial data from multiple sources to provide a single view of all of the points and attributes of those data sources. In the geosciences, researchers often need 3D and 4D (time-varying) visualizations to understand complex spatial and temporal relationships in data, relationships that are challenging to capture in 2D visualizations :cite:p:`witter`. Better perceptions or new understandings may arise from data when referenced in relation to intuitive features like topography, well locations, survey points, or other known information. Visualizing the spatial organization of the subsurface is necessary for geoscientists and stakeholders to be able to directly engage with their data and gain insight :cite:p:`Caumon2009, witter, Carr1997`. Current practices require skilled personnel to simultaneously evaluate data and models on various 2D planes: a qualitative and partial representation of complex subsurface data :cite:p:`Caumon2009`. These qualitative investigation techniques can lead to incorrect findings, but this can be mitigated through visual fusion in an integrated 3D environment :cite:p:`Caumon2009, witter`.
 
-While the availability of software for data integration and management is limited, there is a wide availability of 3D visualization software suitable for geoscientific data. However, it is important to note that many of the open-source packages are not capable of handling spatially-referenced datasets with complex geometries, and some are powerful yet have inherently complex application programming interfaces (APIs). Table 1.1 provides a list of many free visualization software capable of integrating geoscience datasets with interpretation and model building in mind. Table 1.1 compares: API Complexity (the software’s relative ease of use in a programming environment), Data Structures (describes whether the software has explicit spatial data structures for managing spatial data), and Scripting (describes whether the software can be incorporated into reproducible workflows).
+While the availability of software for data integration and management is limited, there is a wide availability of 3D visualization software suitable for geoscientific data. However, it is important to note that many of the open-source packages are not capable of handling spatially-referenced datasets with complex geometries, and some are powerful yet have inherently complex application programming interfaces (APIs). :numref:`viz-table` provides a list of many free visualization software capable of integrating geoscience datasets with interpretation and model building in mind. :numref:`viz-table` compares: API Complexity (the software’s relative ease of use in a programming environment), Data Structures (describes whether the software has explicit spatial data structures for managing spatial data), and Scripting (describes whether the software can be incorporated into reproducible workflows).
 
-TODO: insert table
 
+.. _viz-table:
+.. table:: List of free 3D visualization software capable of handling complex geoscientific data or models.
+
+    +--------------------+----------------+-----------------+-----------+
+    | Softwre            | API Complexity | Data Structures | Scripting |
+    +====================+================+=================+===========+
+    | PyVista            | Low            | Yes             | Yes       |
+    +--------------------+----------------+-----------------+-----------+
+    | LavaVu             | Low            | Yes             | Yes       |
+    +--------------------+----------------+-----------------+-----------+
+    | Mayavi             | High           | Yes             | Yes       |
+    +--------------------+----------------+-----------------+-----------+
+    | ParaView           | High           | Yes             | Yes       |
+    +--------------------+----------------+-----------------+-----------+
+    | SGeMS              | High           | Yes             | Yes       |
+    +--------------------+----------------+-----------------+-----------+
+    | plotly             | Low            | No              | Yes       |
+    +--------------------+----------------+-----------------+-----------+
+    | SketchUp Free      | High           | No              | No        |
+    +--------------------+----------------+-----------------+-----------+
+    | Blender            | High           | No              | No        |
+    +--------------------+----------------+-----------------+-----------+
+    | Geoscience ANALYST | N/A            | Yes             | No        |
+    +--------------------+----------------+-----------------+-----------+
 
 
 The Rise of Python-based Research Software
