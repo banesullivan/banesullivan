@@ -1,13 +1,13 @@
 """
-Kriging
-~~~~~~~
+Kriging with GSTools
+~~~~~~~~~~~~~~~~~~~~
 
 This example utilizes data available from the `FORGE geothermal reserach site <https://utahforge.com>`_'s `2019 Geothermal Design Challenge <https://utahforge.com/studentcomp/>`_. In this example, the data is archived in the `Open Mining Format v1 (OMF) <https://github.com/gmggroup/omf>`_ specification and the `omfvista <https://opengeovis.github.io/omfvista/>`_ software is leverage to load those data into a PyVista ``MultiBlock`` data structure.
 
 The goal of this workflow is to create a 3D temperature model by kriging the *Observed Temperature* data (sparse observational data).
 The open-source, Python software `GSTools <https://geostat-framework.github.io/>`_ is used to perform variogram analysis and kriging of the temperature data onto a PyVista mesh to create the 3D model.
 """
-
+# sphinx_gallery_thumbnail_number = 4
 import pyvista as pv
 import numpy as np
 import omfvista
@@ -197,17 +197,8 @@ def add_contents(p):
     return
 
 
-p = pv.Plotter(border=False, shape=(1, 2), window_size=np.array([1024 * 2, 768]))
+p = pv.Plotter()
 
-add_contents(p)
-
-p.camera_position = [
-    (315661.9406719345, 4234675.528454831, 15167.291249498076),
-    (337498.00521202036, 4260818.504034578, -1261.5688408692681),
-    (0.2708862567924439, 0.3397398234107863, 0.9006650255615491),
-]
-
-p.subplot(0, 1)
 add_contents(p)
 
 p.camera_position = [
