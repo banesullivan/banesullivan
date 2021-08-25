@@ -22,20 +22,20 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
     <link rel="stylesheet" type="text/css" href="../_static/fontawesome/css/all.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -317,12 +317,12 @@
               <div>
                 
   <div class="section" id="reproducible-workflows">
-<h1>Reproducible Workflows<a class="headerlink" href="#reproducible-workflows" title="Permalink to this headline">¶</a></h1>
-<p>Data exploration is the process of quickly extracting insight from data, typically through visualization techniques, when the investigator is unaware of regions or attributes of interest at the onset <span id="id1">[<a class="reference internal" href="references.html#id38">IPC15</a>]</span>. In traditional scientific computing workflows, researchers use data exploration techniques to gain insight into the raw data when pre-processing to inform decisions during simulation/modeling as well as to gain insight from the modeling results. The ability to rapidly visualize and explore spatial datasets in geoscientific research would provide an invaluable tool to drive decision making and build insight throughout the scientific computing process.</p>
-<p>The PyVista framework has created an ecosystem of software built atop PyVista’s robust wrappings of VTK, making it relatively straightforward to develop custom visualization and mesh analysis tools for subdomain problems. The PVGeo software package (see Appendix A) is one such effort that has routines tailored to data visualization and analysis in the geosciences with a heavy focus on structured data sets like 2D or 3D time-varying grids. Other tools that are built atop PyVista include omfvista6 for 3D visualization of the Open Mining Format (OMF), PyMeshFix12 for repairing holes in PyVista surface meshes, and TetGen13 for generating tetrahedral meshes of any 3D polyhedral domains. Furthermore, several geoscience-oriented Python software link to PyVista; an example geostatistical modeling with GSTools <span id="id2">[<a class="reference internal" href="references.html#id39">MS19</a>]</span> will be demonstrated in Section 2.3 of this chapter.</p>
+<h1>Reproducible Workflows</h1>
+<p>Data exploration is the process of quickly extracting insight from data, typically through visualization techniques, when the investigator is unaware of regions or attributes of interest at the onset <span id="id1">[<a class="reference internal" href="references.html#id38" title="Stratos Idreos, Olga Papaemmanouil, and Surajit Chaudhuri. Overview of data exploration techniques. In Proceedings of the 2015 ACM SIGMOD International Conference on Management of Data, 277–281. ACM, 2015.">IPC15</a>]</span>. In traditional scientific computing workflows, researchers use data exploration techniques to gain insight into the raw data when pre-processing to inform decisions during simulation/modeling as well as to gain insight from the modeling results. The ability to rapidly visualize and explore spatial datasets in geoscientific research would provide an invaluable tool to drive decision making and build insight throughout the scientific computing process.</p>
+<p>The PyVista framework has created an ecosystem of software built atop PyVista’s robust wrappings of VTK, making it relatively straightforward to develop custom visualization and mesh analysis tools for subdomain problems. The PVGeo software package (see Appendix A) is one such effort that has routines tailored to data visualization and analysis in the geosciences with a heavy focus on structured data sets like 2D or 3D time-varying grids. Other tools that are built atop PyVista include omfvista6 for 3D visualization of the Open Mining Format (OMF), PyMeshFix12 for repairing holes in PyVista surface meshes, and TetGen13 for generating tetrahedral meshes of any 3D polyhedral domains. Furthermore, several geoscience-oriented Python software link to PyVista; an example geostatistical modeling with GSTools <span id="id2">[<a class="reference internal" href="references.html#id39" title="Sebastian Müller and Lennart Schüler. GeoStat-Framework/GSTools: Reverberating Red. October 2019. URL: https://doi.org/10.5281/zenodo.3468230, doi:10.5281/zenodo.3468230.">MS19</a>]</span> will be demonstrated in Section 2.3 of this chapter.</p>
 <div class="figure align-default" id="id3">
 <span id="in-situ-workflow"></span><img alt="../_images/in-situ-workflow.png" src="../_images/in-situ-workflow.png" />
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">A typical geoscientific computing workflow (left to right) where PyVista can manage and visualize the data for exploration and insight at each stage of the workflow.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">A typical geoscientific computing workflow (left to right) where PyVista can manage and visualize the data for exploration and insight at each stage of the workflow.</span></p>
 </div>
 <p>The PyVista data management and visualization framework enables exploration at every stage of computing workflows. Since PyVista’s data structures are built with a direct access NumPy10 interface, the data can be passed to external Python processing and analysis routines then collected directly back into the PyVista data structures at any stage of the workflow. This would enable, for example, a geophysical inversion workflow where observational data is passed to an external modeling library, and the intermediate results of the inversion could be displayed in real-time at each realization: this workflow is demonstrated in <a class="reference internal" href="#in-situ-workflow"><span class="std std-numref">Fig. 11</span></a>.</p>
 <p>In this case, PyVista acts as an underlying data management platform that stores and visually integrates geospatial data. <a class="reference internal" href="#in-situ-workflow"><span class="std std-numref">Fig. 11</span></a> demonstrates PyVista’s role as a data management framework with 3D visualization and analysis built-in as a tool for sending data to external software and collecting their results for visual fusion. As an underlying layer managing all of the data for a given geoscientific investigation, PyVista leverages data standards common throughout the Python computing stack to make interoperability and data exchange simple. The following sections demonstrate geocomputing research workflows where PyVista manages the spatial data providing exploration tools while other scientific computing libraries are used for modeling.</p>
@@ -337,21 +337,20 @@
 
       </div>
     </div>
-    
+  
   <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-
-    
-    <!-- Google Analytics -->
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-115959679-2', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
-    <footer class="footer mt-5 mt-md-0">
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-115959679-2', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -362,7 +361,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
 </p>
     </div>
     

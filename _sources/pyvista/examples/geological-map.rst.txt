@@ -131,7 +131,7 @@ https://dl.dropbox.com/s/emsg3h7hww1r779/Geologic_map_on_air_photo.tif?dl=0
 
     # Fetch the GCPs
     origin, point_u, point_v = get_gcps(filename)
-    # Use the GCPs to map the texture coordiantes onto the topography surface
+    # Use the GCPs to map the texture coordinates onto the topography surface
     topo.texture_map_to_plane(origin, point_u, point_v, inplace=True)
 
     # Show GCPs in relation to topo surface with texture coordinates displayed
@@ -217,7 +217,7 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  11.899 seconds)
+   **Total running time of the script:** ( 0 minutes  18.071 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_geological-map.py:

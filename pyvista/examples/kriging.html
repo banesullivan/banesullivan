@@ -22,20 +22,20 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -326,8 +326,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#perfroming-the-kriging">
-     Perfroming the Kriging
+    <a class="reference internal nav-link" href="#performing-the-kriging">
+     Performing the Kriging
     </a>
    </li>
   </ul>
@@ -369,7 +369,7 @@
 to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="kriging-with-gstools">
-<span id="sphx-glr-pyvista-examples-kriging-py"></span><h1>Kriging with GSTools<a class="headerlink" href="#kriging-with-gstools" title="Permalink to this headline">¶</a></h1>
+<span id="sphx-glr-pyvista-examples-kriging-py"></span><h1>Kriging with GSTools</h1>
 <p>This example utilizes data available from the <a class="reference external" href="https://utahforge.com">FORGE geothermal reserach site</a>’s <a class="reference external" href="https://utahforge.com/studentcomp/">2019 Geothermal Design Challenge</a>. In this example, the data is archived in the <a class="reference external" href="https://github.com/gmggroup/omf">Open Mining Format v1 (OMF)</a> specification and the <a class="reference external" href="https://opengeovis.github.io/omfvista/">omfvista</a> software is leverage to load those data into a PyVista <code class="docutils literal notranslate"><span class="pre">MultiBlock</span></code> data structure.</p>
 <p>The goal of this workflow is to create a 3D temperature model by kriging the <em>Observed Temperature</em> data (sparse observational data).
 The open-source, Python software <a class="reference external" href="https://geostat-framework.github.io/">GSTools</a> is used to perform variogram analysis and kriging of the temperature data onto a PyVista mesh to create the 3D model.</p>
@@ -385,7 +385,7 @@ The open-source, Python software <a class="reference external" href="https://geo
 </pre></div>
 </div>
 <div class="section" id="load-the-data">
-<h2>Load the Data<a class="headerlink" href="#load-the-data" title="Permalink to this headline">¶</a></h2>
+<h2>Load the Data</h2>
 <p>For this project, we have two data archives in the <a class="reference external" href="https://github.com/gmggroup/omf">Open Mining Format (OMF)</a> specification and we will use one of PyVista’s companion projects, <a class="reference external" href="https://opengeovis.github.io/omfvista/">omfvista</a> to load those data archives into PyVista a <code class="docutils literal notranslate"><span class="pre">MultiBlock</span></code> dataset.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://dl.dropbox.com/s/3cuxvurj8zubchb/FORGE.omf?dl=0&quot;</span>
 <span class="n">path</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">downloads</span><span class="o">.</span><span class="n">_retrieve_file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;FORGE.omf&quot;</span><span class="p">)</span>
@@ -421,7 +421,7 @@ The open-source, Python software <a class="reference external" href="https://geo
 <br />
 <br /></div>
 <div class="section" id="initial-inspection">
-<h2>Initial Inspection<a class="headerlink" href="#initial-inspection" title="Permalink to this headline">¶</a></h2>
+<h2>Initial Inspection</h2>
 <p>Now we can go ahead and create an integrated visualization of all of the data available to us.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">window_size</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">768</span><span class="p">])</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span>
@@ -456,10 +456,10 @@ The open-source, Python software <a class="reference external" href="https://geo
 </div>
 </div>
 <div class="section" id="kriging">
-<h2>Kriging<a class="headerlink" href="#kriging" title="Permalink to this headline">¶</a></h2>
+<h2>Kriging</h2>
 <p>Now we will use an external library, [<cite>gstools</cite>](<a class="reference external" href="https://geostat-framework.github.io">https://geostat-framework.github.io</a>), to krige the temperature probe data into a 3D temperature model of the subsurface.</p>
 <div class="section" id="choosing-a-model-space">
-<h3>Choosing a Model Space<a class="headerlink" href="#choosing-a-model-space" title="Permalink to this headline">¶</a></h3>
+<h3>Choosing a Model Space</h3>
 <p>We start out by creating the 3D model space as a PyVista <cite>UniformGrid</cite> that encompasses the project region. The following were chosen manually:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the kriging grid</span>
 <span class="n">grid</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">UniformGrid</span><span class="p">()</span>
@@ -493,7 +493,7 @@ The open-source, Python software <a class="reference external" href="https://geo
 </div>
 <img alt="kriging" class="sphx-glr-single-img" src="../../_images/sphx_glr_kriging_002.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1297: PyvistaDeprecationWarning:
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1360: PyvistaDeprecationWarning:
 &quot;stitle&quot; is a depreciated keyword and will be removed in a future
 release.
 
@@ -510,7 +510,7 @@ scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
 </div>
 </div>
 <div class="section" id="variogram-analysis">
-<h3>Variogram Analysis<a class="headerlink" href="#variogram-analysis" title="Permalink to this headline">¶</a></h3>
+<h3>Variogram Analysis</h3>
 <p>Next, we need to compute a variogram for the temperature probe data and fit that variogram to an exponential model</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12300</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 <span class="n">bin_center</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="n">vario_estimate_unstructured</span><span class="p">(</span>
@@ -533,8 +533,8 @@ scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
 </div>
 <img alt="kriging" class="sphx-glr-single-img" src="../../_images/sphx_glr_kriging_003.png" />
 </div>
-<div class="section" id="perfroming-the-kriging">
-<h3>Perfroming the Kriging<a class="headerlink" href="#perfroming-the-kriging" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="performing-the-kriging">
+<h3>Performing the Kriging</h3>
 <p>Then we pass the fitted exponential model when instantiating the kriging operator from GSTools.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the kriging model</span>
 <span class="n">krig</span> <span class="o">=</span> <span class="n">krige</span><span class="o">.</span><span class="n">Ordinary</span><span class="p">(</span>
@@ -552,9 +552,9 @@ scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(array([116.47008157, 117.61158345, 118.68310243, ...,  38.15069459,
-        39.5596414 ,  40.96307076]), array([8098.01350521, 7671.63868665, 7234.00736005, ..., 8755.16955356,
-       9108.41407123, 9444.96476497]))
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(array([116.47386304, 117.61531029, 118.68674383, ...,  38.13857775,
+        39.54712007,  40.95017153]), array([8097.95117939, 7671.5082001 , 7233.81720123, ..., 8755.23366923,
+       9108.55575257, 9445.18884886]))
 </pre></div>
 </div>
 <p>And now the <cite>grid</cite> model has the temperature scalar field and kriging variance as data arrays.</p>
@@ -564,7 +564,7 @@ scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
 </div>
 </div>
 <div class="section" id="post-processing">
-<h2>Post-Processing<a class="headerlink" href="#post-processing" title="Permalink to this headline">¶</a></h2>
+<h2>Post-Processing</h2>
 <p>We can use a filter from PVGeo to extract the region of the temperature model that is beneath the topography surface as the kriging did not account for the surface boundary.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instantiate the algorithm</span>
 <span class="n">extractor</span> <span class="o">=</span> <span class="n">PVGeo</span><span class="o">.</span><span class="n">grids</span><span class="o">.</span><span class="n">ExtractTopography</span><span class="p">(</span><span class="n">tolerance</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">remove</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -574,7 +574,7 @@ scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
 </div>
 </div>
 <div class="section" id="resulting-visualization">
-<h2>Resulting Visualization<a class="headerlink" href="#resulting-visualization" title="Permalink to this headline">¶</a></h2>
+<h2>Resulting Visualization</h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the main figure</span>
 <span class="k">def</span> <span class="nf">add_contents</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;A helper to add data to scenes.&quot;&quot;&quot;</span>
@@ -624,7 +624,7 @@ scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
 </div>
 <img alt="kriging" class="sphx-glr-single-img" src="../../_images/sphx_glr_kriging_004.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1297: PyvistaDeprecationWarning:
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1360: PyvistaDeprecationWarning:
 &quot;stitle&quot; is a depreciated keyword and will be removed in a future
 release.
 
@@ -639,7 +639,7 @@ scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
  (-0.09983848586767285, 0.20995262898057368, 0.9726007250273856)]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  5.170 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  9.262 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-kriging-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/2d610c305fc51adb26a96810638bb8ad/kriging.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">kriging.py</span></code></a></p>
@@ -661,21 +661,20 @@ scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
 
       </div>
     </div>
-    
+  
   <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-
-    
-    <!-- Google Analytics -->
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-115959679-2', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
-    <footer class="footer mt-5 mt-md-0">
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-115959679-2', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -686,7 +685,7 @@ scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
 </p>
     </div>
     

@@ -50,7 +50,7 @@ def get_gcps(filename):
 
 # Fetch the GCPs
 origin, point_u, point_v = get_gcps(filename)
-# Use the GCPs to map the texture coordiantes onto the topography surface
+# Use the GCPs to map the texture coordinates onto the topography surface
 topo.texture_map_to_plane(origin, point_u, point_v, inplace=True)
 
 # Show GCPs in relation to topo surface with texture coordinates displayed

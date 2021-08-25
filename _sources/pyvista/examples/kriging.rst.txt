@@ -232,7 +232,7 @@ Visually inspect the kriging grid in relation to data
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1297: PyvistaDeprecationWarning: 
+    /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1360: PyvistaDeprecationWarning: 
     "stitle" is a depreciated keyword and will be removed in a future
     release.
 
@@ -291,7 +291,7 @@ Next, we need to compute a variogram for the temperature probe data and fit that
 
 .. GENERATED FROM PYTHON SOURCE LINES 129-132
 
-Perfroming the Kriging
+Performing the Kriging
 ^^^^^^^^^^^^^^^^^^^^^^
 Then we pass the fitted exponential model when instantiating the kriging operator from GSTools.
 
@@ -338,9 +338,9 @@ After instantiating the kriging operator, we can have it operate on the nodes of
  .. code-block:: none
 
 
-    (array([116.47008157, 117.61158345, 118.68310243, ...,  38.15069459,
-            39.5596414 ,  40.96307076]), array([8098.01350521, 7671.63868665, 7234.00736005, ..., 8755.16955356,
-           9108.41407123, 9444.96476497]))
+    (array([116.47386304, 117.61531029, 118.68674383, ...,  38.13857775,
+            39.54712007,  40.95017153]), array([8097.95117939, 7671.5082001 , 7233.81720123, ..., 8755.23366923,
+           9108.55575257, 9445.18884886]))
 
 
 
@@ -456,7 +456,7 @@ Resulting Visualization
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1297: PyvistaDeprecationWarning: 
+    /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1360: PyvistaDeprecationWarning: 
     "stitle" is a depreciated keyword and will be removed in a future
     release.
 
@@ -475,7 +475,7 @@ Resulting Visualization
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  5.170 seconds)
+   **Total running time of the script:** ( 2 minutes  9.262 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_kriging.py:

@@ -5,38 +5,38 @@
 
 Computation times
 =================
-**13:32.640** total execution time for **pyvista_examples** files:
+**12:02.127** total execution time for **pyvista_examples** files:
 
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_pyvista_examples_mine-pit.py` (``mine-pit.py``)                           | 09:53.144 | 0.0 MB |
+| :ref:`sphx_glr_pyvista_examples_mine-pit.py` (``mine-pit.py``)                           | 08:11.449 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_pyvista_examples_kriging.py` (``kriging.py``)                             | 02:05.170 | 0.0 MB |
+| :ref:`sphx_glr_pyvista_examples_kriging.py` (``kriging.py``)                             | 02:09.262 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_pyvista_examples_topo-map.py` (``topo-map.py``)                           | 00:23.756 | 0.0 MB |
+| :ref:`sphx_glr_pyvista_examples_topo-map.py` (``topo-map.py``)                           | 00:22.384 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_pyvista_examples_damavand.py` (``damavand.py``)                           | 00:14.722 | 0.0 MB |
+| :ref:`sphx_glr_pyvista_examples_geological-map.py` (``geological-map.py``)               | 00:18.071 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_pyvista_examples_geological-map.py` (``geological-map.py``)               | 00:11.899 | 0.0 MB |
+| :ref:`sphx_glr_pyvista_examples_damavand.py` (``damavand.py``)                           | 00:15.208 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_pyvista_examples_wolf-creek.py` (``wolf-creek.py``)                       | 00:09.691 | 0.0 MB |
+| :ref:`sphx_glr_pyvista_examples_extract-topography.py` (``extract-topography.py``)       | 00:09.787 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_pyvista_examples_extract-topography.py` (``extract-topography.py``)       | 00:09.121 | 0.0 MB |
+| :ref:`sphx_glr_pyvista_examples_wolf-creek.py` (``wolf-creek.py``)                       | 00:09.278 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_pyvista_examples_create-surface-draped.py` (``create-surface-draped.py``) | 00:08.674 | 0.0 MB |
+| :ref:`sphx_glr_pyvista_examples_create-surface-draped.py` (``create-surface-draped.py``) | 00:08.990 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_pyvista_examples_exaggeration.py` (``exaggeration.py``)                   | 00:03.211 | 0.0 MB |
+| :ref:`sphx_glr_pyvista_examples_exaggeration.py` (``exaggeration.py``)                   | 00:04.016 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_pyvista_examples_terrain-mesh.py` (``terrain-mesh.py``)                   | 00:03.076 | 0.0 MB |
+| :ref:`sphx_glr_pyvista_examples_terrain-mesh.py` (``terrain-mesh.py``)                   | 00:03.275 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_pyvista_examples_contouring.py` (``contouring.py``)                       | 00:03.070 | 0.0 MB |
+| :ref:`sphx_glr_pyvista_examples_contouring.py` (``contouring.py``)                       | 00:03.035 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_pyvista_examples_horizon-picking.py` (``horizon-picking.py``)             | 00:02.716 | 0.0 MB |
+| :ref:`sphx_glr_pyvista_examples_horizon-picking.py` (``horizon-picking.py``)             | 00:02.809 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_pyvista_examples_cross-section-simple.py` (``cross-section-simple.py``)   | 00:02.199 | 0.0 MB |
+| :ref:`sphx_glr_pyvista_examples_cross-section-simple.py` (``cross-section-simple.py``)   | 00:02.288 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_pyvista_examples_voxelize.py` (``voxelize.py``)                           | 00:01.260 | 0.0 MB |
+| :ref:`sphx_glr_pyvista_examples_voxelize.py` (``voxelize.py``)                           | 00:01.246 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_pyvista_examples_spherical.py` (``spherical.py``)                         | 00:00.927 | 0.0 MB |
+| :ref:`sphx_glr_pyvista_examples_spherical.py` (``spherical.py``)                         | 00:01.027 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
 | :ref:`sphx_glr_pyvista_examples_raster.py` (``raster.py``)                               | 00:00.001 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
