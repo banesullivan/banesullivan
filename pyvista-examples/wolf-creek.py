@@ -77,7 +77,7 @@ p.add_mesh(
 )
 p.add_mesh(thresh_vol, cmap="coolwarm", clim=vol.get_data_range())
 
-# Add the assay logs: use a tube filter that varius the radius by an attribute
+# Add the assay logs: use a tube filter that various the radius by an attribute
 p.add_mesh(assay.tube(radius=3), cmap="viridis")
 p.camera_position = [
     (446842.54037898243, 492089.0563631193, 3229.5037597889404),

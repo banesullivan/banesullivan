@@ -126,7 +126,7 @@ plt.ylabel("Variogram")
 plt.show()
 
 ###############################################################################
-# Perfroming the Kriging
+# Performing the Kriging
 # ^^^^^^^^^^^^^^^^^^^^^^
 # Then we pass the fitted exponential model when instantiating the kriging operator from GSTools.
 

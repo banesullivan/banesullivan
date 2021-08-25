@@ -28,7 +28,7 @@
 
       <center><h2><i class="fas fa-laptop-code fa-2x"></i></h2></center>
 
-    My profession passions include 3D visualization, open-source software development, & reproducibile research
+    My professional passions include 3D visualization, open-source software development, & reproducible research
 
 
 Software
