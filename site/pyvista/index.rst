@@ -1,9 +1,9 @@
 PyVista
 =======
 
-This section of my website provides a guide to PyVista for geoscientisits.
+This section of my website provides a guide to PyVista for geoscientists.
 This content was adopted from sections of my graduate thesis and provides an
-interactive way to learn PyVista from a geoscientisit's perspective.
+interactive way to learn PyVista from a geoscientist's perspective.
 
 
 

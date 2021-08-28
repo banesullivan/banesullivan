@@ -2,7 +2,7 @@ Examples
 ========
 
 There are tons of excellent examples in `PyVista's gallery <https://docs.pyvista.org/examples/index.html>`_,
-but here are some additional examples more geared towards geoscientisits.
+but here are some additional examples more geared towards geoscientists.
 
 Many of these examples have made their way into the main PyVista docs, but I still host them here to have a complete list of geoscientific examples.
 
