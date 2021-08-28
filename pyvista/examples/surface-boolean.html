@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Topographic Map &#8212; Bane Sullivan</title>
+    <title>Surface Boolean Logic &#8212; Bane Sullivan</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -43,8 +43,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Voxelize Points" href="voxelize.html" />
-    <link rel="prev" title="Terrain Following Mesh" href="terrain-mesh.html" />
+    <link rel="next" title="Terrain Following Mesh" href="terrain-mesh.html" />
+    <link rel="prev" title="Spherical Data" href="spherical.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -243,8 +243,8 @@
      Spherical Data
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="surface-boolean.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Surface Boolean Logic
     </a>
    </li>
@@ -253,8 +253,8 @@
      Terrain Following Mesh
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="topo-map.html">
      Topographic Map
     </a>
    </li>
@@ -323,149 +323,95 @@
                 
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-pyvista-examples-topo-map-py"><span class="std std-ref">here</span></a>
+<p>Click <a class="reference internal" href="#sphx-glr-download-pyvista-examples-surface-boolean-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
-<div class="sphx-glr-example-title section" id="topographic-map">
-<span id="sphx-glr-pyvista-examples-topo-map-py"></span><h1>Topographic Map</h1>
-<p>Plot a map from a GeoTIFF on top of a topography mesh.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 4</span>
-
-<span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
-<span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
-
-<span class="c1"># Load the elevation data as a surface</span>
-<span class="n">elevation</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_crater_topo</span><span class="p">()</span><span class="o">.</span><span class="n">warp_by_scalar</span><span class="p">()</span>
-<span class="c1"># Load the topographic map from a GeoTiff</span>
-<span class="n">topo_map</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_crater_imagery</span><span class="p">()</span>
-
-<span class="n">elevation</span>
+<div class="sphx-glr-example-title section" id="surface-boolean-logic">
+<span id="sphx-glr-pyvista-examples-surface-boolean-py"></span><h1>Surface Boolean Logic</h1>
+<p>Use a surface inside a volume to set scalar values on an array in the volume.</p>
+<p>Adopted from <a class="reference external" href="https://docs.pyvista.org/examples/01-filter/clipping-with-surface.html">https://docs.pyvista.org/examples/01-filter/clipping-with-surface.html</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">_vtk</span> <span class="k">as</span> <span class="n">vtk</span>
+</pre></div>
+</div>
+<p>Make a gridded volume</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">51</span>
+<span class="n">xx</span> <span class="o">=</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">zz</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">RectilinearGrid</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">zz</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Define a surface within the volume</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">surface</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Cone</span><span class="p">(</span><span class="n">direction</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">height</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                  <span class="n">resolution</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">capping</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Preview the problem</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Surface&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+           <span class="n">opacity</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;To Clip&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_legend</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="surface boolean" class="sphx-glr-single-img" src="../../_images/sphx_glr_surface-boolean_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(4.622235903444128, 4.622235903444128, 4.642235903444129),
+ (-0.020000000000000018, -0.020000000000000018, 0.0),
+ (0.0, 0.0, 1.0)]
+</pre></div>
+</div>
+<p>Compute an implicit distance inside the volume using this surface, then
+inject new data arrays</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">compute_implicit_distance</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="output_subarea output_html rendered_html output_result">
 <table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
 <table>
-<tr><th>StructuredGrid</th><th>Information</th></tr>
-<tr><td>N Cells</td><td>1677401</td></tr>
-<tr><td>N Points</td><td>1680000</td></tr>
-<tr><td>X Bounds</td><td>1.810e+06, 1.831e+06</td></tr>
-<tr><td>Y Bounds</td><td>5.640e+06, 5.658e+06</td></tr>
-<tr><td>Z Bounds</td><td>7.339e+02, 2.787e+03</td></tr>
-<tr><td>Dimensions</td><td>1400, 1200, 1</td></tr>
+<tr><th>RectilinearGrid</th><th>Information</th></tr>
+<tr><td>N Cells</td><td>125000</td></tr>
+<tr><td>N Points</td><td>132651</td></tr>
+<tr><td>X Bounds</td><td>-1.040e+00, 1.000e+00</td></tr>
+<tr><td>Y Bounds</td><td>-1.040e+00, 1.000e+00</td></tr>
+<tr><td>Z Bounds</td><td>-1.040e+00, 1.000e+00</td></tr>
+<tr><td>Dimensions</td><td>51, 51, 51</td></tr>
 <tr><td>N Arrays</td><td>1</td></tr>
 </table>
 
 </td><td>
 <table>
 <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
-<tr><td><b>scalar1of1</b></td><td>Points</td><td>float64</td><td>1</td><td>7.339e+02</td><td>2.787e+03</td></tr>
+<tr><td><b>implicit_distance</b></td><td>Points</td><td>float64</td><td>1</td><td>-7.623e-01</td><td>1.250e+00</td></tr>
 </table>
 
 </td></tr> </table>
 </div>
 <br />
-<br /><p>Let’s inspect the imagery that we just loaded</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
-
-<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.dpi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">500</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">topo_map</span><span class="o">.</span><span class="n">to_array</span><span class="p">())</span>
+<br /><p>Take note of the new <code class="docutils literal notranslate"><span class="pre">implicit_distance</span></code> scalar array. We will use this
+to fill in regions inside the surface with the value 3.0 and regions outside
+the surface with the value 2.0</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;my_array&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">n_points</span><span class="p">)</span>
+<span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;my_array&#39;</span><span class="p">][</span><span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;implicit_distance&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.0</span>
+<span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;my_array&#39;</span><span class="p">][</span><span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;implicit_distance&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.0</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">scalars</span><span class="o">=</span><span class="s1">&#39;my_array&#39;</span><span class="p">,</span> <span class="n">n_colors</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">clim</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">])</span>
 </pre></div>
 </div>
-<img alt="topo map" class="sphx-glr-single-img" src="../../_images/sphx_glr_topo-map_001.png" />
+<img alt="surface boolean" class="sphx-glr-single-img" src="../../_images/sphx_glr_surface-boolean_002.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7fe2356c4410&gt;
-</pre></div>
-</div>
-<p>Once you have a topography mesh loaded as a surface mesh
-(we use a <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.StructuredGrid</span></code> here) and an image loaded as a
-<code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Texture</span></code> object using the <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read_texture()</span></code>
-method, then you can map that imagery to the surface mesh as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bounds of the aerial imagery - given to us</span>
-<span class="n">bounds</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1818000</span><span class="p">,</span> <span class="mi">1824500</span><span class="p">,</span> <span class="mi">5645000</span><span class="p">,</span> <span class="mi">5652500</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3000</span><span class="p">)</span>
-<span class="c1"># Clip the elevation dataset to the map&#39;s extent</span>
-<span class="n">local</span> <span class="o">=</span> <span class="n">elevation</span><span class="o">.</span><span class="n">clip_box</span><span class="p">(</span><span class="n">bounds</span><span class="p">,</span> <span class="n">invert</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="c1"># Apply texturing coordinates to associate the image to the surface</span>
-<span class="n">local</span><span class="o">.</span><span class="n">texture_map_to_plane</span><span class="p">(</span><span class="n">use_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="output_subarea output_html rendered_html output_result">
-<table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-<table>
-<tr><th>UnstructuredGrid</th><th>Information</th></tr>
-<tr><td>N Cells</td><td>436733</td></tr>
-<tr><td>N Points</td><td>222110</td></tr>
-<tr><td>X Bounds</td><td>1.818e+06, 1.825e+06</td></tr>
-<tr><td>Y Bounds</td><td>5.645e+06, 5.653e+06</td></tr>
-<tr><td>Z Bounds</td><td>1.381e+03, 2.787e+03</td></tr>
-<tr><td>N Arrays</td><td>2</td></tr>
-</table>
-
-</td><td>
-<table>
-<tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
-<tr><td><b>scalar1of1</b></td><td>Points</td><td>float64</td><td>1</td><td>1.381e+03</td><td>2.787e+03</td></tr>
-<tr><td>Texture Coordinates</td><td>Points</td><td>float32</td><td>2</td><td>0.000e+00</td><td>1.000e+00</td></tr>
-</table>
-
-</td></tr> </table>
-</div>
-<br />
-<br /><p>Now display it! Note that the imagery is aligned as we expect.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">local</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">texture</span><span class="o">=</span><span class="n">topo_map</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s2">&quot;xy&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<img alt="topo map" class="sphx-glr-single-img" src="../../_images/sphx_glr_topo-map_002.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(1821250.0, 5648752.5, 21483.021812796094),
- (1821250.0, 5648752.5, 2084.1749267578125),
- (0.0, 1.0, 0.0)]
-</pre></div>
-</div>
-<p>And here is a 3D perspective!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">local</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">texture</span><span class="o">=</span><span class="n">topo_map</span><span class="p">)</span>
-</pre></div>
-</div>
-<img alt="topo map" class="sphx-glr-single-img" src="../../_images/sphx_glr_topo-map_003.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(1832449.9294716225, 5659952.429471622, 13284.10439838035),
- (1821250.0, 5648752.5, 2084.1749267578125),
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(3.9209773712593994, 3.9209773712593994, 3.9209773712593994),
+ (-0.020000000000000018, -0.020000000000000018, -0.020000000000000018),
  (0.0, 0.0, 1.0)]
 </pre></div>
 </div>
-<p>We could also display the entire region by extracting the surrounding region
-and plotting the texture mapped local topography and the outside area</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract surrounding region from elevation data</span>
-<span class="n">surrounding</span> <span class="o">=</span> <span class="n">elevation</span><span class="o">.</span><span class="n">clip_box</span><span class="p">(</span><span class="n">bounds</span><span class="p">,</span> <span class="n">invert</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># Display with a shading technique</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">local</span><span class="p">,</span> <span class="n">texture</span><span class="o">=</span><span class="n">topo_map</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">surrounding</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">enable_eye_dome_lighting</span><span class="p">()</span>
-<span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="mf">1831100.0</span><span class="p">,</span> <span class="mf">5642142.0</span><span class="p">,</span> <span class="mf">8168.0</span><span class="p">),</span>
-    <span class="p">(</span><span class="mf">1820841.0</span><span class="p">,</span> <span class="mf">5648745.0</span><span class="p">,</span> <span class="mf">1104.0</span><span class="p">),</span>
-    <span class="p">(</span><span class="o">-</span><span class="mf">0.435</span><span class="p">,</span> <span class="mf">0.248</span><span class="p">,</span> <span class="mf">0.865</span><span class="p">),</span>
-<span class="p">]</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-<img alt="topo map" class="sphx-glr-single-img" src="../../_images/sphx_glr_topo-map_004.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(1831100.0, 5642142.0, 8168.0),
- (1820841.0, 5648745.0, 1104.0),
- (-0.43522768363338804, 0.24812980584156377, 0.8654527502135188)]
-</pre></div>
-</div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  29.540 seconds)</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-topo-map-py">
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.935 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-surface-boolean-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/951ef07a09e0813ab67feedafb5cbafd/topo-map.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">topo-map.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/7e9f897207d30ce909510639a8680ebc/surface-boolean.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">surface-boolean.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/50a13afa754f7f11a126b078adee636a/topo-map.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">topo-map.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/bd21b6d94ca5f2815122850b2899b2d2/surface-boolean.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">surface-boolean.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>

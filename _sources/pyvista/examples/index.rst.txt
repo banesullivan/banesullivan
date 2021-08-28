@@ -276,6 +276,27 @@ Many of these examples have made their way into the main PyVista docs, but I sti
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Use a surface inside a volume to set scalar values on an array in the volume.">
+
+.. only:: html
+
+ .. figure:: /pyvista/examples/images/thumb/sphx_glr_surface-boolean_thumb.png
+     :alt: Surface Boolean Logic
+
+     :ref:`sphx_glr_pyvista_examples_surface-boolean.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /pyvista/examples/surface-boolean
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Use a topographic surface to create a 3D terrain-following mesh.">
 
 .. only:: html
