@@ -112,9 +112,10 @@ the :func:`pyvista.UniformGridFilters.extract_subset` filter:
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_terrain-mesh_001.png
-    :alt: terrain mesh
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_terrain-mesh_001.png
+   :alt: terrain mesh
+   :srcset: /pyvista/examples/images/sphx_glr_terrain-mesh_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -183,9 +184,10 @@ make a 3D surface of that DEM:
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_terrain-mesh_002.png
-    :alt: terrain mesh
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_terrain-mesh_002.png
+   :alt: terrain mesh
+   :srcset: /pyvista/examples/images/sphx_glr_terrain-mesh_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -273,9 +275,10 @@ Once we have those structured coordinates, we can create a
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_terrain-mesh_003.png
-    :alt: terrain mesh
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_terrain-mesh_003.png
+   :alt: terrain mesh
+   :srcset: /pyvista/examples/images/sphx_glr_terrain-mesh_003.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -294,7 +297,7 @@ Once we have those structured coordinates, we can create a
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.257 seconds)
+   **Total running time of the script:** ( 0 minutes  3.669 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_terrain-mesh.py:

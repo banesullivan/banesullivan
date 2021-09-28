@@ -58,9 +58,10 @@ Pick a horizon along a 2.5D cross section of GPR imagery.
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_horizon-picking_001.png
-    :alt: horizon picking
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_horizon-picking_001.png
+   :alt: horizon picking
+   :srcset: /pyvista/examples/images/sphx_glr_horizon-picking_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -171,7 +172,7 @@ See `enable_horizon_picking` for more details
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.033 seconds)
+   **Total running time of the script:** ( 0 minutes  3.408 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_horizon-picking.py:

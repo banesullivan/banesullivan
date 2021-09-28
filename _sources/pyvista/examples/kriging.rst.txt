@@ -139,9 +139,10 @@ Now we can go ahead and create an integrated visualization of all of the data av
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_kriging_001.png
-    :alt: kriging
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_kriging_001.png
+   :alt: kriging
+   :srcset: /pyvista/examples/images/sphx_glr_kriging_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -221,9 +222,10 @@ Visually inspect the kriging grid in relation to data
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_kriging_002.png
-    :alt: kriging
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_kriging_002.png
+   :alt: kriging
+   :srcset: /pyvista/examples/images/sphx_glr_kriging_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -232,7 +234,7 @@ Visually inspect the kriging grid in relation to data
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1360: PyvistaDeprecationWarning: 
+    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1360: PyvistaDeprecationWarning: 
     "stitle" is a depreciated keyword and will be removed in a future
     release.
 
@@ -281,9 +283,10 @@ Next, we need to compute a variogram for the temperature probe data and fit that
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_kriging_003.png
-    :alt: kriging
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_kriging_003.png
+   :alt: kriging
+   :srcset: /pyvista/examples/images/sphx_glr_kriging_003.png
+   :class: sphx-glr-single-img
 
 
 
@@ -445,9 +448,10 @@ Resulting Visualization
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_kriging_004.png
-    :alt: kriging
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_kriging_004.png
+   :alt: kriging
+   :srcset: /pyvista/examples/images/sphx_glr_kriging_004.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -456,7 +460,7 @@ Resulting Visualization
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1360: PyvistaDeprecationWarning: 
+    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1360: PyvistaDeprecationWarning: 
     "stitle" is a depreciated keyword and will be removed in a future
     release.
 
@@ -475,7 +479,7 @@ Resulting Visualization
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  26.817 seconds)
+   **Total running time of the script:** ( 2 minutes  30.505 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_kriging.py:

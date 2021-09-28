@@ -84,9 +84,10 @@ with the following parameters:
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_extract-topography_001.png
-    :alt: extract topography
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_extract-topography_001.png
+   :alt: extract topography
+   :srcset: /pyvista/examples/images/sphx_glr_extract-topography_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -123,9 +124,10 @@ Now load the topography file from the example data:
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_extract-topography_002.png
-    :alt: extract topography
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_extract-topography_002.png
+   :alt: extract topography
+   :srcset: /pyvista/examples/images/sphx_glr_extract-topography_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -157,9 +159,10 @@ select the inputs to the algorithm.
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_extract-topography_003.png
-    :alt: extract topography
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_extract-topography_003.png
+   :alt: extract topography
+   :srcset: /pyvista/examples/images/sphx_glr_extract-topography_003.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -196,9 +199,10 @@ rendering below:
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_extract-topography_004.png
-    :alt: extract topography
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_extract-topography_004.png
+   :alt: extract topography
+   :srcset: /pyvista/examples/images/sphx_glr_extract-topography_004.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -232,9 +236,10 @@ How well did this remove cells above the topography surface?
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_extract-topography_005.png
-    :alt: extract topography
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_extract-topography_005.png
+   :alt: extract topography
+   :srcset: /pyvista/examples/images/sphx_glr_extract-topography_005.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -270,9 +275,10 @@ topographic surface, you can set a tolerance:
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_extract-topography_006.png
-    :alt: extract topography
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_extract-topography_006.png
+   :alt: extract topography
+   :srcset: /pyvista/examples/images/sphx_glr_extract-topography_006.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -303,9 +309,10 @@ Note that there are other extraction operations like an ``'intersection'``:
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_extract-topography_007.png
-    :alt: extract topography
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_extract-topography_007.png
+   :alt: extract topography
+   :srcset: /pyvista/examples/images/sphx_glr_extract-topography_007.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -324,7 +331,7 @@ Note that there are other extraction operations like an ``'intersection'``:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  11.330 seconds)
+   **Total running time of the script:** ( 0 minutes  11.420 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_extract-topography.py:

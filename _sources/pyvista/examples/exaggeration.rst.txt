@@ -90,9 +90,10 @@ Load data files using PVGeo
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_exaggeration_001.png
-    :alt: exaggeration
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_exaggeration_001.png
+   :alt: exaggeration
+   :srcset: /pyvista/examples/images/sphx_glr_exaggeration_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -101,7 +102,7 @@ Load data files using PVGeo
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1360: PyvistaDeprecationWarning: 
+    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1360: PyvistaDeprecationWarning: 
     "stitle" is a depreciated keyword and will be removed in a future
     release.
 
@@ -129,9 +130,10 @@ Load data files using PVGeo
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_exaggeration_002.png
-    :alt: exaggeration
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_exaggeration_002.png
+   :alt: exaggeration
+   :srcset: /pyvista/examples/images/sphx_glr_exaggeration_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -140,7 +142,7 @@ Load data files using PVGeo
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.7.11/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1360: PyvistaDeprecationWarning: 
+    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1360: PyvistaDeprecationWarning: 
     "stitle" is a depreciated keyword and will be removed in a future
     release.
 
@@ -159,7 +161,7 @@ Load data files using PVGeo
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.842 seconds)
+   **Total running time of the script:** ( 0 minutes  4.236 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_exaggeration.py:

@@ -96,9 +96,10 @@ Preview the problem
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_surface-boolean_001.png
-    :alt: surface boolean
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_surface-boolean_001.png
+   :alt: surface boolean
+   :srcset: /pyvista/examples/images/sphx_glr_surface-boolean_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -175,9 +176,10 @@ the surface with the value 2.0
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_surface-boolean_002.png
-    :alt: surface boolean
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_surface-boolean_002.png
+   :alt: surface boolean
+   :srcset: /pyvista/examples/images/sphx_glr_surface-boolean_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -196,7 +198,7 @@ the surface with the value 2.0
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.718 seconds)
+   **Total running time of the script:** ( 0 minutes  4.151 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_surface-boolean.py:

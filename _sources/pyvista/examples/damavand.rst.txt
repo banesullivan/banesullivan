@@ -94,9 +94,10 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_damavand_001.png
-    :alt: damavand
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_damavand_001.png
+   :alt: damavand
+   :srcset: /pyvista/examples/images/sphx_glr_damavand_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -126,9 +127,10 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_damavand_002.png
-    :alt: damavand
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_damavand_002.png
+   :alt: damavand
+   :srcset: /pyvista/examples/images/sphx_glr_damavand_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -160,9 +162,10 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_damavand_003.png
-    :alt: damavand
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_damavand_003.png
+   :alt: damavand
+   :srcset: /pyvista/examples/images/sphx_glr_damavand_003.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -224,9 +227,10 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_damavand_004.png
-    :alt: damavand
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_damavand_004.png
+   :alt: damavand
+   :srcset: /pyvista/examples/images/sphx_glr_damavand_004.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -253,9 +257,10 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_damavand_005.png
-    :alt: damavand
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_damavand_005.png
+   :alt: damavand
+   :srcset: /pyvista/examples/images/sphx_glr_damavand_005.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -296,9 +301,10 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_damavand_006.png
-    :alt: damavand
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_damavand_006.png
+   :alt: damavand
+   :srcset: /pyvista/examples/images/sphx_glr_damavand_006.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -317,7 +323,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  15.810 seconds)
+   **Total running time of the script:** ( 0 minutes  17.926 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_damavand.py:

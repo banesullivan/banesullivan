@@ -80,9 +80,10 @@ profile in 2D with the coordinates associated to the top of each column in your
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_create-surface-draped_001.png
-    :alt: create surface draped
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_create-surface-draped_001.png
+   :alt: create surface draped
+   :srcset: /pyvista/examples/images/sphx_glr_create-surface-draped_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -106,9 +107,10 @@ mesh "draping" down from those coordinates to hold the GPR image data.
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_create-surface-draped_002.png
-    :alt: create surface draped
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_create-surface-draped_002.png
+   :alt: create surface draped
+   :srcset: /pyvista/examples/images/sphx_glr_create-surface-draped_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -195,9 +197,10 @@ mesh and the possibilities are endless with PyVista
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_create-surface-draped_003.png
-    :alt: create surface draped
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_create-surface-draped_003.png
+   :alt: create surface draped
+   :srcset: /pyvista/examples/images/sphx_glr_create-surface-draped_003.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -216,7 +219,7 @@ mesh and the possibilities are endless with PyVista
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.504 seconds)
+   **Total running time of the script:** ( 0 minutes  9.792 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_create-surface-draped.py:

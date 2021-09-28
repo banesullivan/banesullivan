@@ -155,9 +155,10 @@ https://dl.dropbox.com/s/emsg3h7hww1r779/Geologic_map_on_air_photo.tif?dl=0
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_geological-map_001.png
-    :alt: geological map
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_geological-map_001.png
+   :alt: geological map
+   :srcset: /pyvista/examples/images/sphx_glr_geological-map_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -196,9 +197,10 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_geological-map_002.png
-    :alt: geological map
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_geological-map_002.png
+   :alt: geological map
+   :srcset: /pyvista/examples/images/sphx_glr_geological-map_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -217,7 +219,7 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  21.880 seconds)
+   **Total running time of the script:** ( 0 minutes  14.000 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_geological-map.py:

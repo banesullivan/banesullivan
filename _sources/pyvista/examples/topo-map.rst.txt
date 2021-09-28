@@ -88,9 +88,10 @@ Let's inspect the imagery that we just loaded
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_topo-map_001.png
-    :alt: topo map
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_topo-map_001.png
+   :alt: topo map
+   :srcset: /pyvista/examples/images/sphx_glr_topo-map_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -100,7 +101,7 @@ Let's inspect the imagery that we just loaded
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f1784424d10>
+    <matplotlib.image.AxesImage object at 0x7f4a7976e890>
 
 
 
@@ -167,9 +168,10 @@ Now display it! Note that the imagery is aligned as we expect.
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_topo-map_002.png
-    :alt: topo map
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_topo-map_002.png
+   :alt: topo map
+   :srcset: /pyvista/examples/images/sphx_glr_topo-map_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -198,9 +200,10 @@ And here is a 3D perspective!
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_topo-map_003.png
-    :alt: topo map
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_topo-map_003.png
+   :alt: topo map
+   :srcset: /pyvista/examples/images/sphx_glr_topo-map_003.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -243,9 +246,10 @@ and plotting the texture mapped local topography and the outside area
 
 
 
-.. image:: /pyvista/examples/images/sphx_glr_topo-map_004.png
-    :alt: topo map
-    :class: sphx-glr-single-img
+.. image-sg:: /pyvista/examples/images/sphx_glr_topo-map_004.png
+   :alt: topo map
+   :srcset: /pyvista/examples/images/sphx_glr_topo-map_004.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -264,7 +268,7 @@ and plotting the texture mapped local topography and the outside area
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  26.650 seconds)
+   **Total running time of the script:** ( 0 minutes  24.422 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_topo-map.py:
