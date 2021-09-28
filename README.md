@@ -14,6 +14,9 @@ head into [the gallery directory](https://github.com/banesullivan/mywebsite/tree
 
 Please feel free to use and extend the coding examples. I ask that you please follow the terms of the [license](./LICENSE): it's an MIT license so basically just give me a shout out / some form of acknowledgment ;)
 
+For examples that link back to PyVista's documentation, please give credit to the PyVista Developers per [PyVista's License](https://docs.pyvista.org/getting-started/authors.html#license)
+
+
 ## Building the Site Locally
 
 Install the requirements:
