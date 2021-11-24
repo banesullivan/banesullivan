@@ -5,14 +5,22 @@ Read a raster using xarray
 Use xarray and rasterio to load a raster into a StructuredGrid.
 """
 
-import pyvista as pv
-import xarray as xr
 import numpy as np
+import xarray as xr
+from rasterio.warp import transform
+
+import pyvista as pv
+from pyvista import examples
+
+##############################################################################
+# The following is a function you can use to load just about any geospatial
+# raster.
 
 
-def read_raster(filename):
-    """
-    Helpful: http://xarray.pydata.org/en/stable/auto_gallery/plot_rasterio.html
+def read_raster(filename, out_crs="EPSG:3857", use_z=False):
+    """Read a raster to a ``pyvista.StructuredGrid``.
+
+    This will handle coordinate transformations.
     """
     # Read in the data
     data = xr.open_rasterio(filename)
@@ -23,12 +31,29 @@ def read_raster(filename):
         values[nans] = np.nan
     # Make a mesh
     xx, yy = np.meshgrid(data["x"], data["y"])
-    zz = values.reshape(xx.shape)  # will make z-comp the values in the file
-    # zz = np.zeros_like(xx) # or this will make it flat
+    if use_z and values.shape[0] == 1:
+        # will make z-comp the values in the file
+        zz = values.reshape(xx.shape)
+    else:
+        # or this will make it flat
+        zz = np.zeros_like(xx)
     mesh = pv.StructuredGrid(xx, yy, zz)
-    mesh["data"] = values.ravel(order="F")
+    pts = mesh.points
+    lon, lat = transform(data.crs, out_crs, pts[:, 0], pts[:, 1])
+    mesh.points[:, 0] = lon
+    mesh.points[:, 1] = lat
+    mesh["data"] = values.reshape(mesh.n_points, -1, order="F")
     return mesh
 
 
-# TODO: find raster we can use
-# topo = read_raster('topography.tif')
+##############################################################################
+# Download a sample GeoTiff to demonstrate
+path, _ = examples.downloads._download_file("Elevation.tif")
+
+##############################################################################
+# Use the utility function to load that file.
+topo = read_raster(path, use_z=True)
+topo
+
+##############################################################################
+topo.plot()
