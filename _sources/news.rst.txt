@@ -10,7 +10,19 @@ Keep up with with my latest activities! I use this as a place to archive article
 
 
     ---
-    :img-top: _static/news/award.png
+    :img-top: _static/news/transform-2021.png
+
+    I instructed a workshop introducing PyVista as a visualization toolkit for geoscientists.
+
+    .. link-button:: https://www.youtube.com/watch?v=FmNmRBsEBHE
+        :type: url
+        :text: Transform 2021 Workshop
+        :classes: btn-outline-primary btn-block stretched-link
+
+
+
+    ---
+    :img-top: _static/news/csm-geophysics.png
 
     I received the Mendenhall Prize for outstanding MSc Student in Geophysics (May 2020).
 
