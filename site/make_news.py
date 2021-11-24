@@ -34,11 +34,17 @@ class News:
 ###############################################################################
 
 articles = dict(
+    transform_2021=News(
+        title="Transform 2021 Workshop",
+        description="I instructed a workshop introducing PyVista as a visualization toolkit for geoscientists.",
+        link="https://www.youtube.com/watch?v=FmNmRBsEBHE",
+        image="transform-2021.png",
+    ),
     mendenhall=News(
         title="Mendenhall Prize",
         description="I received the Mendenhall Prize for outstanding MSc Student in Geophysics (May 2020).",
         link="http://online.anyflip.com/vsibo/nqih/mobile/index.html",
-        image="award.png",
+        image="csm-geophysics.png",
     ),
     seequent=News(
         title="Future of geovisualization: discussion with Seequent",
