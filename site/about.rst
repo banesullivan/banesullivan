@@ -1,9 +1,6 @@
 About
 =====
 
-TL;DR
------
-
 * Hydrologically minded geophysicist turned research software engineer
 * Helped create the `PyVista Project <https://www.pyvista.org>`_
 * Passionate about open-source software
