@@ -63,8 +63,13 @@ clim = [0, 100]
 # Now I instantiate the ``Plotter`` and create the visualization.
 
 p = pv.Plotter()
-p.add_volume(model, cmap="magma", clim=clim,
-             opacity=opacity, opacity_unit_distance=6000,)
+p.add_volume(
+    model,
+    cmap="magma",
+    clim=clim,
+    opacity=opacity,
+    opacity_unit_distance=6000,
+)
 p.show()
 
 ###############################################################################
@@ -90,11 +95,12 @@ p.show()
 # Let’s now volume render that region of interest!
 
 p = pv.Plotter()
-p.add_volume(voi, cmap="magma", clim=clim, opacity=opacity,
-             opacity_unit_distance=2000)
-p.camera_position = [(531554.5542909054, 3944331.800171338, 26563.04809259223),
- (599088.1433822059, 3982089.287834022, -11965.14728669936),
- (0.3738545892415734, 0.244312810377319, 0.8947312427698892)]
+p.add_volume(voi, cmap="magma", clim=clim, opacity=opacity, opacity_unit_distance=2000)
+p.camera_position = [
+    (531554.5542909054, 3944331.800171338, 26563.04809259223),
+    (599088.1433822059, 3982089.287834022, -11965.14728669936),
+    (0.3738545892415734, 0.244312810377319, 0.8947312427698892),
+]
 p.show()
 
 

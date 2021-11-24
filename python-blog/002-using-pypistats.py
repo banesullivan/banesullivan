@@ -20,21 +20,23 @@ projects are getting lately.
 import pypistats
 import matplotlib.pyplot as plt
 
+
 def fetch_and_plot(name):
     """A little helper method to do it all and make it pretty."""
     data = pypistats.overall(name, total=True, format="pandas")
     data = data.groupby("category").get_group("without_mirrors").sort_values("date")
 
-    data.plot(x="date", y="downloads", figsize=(15, 5), marker='o')
+    data.plot(x="date", y="downloads", figsize=(15, 5), marker="o")
     plt.xticks(
         rotation=45,
-        horizontalalignment='right',
-        fontweight='light',
-        fontsize='medium',
+        horizontalalignment="right",
+        fontweight="light",
+        fontsize="medium",
     )
     plt.title("Downloads for {}".format(name))
     plt.tight_layout()
     return plt.show()
+
 
 ###############################################################################
 
@@ -43,6 +45,10 @@ fetch_and_plot("pyvista")
 ###############################################################################
 
 fetch_and_plot("scooby")
+
+###############################################################################
+
+fetch_and_plot("flask-tileserver")
 
 ###############################################################################
 

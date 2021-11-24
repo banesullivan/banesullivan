@@ -27,7 +27,7 @@ import matplotlib as mpl
 #
 #     \int_0^{\frac{5\pi}{4}} g(x) \, dx = - \cos(x) |_0^{\frac{5\pi}{4}} = - \cos(\frac{5\pi}{4}) + \cos(0) = \frac{\sqrt{2}}{2} + 1 = 1.7071
 
-np.sqrt(2)/2 + 1
+np.sqrt(2) / 2 + 1
 
 ###############################################################################
 # We can visualize this as the area under the curve - which is all a numerical
@@ -42,12 +42,13 @@ np.sqrt(2)/2 + 1
 
 
 g = lambda x: np.sin(x)
-a, b = 0, 5*np.pi/4
+a, b = 0, 5 * np.pi / 4
 
 y = np.linspace(a, b)
 
-dy = np.pi/16
+dy = np.pi / 16
 yy = np.arange(a, b, dy)
+
 
 def plot_rects(xx, f, delta):
     for v in xx:
@@ -58,11 +59,12 @@ def plot_rects(xx, f, delta):
         else:
             loc = value
             h = 0 - value
-        r = mpl.patches.Rectangle((v-delta/2., loc),
-                                  width=delta, height=h,
-                                  edgecolor="k", linewidth=1)
+        r = mpl.patches.Rectangle(
+            (v - delta / 2.0, loc), width=delta, height=h, edgecolor="k", linewidth=1
+        )
         plt.gca().add_patch(r)
     return
+
 
 def plot_g():
     plt.plot(y, g(y))
@@ -73,30 +75,31 @@ def plot_g():
     plt.xlabel("$x$")
     plt.ylabel("$g(x)$")
 
+
 plot_g()
 plt.show()
 
 ###############################################################################
 # So now we can sum the areas of all of those rectangles to get an
 # approximation of the area under the curve (the integral)
-np.sum(g(yy-(dy/2)) * dy)
+np.sum(g(yy - (dy / 2)) * dy)
 
 
 # That's not too bad considering our rectangles do not perfectly follow the
 # curve. Let's now try choosing a :math:`\Delta x` value that will increase the
 # sampling creating finer spaced rectangles to improve our approximation.
 
-dy = np.pi/32
+dy = np.pi / 32
 yy = np.arange(a, b, dy)
 
-plt.figure(figsize=(12,4))
-plt.subplot(1,2,1)
+plt.figure(figsize=(12, 4))
+plt.subplot(1, 2, 1)
 plot_g()
 plt.title("Area = {:.3f}".format(np.sum(g(yy) * dy)))
 
-plt.subplot(1,2,2)
+plt.subplot(1, 2, 2)
 
-dy = np.pi/128
+dy = np.pi / 128
 yy = np.arange(a, b, dy)
 
 plot_g()
@@ -129,7 +132,7 @@ np.sum(g(yy) * dy)
 # integration benefits as I don't even know where to begin when it comes to
 # analytically integrating that.
 
-f = lambda x: np.sin(1/x)
+f = lambda x: np.sin(1 / x)
 
 ###############################################################################
 # To do so, we'll need to define a range of x values on which to evaluate the
@@ -144,7 +147,7 @@ num = 100000
 zero = 1e-9
 
 # Create an array of x values to evaluate
-x = np.linspace(zero, 2*np.pi, num)
+x = np.linspace(zero, 2 * np.pi, num)
 
 # Evaluate and plot the values
 plt.plot(x, f(x))
@@ -163,7 +166,7 @@ plt.show()
 # Then find the maximum and see what interval of :math:`\pi` is causing the change
 # in behavior.
 
-subset = np.linspace(0.3, 2*np.pi, num)
+subset = np.linspace(0.3, 2 * np.pi, num)
 subset[np.argmax(f(subset))] * np.pi
 
 ###############################################################################
@@ -171,7 +174,7 @@ subset[np.argmax(f(subset))] * np.pi
 # decay. This makes sense because :math:`\sin(1/2/\pi) = \sin(\pi/2) = 1`
 
 plt.plot(x, f(x), label="$f(x)$")
-plt.plot(2./np.pi, f(2./np.pi), 'ro', label=r"$x=\frac{2}{\pi}$")
+plt.plot(2.0 / np.pi, f(2.0 / np.pi), "ro", label=r"$x=\frac{2}{\pi}$")
 plt.legend()
 plt.xlabel("$x$")
 plt.ylabel("$f(x)$")
@@ -188,10 +191,10 @@ plt.show()
 # space to evaluate our function which will bring out finer sampling for lower
 # values and see how the function behaves as x approaches zero.
 
-x = np.geomspace(1e-2, 2*np.pi, num)
+x = np.geomspace(1e-2, 2 * np.pi, num)
 
 plt.plot(x, f(x))
-plt.gca().set_xscale('log')
+plt.gca().set_xscale("log")
 plt.xlabel("$x$")
 plt.ylabel("$f(x)$")
 plt.show()
@@ -212,36 +215,36 @@ plt.show()
 # value of 1 occurred at :math:`\frac{2}{\pi}`, so let's use decreasing values from
 # there.
 
-f(3./np.pi)
+f(3.0 / np.pi)
 
 
 ###############################################################################
-f(3./(2.*np.pi))
+f(3.0 / (2.0 * np.pi))
 
 
 ###############################################################################
-f(2./(3*np.pi))
+f(2.0 / (3 * np.pi))
 
 
 ###############################################################################
-f(2./(4*np.pi))
+f(2.0 / (4 * np.pi))
 
 
 ###############################################################################
-f(2./(5*np.pi))
+f(2.0 / (5 * np.pi))
 
 ###############################################################################
 # So this is interesting. I'm seeing a weird pattern where :math:`\frac{2}{n \pi}`
 # appears to oscillate :math:`f(x)` between -1 and 1. Let's test this out.
 
-xx = lambda n: 2/(n*np.pi)
+xx = lambda n: 2 / (n * np.pi)
 nn = 65
 n = np.arange(1, nn)
 xn = xx(n)
 
 plt.plot(xn, f(xn), "ro")
 plt.plot(x, f(x))
-plt.gca().set_xscale('log')
+plt.gca().set_xscale("log")
 plt.xlabel("$x$")
 plt.ylabel("$f(x)$")
 plt.show()
@@ -260,13 +263,14 @@ plt.show()
 # point. Let's see if that gives us a visually pleasing approximation of our
 # function.
 
+
 def plot_f():
-    plt.gca().set_xscale('log')
+    plt.gca().set_xscale("log")
     plt.plot(x, f(x))
     plt.plot(xn, f(xn), "ro")
 
     for i, v in enumerate(xn):
-        if i == len(xn)-1:
+        if i == len(xn) - 1:
             continue
         value = f(v)
         if value >= 0.0:
@@ -275,10 +279,10 @@ def plot_f():
         else:
             loc = value
             h = 0 - value
-        delta = abs(xn[i] - xn[i+1])
-        r = mpl.patches.Rectangle((v - delta/2, loc),
-                                  width=delta, height=h,
-                                  edgecolor="k", linewidth=1)
+        delta = abs(xn[i] - xn[i + 1])
+        r = mpl.patches.Rectangle(
+            (v - delta / 2, loc), width=delta, height=h, edgecolor="k", linewidth=1
+        )
         plt.gca().add_patch(r)
     plt.xlabel("$x$")
     plt.ylabel("$f(x)$")
@@ -314,8 +318,8 @@ plt.show()
 # constant this time, so well need to compute an array of all of our
 # :math:`\Delta x` values first.
 
-dx = np.pi/(128*4)
-x = np.arange(2/np.pi, 2*np.pi, step=dx)
+dx = np.pi / (128 * 4)
+x = np.arange(2 / np.pi, 2 * np.pi, step=dx)
 right = np.sum(f(x) * dx)
 right
 
@@ -329,6 +333,7 @@ def compute_left(dn, nn=1000):
     xn = xx(n)
     dx = np.abs(np.diff(xn))
     return np.sum(f(xn)[:-1] * dx)
+
 
 left = compute_left(dn)
 left
@@ -344,7 +349,7 @@ left
 
 
 ###############################################################################
-left+right
+left + right
 
 ###############################################################################
 # The full integral is known to be 2.26277 from `Wolfram Alpha <https://www.wolframalpha.com/input/?i=integrate+sin+1%2Fx+dx+from+x%3D0+to+2pi>`_
