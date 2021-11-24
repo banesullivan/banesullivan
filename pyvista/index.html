@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>PyVista &#8212; Bane Sullivan</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -23,17 +24,17 @@
 
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="../_static/fontawesome/css/all.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -43,11 +44,24 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="TL;DR" href="tldr.html" />
+    <link rel="next" title="3D Geoscience" href="overview.html" />
     <link rel="prev" title="About" href="../about.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-115959679-2', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -148,11 +162,6 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
     <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="tldr.html">
-   TL;DR
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="overview.html">
    3D Geoscience
@@ -306,8 +315,8 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#abstract">
-   Abstract
+  <a class="reference internal nav-link" href="#tl-dr">
+   TL;DR
   </a>
  </li>
 </ul>
@@ -331,7 +340,7 @@
               
               <div>
                 
-  <div class="section" id="pyvista">
+  <section id="pyvista">
 <h1>PyVista</h1>
 <p>This section of my website provides a guide to PyVista for geoscientists.
 This content was adopted from sections of my graduate thesis and provides an
@@ -340,16 +349,6 @@ interactive way to learn PyVista from a geoscientist’s perspective.</p>
 </div>
 <div class="sphinx-bs container pb-4 docutils">
 <div class="row docutils">
-<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
-<div class="card w-100 shadow docutils">
-<div class="card-body docutils">
-<p class="card-text">Want the TL;DR?</p>
-</div>
-<div class="card-footer docutils">
-<p class="card-text"><a class="sphinx-bs btn text-wrap btn-outline-primary btn-block stretched-link reference internal" href="tldr.html"><span class="doc">Read the Summary</span></a></p>
-</div>
-</div>
-</div>
 <div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
 <div class="card w-100 shadow docutils">
 <div class="card-body docutils">
@@ -362,11 +361,11 @@ interactive way to learn PyVista from a geoscientist’s perspective.</p>
 </div>
 </div>
 </div>
-<div class="section" id="abstract">
-<h2>Abstract</h2>
+<section id="tl-dr">
+<h2>TL;DR</h2>
 <p>There is a wide range of data types present in typical hydrogeophysical studies; being able to gather all data types for a given project into a single framework is challenging and often unachievable at an affordable cost for hydrological researchers. Steep licensing fees for commercial software and complex user interfaces in existing open software have limited the accessibility of tools to build, integrate, and make decisions with diverse types of 3D geospatial data and models. In earth science research, particularly in hydrology, restricted budgets exacerbate these limitations, creating barriers for using software to manage, visualize, and exchange 3D data in reproducible workflows. In response to these challenges, I have created the PyVista software as an open-source framework for 3D geospatial data management, fusion, and visualization. The PyVista Python package provides an accessible and intuitive interface back to a robust and established visualization library, the Visualization Toolkit (VTK), to facilitate rapid analysis and visual integration of spatially referenced datasets. This interface implements spatial data structures encompassing a majority of subsurface applications to make creating, managing, and analyzing spatial data more streamlined for domain scientists. PyVista’s data management approach to 3D visualization furthers researchers’ ability to work across existing and emerging Python-based software while offering streamlined routines for creating publication-quality, integrated 3D visualizations. Example code to produce visualizations of 3D subsurface models, surface topography, sparse data, and other geospatial information are provided. These examples demonstrate how PyVista enables researchers to gather all of their spatial data into a single framework to rapidly visualize, explore, and gain insight from spatial data. PyVista is breaking down barriers for novice programmers hoping to use powerful, open-source, 3D software in reproducible geocomputing workflows.</p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -378,30 +377,19 @@ interactive way to learn PyVista from a geoscientist’s perspective.</p>
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-115959679-2', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 <footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
       <p class="copyright">
-    &copy; Copyright 2021, Bane Sullivan.<br/>
+    &copy; Copyright 2021, Bane Sullivan.<br>
 </p>
     </div>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br>
 </p>
     </div>
     

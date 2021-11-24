@@ -74,25 +74,20 @@ efforts with OpenGeoVis and PyVista.
       </ul>
 
     ---
-    :img-top: _static/pvgeo-logo.png
+    :img-top: _static/tile-diagram.png
 
-    PVGeo is an open-source Python package for geoscientific visualization
-    in VTK and ParaView, built on top of PyVista.
+    ``flask-tileserver`` is a minimalist tile server for local, large
+    geospatial images. This package enables visualization of geospatial
+    rasters in Jupyter notebooks with ``ipyleaflet``.
 
     .. raw:: html
 
       <ul class="fa-ul project-icons">
          <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
-            <a href="https://github.com/OpenGeoVis/PVGeo">OpenGeoVis/PVGeo</a>
+            <a href="https://github.com/banesullivan/flask-tileserver">banesullivan/flask-tileserver</a>
          </li>
-         <li><i class="fa-li fa fa-book fa-fw" title="Documentation"></i>
-            <a href="https://pvgeo.org/">pvgeo.org</a>
-         </li>
-         <li><i class="fa-li fas fa-bookmark fa-fw" title="Publication"></i>
-            doi: <a href="https://doi.org/10.21105/joss.01451">10.21105/joss.01451</a>
-         </li>
-         <li><i class="fa-li fa fa-check fa-fw" style="color: green" title="Project status"></i>
-            Stable and ready for use
+         <li><i class="fa-li fa fa-sync-alt fa-fw" style="color: green" title="Project status"></i>
+            Ready for use but still changing
          </li>
       </ul>
 
@@ -119,24 +114,26 @@ efforts with OpenGeoVis and PyVista.
 
     ---
 
-    `omfvista`
-    ^^^^^^^^^^
+    PVGeo
+    ^^^^^
 
-    A PyVista (and VTK) interface for the Open Mining Format package (omf)
-    providing Python 3D visualization and usable mesh data structures
-    for processing datasets in the OMF specification.
+    PVGeo is an open-source Python package for geoscientific visualization
+    in VTK and ParaView, built on top of PyVista.
 
     .. raw:: html
 
       <ul class="fa-ul project-icons">
          <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
-            <a href="https://github.com/OpenGeoVis/omfvista">OpenGeoVis/omfvista</a>
+            <a href="https://github.com/OpenGeoVis/PVGeo">OpenGeoVis/PVGeo</a>
          </li>
          <li><i class="fa-li fa fa-book fa-fw" title="Documentation"></i>
-            <a href="https://opengeovis.github.io/omfvista/">opengeovis.github.io/omfvista</a>
+            <a href="https://pvgeo.org/">pvgeo.org</a>
          </li>
-         <li><i class="fa-li fa fa-sync-alt fa-fw" style="color: green" title="Project status"></i>
-            Ready for use but still changing
+         <li><i class="fa-li fas fa-bookmark fa-fw" title="Publication"></i>
+            doi: <a href="https://doi.org/10.21105/joss.01451">10.21105/joss.01451</a>
+         </li>
+         <li><i class="fa-li fa fa-check fa-fw" style="color: green" title="Project status"></i>
+            Stable and ready for use
          </li>
       </ul>
 
