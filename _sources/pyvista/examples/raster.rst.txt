@@ -177,7 +177,7 @@ Use the utility function to load that file.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  29.782 seconds)
+   **Total running time of the script:** ( 0 minutes  20.235 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_raster.py:
