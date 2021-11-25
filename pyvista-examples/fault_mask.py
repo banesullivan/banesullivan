@@ -27,9 +27,9 @@ grid = pv.UniformGrid()
 # Bottom south-west corner
 grid.origin = (329700, 4252600, -2700)
 # Cell sizes
-grid.spacing = (250, 250, 50)
-# Number of cells in eaxh direction
-grid.dimensions = (60, 75, 100)
+grid.spacing = (250, 250, 500)
+# Number of cells in each direction
+grid.dimensions = (60, 75, 10)
 
 ###############################################################################
 # Take a quick preview to see where the fault is inside of the grid
