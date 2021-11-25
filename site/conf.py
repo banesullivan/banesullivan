@@ -127,7 +127,6 @@ html_sidebars = {
     "index": ["home-sidebar.html"],
     "about": ["home-sidebar.html"],
     "publications": ["home-sidebar.html"],
-    "news": ["home-sidebar.html"],
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
