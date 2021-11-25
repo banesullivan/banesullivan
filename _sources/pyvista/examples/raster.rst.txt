@@ -126,7 +126,7 @@ Use the utility function to load that file.
 
  .. code-block:: none
 
-    /home/runner/work/mywebsite/mywebsite/pyvista-examples/raster.py:25: DeprecationWarning: open_rasterio is Deprecated in favor of rioxarray. For information about transitioning, see: https://corteva.github.io/rioxarray/stable/getting_started/getting_started.html
+    /home/runner/work/banesullivan/banesullivan/pyvista-examples/raster.py:25: DeprecationWarning: open_rasterio is Deprecated in favor of rioxarray. For information about transitioning, see: https://corteva.github.io/rioxarray/stable/getting_started/getting_started.html
       data = xr.open_rasterio(filename)
 
 
@@ -176,7 +176,7 @@ Use the utility function to load that file.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  24.906 seconds)
+   **Total running time of the script:** ( 0 minutes  28.719 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_raster.py:
