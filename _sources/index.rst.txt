@@ -146,5 +146,4 @@ efforts with OpenGeoVis and PyVista.
 
    about
    pyvista/index
-   news
    publications

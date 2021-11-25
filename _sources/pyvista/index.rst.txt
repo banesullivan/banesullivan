@@ -21,6 +21,7 @@ interactive way to learn PyVista from a geoscientist's perspective.
 
 
 .. panels::
+   :column: col-lg-12 p-2
 
     Don't miss the included gallery of examples
     +++++++++++++++++++++++++++++++++++++++++++
