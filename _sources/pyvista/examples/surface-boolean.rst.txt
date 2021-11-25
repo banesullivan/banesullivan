@@ -50,7 +50,7 @@ Make a gridded volume
 .. code-block:: default
 
     n = 51
-    xx = yy = zz = 1 - np.linspace(0, n, n) * 2 / (n-1)
+    xx = yy = zz = 1 - np.linspace(0, n, n) * 2 / (n - 1)
     dataset = pv.RectilinearGrid(xx, yy, zz)
 
 
@@ -64,12 +64,13 @@ Make a gridded volume
 
 Define a surface within the volume
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-25
+.. GENERATED FROM PYTHON SOURCE LINES 22-26
 
 .. code-block:: default
 
-    surface = pv.Cone(direction=(0,0,-1), height=3.0, radius=1,
-                      resolution=50, capping=False)
+    surface = pv.Cone(
+        direction=(0, 0, -1), height=3.0, radius=1, resolution=50, capping=False
+    )
 
 
 
@@ -78,18 +79,17 @@ Define a surface within the volume
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-27
+.. GENERATED FROM PYTHON SOURCE LINES 27-28
 
 Preview the problem
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-34
+.. GENERATED FROM PYTHON SOURCE LINES 28-34
 
 .. code-block:: default
 
     p = pv.Plotter()
-    p.add_mesh(surface, color='w', label='Surface')
-    p.add_mesh(dataset, color='gold', show_edges=True,
-               opacity=0.75, label='To Clip')
+    p.add_mesh(surface, color="w", label="Surface")
+    p.add_mesh(dataset, color="gold", show_edges=True, opacity=0.75, label="To Clip")
     p.add_legend()
     p.show()
 
@@ -169,10 +169,10 @@ the surface with the value 2.0
 
 .. code-block:: default
 
-    dataset['my_array'] = np.zeros(dataset.n_points)
-    dataset['my_array'][dataset['implicit_distance'] >= 0] = 2.0
-    dataset['my_array'][dataset['implicit_distance'] < 0] = 3.0
-    dataset.plot(scalars='my_array', n_colors=2, clim=[1.5, 3.5])
+    dataset["my_array"] = np.zeros(dataset.n_points)
+    dataset["my_array"][dataset["implicit_distance"] >= 0] = 2.0
+    dataset["my_array"][dataset["implicit_distance"] < 0] = 3.0
+    dataset.plot(scalars="my_array", n_colors=2, clim=[1.5, 3.5])
 
 
 
@@ -198,7 +198,7 @@ the surface with the value 2.0
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.195 seconds)
+   **Total running time of the script:** ( 0 minutes  4.047 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_surface-boolean.py:

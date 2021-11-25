@@ -215,14 +215,14 @@ Create a 2D contour map
  .. code-block:: none
 
 
-    <matplotlib.collections.PathCollection object at 0x7fbdd8bc50d0>
+    <matplotlib.collections.PathCollection object at 0x7fe04adedc10>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.185 seconds)
+   **Total running time of the script:** ( 0 minutes  2.402 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_contouring.py:

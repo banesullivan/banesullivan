@@ -23,25 +23,40 @@ Read a raster using xarray
 
 Use xarray and rasterio to load a raster into a StructuredGrid.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-35
-
-
-
-
-
-
+.. GENERATED FROM PYTHON SOURCE LINES 7-15
 
 .. code-block:: default
 
 
-    import pyvista as pv
-    import xarray as xr
     import numpy as np
+    import xarray as xr
+    from rasterio.warp import transform
+
+    import pyvista as pv
+    from pyvista import examples
 
 
-    def read_raster(filename):
-        """
-        Helpful: http://xarray.pydata.org/en/stable/auto_gallery/plot_rasterio.html
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 16-18
+
+The following is a function you can use to load just about any geospatial
+raster.
+
+.. GENERATED FROM PYTHON SOURCE LINES 18-49
+
+.. code-block:: default
+
+
+
+    def read_raster(filename, out_crs="EPSG:3857", use_z=False):
+        """Read a raster to a ``pyvista.StructuredGrid``.
+
+        This will handle coordinate transformations.
         """
         # Read in the data
         data = xr.open_rasterio(filename)
@@ -52,20 +67,127 @@ Use xarray and rasterio to load a raster into a StructuredGrid.
             values[nans] = np.nan
         # Make a mesh
         xx, yy = np.meshgrid(data["x"], data["y"])
-        zz = values.reshape(xx.shape)  # will make z-comp the values in the file
-        # zz = np.zeros_like(xx) # or this will make it flat
+        if use_z and values.shape[0] == 1:
+            # will make z-comp the values in the file
+            zz = values.reshape(xx.shape)
+        else:
+            # or this will make it flat
+            zz = np.zeros_like(xx)
         mesh = pv.StructuredGrid(xx, yy, zz)
-        mesh["data"] = values.ravel(order="F")
+        pts = mesh.points
+        lon, lat = transform(data.crs, out_crs, pts[:, 0], pts[:, 1])
+        mesh.points[:, 0] = lon
+        mesh.points[:, 1] = lat
+        mesh["data"] = values.reshape(mesh.n_points, -1, order="F")
         return mesh
 
 
-    # TODO: find raster we can use
-    # topo = read_raster('topography.tif')
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 50-51
+
+Download a sample GeoTiff to demonstrate
+
+.. GENERATED FROM PYTHON SOURCE LINES 51-53
+
+.. code-block:: default
+
+    path, _ = examples.downloads._download_file("Elevation.tif")
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 54-55
+
+Use the utility function to load that file.
+
+.. GENERATED FROM PYTHON SOURCE LINES 55-58
+
+.. code-block:: default
+
+    topo = read_raster(path, use_z=True)
+    topo
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /home/runner/work/mywebsite/mywebsite/pyvista-examples/raster.py:26: DeprecationWarning: open_rasterio is Deprecated in favor of rioxarray. For information about transitioning, see: https://corteva.github.io/rioxarray/stable/getting_started/getting_started.html
+      data = xr.open_rasterio(filename)
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+    <table>
+    <tr><th>StructuredGrid</th><th>Information</th></tr>
+    <tr><td>N Cells</td><td>8126580</td></tr>
+    <tr><td>N Points</td><td>8132409</td></tr>
+    <tr><td>X Bounds</td><td>-1.193e+07, -1.189e+07</td></tr>
+    <tr><td>Y Bounds</td><td>4.702e+06, 4.732e+06</td></tr>
+    <tr><td>Z Bounds</td><td>2.360e+03, 4.346e+03</td></tr>
+    <tr><td>Dimensions</td><td>2311, 3519, 1</td></tr>
+    <tr><td>N Arrays</td><td>1</td></tr>
+    </table>
+
+    </td><td>
+    <table>
+    <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
+    <tr><td><b>data</b></td><td>Points</td><td>float32</td><td>1</td><td>2.360e+03</td><td>4.346e+03</td></tr>
+    </table>
+
+    </td></tr> </table>
+    </div>
+    <br />
+    <br />
+
+.. GENERATED FROM PYTHON SOURCE LINES 59-60
+
+.. code-block:: default
+
+    topo.plot()
+
+
+
+.. image-sg:: /pyvista/examples/images/sphx_glr_raster_001.png
+   :alt: raster
+   :srcset: /pyvista/examples/images/sphx_glr_raster_001.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    [(-11859278.508325925, 4770099.150425197, 56337.06131672742),
+     (-11912262.633973707, 4717115.024777414, 3352.9356689453125),
+     (0.0, 0.0, 1.0)]
+
+
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.001 seconds)
+   **Total running time of the script:** ( 0 minutes  14.686 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_raster.py:
