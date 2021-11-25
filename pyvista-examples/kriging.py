@@ -49,7 +49,6 @@ p.add_mesh(
     render_points_as_spheres=True,
 )
 
-p.enable_depth_peeling()
 p.camera_position = [
     (315661.9406719345, 4234675.528454831, 15167.291249498076),
     (337498.00521202036, 4260818.504034578, -1261.5688408692681),
@@ -91,7 +90,6 @@ p.add_mesh(
     point_size=15,
     render_points_as_spheres=True,
 )
-p.enable_depth_peeling()
 p.camera_position = [
     (303509.4197523619, 4279629.689766085, 8053.049483835099),
     (336316.405356571, 4261479.748583805, -1756.358124546427),
@@ -194,7 +192,6 @@ def add_contents(p):
         stitle="Temperature (C)",
     )
 
-    p.enable_depth_peeling(20)
     return
 
 
