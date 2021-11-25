@@ -100,16 +100,6 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(962759.682893736, 4390399.944685736, 385481.9418857361),
-     (552532.741008, 3980173.0028, -24745.0),
-     (0.0, 0.0, 1.0)]
 
 
 
@@ -133,16 +123,6 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(962759.6918857361, 4390399.941885736, 385481.9418857361),
-     (552532.75, 3980173.0, -24745.0),
-     (0.0, 0.0, 1.0)]
 
 
 
@@ -168,16 +148,6 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(531554.5542909054, 3944331.800171338, 26563.04809259223),
-     (599088.1433822059, 3982089.287834022, -11965.14728669936),
-     (0.37385458924157344, 0.24431281037731903, 0.8947312427698894)]
 
 
 
@@ -233,16 +203,6 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(650212.2062091012, 4032352.4562091012, 42079.206209101285),
-     (600532.75, 3982673.0, -7600.25),
-     (0.0, 0.0, 1.0)]
 
 
 
@@ -263,16 +223,6 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(552782.0, 3980173.0, 705486.0238073843),
-     (552782.0, 3980173.0, 2297.55078125),
-     (0.0, 1.0, 0.0)]
 
 
 
@@ -307,23 +257,13 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(544065.5831913119, 3924518.576093113, 24324.3096344195),
-     (597885.1732914157, 3982998.0900773173, -12587.537450058662),
-     (0.3316271474071843, 0.2660948724491531, 0.9051060456978743)]
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  15.324 seconds)
+   **Total running time of the script:** ( 0 minutes  16.587 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_damavand.py:

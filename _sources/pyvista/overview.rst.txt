@@ -40,7 +40,7 @@ While the availability of software for data integration and management is limite
 .. table:: List of free 3D visualization software capable of handling complex geoscientific data or models.
 
     +--------------------+----------------+-----------------+-----------+
-    | Softwre            | API Complexity | Data Structures | Scripting |
+    | Software           | API Complexity | Data Structures | Scripting |
     +====================+================+=================+===========+
     | PyVista            | Low            | Yes             | Yes       |
     +--------------------+----------------+-----------------+-----------+

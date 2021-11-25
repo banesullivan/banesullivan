@@ -64,16 +64,6 @@ Pick a horizon along a 2.5D cross section of GPR imagery.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(-212.30873550953538, 359.730172722682, 59.10289856114311),
-     (9.6039882161056, 8.329846888337428, -0.5391548951008538),
-     (0.08754214189159452, -0.1127058489834577, 0.9897644997664596)]
 
 
 
@@ -121,19 +111,12 @@ See `enable_horizon_picking` for more details
             function.
     
         normal : tuple(float), optional
-            The normal to the horizon surface's projection plane
+            The normal to the horizon surface's projection plane.
     
         width : float, optional
             The width of the horizon surface. Default behaviour will
             dynamically change the surface width depending on its
             length.
-    
-        show_horizon : bool, optional
-            Show the picked horizon surface interactively.
-    
-        show_path : bool, optional
-            Show the picked path that the horizon is built from
-            interactively.
     
         show_message : bool or str, optional
             Show the message about how to use the horizon picking
@@ -142,28 +125,30 @@ See `enable_horizon_picking` for more details
         font_size : int, optional
             Sets the font size of the message.
     
+        color : str, optional
+            The color of the horizon surface if shown.
+    
         point_size : int, optional
             Size of picked points if ``show_horizon`` is
             ``True``. Default 10.
-    
-        color : str, optional
-            The color of the horizon surface if shown.
     
         line_width : float, optional
             Thickness of path representation if ``show_horizon`` is
             ``True``.  Default 5.
     
+        show_path : bool, optional
+            Show the picked path that the horizon is built from
+            interactively.
+    
         opacity : float, optional
             The opacity of the horizon surface if shown.
     
-        tolerance : float, optional
-            Specify tolerance for performing pick operation. Tolerance
-            is specified as fraction of rendering window
-            size. Rendering window size is measured across diagonal.
+        show_horizon : bool, optional
+            Show the picked horizon surface interactively.
     
-        kwargs : optional
+        **kwargs : dict, optional
             All remaining keyword arguments are used to control how
-            the picked path is interactively displayed
+            the picked path is interactively displayed.
 
 
 
@@ -172,7 +157,7 @@ See `enable_horizon_picking` for more details
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.969 seconds)
+   **Total running time of the script:** ( 0 minutes  5.176 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_horizon-picking.py:

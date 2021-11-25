@@ -223,6 +223,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="fault_mask.html">
+     Masked Grid for Two Sides of a Fault
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="geological-map.html">
      Geological Map on Topography
     </a>
@@ -389,13 +394,7 @@ the <code class="xref py py-func docutils literal notranslate"><span class="pre"
 <span class="n">subset</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="s2">&quot;xy&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_terrain-mesh_001.png" srcset="../../_images/sphx_glr_terrain-mesh_001.png" alt="terrain mesh" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(1820500.0, 5649000.0, 16392.304845413266),
- (1820500.0, 5649000.0, 0.0),
- (0.0, 1.0, 0.0)]
-</pre></div>
-</div>
-<p>Now that we have a region of interest for our terrain following mesh, lets
+<img src="../../_images/sphx_glr_terrain-mesh_001.png" srcset="../../_images/sphx_glr_terrain-mesh_001.png" alt="terrain mesh" class = "sphx-glr-single-img"/><p>Now that we have a region of interest for our terrain following mesh, lets
 make a 3D surface of that DEM:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="o">=</span> <span class="n">subset</span><span class="o">.</span><span class="n">warp_by_scalar</span><span class="p">()</span>
 <span class="n">terrain</span>
@@ -426,13 +425,7 @@ make a 3D surface of that DEM:</p>
 <br /><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_terrain-mesh_002.png" srcset="../../_images/sphx_glr_terrain-mesh_002.png" alt="terrain mesh" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(1830079.2876189426, 5658579.287618943, 11684.58760673553),
- (1820500.0, 5649000.0, 2105.2999877929688),
- (0.0, 0.0, 1.0)]
-</pre></div>
-</div>
-<p>And now we have a 3D structured surface of the terrain! We can now extend
+<img src="../../_images/sphx_glr_terrain-mesh_002.png" srcset="../../_images/sphx_glr_terrain-mesh_002.png" alt="terrain mesh" class = "sphx-glr-single-img"/><p>And now we have a 3D structured surface of the terrain! We can now extend
 that structured surface into a 3D mesh to form a terrain following grid.
 To do this, we first our cell spacings in the z-direction (these start
 from the terrain surface). Then we repeat the XYZ structured coordinates
@@ -443,9 +436,7 @@ Once we have those structured coordinates, we can create a
 
 <span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">terrain</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">z_cells</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">terrain</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">z_cells</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">zz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">terrain</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">z_cells</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">z_cells</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span>
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="p">)</span>
+<span class="n">zz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">terrain</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">z_cells</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">z_cells</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 
 <span class="n">mesh</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">StructuredGrid</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">zz</span><span class="p">)</span>
 <span class="n">mesh</span><span class="p">[</span><span class="s2">&quot;Elevation&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zz</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>
@@ -483,13 +474,7 @@ Once we have those structured coordinates, we can create a
 <span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">lighting</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="n">cpos</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_terrain-mesh_003.png" srcset="../../_images/sphx_glr_terrain-mesh_003.png" alt="terrain mesh" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(1826736.796308761, 5655837.275274233, 4676.8405505181745),
- (1821066.1790519988, 5649248.765538796, 943.0995128226014),
- (-0.27978562253809786, -0.2796694633759488, 0.9184252809434079)]
-</pre></div>
-</div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.176 seconds)</p>
+<img src="../../_images/sphx_glr_terrain-mesh_003.png" srcset="../../_images/sphx_glr_terrain-mesh_003.png" alt="terrain mesh" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.843 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-terrain-mesh-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/d5fee3b90fb3957a0776f80b50fba230/terrain-mesh.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">terrain-mesh.py</span></code></a></p>

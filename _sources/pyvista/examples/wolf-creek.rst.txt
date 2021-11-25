@@ -65,7 +65,9 @@ Load the project into an :class:`pyvista.MultiBlock` dataset
 
  .. code-block:: none
 
-    MultiBlock (0x7f3223b65ad0)
+    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/core/dataset.py:1335: PyvistaDeprecationWarning: Use of `cell_arrays` is deprecated. Use `cell_data` instead.
+      PyvistaDeprecationWarning
+    MultiBlock (0x7f66ac839c90)
       N Blocks:     9
       X Bounds:     443941.105, 447059.611
       Y Bounds:     491941.536, 495059.859
@@ -98,16 +100,6 @@ visualization from ``pyvista``:
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(450605.70583080064, 498606.04540880054, 8048.318718998364),
-     (445500.3579790001, 493500.697557, 2942.97086719778),
-     (0.0, 0.0, 1.0)]
 
 
 
@@ -161,16 +153,6 @@ project:
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(445542.1943310096, 491993.83439313783, 2319.4833541935445),
-     (445279.0538059701, 493496.6896061105, 2751.562316285356),
-     (-0.03677380086746433, -0.2820672798388477, 0.9586895937758338)]
 
 
 
@@ -197,7 +179,7 @@ Then apply a filtering tool from ``pyvista`` to the volumetric data:
 
  .. code-block:: none
 
-    UnstructuredGrid (0x7f322215a130)
+    UnstructuredGrid (0x7f66aaedf9f0)
       N Cells:      92525
       N Points:     107807
       X Bounds:     4.447e+05, 4.457e+05
@@ -250,23 +232,13 @@ Then you can put it all in one environment!
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(446842.54037898243, 492089.0563631193, 3229.5037597889404),
-     (445265.2503466077, 493747.3230470255, 2799.8853219866005),
-     (-0.10728419235836695, 0.1524885965210015, 0.9824649255831316)]
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.060 seconds)
+   **Total running time of the script:** ( 0 minutes  21.578 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_wolf-creek.py:

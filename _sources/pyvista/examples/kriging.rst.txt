@@ -70,6 +70,15 @@ For this project, we have two data archives in the `Open Mining Format (OMF) <ht
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/core/dataset.py:1335: PyvistaDeprecationWarning: Use of `cell_arrays` is deprecated. Use `cell_data` instead.
+      PyvistaDeprecationWarning
+
 
 .. raw:: html
 
@@ -107,15 +116,13 @@ Initial Inspection
 
 Now we can go ahead and create an integrated visualization of all of the data available to us.
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-63
+.. GENERATED FROM PYTHON SOURCE LINES 38-61
 
 .. code-block:: default
 
 
     p = pv.Plotter(window_size=np.array([1024, 768]) * 2)
-    p.add_mesh(
-        project["Site Boundary"], color="yellow", render_lines_as_tubes=True, line_width=10
-    )
+    p.add_mesh(project["Site Boundary"], color="yellow", render_lines_as_tubes=True, line_width=10)
     p.add_mesh(project["Terrain"], texture="geo_aer", opacity=0.7, lighting=False)
     p.add_mesh(project["Opal Mound Fault"], color="brown", opacity=0.7)
     p.add_mesh(project["Negro Mag Fault"], color="lightblue", opacity=0.7)
@@ -145,34 +152,24 @@ Now we can go ahead and create an integrated visualization of all of the data av
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(315661.9406719345, 4234675.528454831, 15167.291249498076),
-     (337498.00521202036, 4260818.504034578, -1261.5688408692681),
-     (0.2708862567924439, 0.3397398234107863, 0.9006650255615491)]
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-68
+.. GENERATED FROM PYTHON SOURCE LINES 62-66
 
 Kriging
 +++++++
 
 Now we will use an external library, [`gstools`](https://geostat-framework.github.io), to krige the temperature probe data into a 3D temperature model of the subsurface.
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-74
+.. GENERATED FROM PYTHON SOURCE LINES 68-72
 
 Choosing a Model Space
 ^^^^^^^^^^^^^^^^^^^^^^
 
 We start out by creating the 3D model space as a PyVista `UniformGrid` that encompasses the project region. The following were chosen manually:
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-84
+.. GENERATED FROM PYTHON SOURCE LINES 72-82
 
 .. code-block:: default
 
@@ -183,7 +180,7 @@ We start out by creating the 3D model space as a PyVista `UniformGrid` that enco
     grid.origin = (329700, 4252600, -2700)
     # Cell sizes
     grid.spacing = (250, 250, 50)
-    # Number of cells in eaxh direction
+    # Number of cells in each direction
     grid.dimensions = (60, 75, 100)
 
 
@@ -193,11 +190,11 @@ We start out by creating the 3D model space as a PyVista `UniformGrid` that enco
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-86
+.. GENERATED FROM PYTHON SOURCE LINES 83-84
 
 Visually inspect the kriging grid in relation to data
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-104
+.. GENERATED FROM PYTHON SOURCE LINES 84-102
 
 .. code-block:: default
 
@@ -234,7 +231,7 @@ Visually inspect the kriging grid in relation to data
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1360: PyvistaDeprecationWarning: 
+    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1795: PyvistaDeprecationWarning: 
     "stitle" is a depreciated keyword and will be removed in a future
     release.
 
@@ -244,20 +241,17 @@ Visually inspect the kriging grid in relation to data
 
       warnings.warn(USE_SCALAR_BAR_ARGS, PyvistaDeprecationWarning)
 
-    [(303509.4197523619, 4279629.689766085, 8053.049483835099),
-     (336316.405356571, 4261479.748583805, -1756.358124546427),
-     (0.22299463811939538, -0.11978828465250714, 0.967431733110926)]
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-109
+.. GENERATED FROM PYTHON SOURCE LINES 103-107
 
 Variogram Analysis
 ^^^^^^^^^^^^^^^^^^
 
 Next, we need to compute a variogram for the temperature probe data and fit that variogram to an exponential model
 
-.. GENERATED FROM PYTHON SOURCE LINES 109-128
+.. GENERATED FROM PYTHON SOURCE LINES 107-126
 
 .. code-block:: default
 
@@ -292,13 +286,13 @@ Next, we need to compute a variogram for the temperature probe data and fit that
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 129-132
+.. GENERATED FROM PYTHON SOURCE LINES 127-130
 
 Performing the Kriging
 ^^^^^^^^^^^^^^^^^^^^^^
 Then we pass the fitted exponential model when instantiating the kriging operator from GSTools.
 
-.. GENERATED FROM PYTHON SOURCE LINES 132-140
+.. GENERATED FROM PYTHON SOURCE LINES 130-138
 
 .. code-block:: default
 
@@ -317,11 +311,11 @@ Then we pass the fitted exponential model when instantiating the kriging operato
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-142
+.. GENERATED FROM PYTHON SOURCE LINES 139-140
 
 After instantiating the kriging operator, we can have it operate on the nodes of our 3D grid that we created earlier and collect the results back onto the grid.
 
-.. GENERATED FROM PYTHON SOURCE LINES 142-147
+.. GENERATED FROM PYTHON SOURCE LINES 140-145
 
 .. code-block:: default
 
@@ -341,22 +335,23 @@ After instantiating the kriging operator, we can have it operate on the nodes of
  .. code-block:: none
 
 
-    (array([116.47386304, 117.61531029, 118.68674383, ...,  38.13857775,
-            39.54712007,  40.95017153]), array([8097.95117939, 7671.5082001 , 7233.81720123, ..., 8755.23366923,
-           9108.55575257, 9445.18884886]))
+    (array([116.47008157, 117.61158345, 118.68310243, ...,  38.15069459,
+            39.5596414 ,  40.96307076]), array([8098.01350521, 7671.63868665, 7234.00736005, ..., 8755.16955356,
+           9108.41407123, 9444.96476497]))
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 148-149
+.. GENERATED FROM PYTHON SOURCE LINES 146-147
 
 And now the `grid` model has the temperature scalar field and kriging variance as data arrays.
 
-.. GENERATED FROM PYTHON SOURCE LINES 149-153
+.. GENERATED FROM PYTHON SOURCE LINES 147-152
 
 .. code-block:: default
 
 
     project["Kriged Temperature Model"] = grid
+    project
 
 
 
@@ -364,16 +359,44 @@ And now the `grid` model has the temperature scalar field and kriging variance a
 
 
 
+.. raw:: html
 
+    <div class="output_subarea output_html rendered_html output_result">
+    <table><tr><th>Information</th><th>Blocks</th></tr><tr><td>
+    <table>
+    <tr><th>MultiBlock</th><th>Values</th></tr>
+    <tr><td>N Blocks</td><td>8</td></tr>
+    <tr><td>X Bounds</td><td>329700.000, 344450.000</td></tr>
+    <tr><td>Y Bounds</td><td>4252600.000, 4271100.000</td></tr>
+    <tr><td>Z Bounds</td><td>-2700.000, 2906.000</td></tr>
+    </table>
 
-.. GENERATED FROM PYTHON SOURCE LINES 154-158
+    </td><td>
+    <table>
+    <tr><th>Index</th><th>Name</th><th>Type</th></tr>
+    <tr><th>0</th><th>Terrain</th><th>PolyData</th></tr>
+    <tr><th>1</th><th>Opal Mound Fault</th><th>PolyData</th></tr>
+    <tr><th>2</th><th>Negro Mag Fault</th><th>PolyData</th></tr>
+    <tr><th>3</th><th>Top of Basement</th><th>PolyData</th></tr>
+    <tr><th>4</th><th>Site Boundary</th><th>PolyData</th></tr>
+    <tr><th>5</th><th>Observed Temperature</th><th>PolyData</th></tr>
+    <tr><th>6</th><th>Observed Gravity</th><th>PolyData</th></tr>
+    <tr><th>7</th><th>Kriged Temperature Model</th><th>UniformGrid</th></tr>
+    </table>
+
+    </td></tr> </table>
+    </div>
+    <br />
+    <br />
+
+.. GENERATED FROM PYTHON SOURCE LINES 153-157
 
 Post-Processing
 +++++++++++++++
 
 We can use a filter from PVGeo to extract the region of the temperature model that is beneath the topography surface as the kriging did not account for the surface boundary.
 
-.. GENERATED FROM PYTHON SOURCE LINES 158-164
+.. GENERATED FROM PYTHON SOURCE LINES 157-163
 
 .. code-block:: default
 
@@ -390,12 +413,12 @@ We can use a filter from PVGeo to extract the region of the temperature model th
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 165-167
+.. GENERATED FROM PYTHON SOURCE LINES 164-166
 
 Resulting Visualization
 +++++++++++++++++++++++
 
-.. GENERATED FROM PYTHON SOURCE LINES 167-213
+.. GENERATED FROM PYTHON SOURCE LINES 166-212
 
 .. code-block:: default
 
@@ -413,7 +436,7 @@ Resulting Visualization
         p.add_mesh(project["Negro Mag Fault"], color="lightblue", opacity=0.75)
 
         p.add_mesh(
-            subsurface.ctp().contour([175, 225]),
+            subsurface.ctp().contour([175, 225], scalars='temperature (C)'),
             name="the model",
             scalars="temperature (C)",
             cmap="coolwarm",
@@ -460,7 +483,7 @@ Resulting Visualization
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1360: PyvistaDeprecationWarning: 
+    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1795: PyvistaDeprecationWarning: 
     "stitle" is a depreciated keyword and will be removed in a future
     release.
 
@@ -470,16 +493,13 @@ Resulting Visualization
 
       warnings.warn(USE_SCALAR_BAR_ARGS, PyvistaDeprecationWarning)
 
-    [(319663.46494887985, 4294870.4704494225, -8787.973684799075),
-     (336926.4650625, 4261892.29012, 103.0),
-     (-0.09983848586767285, 0.20995262898057368, 0.9726007250273856)]
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  24.158 seconds)
+   **Total running time of the script:** ( 2 minutes  33.698 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_kriging.py:

@@ -223,6 +223,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="fault_mask.html">
+     Masked Grid for Two Sides of a Fault
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="geological-map.html">
      Geological Map on Topography
     </a>
@@ -383,7 +388,7 @@ to download the full example code</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_topo-map_001.png" srcset="../../_images/sphx_glr_topo-map_001.png" alt="topo map" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f322225ff10&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f66aaeba590&gt;
 </pre></div>
 </div>
 <p>Once you have a topography mesh loaded as a surface mesh
@@ -424,23 +429,11 @@ method, then you can map that imagery to the surface mesh as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">local</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">texture</span><span class="o">=</span><span class="n">topo_map</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s2">&quot;xy&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_topo-map_002.png" srcset="../../_images/sphx_glr_topo-map_002.png" alt="topo map" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(1821250.0, 5648752.5, 21483.021812796094),
- (1821250.0, 5648752.5, 2084.1749267578125),
- (0.0, 1.0, 0.0)]
-</pre></div>
-</div>
-<p>And here is a 3D perspective!</p>
+<img src="../../_images/sphx_glr_topo-map_002.png" srcset="../../_images/sphx_glr_topo-map_002.png" alt="topo map" class = "sphx-glr-single-img"/><p>And here is a 3D perspective!</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">local</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">texture</span><span class="o">=</span><span class="n">topo_map</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_topo-map_003.png" srcset="../../_images/sphx_glr_topo-map_003.png" alt="topo map" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(1832449.9294716225, 5659952.429471622, 13284.10439838035),
- (1821250.0, 5648752.5, 2084.1749267578125),
- (0.0, 0.0, 1.0)]
-</pre></div>
-</div>
-<p>We could also display the entire region by extracting the surrounding region
+<img src="../../_images/sphx_glr_topo-map_003.png" srcset="../../_images/sphx_glr_topo-map_003.png" alt="topo map" class = "sphx-glr-single-img"/><p>We could also display the entire region by extracting the surrounding region
 and plotting the texture mapped local topography and the outside area</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract surrounding region from elevation data</span>
 <span class="n">surrounding</span> <span class="o">=</span> <span class="n">elevation</span><span class="o">.</span><span class="n">clip_box</span><span class="p">(</span><span class="n">bounds</span><span class="p">,</span> <span class="n">invert</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -458,13 +451,7 @@ and plotting the texture mapped local topography and the outside area</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_topo-map_004.png" srcset="../../_images/sphx_glr_topo-map_004.png" alt="topo map" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(1831100.0, 5642142.0, 8168.0),
- (1820841.0, 5648745.0, 1104.0),
- (-0.43522768363338804, 0.24812980584156377, 0.8654527502135188)]
-</pre></div>
-</div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  27.916 seconds)</p>
+<img src="../../_images/sphx_glr_topo-map_004.png" srcset="../../_images/sphx_glr_topo-map_004.png" alt="topo map" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  27.821 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-topo-map-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/951ef07a09e0813ab67feedafb5cbafd/topo-map.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">topo-map.py</span></code></a></p>

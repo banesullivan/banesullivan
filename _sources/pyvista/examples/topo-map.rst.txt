@@ -101,7 +101,7 @@ Let's inspect the imagery that we just loaded
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f322225ff10>
+    <matplotlib.image.AxesImage object at 0x7f66aaeba590>
 
 
 
@@ -174,16 +174,6 @@ Now display it! Note that the imagery is aligned as we expect.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(1821250.0, 5648752.5, 21483.021812796094),
-     (1821250.0, 5648752.5, 2084.1749267578125),
-     (0.0, 1.0, 0.0)]
 
 
 
@@ -206,16 +196,6 @@ And here is a 3D perspective!
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(1832449.9294716225, 5659952.429471622, 13284.10439838035),
-     (1821250.0, 5648752.5, 2084.1749267578125),
-     (0.0, 0.0, 1.0)]
 
 
 
@@ -252,23 +232,13 @@ and plotting the texture mapped local topography and the outside area
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(1831100.0, 5642142.0, 8168.0),
-     (1820841.0, 5648745.0, 1104.0),
-     (-0.43522768363338804, 0.24812980584156377, 0.8654527502135188)]
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  27.916 seconds)
+   **Total running time of the script:** ( 0 minutes  27.821 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_topo-map.py:

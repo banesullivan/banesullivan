@@ -159,6 +159,15 @@ Map the texture to the mesh.
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/core/dataset.py:497: PyvistaDeprecationWarning: Use of `DataSet.t_coords` is deprecated. Use `DataSet.active_t_coords` instead.
+      PyvistaDeprecationWarning
+
 
 
 
@@ -203,23 +212,13 @@ Plot it up!
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(32361897.379640546, 5777033.66791174, 341.48314909204873),
-     (32366747.758752592, 5766374.637744438, -1142.521946006218),
-     (0.047926147231751065, -0.11631040130754997, 0.9920559333823861)]
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.407 seconds)
+   **Total running time of the script:** ( 0 minutes  3.113 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_cross-section-simple.py:

@@ -223,6 +223,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="fault_mask.html">
+     Masked Grid for Two Sides of a Fault
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="geological-map.html">
      Geological Map on Topography
     </a>
@@ -377,13 +382,7 @@ to download the full example code</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_damavand_001.png" srcset="../../_images/sphx_glr_damavand_001.png" alt="damavand" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(962759.682893736, 4390399.944685736, 385481.9418857361),
- (552532.741008, 3980173.0028, -24745.0),
- (0.0, 0.0, 1.0)]
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">voi</span> <span class="o">=</span> <span class="n">gebco</span><span class="o">.</span><span class="n">extract_subset</span><span class="p">([</span><span class="mi">175</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">132</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">170</span><span class="p">])</span>
+<img src="../../_images/sphx_glr_damavand_001.png" srcset="../../_images/sphx_glr_damavand_001.png" alt="damavand" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">voi</span> <span class="o">=</span> <span class="n">gebco</span><span class="o">.</span><span class="n">extract_subset</span><span class="p">([</span><span class="mi">175</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">132</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">170</span><span class="p">])</span>
 
 <span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
 <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">gebco</span><span class="o">.</span><span class="n">outline</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
@@ -391,13 +390,7 @@ to download the full example code</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_damavand_002.png" srcset="../../_images/sphx_glr_damavand_002.png" alt="damavand" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(962759.6918857361, 4390399.941885736, 385481.9418857361),
- (552532.75, 3980173.0, -24745.0),
- (0.0, 0.0, 1.0)]
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<img src="../../_images/sphx_glr_damavand_002.png" srcset="../../_images/sphx_glr_damavand_002.png" alt="damavand" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
 <span class="n">p</span><span class="o">.</span><span class="n">add_volume</span><span class="p">(</span><span class="n">voi</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;magma&quot;</span><span class="p">,</span> <span class="n">clim</span><span class="o">=</span><span class="n">clim</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="n">opacity</span><span class="p">,</span> <span class="n">opacity_unit_distance</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">(</span><span class="mf">531554.5542909054</span><span class="p">,</span> <span class="mf">3944331.800171338</span><span class="p">,</span> <span class="mf">26563.04809259223</span><span class="p">),</span>
@@ -407,13 +400,7 @@ to download the full example code</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_damavand_003.png" srcset="../../_images/sphx_glr_damavand_003.png" alt="damavand" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(531554.5542909054, 3944331.800171338, 26563.04809259223),
- (599088.1433822059, 3982089.287834022, -11965.14728669936),
- (0.37385458924157344, 0.24431281037731903, 0.8947312427698894)]
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">contours</span> <span class="o">=</span> <span class="n">voi</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<img src="../../_images/sphx_glr_damavand_003.png" srcset="../../_images/sphx_glr_damavand_003.png" alt="damavand" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">contours</span> <span class="o">=</span> <span class="n">voi</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="n">contours</span>
 </pre></div>
 </div>
@@ -441,24 +428,12 @@ to download the full example code</p>
 <br /><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">contours</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;nipy_spectral&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_damavand_004.png" srcset="../../_images/sphx_glr_damavand_004.png" alt="damavand" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(650212.2062091012, 4032352.4562091012, 42079.206209101285),
- (600532.75, 3982673.0, -7600.25),
- (0.0, 0.0, 1.0)]
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">roi</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="n">voi</span><span class="o">.</span><span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="o">*</span><span class="n">aoi</span><span class="o">.</span><span class="n">bounds</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]]</span>
+<img src="../../_images/sphx_glr_damavand_004.png" srcset="../../_images/sphx_glr_damavand_004.png" alt="damavand" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">roi</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="n">voi</span><span class="o">.</span><span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="o">*</span><span class="n">aoi</span><span class="o">.</span><span class="n">bounds</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]]</span>
 <span class="n">aoi_clipped</span> <span class="o">=</span> <span class="n">aoi</span><span class="o">.</span><span class="n">clip_box</span><span class="p">(</span><span class="n">roi</span><span class="p">,</span> <span class="n">invert</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">pv</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">aoi</span><span class="p">,</span> <span class="n">pv</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">roi</span><span class="p">)</span><span class="o">.</span><span class="n">outline</span><span class="p">()],</span> <span class="n">cpos</span><span class="o">=</span><span class="s2">&quot;xy&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_damavand_005.png" srcset="../../_images/sphx_glr_damavand_005.png" alt="damavand" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(552782.0, 3980173.0, 705486.0238073843),
- (552782.0, 3980173.0, 2297.55078125),
- (0.0, 1.0, 0.0)]
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">window_size</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">768</span><span class="p">])</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<img src="../../_images/sphx_glr_damavand_005.png" srcset="../../_images/sphx_glr_damavand_005.png" alt="damavand" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">window_size</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">768</span><span class="p">])</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="c1"># Add all the data we want to see</span>
 <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">contours</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;nipy_spectral&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
@@ -478,13 +453,7 @@ to download the full example code</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_damavand_006.png" srcset="../../_images/sphx_glr_damavand_006.png" alt="damavand" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(544065.5831913119, 3924518.576093113, 24324.3096344195),
- (597885.1732914157, 3982998.0900773173, -12587.537450058662),
- (0.3316271474071843, 0.2660948724491531, 0.9051060456978743)]
-</pre></div>
-</div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  15.324 seconds)</p>
+<img src="../../_images/sphx_glr_damavand_006.png" srcset="../../_images/sphx_glr_damavand_006.png" alt="damavand" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  16.587 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-damavand-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/82482fcd8f6b4e319a9e5952d336a2a6/damavand.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">damavand.py</span></code></a></p>

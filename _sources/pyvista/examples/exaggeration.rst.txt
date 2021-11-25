@@ -102,7 +102,7 @@ Load data files using PVGeo
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1360: PyvistaDeprecationWarning: 
+    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1795: PyvistaDeprecationWarning: 
     "stitle" is a depreciated keyword and will be removed in a future
     release.
 
@@ -112,9 +112,6 @@ Load data files using PVGeo
 
       warnings.warn(USE_SCALAR_BAR_ARGS, PyvistaDeprecationWarning)
 
-    [(259020.43748942937, 5129530.509280042, 13023.703775334989),
-     (270665.9132071607, 5119041.602718343, -837.0133710551552),
-     (0.39114802616415034, -0.5453684907934401, 0.7413342234630576)]
 
 
 
@@ -142,7 +139,7 @@ Load data files using PVGeo
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1360: PyvistaDeprecationWarning: 
+    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1795: PyvistaDeprecationWarning: 
     "stitle" is a depreciated keyword and will be removed in a future
     release.
 
@@ -152,16 +149,13 @@ Load data files using PVGeo
 
       warnings.warn(USE_SCALAR_BAR_ARGS, PyvistaDeprecationWarning)
 
-    [(293224.7554334926, 5139900.025933493, 4912.309886698521),
-     (271629.4835, 5118304.754000001, 593.2555000000001),
-     (0.0, 0.0, 1.0)]
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.656 seconds)
+   **Total running time of the script:** ( 0 minutes  4.942 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_exaggeration.py:

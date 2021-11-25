@@ -85,23 +85,13 @@ Seee also https://pvgeo.org/examples/filters-general/voxelize-points.html#voxeli
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(79.33386539265953, 67.31649454630514, 34.0649093635989),
-     (35.68180551703578, 60.72062545602169, 29.136616698279703),
-     (-0.11000016621558598, -0.014573551603326724, 0.9938247204744953)]
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.120 seconds)
+   **Total running time of the script:** ( 0 minutes  2.066 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_voxelize.py:

@@ -93,6 +93,15 @@ Create PyVista mesh
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/core/dataset.py:1335: PyvistaDeprecationWarning: Use of `cell_arrays` is deprecated. Use `cell_data` instead.
+      PyvistaDeprecationWarning
+
 
 
 
@@ -114,23 +123,13 @@ Visualize!
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(24605657978.40834, 24605657978.40834, 24605657978.40834),
-     (0.0, 0.0, 0.0),
-     (0.0, 0.0, 1.0)]
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.926 seconds)
+   **Total running time of the script:** ( 0 minutes  1.600 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_spherical.py:

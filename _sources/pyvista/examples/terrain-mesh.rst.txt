@@ -118,16 +118,6 @@ the :func:`pyvista.UniformGridFilters.extract_subset` filter:
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(1820500.0, 5649000.0, 16392.304845413266),
-     (1820500.0, 5649000.0, 0.0),
-     (0.0, 1.0, 0.0)]
 
 
 
@@ -190,16 +180,6 @@ make a 3D surface of that DEM:
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(1830079.2876189426, 5658579.287618943, 11684.58760673553),
-     (1820500.0, 5649000.0, 2105.2999877929688),
-     (0.0, 0.0, 1.0)]
 
 
 
@@ -213,7 +193,7 @@ of the terrain mesh and decrease each Z level by our Z cell spacing.
 Once we have those structured coordinates, we can create a
 :class:`pyvista.StructuredGrid`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-69
+.. GENERATED FROM PYTHON SOURCE LINES 56-67
 
 .. code-block:: default
 
@@ -222,9 +202,7 @@ Once we have those structured coordinates, we can create a
 
     xx = np.repeat(terrain.x, len(z_cells), axis=-1)
     yy = np.repeat(terrain.y, len(z_cells), axis=-1)
-    zz = np.repeat(terrain.z, len(z_cells), axis=-1) - np.cumsum(z_cells).reshape(
-        (1, 1, -1)
-    )
+    zz = np.repeat(terrain.z, len(z_cells), axis=-1) - np.cumsum(z_cells).reshape((1, 1, -1))
 
     mesh = pv.StructuredGrid(xx, yy, zz)
     mesh["Elevation"] = zz.ravel(order="F")
@@ -261,7 +239,7 @@ Once we have those structured coordinates, we can create a
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-77
+.. GENERATED FROM PYTHON SOURCE LINES 68-75
 
 .. code-block:: default
 
@@ -281,23 +259,13 @@ Once we have those structured coordinates, we can create a
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(1826736.796308761, 5655837.275274233, 4676.8405505181745),
-     (1821066.1790519988, 5649248.765538796, 943.0995128226014),
-     (-0.27978562253809786, -0.2796694633759488, 0.9184252809434079)]
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.176 seconds)
+   **Total running time of the script:** ( 0 minutes  5.843 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_terrain-mesh.py:

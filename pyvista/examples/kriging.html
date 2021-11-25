@@ -223,6 +223,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="fault_mask.html">
+     Masked Grid for Two Sides of a Fault
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="geological-map.html">
      Geological Map on Topography
     </a>
@@ -408,6 +413,11 @@ The open-source, Python software <a class="reference external" href="https://geo
 <span class="n">project</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/core/dataset.py:1335: PyvistaDeprecationWarning: Use of `cell_arrays` is deprecated. Use `cell_data` instead.
+  PyvistaDeprecationWarning
+</pre></div>
+</div>
 <div class="output_subarea output_html rendered_html output_result">
 <table><tr><th>Information</th><th>Blocks</th></tr><tr><td>
 <table>
@@ -438,9 +448,7 @@ The open-source, Python software <a class="reference external" href="https://geo
 <h2>Initial Inspection</h2>
 <p>Now we can go ahead and create an integrated visualization of all of the data available to us.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">window_size</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">768</span><span class="p">])</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span>
-    <span class="n">project</span><span class="p">[</span><span class="s2">&quot;Site Boundary&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="n">render_lines_as_tubes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">10</span>
-<span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">project</span><span class="p">[</span><span class="s2">&quot;Site Boundary&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="n">render_lines_as_tubes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">project</span><span class="p">[</span><span class="s2">&quot;Terrain&quot;</span><span class="p">],</span> <span class="n">texture</span><span class="o">=</span><span class="s2">&quot;geo_aer&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">lighting</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">project</span><span class="p">[</span><span class="s2">&quot;Opal Mound Fault&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;brown&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">project</span><span class="p">[</span><span class="s2">&quot;Negro Mag Fault&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
@@ -461,13 +469,7 @@ The open-source, Python software <a class="reference external" href="https://geo
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_kriging_001.png" srcset="../../_images/sphx_glr_kriging_001.png" alt="kriging" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(315661.9406719345, 4234675.528454831, 15167.291249498076),
- (337498.00521202036, 4260818.504034578, -1261.5688408692681),
- (0.2708862567924439, 0.3397398234107863, 0.9006650255615491)]
-</pre></div>
-</div>
-</section>
+<img src="../../_images/sphx_glr_kriging_001.png" srcset="../../_images/sphx_glr_kriging_001.png" alt="kriging" class = "sphx-glr-single-img"/></section>
 <section id="kriging">
 <h2>Kriging</h2>
 <p>Now we will use an external library, [<cite>gstools</cite>](<a class="reference external" href="https://geostat-framework.github.io">https://geostat-framework.github.io</a>), to krige the temperature probe data into a 3D temperature model of the subsurface.</p>
@@ -480,7 +482,7 @@ The open-source, Python software <a class="reference external" href="https://geo
 <span class="n">grid</span><span class="o">.</span><span class="n">origin</span> <span class="o">=</span> <span class="p">(</span><span class="mi">329700</span><span class="p">,</span> <span class="mi">4252600</span><span class="p">,</span> <span class="o">-</span><span class="mi">2700</span><span class="p">)</span>
 <span class="c1"># Cell sizes</span>
 <span class="n">grid</span><span class="o">.</span><span class="n">spacing</span> <span class="o">=</span> <span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-<span class="c1"># Number of cells in eaxh direction</span>
+<span class="c1"># Number of cells in each direction</span>
 <span class="n">grid</span><span class="o">.</span><span class="n">dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -505,7 +507,7 @@ The open-source, Python software <a class="reference external" href="https://geo
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_kriging_002.png" srcset="../../_images/sphx_glr_kriging_002.png" alt="kriging" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1360: PyvistaDeprecationWarning:
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1795: PyvistaDeprecationWarning:
 &quot;stitle&quot; is a depreciated keyword and will be removed in a future
 release.
 
@@ -514,10 +516,6 @@ Use ``scalar_bar_args`` instead.  For example:
 scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
 
   warnings.warn(USE_SCALAR_BAR_ARGS, PyvistaDeprecationWarning)
-
-[(303509.4197523619, 4279629.689766085, 8053.049483835099),
- (336316.405356571, 4261479.748583805, -1756.358124546427),
- (0.22299463811939538, -0.11978828465250714, 0.967431733110926)]
 </pre></div>
 </div>
 </section>
@@ -563,16 +561,43 @@ scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(array([116.47386304, 117.61531029, 118.68674383, ...,  38.13857775,
-        39.54712007,  40.95017153]), array([8097.95117939, 7671.5082001 , 7233.81720123, ..., 8755.23366923,
-       9108.55575257, 9445.18884886]))
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(array([116.47008157, 117.61158345, 118.68310243, ...,  38.15069459,
+        39.5596414 ,  40.96307076]), array([8098.01350521, 7671.63868665, 7234.00736005, ..., 8755.16955356,
+       9108.41407123, 9444.96476497]))
 </pre></div>
 </div>
 <p>And now the <cite>grid</cite> model has the temperature scalar field and kriging variance as data arrays.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">project</span><span class="p">[</span><span class="s2">&quot;Kriged Temperature Model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">grid</span>
+<span class="n">project</span>
 </pre></div>
 </div>
-</section>
+<div class="output_subarea output_html rendered_html output_result">
+<table><tr><th>Information</th><th>Blocks</th></tr><tr><td>
+<table>
+<tr><th>MultiBlock</th><th>Values</th></tr>
+<tr><td>N Blocks</td><td>8</td></tr>
+<tr><td>X Bounds</td><td>329700.000, 344450.000</td></tr>
+<tr><td>Y Bounds</td><td>4252600.000, 4271100.000</td></tr>
+<tr><td>Z Bounds</td><td>-2700.000, 2906.000</td></tr>
+</table>
+
+</td><td>
+<table>
+<tr><th>Index</th><th>Name</th><th>Type</th></tr>
+<tr><th>0</th><th>Terrain</th><th>PolyData</th></tr>
+<tr><th>1</th><th>Opal Mound Fault</th><th>PolyData</th></tr>
+<tr><th>2</th><th>Negro Mag Fault</th><th>PolyData</th></tr>
+<tr><th>3</th><th>Top of Basement</th><th>PolyData</th></tr>
+<tr><th>4</th><th>Site Boundary</th><th>PolyData</th></tr>
+<tr><th>5</th><th>Observed Temperature</th><th>PolyData</th></tr>
+<tr><th>6</th><th>Observed Gravity</th><th>PolyData</th></tr>
+<tr><th>7</th><th>Kriged Temperature Model</th><th>UniformGrid</th></tr>
+</table>
+
+</td></tr> </table>
+</div>
+<br />
+<br /></section>
 </section>
 <section id="post-processing">
 <h2>Post-Processing</h2>
@@ -599,7 +624,7 @@ scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
     <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">project</span><span class="p">[</span><span class="s2">&quot;Negro Mag Fault&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
 
     <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span>
-        <span class="n">subsurface</span><span class="o">.</span><span class="n">ctp</span><span class="p">()</span><span class="o">.</span><span class="n">contour</span><span class="p">([</span><span class="mi">175</span><span class="p">,</span> <span class="mi">225</span><span class="p">]),</span>
+        <span class="n">subsurface</span><span class="o">.</span><span class="n">ctp</span><span class="p">()</span><span class="o">.</span><span class="n">contour</span><span class="p">([</span><span class="mi">175</span><span class="p">,</span> <span class="mi">225</span><span class="p">],</span> <span class="n">scalars</span><span class="o">=</span><span class="s1">&#39;temperature (C)&#39;</span><span class="p">),</span>
         <span class="n">name</span><span class="o">=</span><span class="s2">&quot;the model&quot;</span><span class="p">,</span>
         <span class="n">scalars</span><span class="o">=</span><span class="s2">&quot;temperature (C)&quot;</span><span class="p">,</span>
         <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">,</span>
@@ -634,7 +659,7 @@ scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_kriging_004.png" srcset="../../_images/sphx_glr_kriging_004.png" alt="kriging" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1360: PyvistaDeprecationWarning:
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1795: PyvistaDeprecationWarning:
 &quot;stitle&quot; is a depreciated keyword and will be removed in a future
 release.
 
@@ -643,13 +668,9 @@ Use ``scalar_bar_args`` instead.  For example:
 scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
 
   warnings.warn(USE_SCALAR_BAR_ARGS, PyvistaDeprecationWarning)
-
-[(319663.46494887985, 4294870.4704494225, -8787.973684799075),
- (336926.4650625, 4261892.29012, 103.0),
- (-0.09983848586767285, 0.20995262898057368, 0.9726007250273856)]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  24.158 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  33.698 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-kriging-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/2d610c305fc51adb26a96810638bb8ad/kriging.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">kriging.py</span></code></a></p>

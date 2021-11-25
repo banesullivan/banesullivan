@@ -171,23 +171,13 @@ Use the utility function to load that file.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(-11859278.508325925, 4770099.150425197, 56337.06131672742),
-     (-11912262.633973707, 4717115.024777414, 3352.9356689453125),
-     (0.0, 0.0, 1.0)]
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.029 seconds)
+   **Total running time of the script:** ( 0 minutes  30.617 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_raster.py:

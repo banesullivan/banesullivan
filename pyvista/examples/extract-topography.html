@@ -44,7 +44,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Geological Map on Topography" href="geological-map.html" />
+    <link rel="next" title="Masked Grid for Two Sides of a Fault" href="fault_mask.html" />
     <link rel="prev" title="Vertical Exaggeration" href="exaggeration.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -223,6 +223,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="fault_mask.html">
+     Masked Grid for Two Sides of a Fault
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="geological-map.html">
      Geological Map on Topography
     </a>
@@ -375,13 +380,7 @@ with the following parameters:</p>
 <span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show_grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_extract-topography_001.png" srcset="../../_images/sphx_glr_extract-topography_001.png" alt="extract topography" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(826749.3788872141, 9226874.378887214, 26314.378887214076),
- (800750.0, 9200875.0, 315.0),
- (0.0, 0.0, 1.0)]
-</pre></div>
-</div>
-<p>Now load the topography file from the example data:</p>
+<img src="../../_images/sphx_glr_extract-topography_001.png" srcset="../../_images/sphx_glr_extract-topography_001.png" alt="extract topography" class = "sphx-glr-single-img"/><p>Now load the topography file from the example data:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">link</span> <span class="o">=</span> <span class="s2">&quot;https://dl.dropbox.com/s/gw5v3tiq68oge3l/Example-Extract-Topo.zip?dl=0&quot;</span>
 <span class="n">examples</span><span class="o">.</span><span class="n">downloads</span><span class="o">.</span><span class="n">_retrieve_file</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="s2">&quot;Example-Extract-Topo.zip&quot;</span><span class="p">)</span>
 <span class="n">topo</span> <span class="o">=</span> <span class="n">pyvista</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pyvista</span><span class="o">.</span><span class="n">EXAMPLES_PATH</span><span class="p">,</span> <span class="s2">&quot;topo.vtk&quot;</span><span class="p">))</span>
@@ -393,26 +392,14 @@ with the following parameters:</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_extract-topography_002.png" srcset="../../_images/sphx_glr_extract-topography_002.png" alt="extract topography" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(826749.3788872141, 9226874.378887214, 26314.378887214076),
- (800750.0, 9200875.0, 315.0),
- (0.0, 0.0, 1.0)]
-</pre></div>
-</div>
-<p>Now that you have the topography and a grid data set,
+<img src="../../_images/sphx_glr_extract-topography_002.png" srcset="../../_images/sphx_glr_extract-topography_002.png" alt="extract topography" class = "sphx-glr-single-img"/><p>Now that you have the topography and a grid data set,
 let’s go ahead and use the <strong>Extract Topography</strong> filter. Be sure to properly
 select the inputs to the algorithm.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extracted</span> <span class="o">=</span> <span class="n">ExtractTopography</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">topo</span><span class="p">)</span>
 <span class="n">extracted</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">scalars</span><span class="o">=</span><span class="s2">&quot;Extracted&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_extract-topography_003.png" srcset="../../_images/sphx_glr_extract-topography_003.png" alt="extract topography" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(826749.3788872141, 9226874.378887214, 26314.378887214076),
- (800750.0, 9200875.0, 315.0),
- (0.0, 0.0, 1.0)]
-</pre></div>
-</div>
-<p>op=’underneath’, tolerance=0.001, offset=0.0, invert=False, remove=False
+<img src="../../_images/sphx_glr_extract-topography_003.png" srcset="../../_images/sphx_glr_extract-topography_003.png" alt="extract topography" class = "sphx-glr-single-img"/><p>op=’underneath’, tolerance=0.001, offset=0.0, invert=False, remove=False
 This will show the cells that are active underneath the topography surface
 (0 for above surface and 1 for below surface). Now we can threshold this gridded
 data set to remove parts of the model that are above the topography surface by
@@ -423,13 +410,7 @@ rendering below:</p>
 <span class="n">threshed</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_extract-topography_004.png" srcset="../../_images/sphx_glr_extract-topography_004.png" alt="extract topography" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(826749.3788872141, 9226874.378887214, 26314.378887214076),
- (800750.0, 9200875.0, 315.0),
- (0.0, 0.0, 1.0)]
-</pre></div>
-</div>
-<p>How well did this remove cells above the topography surface?</p>
+<img src="../../_images/sphx_glr_extract-topography_004.png" srcset="../../_images/sphx_glr_extract-topography_004.png" alt="extract topography" class = "sphx-glr-single-img"/><p>How well did this remove cells above the topography surface?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pyvista</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
 <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">topo</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;terrain&quot;</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">threshed</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -437,13 +418,7 @@ rendering below:</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_extract-topography_005.png" srcset="../../_images/sphx_glr_extract-topography_005.png" alt="extract topography" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(826749.3788872141, 9226874.378887214, 26314.378887214076),
- (800750.0, 9200875.0, 315.0),
- (0.0, 0.0, 1.0)]
-</pre></div>
-</div>
-<p>Is that extraction too close to the topography surface? To better extract the
+<img src="../../_images/sphx_glr_extract-topography_005.png" srcset="../../_images/sphx_glr_extract-topography_005.png" alt="extract topography" class = "sphx-glr-single-img"/><p>Is that extraction too close to the topography surface? To better extract the
 topographic surface, you can set a tolerance:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extracted</span> <span class="o">=</span> <span class="n">ExtractTopography</span><span class="p">(</span><span class="n">tolerance</span><span class="o">=</span><span class="mf">100.0</span><span class="p">,</span> <span class="n">remove</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">topo</span><span class="p">)</span>
 
@@ -454,26 +429,12 @@ topographic surface, you can set a tolerance:</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_extract-topography_006.png" srcset="../../_images/sphx_glr_extract-topography_006.png" alt="extract topography" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(826749.3084199977, 9226874.308419997, 26314.1533907008),
- (800750.0, 9200875.0, 314.844970703125),
- (0.0, 0.0, 1.0)]
-</pre></div>
-</div>
-<p>Note that there are other extraction operations like an <code class="docutils literal notranslate"><span class="pre">'intersection'</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extracted</span> <span class="o">=</span> <span class="n">ExtractTopography</span><span class="p">(</span><span class="n">op</span><span class="o">=</span><span class="s2">&quot;intersection&quot;</span><span class="p">,</span> <span class="n">remove</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">100.0</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
-    <span class="n">mesh</span><span class="p">,</span> <span class="n">topo</span>
-<span class="p">)</span>
+<img src="../../_images/sphx_glr_extract-topography_006.png" srcset="../../_images/sphx_glr_extract-topography_006.png" alt="extract topography" class = "sphx-glr-single-img"/><p>Note that there are other extraction operations like an <code class="docutils literal notranslate"><span class="pre">'intersection'</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extracted</span> <span class="o">=</span> <span class="n">ExtractTopography</span><span class="p">(</span><span class="n">op</span><span class="o">=</span><span class="s2">&quot;intersection&quot;</span><span class="p">,</span> <span class="n">remove</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">100.0</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">topo</span><span class="p">)</span>
 <span class="n">extracted</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_extract-topography_007.png" srcset="../../_images/sphx_glr_extract-topography_007.png" alt="extract topography" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(826266.3526735591, 9226391.352673559, 27406.352673559122),
- (800750.0, 9200875.0, 1890.0),
- (0.0, 0.0, 1.0)]
-</pre></div>
-</div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  10.764 seconds)</p>
+<img src="../../_images/sphx_glr_extract-topography_007.png" srcset="../../_images/sphx_glr_extract-topography_007.png" alt="extract topography" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  16.000 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-extract-topography-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/c8c5856cf304967a110cb7a8ee6be7a6/extract-topography.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">extract-topography.py</span></code></a></p>

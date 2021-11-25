@@ -161,16 +161,6 @@ https://dl.dropbox.com/s/emsg3h7hww1r779/Geologic_map_on_air_photo.tif?dl=0
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(334825.3439576033, 4257561.516503261, 118648.43213499933),
-     (334825.3439576033, 4257561.516503261, 1361.384521485),
-     (0.0, 1.0, 0.0)]
 
 
 
@@ -203,23 +193,13 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(337461.4124956896, 4257141.430658634, 2738.4956020899253),
-     (339000.40935731295, 4260394.940646875, 1724.0720826501868),
-     (0.10526647627366331, 0.2502863297360612, 0.962432190920575)]
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.891 seconds)
+   **Total running time of the script:** ( 0 minutes  21.930 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_geological-map.py:

@@ -223,6 +223,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="fault_mask.html">
+     Masked Grid for Two Sides of a Fault
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="geological-map.html">
      Geological Map on Topography
     </a>
@@ -356,13 +361,7 @@ to download the full example code</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_horizon-picking_001.png" srcset="../../_images/sphx_glr_horizon-picking_001.png" alt="horizon picking" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(-212.30873550953538, 359.730172722682, 59.10289856114311),
- (9.6039882161056, 8.329846888337428, -0.5391548951008538),
- (0.08754214189159452, -0.1127058489834577, 0.9897644997664596)]
-</pre></div>
-</div>
-<img alt="../../_images/gpr-line.gif" src="../../_images/gpr-line.gif" />
+<img src="../../_images/sphx_glr_horizon-picking_001.png" srcset="../../_images/sphx_glr_horizon-picking_001.png" alt="horizon picking" class = "sphx-glr-single-img"/><img alt="../../_images/gpr-line.gif" src="../../_images/gpr-line.gif" />
 <p>Then you can access the picked surface via <code class="docutils literal notranslate"><span class="pre">p.picked_horizon</span></code></p>
 <p>See <cite>enable_horizon_picking</cite> for more details</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">enable_horizon_picking</span><span class="p">)</span>
@@ -386,19 +385,12 @@ enable_horizon_picking(callback=None, normal=(0, 0, 1), width=None, show_message
         function.
 
     normal : tuple(float), optional
-        The normal to the horizon surface&#39;s projection plane
+        The normal to the horizon surface&#39;s projection plane.
 
     width : float, optional
         The width of the horizon surface. Default behaviour will
         dynamically change the surface width depending on its
         length.
-
-    show_horizon : bool, optional
-        Show the picked horizon surface interactively.
-
-    show_path : bool, optional
-        Show the picked path that the horizon is built from
-        interactively.
 
     show_message : bool or str, optional
         Show the message about how to use the horizon picking
@@ -407,31 +399,33 @@ enable_horizon_picking(callback=None, normal=(0, 0, 1), width=None, show_message
     font_size : int, optional
         Sets the font size of the message.
 
+    color : str, optional
+        The color of the horizon surface if shown.
+
     point_size : int, optional
         Size of picked points if ``show_horizon`` is
         ``True``. Default 10.
-
-    color : str, optional
-        The color of the horizon surface if shown.
 
     line_width : float, optional
         Thickness of path representation if ``show_horizon`` is
         ``True``.  Default 5.
 
+    show_path : bool, optional
+        Show the picked path that the horizon is built from
+        interactively.
+
     opacity : float, optional
         The opacity of the horizon surface if shown.
 
-    tolerance : float, optional
-        Specify tolerance for performing pick operation. Tolerance
-        is specified as fraction of rendering window
-        size. Rendering window size is measured across diagonal.
+    show_horizon : bool, optional
+        Show the picked horizon surface interactively.
 
-    kwargs : optional
+    **kwargs : dict, optional
         All remaining keyword arguments are used to control how
-        the picked path is interactively displayed
+        the picked path is interactively displayed.
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.969 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.176 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-horizon-picking-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/69aa46d2d1ebc8eee90b7dfc84f4ff09/horizon-picking.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">horizon-picking.py</span></code></a></p>

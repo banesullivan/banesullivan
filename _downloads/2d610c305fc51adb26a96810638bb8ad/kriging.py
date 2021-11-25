@@ -37,9 +37,7 @@ project
 # Now we can go ahead and create an integrated visualization of all of the data available to us.
 
 p = pv.Plotter(window_size=np.array([1024, 768]) * 2)
-p.add_mesh(
-    project["Site Boundary"], color="yellow", render_lines_as_tubes=True, line_width=10
-)
+p.add_mesh(project["Site Boundary"], color="yellow", render_lines_as_tubes=True, line_width=10)
 p.add_mesh(project["Terrain"], texture="geo_aer", opacity=0.7, lighting=False)
 p.add_mesh(project["Opal Mound Fault"], color="brown", opacity=0.7)
 p.add_mesh(project["Negro Mag Fault"], color="lightblue", opacity=0.7)
@@ -78,7 +76,7 @@ grid = pv.UniformGrid()
 grid.origin = (329700, 4252600, -2700)
 # Cell sizes
 grid.spacing = (250, 250, 50)
-# Number of cells in eaxh direction
+# Number of cells in each direction
 grid.dimensions = (60, 75, 100)
 
 ###############################################################################
@@ -148,6 +146,7 @@ krig.mesh(
 # And now the `grid` model has the temperature scalar field and kriging variance as data arrays.
 
 project["Kriged Temperature Model"] = grid
+project
 
 
 ###############################################################################
@@ -178,7 +177,7 @@ def add_contents(p):
     p.add_mesh(project["Negro Mag Fault"], color="lightblue", opacity=0.75)
 
     p.add_mesh(
-        subsurface.ctp().contour([175, 225]),
+        subsurface.ctp().contour([175, 225], scalars='temperature (C)'),
         name="the model",
         scalars="temperature (C)",
         cmap="coolwarm",

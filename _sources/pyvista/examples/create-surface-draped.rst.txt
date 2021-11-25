@@ -203,23 +203,13 @@ mesh and the possibilities are endless with PyVista
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    [(1217002.366883762, 345363.80666238244, 3816.828857791056),
-     (1216322.4753436751, 344033.0310674846, 3331.052985309526),
-     (-0.17716571330686096, -0.25634368781817973, 0.9502106207279767)]
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.680 seconds)
+   **Total running time of the script:** ( 0 minutes  16.645 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_create-surface-draped.py:

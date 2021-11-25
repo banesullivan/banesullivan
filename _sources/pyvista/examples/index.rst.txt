@@ -153,6 +153,27 @@ Please feel free to use and extend these examples. I simply ask that you please 
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example, I demonstrate how to use a surface mesh of a fault in the subsurface to create...">
+
+.. only:: html
+
+ .. figure:: /pyvista/examples/images/thumb/sphx_glr_fault_mask_thumb.png
+     :alt: Masked Grid for Two Sides of a Fault
+
+     :ref:`sphx_glr_pyvista_examples_fault_mask.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /pyvista/examples/fault_mask
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Texture mapping for a GeoTIFF on a topography surface.">
 
 .. only:: html
