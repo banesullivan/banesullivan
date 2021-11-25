@@ -19,7 +19,7 @@
 
       <center><h2><i class="fas fa-school fa-2x"></i></h2></center>
 
-    *B.Sc.* in Geophysical Engineering and *M.Sc.* in Hydrology from the Colorado School of Mines
+    *M.Sc.* in Hydrology and *B.Sc.* in Geophysical Engineering from the Colorado School of Mines
 
 
     ---
@@ -34,18 +34,19 @@
 Software
 --------
 
-I build open-source software focusing around earth science, 3D visualization,
-and reproducible science. These are some of my notable projects!
+My passion is building open-source software focusing around earth science, 3D
+visualization, and reproducible science. These are some of my notable projects,
+but for the most up-to-date information, `follow me on GitHub <https://github.com/banesullivan>`_!
 
-For the most up-to-date information, `follow me on GitHub <https://github.com/banesullivan>`_!
 I am a co-creator of the `PyVista project <http://www.pyvista.org>`_ - an
 effort devoted to making 3D visualization and analysis tools more accessible
 to researchers. I am also the founder of
 `OpenGeoVis <http://opengeovis.org/>`_, a similar, offshoot
 project focusing on geoscience applications.
 
-Much of my contributions to open-source projects are a part of my
-efforts with OpenGeoVis and PyVista.
+Prior to joinging Kitware, much of my contributions to open-source projects are
+a part of my efforts with OpenGeoVis and PyVista (*I developed PyVista prior
+to joining Kitware*).
 
 
 .. panels::
@@ -71,6 +72,9 @@ efforts with OpenGeoVis and PyVista.
          <li><i class="fa-li fa fa-check fa-fw" style="color: green" title="Project status"></i>
             Stable and ready for use
          </li>
+         <li><i class="fas fa-graduation-cap" style="color: blue" title="Was this effort personal or professional?"></i>
+            Originated as my M.Sc. thesis
+         </li>
       </ul>
 
     ---
@@ -89,12 +93,36 @@ efforts with OpenGeoVis and PyVista.
          <li><i class="fa-li fa fa-sync-alt fa-fw" style="color: green" title="Project status"></i>
             Ready for use but still changing
          </li>
+         <li><i class="fas fa-hat-cowboy" style="color: brown" title="Was this effort personal or professional?"></i>
+            Personal project
+         </li>
+      </ul>
+
+    ---
+    :img-top: _static/resonantgeodata.png
+
+    As a part of my work at Kitware, I am the lead developer of Resonant
+    GeoData (RGD): a series of Django applications built for cataloging and
+    searching cloud-hosted geospatial data.
+
+    .. raw:: html
+
+      <ul class="fa-ul project-icons">
+         <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
+            <a href="https://github.com/ResonantGeoData">ResonantGeoData</a>
+         </li>
+         <li><i class="fa-li fa fa-sync-alt fa-fw" style="color: green" title="Project status"></i>
+            Ready for use but still changing
+         </li>
+         <li><i class="fas fa-building" style="color: green" title="Was this effort personal or professional?"></i>
+            Professional work at Kitware
+         </li>
       </ul>
 
     ---
 
-    Scooby
-    ^^^^^^
+    🐶🕵 ️Scooby
+    ^^^^^^^^^^
 
 
     Scooby is a lightweight toolset to easily report your Python
@@ -110,12 +138,37 @@ efforts with OpenGeoVis and PyVista.
          <li><i class="fa-li fa fa-check fa-fw" style="color: green" title="Project status"></i>
             Stable and ready for use
          </li>
+         <li><i class="fas fa-hat-cowboy" style="color: brown" title="Was this effort personal or professional?"></i>
+            Personal project
+         </li>
       </ul>
 
     ---
 
-    PVGeo
-    ^^^^^
+    🔗 ``ipyvtklink``
+    ^^^^^^^^^^^^^^^^^
+
+    A minimalist ``ipywidget`` for connecting to any ``vtkRenderWindow`` to
+    enable powerful, server-side 3D rendering in Jupyer notebooks. This tool
+    is widely used by Python-VTK and PyVista communities.
+
+    .. raw:: html
+
+      <ul class="fa-ul project-icons">
+         <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
+            <a href="https://github.com/Kitware/ipyvtklink">Kitware/ipyvtklink</a>
+         </li>
+         <li><i class="fa-li fa fa-check fa-fw" style="color: green" title="Project status"></i>
+            Stable and ready for use
+         </li>
+         <li><i class="fas fa-building" style="color: green" title="Was this effort personal or professional?"></i>
+            Professional work at Kitware
+         </li>
+      </ul>
+    ---
+
+    🌍 PVGeo
+    ^^^^^^^^
 
     PVGeo is an open-source Python package for geoscientific visualization
     in VTK and ParaView, built on top of PyVista.
@@ -134,6 +187,9 @@ efforts with OpenGeoVis and PyVista.
          </li>
          <li><i class="fa-li fa fa-check fa-fw" style="color: green" title="Project status"></i>
             Stable and ready for use
+         </li>
+         <li><i class="fas fa-graduation-cap" style="color: blue" title="Was this effort personal or professional?"></i>
+            Research project during my B.Sc.
          </li>
       </ul>
 
