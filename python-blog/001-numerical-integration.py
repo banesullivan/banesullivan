@@ -4,9 +4,9 @@ Numerical Integration
 
 Here is an introduction to Numerical Integration with Python!
 """
-import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib as mpl
+import matplotlib.pyplot as plt
+import numpy as np
 
 ###############################################################################
 # Let's look at a simple function:

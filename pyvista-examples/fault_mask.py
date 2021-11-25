@@ -10,10 +10,11 @@ of the fault - but still have a single modeling grid.
 
 Let's get to it!
 """
+import numpy as np
+
 # sphinx_gallery_thumbnail_number = 4
 import pyvista as pv
 from pyvista import examples
-import numpy as np
 
 ###############################################################################
 path, _ = examples.downloads._download_file("opal_mound_fault.vtk")

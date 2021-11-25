@@ -5,6 +5,9 @@
 # http://www.sphinx-doc.org/en/master/config
 import datetime
 
+import numpy as np
+import pyvista
+
 # -- Path setup --------------------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -21,8 +24,6 @@ import datetime
 # make_news.make_news_gallery()
 
 
-import pyvista
-import numpy as np
 
 # Manage errors
 pyvista.set_error_output_file("errors.txt")

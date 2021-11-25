@@ -10,10 +10,11 @@ We can do this by using the spatial reference of the GeoTIFF itself, as this all
 
 Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 """
+import numpy as np
+
 # sphinx_gallery_thumbnail_number = 2
 import pyvista as pv
 from pyvista import examples
-import numpy as np
 import rasterio
 
 ###############################################################################

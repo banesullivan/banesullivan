@@ -16,9 +16,10 @@ projects are getting lately.
 
 """
 
+import matplotlib.pyplot as plt
+
 # sphinx_gallery_thumbnail_number = 1
 import pypistats
-import matplotlib.pyplot as plt
 
 
 def fetch_and_plot(name):

@@ -7,10 +7,10 @@ Originally posted: https://github.com/pyvista/pyvista-support/issues/67
 See also https://docs.pyvista.org/examples/02-plot/spherical.html
 """
 
-import xarray as xr
 import numpy as np
 import pyvista as pv
 from pyvista import examples
+import xarray as xr
 
 path, _ = examples.downloads._download_file("lsm_4x5.nc")
 

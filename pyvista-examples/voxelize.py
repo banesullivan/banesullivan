@@ -9,10 +9,10 @@ Originally posted: https://github.com/pyvista/pyvista-support/issues/178
 Seee also https://pvgeo.org/examples/filters-general/voxelize-points.html#voxelize-points
 """
 
+import PVGeo
+import numpy as np
 import pyvista as pv
 from pyvista import examples
-import numpy as np
-import PVGeo
 
 path, _ = examples.downloads._download_file("points3d.txt")
 

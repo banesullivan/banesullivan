@@ -6,10 +6,11 @@ Load and visualize an OMF project file
 
 Originally from: https://opengeovis.github.io/omfvista/examples/load-project.html
 """
+import omfvista
+
 # sphinx_gallery_thumbnail_number = 3
 import pyvista as pv
 from pyvista import examples
-import omfvista
 
 ###############################################################################
 # Load the project into an :class:`pyvista.MultiBlock` dataset
