@@ -73,7 +73,7 @@ to joining Kitware*).
             Stable and ready for use
          </li>
          <li><i class="fa-li fas fa-graduation-cap" style="color: blue" title="Was this effort personal or professional?"></i>
-            Originated as my M.Sc. thesis
+            A part of my M.Sc. thesis
          </li>
       </ul>
 
@@ -90,7 +90,7 @@ to joining Kitware*).
          <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
             <a href="https://github.com/banesullivan/flask-tileserver" target="_blank">banesullivan/flask-tileserver</a>
          </li>
-         <li><i class="fa-li fa fa-sync-alt fa-fw" style="color: green" title="Project status"></i>
+         <li><i class="fa-li fa fa-sync-alt fa-fw" style="color: orange" title="Project status"></i>
             Ready for use but still changing
          </li>
          <li><i class="fa-li fas fa-hat-cowboy" style="color: brown" title="Was this effort personal or professional?"></i>
@@ -111,7 +111,7 @@ to joining Kitware*).
          <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
             <a href="https://github.com/ResonantGeoData" target="_blank">ResonantGeoData</a>
          </li>
-         <li><i class="fa-li fa fa-sync-alt fa-fw" style="color: green" title="Project status"></i>
+         <li><i class="fa-li fa fa-sync-alt fa-fw" style="color: orange" title="Project status"></i>
             Ready for use but still changing
          </li>
          <li><i class="fa-li fas fa-building" style="color: green" title="Was this effort personal or professional?"></i>
