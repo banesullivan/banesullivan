@@ -44,8 +44,8 @@ to researchers. I am also the founder of
 `OpenGeoVis <http://opengeovis.org/>`_, a similar, offshoot
 project focusing on geoscience applications.
 
-Prior to joinging Kitware, much of my contributions to open-source projects are
-a part of my efforts with OpenGeoVis and PyVista (*I developed PyVista prior
+Prior to joining Kitware, most of my contributions to open-source software were
+a part of my efforts with the PyVista ecosystem (*I developed PyVista prior
 to joining Kitware*).
 
 
