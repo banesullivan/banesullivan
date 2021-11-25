@@ -38,14 +38,15 @@ See LinkedIn posts for more details:
 
 Originally posted: https://github.com/banesullivan/damavand-volcano
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-27
+.. GENERATED FROM PYTHON SOURCE LINES 22-28
 
 .. code-block:: default
+
+    import numpy as np
 
     # sphinx_gallery_thumbnail_number = 6
     import pyvista as pv
     from pyvista import examples
-    import numpy as np
 
 
 
@@ -54,7 +55,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-37
+.. GENERATED FROM PYTHON SOURCE LINES 29-38
 
 .. code-block:: default
 
@@ -74,7 +75,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-51
+.. GENERATED FROM PYTHON SOURCE LINES 39-52
 
 .. code-block:: default
 
@@ -103,7 +104,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-59
+.. GENERATED FROM PYTHON SOURCE LINES 53-60
 
 .. code-block:: default
 
@@ -126,7 +127,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-69
+.. GENERATED FROM PYTHON SOURCE LINES 61-70
 
 .. code-block:: default
 
@@ -151,7 +152,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-73
+.. GENERATED FROM PYTHON SOURCE LINES 71-74
 
 .. code-block:: default
 
@@ -188,7 +189,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-76
+.. GENERATED FROM PYTHON SOURCE LINES 75-77
 
 .. code-block:: default
 
@@ -206,7 +207,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-81
+.. GENERATED FROM PYTHON SOURCE LINES 78-82
 
 .. code-block:: default
 
@@ -226,7 +227,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-100
+.. GENERATED FROM PYTHON SOURCE LINES 83-101
 
 .. code-block:: default
 
@@ -263,7 +264,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  15.862 seconds)
+   **Total running time of the script:** ( 0 minutes  15.177 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_damavand.py:

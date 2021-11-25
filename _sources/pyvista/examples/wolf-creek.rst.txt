@@ -25,14 +25,15 @@ Load and visualize an OMF project file
 
 Originally from: https://opengeovis.github.io/omfvista/examples/load-project.html
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-14
+.. GENERATED FROM PYTHON SOURCE LINES 9-15
 
 .. code-block:: default
+
+    import omfvista
 
     # sphinx_gallery_thumbnail_number = 3
     import pyvista as pv
     from pyvista import examples
-    import omfvista
 
 
 
@@ -41,11 +42,11 @@ Originally from: https://opengeovis.github.io/omfvista/examples/load-project.htm
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-16
+.. GENERATED FROM PYTHON SOURCE LINES 16-17
 
 Load the project into an :class:`pyvista.MultiBlock` dataset
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-22
+.. GENERATED FROM PYTHON SOURCE LINES 17-23
 
 .. code-block:: default
 
@@ -67,7 +68,7 @@ Load the project into an :class:`pyvista.MultiBlock` dataset
 
     /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/core/dataset.py:1335: PyvistaDeprecationWarning: Use of `cell_arrays` is deprecated. Use `cell_data` instead.
       PyvistaDeprecationWarning
-    MultiBlock (0x7f43fdeef750)
+    MultiBlock (0x7f6f59f61c20)
       N Blocks:     9
       X Bounds:     443941.105, 447059.611
       Y Bounds:     491941.536, 495059.859
@@ -77,13 +78,13 @@ Load the project into an :class:`pyvista.MultiBlock` dataset
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-26
+.. GENERATED FROM PYTHON SOURCE LINES 24-27
 
 Once the data is loaded as a :class:`pyvista.MultiBlock` dataset from
 ``omfvista``, then that object can be directly used for interactive 3D
 visualization from ``pyvista``:
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-30
+.. GENERATED FROM PYTHON SOURCE LINES 27-31
 
 .. code-block:: default
 
@@ -103,13 +104,13 @@ visualization from ``pyvista``:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-34
+.. GENERATED FROM PYTHON SOURCE LINES 32-35
 
 Or an interactive scene can be created and manipulated to create a compelling
 figure directly in a Jupyter notebook. First, grab the elements from the
 project:
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-41
+.. GENERATED FROM PYTHON SOURCE LINES 35-42
 
 .. code-block:: default
 
@@ -127,7 +128,7 @@ project:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-55
+.. GENERATED FROM PYTHON SOURCE LINES 43-56
 
 .. code-block:: default
 
@@ -156,11 +157,11 @@ project:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-57
+.. GENERATED FROM PYTHON SOURCE LINES 57-58
 
 Then apply a filtering tool from ``pyvista`` to the volumetric data:
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-62
+.. GENERATED FROM PYTHON SOURCE LINES 58-63
 
 .. code-block:: default
 
@@ -179,7 +180,7 @@ Then apply a filtering tool from ``pyvista`` to the volumetric data:
 
  .. code-block:: none
 
-    UnstructuredGrid (0x7f43e6a0b830)
+    UnstructuredGrid (0x7f6f3de3cd00)
       N Cells:      92525
       N Points:     107807
       X Bounds:     4.447e+05, 4.457e+05
@@ -191,11 +192,11 @@ Then apply a filtering tool from ``pyvista`` to the volumetric data:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-64
+.. GENERATED FROM PYTHON SOURCE LINES 64-65
 
 Then you can put it all in one environment!
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-88
+.. GENERATED FROM PYTHON SOURCE LINES 65-89
 
 .. code-block:: default
 
@@ -238,7 +239,7 @@ Then you can put it all in one environment!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  18.341 seconds)
+   **Total running time of the script:** ( 0 minutes  18.293 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_wolf-creek.py:

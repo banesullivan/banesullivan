@@ -37,9 +37,9 @@ Originally posted: https://github.com/pyvista/pyvista-support/issues/272
 .. code-block:: default
 
 
+    import numpy as np
     import pyvista as pv
     from pyvista import examples
-    import numpy as np
 
 
 
@@ -218,7 +218,7 @@ Plot it up!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.863 seconds)
+   **Total running time of the script:** ( 0 minutes  2.623 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_cross-section-simple.py:

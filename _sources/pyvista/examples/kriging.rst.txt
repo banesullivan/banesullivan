@@ -30,16 +30,16 @@ The open-source, Python software `GSTools <https://geostat-framework.github.io/>
 
 .. code-block:: default
 
+    import PVGeo
+    from gstools import Exponential, krige, vario_estimate_unstructured
+    from gstools.covmodel.plot import plot_variogram
+    import matplotlib.pyplot as plt
+    import numpy as np
+    import omfvista
+
     # sphinx_gallery_thumbnail_number = 4
     import pyvista as pv
     from pyvista import examples
-    import numpy as np
-    import omfvista
-    import PVGeo
-    import matplotlib.pyplot as plt
-    from gstools import Exponential, krige, vario_estimate_unstructured
-    from gstools.covmodel.plot import plot_variogram
-
 
 
 
@@ -116,7 +116,7 @@ Initial Inspection
 
 Now we can go ahead and create an integrated visualization of all of the data available to us.
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-61
+.. GENERATED FROM PYTHON SOURCE LINES 38-60
 
 .. code-block:: default
 
@@ -134,7 +134,6 @@ Now we can go ahead and create an integrated visualization of all of the data av
         render_points_as_spheres=True,
     )
 
-    p.enable_depth_peeling()
     p.camera_position = [
         (315661.9406719345, 4234675.528454831, 15167.291249498076),
         (337498.00521202036, 4260818.504034578, -1261.5688408692681),
@@ -155,21 +154,21 @@ Now we can go ahead and create an integrated visualization of all of the data av
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-66
+.. GENERATED FROM PYTHON SOURCE LINES 61-65
 
 Kriging
 +++++++
 
 Now we will use an external library, [`gstools`](https://geostat-framework.github.io), to krige the temperature probe data into a 3D temperature model of the subsurface.
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-72
+.. GENERATED FROM PYTHON SOURCE LINES 67-71
 
 Choosing a Model Space
 ^^^^^^^^^^^^^^^^^^^^^^
 
 We start out by creating the 3D model space as a PyVista `UniformGrid` that encompasses the project region. The following were chosen manually:
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-82
+.. GENERATED FROM PYTHON SOURCE LINES 71-81
 
 .. code-block:: default
 
@@ -190,11 +189,11 @@ We start out by creating the 3D model space as a PyVista `UniformGrid` that enco
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-84
+.. GENERATED FROM PYTHON SOURCE LINES 82-83
 
 Visually inspect the kriging grid in relation to data
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-102
+.. GENERATED FROM PYTHON SOURCE LINES 83-100
 
 .. code-block:: default
 
@@ -208,7 +207,6 @@ Visually inspect the kriging grid in relation to data
         point_size=15,
         render_points_as_spheres=True,
     )
-    p.enable_depth_peeling()
     p.camera_position = [
         (303509.4197523619, 4279629.689766085, 8053.049483835099),
         (336316.405356571, 4261479.748583805, -1756.358124546427),
@@ -244,14 +242,14 @@ Visually inspect the kriging grid in relation to data
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-107
+.. GENERATED FROM PYTHON SOURCE LINES 101-105
 
 Variogram Analysis
 ^^^^^^^^^^^^^^^^^^
 
 Next, we need to compute a variogram for the temperature probe data and fit that variogram to an exponential model
 
-.. GENERATED FROM PYTHON SOURCE LINES 107-126
+.. GENERATED FROM PYTHON SOURCE LINES 105-124
 
 .. code-block:: default
 
@@ -286,13 +284,13 @@ Next, we need to compute a variogram for the temperature probe data and fit that
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 127-130
+.. GENERATED FROM PYTHON SOURCE LINES 125-128
 
 Performing the Kriging
 ^^^^^^^^^^^^^^^^^^^^^^
 Then we pass the fitted exponential model when instantiating the kriging operator from GSTools.
 
-.. GENERATED FROM PYTHON SOURCE LINES 130-138
+.. GENERATED FROM PYTHON SOURCE LINES 128-136
 
 .. code-block:: default
 
@@ -311,11 +309,11 @@ Then we pass the fitted exponential model when instantiating the kriging operato
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 139-140
+.. GENERATED FROM PYTHON SOURCE LINES 137-138
 
 After instantiating the kriging operator, we can have it operate on the nodes of our 3D grid that we created earlier and collect the results back onto the grid.
 
-.. GENERATED FROM PYTHON SOURCE LINES 140-145
+.. GENERATED FROM PYTHON SOURCE LINES 138-143
 
 .. code-block:: default
 
@@ -341,11 +339,11 @@ After instantiating the kriging operator, we can have it operate on the nodes of
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 146-147
+.. GENERATED FROM PYTHON SOURCE LINES 144-145
 
 And now the `grid` model has the temperature scalar field and kriging variance as data arrays.
 
-.. GENERATED FROM PYTHON SOURCE LINES 147-152
+.. GENERATED FROM PYTHON SOURCE LINES 145-150
 
 .. code-block:: default
 
@@ -389,14 +387,14 @@ And now the `grid` model has the temperature scalar field and kriging variance a
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 153-157
+.. GENERATED FROM PYTHON SOURCE LINES 151-155
 
 Post-Processing
 +++++++++++++++
 
 We can use a filter from PVGeo to extract the region of the temperature model that is beneath the topography surface as the kriging did not account for the surface boundary.
 
-.. GENERATED FROM PYTHON SOURCE LINES 157-163
+.. GENERATED FROM PYTHON SOURCE LINES 155-161
 
 .. code-block:: default
 
@@ -413,12 +411,12 @@ We can use a filter from PVGeo to extract the region of the temperature model th
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 164-166
+.. GENERATED FROM PYTHON SOURCE LINES 162-164
 
 Resulting Visualization
 +++++++++++++++++++++++
 
-.. GENERATED FROM PYTHON SOURCE LINES 166-212
+.. GENERATED FROM PYTHON SOURCE LINES 164-209
 
 .. code-block:: default
 
@@ -453,7 +451,6 @@ Resulting Visualization
             stitle="Temperature (C)",
         )
 
-        p.enable_depth_peeling(20)
         return
 
 
@@ -499,7 +496,7 @@ Resulting Visualization
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  9.499 seconds)
+   **Total running time of the script:** ( 2 minutes  6.131 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_kriging.py:

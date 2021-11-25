@@ -19,10 +19,11 @@ See LinkedIn posts for more details:
 
 Originally posted: https://github.com/banesullivan/damavand-volcano
 """
+import numpy as np
+
 # sphinx_gallery_thumbnail_number = 6
 import pyvista as pv
 from pyvista import examples
-import numpy as np
 
 ###############################################################################
 a, _ = examples.downloads._download_file("gebco7510_49cl.stl")

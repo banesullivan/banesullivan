@@ -386,15 +386,16 @@ to download the full example code</p>
 <p>This example utilizes data available from the <a class="reference external" href="https://utahforge.com">FORGE geothermal reserach site</a>’s <a class="reference external" href="https://utahforge.com/studentcomp/">2019 Geothermal Design Challenge</a>. In this example, the data is archived in the <a class="reference external" href="https://github.com/gmggroup/omf">Open Mining Format v1 (OMF)</a> specification and the <a class="reference external" href="https://opengeovis.github.io/omfvista/">omfvista</a> software is leverage to load those data into a PyVista <code class="docutils literal notranslate"><span class="pre">MultiBlock</span></code> data structure.</p>
 <p>The goal of this workflow is to create a 3D temperature model by kriging the <em>Observed Temperature</em> data (sparse observational data).
 The open-source, Python software <a class="reference external" href="https://geostat-framework.github.io/">GSTools</a> is used to perform variogram analysis and kriging of the temperature data onto a PyVista mesh to create the 3D model.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 4</span>
-<span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
-<span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">omfvista</span>
-<span class="kn">import</span> <span class="nn">PVGeo</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PVGeo</span>
 <span class="kn">from</span> <span class="nn">gstools</span> <span class="kn">import</span> <span class="n">Exponential</span><span class="p">,</span> <span class="n">krige</span><span class="p">,</span> <span class="n">vario_estimate_unstructured</span>
 <span class="kn">from</span> <span class="nn">gstools.covmodel.plot</span> <span class="kn">import</span> <span class="n">plot_variogram</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">omfvista</span>
+
+<span class="c1"># sphinx_gallery_thumbnail_number = 4</span>
+<span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
 </pre></div>
 </div>
 <section id="load-the-data">
@@ -454,7 +455,6 @@ The open-source, Python software <a class="reference external" href="https://geo
     <span class="n">render_points_as_spheres</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="n">p</span><span class="o">.</span><span class="n">enable_depth_peeling</span><span class="p">()</span>
 <span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">(</span><span class="mf">315661.9406719345</span><span class="p">,</span> <span class="mf">4234675.528454831</span><span class="p">,</span> <span class="mf">15167.291249498076</span><span class="p">),</span>
     <span class="p">(</span><span class="mf">337498.00521202036</span><span class="p">,</span> <span class="mf">4260818.504034578</span><span class="p">,</span> <span class="o">-</span><span class="mf">1261.5688408692681</span><span class="p">),</span>
@@ -491,7 +491,6 @@ The open-source, Python software <a class="reference external" href="https://geo
     <span class="n">point_size</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
     <span class="n">render_points_as_spheres</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">enable_depth_peeling</span><span class="p">()</span>
 <span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">(</span><span class="mf">303509.4197523619</span><span class="p">,</span> <span class="mf">4279629.689766085</span><span class="p">,</span> <span class="mf">8053.049483835099</span><span class="p">),</span>
     <span class="p">(</span><span class="mf">336316.405356571</span><span class="p">,</span> <span class="mf">4261479.748583805</span><span class="p">,</span> <span class="o">-</span><span class="mf">1756.358124546427</span><span class="p">),</span>
@@ -635,7 +634,6 @@ scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
         <span class="n">stitle</span><span class="o">=</span><span class="s2">&quot;Temperature (C)&quot;</span><span class="p">,</span>
     <span class="p">)</span>
 
-    <span class="n">p</span><span class="o">.</span><span class="n">enable_depth_peeling</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
     <span class="k">return</span>
 
 
@@ -664,7 +662,7 @@ scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
   warnings.warn(USE_SCALAR_BAR_ARGS, PyvistaDeprecationWarning)
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  9.499 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  6.131 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-kriging-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/2d610c305fc51adb26a96810638bb8ad/kriging.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">kriging.py</span></code></a></p>
