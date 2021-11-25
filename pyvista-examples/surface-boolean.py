@@ -19,9 +19,7 @@ dataset = pv.RectilinearGrid(xx, yy, zz)
 
 ###############################################################################
 # Define a surface within the volume
-surface = pv.Cone(
-    direction=(0, 0, -1), height=3.0, radius=1, resolution=50, capping=False
-)
+surface = pv.Cone(direction=(0, 0, -1), height=3.0, radius=1, resolution=50, capping=False)
 
 ###############################################################################
 # Preview the problem

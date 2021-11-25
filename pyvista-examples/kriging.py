@@ -37,9 +37,7 @@ project
 # Now we can go ahead and create an integrated visualization of all of the data available to us.
 
 p = pv.Plotter(window_size=np.array([1024, 768]) * 2)
-p.add_mesh(
-    project["Site Boundary"], color="yellow", render_lines_as_tubes=True, line_width=10
-)
+p.add_mesh(project["Site Boundary"], color="yellow", render_lines_as_tubes=True, line_width=10)
 p.add_mesh(project["Terrain"], texture="geo_aer", opacity=0.7, lighting=False)
 p.add_mesh(project["Opal Mound Fault"], color="brown", opacity=0.7)
 p.add_mesh(project["Negro Mag Fault"], color="lightblue", opacity=0.7)

@@ -31,9 +31,7 @@ surf = cloud.delaunay_2d(progress_bar=True)
 ###############################################################################
 # Open the GeoTIFF
 url = "https://dl.dropbox.com/s/pqgme8qsl95u9un/Sio020320_transparent_mosaic_group1.tif?dl=0"
-path, _ = examples.downloads._retrieve_file(
-    url, "Sio020320_transparent_mosaic_group1.tif.csv"
-)
+path, _ = examples.downloads._retrieve_file(url, "Sio020320_transparent_mosaic_group1.tif.csv")
 ds = xr.open_rasterio(path)
 
 # Fetch the texture as an image

@@ -98,7 +98,5 @@ p.show()
 
 ###############################################################################
 # Note that there are other extraction operations like an ``'intersection'``:
-extracted = ExtractTopography(op="intersection", remove=True, tolerance=100.0).apply(
-    mesh, topo
-)
+extracted = ExtractTopography(op="intersection", remove=True, tolerance=100.0).apply(mesh, topo)
 extracted.plot(color=True, show_edges=True)
