@@ -80,7 +80,7 @@ to joining Kitware*).
     ---
     :img-top: _static/tile-diagram.png
 
-    ``flask-tileserver`` is a minimalist tile server for local, large
+    ``localtileserver`` is a minimalist tile server for local, large
     geospatial images. This package enables visualization of geospatial
     rasters in Jupyter notebooks with ``ipyleaflet``.
 
@@ -88,7 +88,7 @@ to joining Kitware*).
 
       <ul class="fa-ul project-icons">
          <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
-            <a href="https://github.com/banesullivan/flask-tileserver" target="_blank">banesullivan/flask-tileserver</a>
+            <a href="https://github.com/banesullivan/localtileserver" target="_blank">banesullivan/localtileserver</a>
          </li>
          <li><i class="fa-li fa fa-sync-alt fa-fw" style="color: orange" title="Project status"></i>
             Ready for use but still changing
