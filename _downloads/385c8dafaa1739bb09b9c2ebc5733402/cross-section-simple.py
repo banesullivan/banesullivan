@@ -14,9 +14,9 @@ We have a cross section PNG image and we know three coordinates along that secti
 Originally posted: https://github.com/pyvista/pyvista-support/issues/272
 """
 
-import numpy as np
 import pyvista as pv
 from pyvista import examples
+import numpy as np
 
 ###############################################################################
 # Parameters for cross section

@@ -29,15 +29,14 @@ We can do this by using the spatial reference of the GeoTIFF itself, as this all
 
 Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-20
+.. GENERATED FROM PYTHON SOURCE LINES 13-19
 
 .. code-block:: default
-
-    import numpy as np
 
     # sphinx_gallery_thumbnail_number = 2
     import pyvista as pv
     from pyvista import examples
+    import numpy as np
     import rasterio
 
 
@@ -47,7 +46,7 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-25
+.. GENERATED FROM PYTHON SOURCE LINES 20-24
 
 .. code-block:: default
 
@@ -79,12 +78,12 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-28
+.. GENERATED FROM PYTHON SOURCE LINES 25-27
 
 Load the GeoTIFF/texture
 https://dl.dropbox.com/s/emsg3h7hww1r779/Geologic_map_on_air_photo.tif?dl=0
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-32
+.. GENERATED FROM PYTHON SOURCE LINES 27-31
 
 .. code-block:: default
 
@@ -107,7 +106,7 @@ https://dl.dropbox.com/s/emsg3h7hww1r779/Geologic_map_on_air_photo.tif?dl=0
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-75
+.. GENERATED FROM PYTHON SOURCE LINES 32-74
 
 .. code-block:: default
 
@@ -165,11 +164,11 @@ https://dl.dropbox.com/s/emsg3h7hww1r779/Geologic_map_on_air_photo.tif?dl=0
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-77
+.. GENERATED FROM PYTHON SOURCE LINES 75-76
 
 Read the GeoTIFF as a ``Texture`` in PyVista:
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-89
+.. GENERATED FROM PYTHON SOURCE LINES 76-88
 
 .. code-block:: default
 
@@ -200,7 +199,7 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.781 seconds)
+   **Total running time of the script:** ( 0 minutes  15.849 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_geological-map.py:

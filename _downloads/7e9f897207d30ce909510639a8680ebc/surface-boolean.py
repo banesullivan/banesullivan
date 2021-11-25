@@ -6,9 +6,10 @@ Use a surface inside a volume to set scalar values on an array in the volume.
 
 Adopted from https://docs.pyvista.org/examples/01-filter/clipping-with-surface.html
 """
-import numpy as np
 import pyvista as pv
+import numpy as np
 from pyvista import _vtk as vtk
+
 
 ###############################################################################
 # Make a gridded volume

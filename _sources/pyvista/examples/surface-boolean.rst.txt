@@ -25,12 +25,12 @@ Use a surface inside a volume to set scalar values on an array in the volume.
 
 Adopted from https://docs.pyvista.org/examples/01-filter/clipping-with-surface.html
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-13
+.. GENERATED FROM PYTHON SOURCE LINES 9-14
 
 .. code-block:: default
 
-    import numpy as np
     import pyvista as pv
+    import numpy as np
     from pyvista import _vtk as vtk
 
 
@@ -40,11 +40,12 @@ Adopted from https://docs.pyvista.org/examples/01-filter/clipping-with-surface.h
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 14-15
+
+.. GENERATED FROM PYTHON SOURCE LINES 15-16
 
 Make a gridded volume
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-19
+.. GENERATED FROM PYTHON SOURCE LINES 16-20
 
 .. code-block:: default
 
@@ -59,11 +60,11 @@ Make a gridded volume
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-21
+.. GENERATED FROM PYTHON SOURCE LINES 21-22
 
 Define a surface within the volume
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-23
+.. GENERATED FROM PYTHON SOURCE LINES 22-24
 
 .. code-block:: default
 
@@ -76,11 +77,11 @@ Define a surface within the volume
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-25
+.. GENERATED FROM PYTHON SOURCE LINES 25-26
 
 Preview the problem
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-31
+.. GENERATED FROM PYTHON SOURCE LINES 26-32
 
 .. code-block:: default
 
@@ -102,12 +103,12 @@ Preview the problem
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-34
+.. GENERATED FROM PYTHON SOURCE LINES 33-35
 
 Compute an implicit distance inside the volume using this surface, then
 inject new data arrays
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-38
+.. GENERATED FROM PYTHON SOURCE LINES 35-39
 
 .. code-block:: default
 
@@ -146,13 +147,13 @@ inject new data arrays
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-42
+.. GENERATED FROM PYTHON SOURCE LINES 40-43
 
 Take note of the new ``implicit_distance`` scalar array. We will use this
 to fill in regions inside the surface with the value 3.0 and regions outside
 the surface with the value 2.0
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-46
+.. GENERATED FROM PYTHON SOURCE LINES 43-47
 
 .. code-block:: default
 
@@ -175,7 +176,7 @@ the surface with the value 2.0
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.312 seconds)
+   **Total running time of the script:** ( 0 minutes  4.629 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_surface-boolean.py:

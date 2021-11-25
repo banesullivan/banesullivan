@@ -39,18 +39,16 @@ cells field.
 
 Also posted on PVGeo: https://pvgeo.org/examples/grids/extract-topography.html
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-32
+.. GENERATED FROM PYTHON SOURCE LINES 23-30
 
 .. code-block:: default
-
-    import os
-
-    from PVGeo.grids import ExtractTopography
-    from PVGeo.model_build import CreateTensorMesh
 
     # sphinx_gallery_thumbnail_number = 6
     import pyvista
     from pyvista import examples
+    from PVGeo.model_build import CreateTensorMesh
+    from PVGeo.grids import ExtractTopography
+    import os
 
 
 
@@ -59,7 +57,7 @@ Also posted on PVGeo: https://pvgeo.org/examples/grids/extract-topography.html
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-40
+.. GENERATED FROM PYTHON SOURCE LINES 31-38
 
 For the grid data set, let's use one of the Model Building sources
 with the following parameters:
@@ -69,7 +67,7 @@ with the following parameters:
 - Y Cells: ``'1000 500 55*250 500 1000'``
 - Z Cells: ``'30*100.0 5*250.0 500'``
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-50
+.. GENERATED FROM PYTHON SOURCE LINES 38-48
 
 .. code-block:: default
 
@@ -95,11 +93,11 @@ with the following parameters:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-52
+.. GENERATED FROM PYTHON SOURCE LINES 49-50
 
 Now load the topography file from the example data:
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-62
+.. GENERATED FROM PYTHON SOURCE LINES 50-60
 
 .. code-block:: default
 
@@ -125,13 +123,13 @@ Now load the topography file from the example data:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-66
+.. GENERATED FROM PYTHON SOURCE LINES 61-64
 
 Now that you have the topography and a grid data set,
 let's go ahead and use the **Extract Topography** filter. Be sure to properly
 select the inputs to the algorithm.
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-69
+.. GENERATED FROM PYTHON SOURCE LINES 64-67
 
 .. code-block:: default
 
@@ -150,7 +148,7 @@ select the inputs to the algorithm.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-78
+.. GENERATED FROM PYTHON SOURCE LINES 68-76
 
 op='underneath', tolerance=0.001, offset=0.0, invert=False, remove=False
 This will show the cells that are active underneath the topography surface
@@ -161,7 +159,7 @@ applying a *Threshold* filter to chop out all values below 1.
 The resulting grid with cells above the topography extracted will look like the
 rendering below:
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-81
+.. GENERATED FROM PYTHON SOURCE LINES 76-79
 
 .. code-block:: default
 
@@ -180,11 +178,11 @@ rendering below:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-83
+.. GENERATED FROM PYTHON SOURCE LINES 80-81
 
 How well did this remove cells above the topography surface?
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-90
+.. GENERATED FROM PYTHON SOURCE LINES 81-88
 
 .. code-block:: default
 
@@ -207,12 +205,12 @@ How well did this remove cells above the topography surface?
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-93
+.. GENERATED FROM PYTHON SOURCE LINES 89-91
 
 Is that extraction too close to the topography surface? To better extract the
 topographic surface, you can set a tolerance:
 
-.. GENERATED FROM PYTHON SOURCE LINES 93-101
+.. GENERATED FROM PYTHON SOURCE LINES 91-99
 
 .. code-block:: default
 
@@ -236,11 +234,11 @@ topographic surface, you can set a tolerance:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 102-103
+.. GENERATED FROM PYTHON SOURCE LINES 100-101
 
 Note that there are other extraction operations like an ``'intersection'``:
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-105
+.. GENERATED FROM PYTHON SOURCE LINES 101-103
 
 .. code-block:: default
 
@@ -261,7 +259,7 @@ Note that there are other extraction operations like an ``'intersection'``:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  11.070 seconds)
+   **Total running time of the script:** ( 0 minutes  13.612 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_extract-topography.py:

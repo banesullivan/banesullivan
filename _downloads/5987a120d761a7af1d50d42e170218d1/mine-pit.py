@@ -7,11 +7,10 @@ mine pit.
 
 Originally posted: https://github.com/pyvista/pyvista-support/issues/159
 """
-import numpy as np
-
 # sphinx_gallery_thumbnail_number = 2
 import pyvista as pv
 from pyvista import examples
+import numpy as np
 import xarray as xr
 
 ###############################################################################

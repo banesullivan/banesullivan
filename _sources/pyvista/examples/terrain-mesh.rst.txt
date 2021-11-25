@@ -34,15 +34,14 @@ follows a given topographic surface. In this example, it is important to note
 that the given digital elevation model (DEM) is structured (gridded and not
 triangulated): this is common for DEMs.
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-25
+.. GENERATED FROM PYTHON SOURCE LINES 18-24
 
 .. code-block:: default
 
 
-    import numpy as np
-
     # sphinx_gallery_thumbnail_number = 3
     import pyvista as pv
+    import numpy as np
     from pyvista import examples
 
 
@@ -52,11 +51,11 @@ triangulated): this is common for DEMs.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-27
+.. GENERATED FROM PYTHON SOURCE LINES 25-26
 
 Download a gridded topography surface (DEM)
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-30
+.. GENERATED FROM PYTHON SOURCE LINES 26-29
 
 .. code-block:: default
 
@@ -95,14 +94,14 @@ Download a gridded topography surface (DEM)
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-35
+.. GENERATED FROM PYTHON SOURCE LINES 30-34
 
 Now let's subsample and extract an area of interest to make this example
 simple (also the DEM we just load is pretty big).
 Since the DEM we loaded is a :class:`pyvista.UniformGrid` mesh, we can use
 the :func:`pyvista.UniformGridFilters.extract_subset` filter:
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-39
+.. GENERATED FROM PYTHON SOURCE LINES 34-38
 
 .. code-block:: default
 
@@ -122,12 +121,12 @@ the :func:`pyvista.UniformGridFilters.extract_subset` filter:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-42
+.. GENERATED FROM PYTHON SOURCE LINES 39-41
 
 Now that we have a region of interest for our terrain following mesh, lets
 make a 3D surface of that DEM:
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-45
+.. GENERATED FROM PYTHON SOURCE LINES 41-44
 
 .. code-block:: default
 
@@ -165,7 +164,7 @@ make a 3D surface of that DEM:
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-49
+.. GENERATED FROM PYTHON SOURCE LINES 45-48
 
 .. code-block:: default
 
@@ -184,7 +183,7 @@ make a 3D surface of that DEM:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-57
+.. GENERATED FROM PYTHON SOURCE LINES 49-56
 
 And now we have a 3D structured surface of the terrain! We can now extend
 that structured surface into a 3D mesh to form a terrain following grid.
@@ -194,7 +193,7 @@ of the terrain mesh and decrease each Z level by our Z cell spacing.
 Once we have those structured coordinates, we can create a
 :class:`pyvista.StructuredGrid`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-68
+.. GENERATED FROM PYTHON SOURCE LINES 56-67
 
 .. code-block:: default
 
@@ -240,7 +239,7 @@ Once we have those structured coordinates, we can create a
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-76
+.. GENERATED FROM PYTHON SOURCE LINES 68-75
 
 .. code-block:: default
 
@@ -266,7 +265,7 @@ Once we have those structured coordinates, we can create a
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.536 seconds)
+   **Total running time of the script:** ( 0 minutes  4.766 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_terrain-mesh.py:

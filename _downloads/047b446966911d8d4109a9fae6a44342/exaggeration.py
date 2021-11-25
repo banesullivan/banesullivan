@@ -4,11 +4,10 @@ Vertical Exaggeration
 
 Originally posted: https://github.com/pyvista/pyvista-support/issues/8
 """
-import PVGeo
-
 # sphinx_gallery_thumbnail_number = 2
 import pyvista as pv
 from pyvista import examples
+import PVGeo
 
 ###############################################################################
 # Load data files using PVGeo
