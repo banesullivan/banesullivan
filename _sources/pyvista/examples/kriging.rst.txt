@@ -499,7 +499,7 @@ Resulting Visualization
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  33.247 seconds)
+   **Total running time of the script:** ( 2 minutes  22.212 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_kriging.py:
