@@ -355,11 +355,12 @@ have are technically shifted up and we have some NaN filler above the surface
 - its weird and just ignore it. You’ll typically have a more uniform looking
 profile in 2D with the coordinates associated to the top of each column in your
 2D array.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 3</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># sphinx_gallery_thumbnail_number = 3</span>
 <span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="c1"># Extract the data archive and load these files</span>
 <span class="c1"># 2D array of XYZ coordinates</span>
@@ -426,7 +427,7 @@ mesh and the possibilities are endless with PyVista</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="n">cpos</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_create-surface-draped_003.png" srcset="../../_images/sphx_glr_create-surface-draped_003.png" alt="create surface draped" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  16.405 seconds)</p>
+<img src="../../_images/sphx_glr_create-surface-draped_003.png" srcset="../../_images/sphx_glr_create-surface-draped_003.png" alt="create surface draped" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  11.200 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-create-surface-draped-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/afdb3dbe277b0cc1848041e95f396fef/create-surface-draped.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">create-surface-draped.py</span></code></a></p>

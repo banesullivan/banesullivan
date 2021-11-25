@@ -46,15 +46,16 @@ have are technically shifted up and we have some NaN filler above the surface
 profile in 2D with the coordinates associated to the top of each column in your
 2D array.
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-42
+.. GENERATED FROM PYTHON SOURCE LINES 30-43
 
 .. code-block:: default
+
+    import matplotlib.pyplot as plt
+    import numpy as np
 
     # sphinx_gallery_thumbnail_number = 3
     import pyvista as pv
     from pyvista import examples
-    import numpy as np
-    import matplotlib.pyplot as plt
 
     # Extract the data archive and load these files
     # 2D array of XYZ coordinates
@@ -69,7 +70,7 @@ profile in 2D with the coordinates associated to the top of each column in your
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-47
+.. GENERATED FROM PYTHON SOURCE LINES 44-48
 
 .. code-block:: default
 
@@ -89,13 +90,13 @@ profile in 2D with the coordinates associated to the top of each column in your
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-51
+.. GENERATED FROM PYTHON SOURCE LINES 49-52
 
 View the the path of the GPR profile from a top-down perspective.
 Since we have the full coordinates (XY and Z), we can create a structured
 mesh "draping" down from those coordinates to hold the GPR image data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-56
+.. GENERATED FROM PYTHON SOURCE LINES 52-57
 
 .. code-block:: default
 
@@ -124,7 +125,7 @@ mesh "draping" down from those coordinates to hold the GPR image data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-74
+.. GENERATED FROM PYTHON SOURCE LINES 58-75
 
 .. code-block:: default
 
@@ -152,11 +153,11 @@ mesh "draping" down from those coordinates to hold the GPR image data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-76
+.. GENERATED FROM PYTHON SOURCE LINES 76-77
 
 Make a StructuredGrid from the structured points
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-83
+.. GENERATED FROM PYTHON SOURCE LINES 77-84
 
 .. code-block:: default
 
@@ -174,12 +175,12 @@ Make a StructuredGrid from the structured points
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-86
+.. GENERATED FROM PYTHON SOURCE LINES 85-87
 
 And now we can plot it! or process or do anything, because it is a PyVista
 mesh and the possibilities are endless with PyVista
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-97
+.. GENERATED FROM PYTHON SOURCE LINES 87-98
 
 .. code-block:: default
 
@@ -209,7 +210,7 @@ mesh and the possibilities are endless with PyVista
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  16.405 seconds)
+   **Total running time of the script:** ( 0 minutes  11.200 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_create-surface-draped.py:

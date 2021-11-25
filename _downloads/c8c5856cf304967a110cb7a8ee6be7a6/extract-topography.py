@@ -20,12 +20,14 @@ cells field.
 
 Also posted on PVGeo: https://pvgeo.org/examples/grids/extract-topography.html
 """
+import os
+
+from PVGeo.grids import ExtractTopography
+from PVGeo.model_build import CreateTensorMesh
+
 # sphinx_gallery_thumbnail_number = 6
 import pyvista
 from pyvista import examples
-from PVGeo.model_build import CreateTensorMesh
-from PVGeo.grids import ExtractTopography
-import os
 
 ###############################################################################
 # For the grid data set, let's use one of the Model Building sources

@@ -348,33 +348,12 @@ to download the full example code</p>
 <span class="n">topo_map</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_crater_imagery</span><span class="p">()</span>
 
 <span class="n">elevation</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 </pre></div>
 </div>
-<div class="output_subarea output_html rendered_html output_result">
-<table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-<table>
-<tr><th>StructuredGrid</th><th>Information</th></tr>
-<tr><td>N Cells</td><td>1677401</td></tr>
-<tr><td>N Points</td><td>1680000</td></tr>
-<tr><td>X Bounds</td><td>1.810e+06, 1.831e+06</td></tr>
-<tr><td>Y Bounds</td><td>5.640e+06, 5.658e+06</td></tr>
-<tr><td>Z Bounds</td><td>7.339e+02, 2.787e+03</td></tr>
-<tr><td>Dimensions</td><td>1400, 1200, 1</td></tr>
-<tr><td>N Arrays</td><td>1</td></tr>
-</table>
-
-</td><td>
-<table>
-<tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
-<tr><td><b>scalar1of1</b></td><td>Points</td><td>float64</td><td>1</td><td>7.339e+02</td><td>2.787e+03</td></tr>
-</table>
-
-</td></tr> </table>
-</div>
-<br />
-<br /><p>Let’s inspect the imagery that we just loaded</p>
+<p>Let’s inspect the imagery that we just loaded</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 
 <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.dpi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">500</span>
 
@@ -382,7 +361,7 @@ to download the full example code</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_topo-map_001.png" srcset="../../_images/sphx_glr_topo-map_001.png" alt="topo map" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f8c9cc69bd0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7fd20bdad310&gt;
 </pre></div>
 </div>
 <p>Once you have a topography mesh loaded as a surface mesh
@@ -445,7 +424,7 @@ and plotting the texture mapped local topography and the outside area</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_topo-map_004.png" srcset="../../_images/sphx_glr_topo-map_004.png" alt="topo map" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  27.176 seconds)</p>
+<img src="../../_images/sphx_glr_topo-map_004.png" srcset="../../_images/sphx_glr_topo-map_004.png" alt="topo map" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  19.921 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-topo-map-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/951ef07a09e0813ab67feedafb5cbafd/topo-map.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">topo-map.py</span></code></a></p>

@@ -6,11 +6,10 @@ Use xarray and rasterio to load a raster into a StructuredGrid.
 """
 
 import numpy as np
-import xarray as xr
-from rasterio.warp import transform
-
 import pyvista as pv
 from pyvista import examples
+from rasterio.warp import transform
+import xarray as xr
 
 ##############################################################################
 # The following is a function you can use to load just about any geospatial

@@ -29,14 +29,15 @@ of the fault - but still have a single modeling grid.
 
 Let's get to it!
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-18
+.. GENERATED FROM PYTHON SOURCE LINES 13-19
 
 .. code-block:: default
+
+    import numpy as np
 
     # sphinx_gallery_thumbnail_number = 4
     import pyvista as pv
     from pyvista import examples
-    import numpy as np
 
 
 
@@ -45,7 +46,7 @@ Let's get to it!
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-24
+.. GENERATED FROM PYTHON SOURCE LINES 20-25
 
 .. code-block:: default
 
@@ -78,11 +79,11 @@ Let's get to it!
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-26
+.. GENERATED FROM PYTHON SOURCE LINES 26-27
 
 Create the modelling grid if you don't already have one
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-35
+.. GENERATED FROM PYTHON SOURCE LINES 27-36
 
 .. code-block:: default
 
@@ -121,11 +122,11 @@ Create the modelling grid if you don't already have one
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-37
+.. GENERATED FROM PYTHON SOURCE LINES 37-38
 
 Take a quick preview to see where the fault is inside of the grid
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-42
+.. GENERATED FROM PYTHON SOURCE LINES 38-43
 
 .. code-block:: default
 
@@ -146,7 +147,7 @@ Take a quick preview to see where the fault is inside of the grid
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-49
+.. GENERATED FROM PYTHON SOURCE LINES 44-50
 
 You may notice that the modeling grid's extent is far greater than that of
 the fault -- not to worry! PyVista's `clip_surface` filter and the utility
@@ -155,7 +156,7 @@ plane outward.
 
 This is a reusable utility for performing the mask:
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-69
+.. GENERATED FROM PYTHON SOURCE LINES 50-70
 
 .. code-block:: default
 
@@ -186,11 +187,11 @@ This is a reusable utility for performing the mask:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-71
+.. GENERATED FROM PYTHON SOURCE LINES 71-72
 
 Let's run it and take a look at the result!
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-78
+.. GENERATED FROM PYTHON SOURCE LINES 72-79
 
 .. code-block:: default
 
@@ -213,10 +214,14 @@ Let's run it and take a look at the result!
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-84
+.. GENERATED FROM PYTHON SOURCE LINES 80-82
+
+And here is how you might use that mask to do some sort of fancy modeling.
+In my example, I'm going to use a rather sophisticated distance calculation:
+
+.. GENERATED FROM PYTHON SOURCE LINES 82-86
 
 .. code-block:: default
-
 
     ids = np.argwhere(masked["point_mask"] == 1).ravel()
     pts = grid.points[ids]
@@ -237,11 +242,11 @@ Let's run it and take a look at the result!
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-86
+.. GENERATED FROM PYTHON SOURCE LINES 87-88
 
 Compute distance from TNE corner
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-89
+.. GENERATED FROM PYTHON SOURCE LINES 88-91
 
 .. code-block:: default
 
@@ -255,11 +260,11 @@ Compute distance from TNE corner
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 90-91
+.. GENERATED FROM PYTHON SOURCE LINES 92-93
 
 Add those results back to the source grid
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-97
+.. GENERATED FROM PYTHON SOURCE LINES 93-99
 
 .. code-block:: default
 
@@ -284,11 +289,11 @@ Add those results back to the source grid
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 98-99
+.. GENERATED FROM PYTHON SOURCE LINES 100-101
 
 Display!
 
-.. GENERATED FROM PYTHON SOURCE LINES 99-101
+.. GENERATED FROM PYTHON SOURCE LINES 101-103
 
 .. code-block:: default
 
@@ -306,11 +311,11 @@ Display!
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 102-103
+.. GENERATED FROM PYTHON SOURCE LINES 104-105
 
 Visualize one side of the masked grid
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-109
+.. GENERATED FROM PYTHON SOURCE LINES 105-111
 
 .. code-block:: default
 
@@ -335,7 +340,7 @@ Visualize one side of the masked grid
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.323 seconds)
+   **Total running time of the script:** ( 0 minutes  4.431 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_fault_mask.py:
