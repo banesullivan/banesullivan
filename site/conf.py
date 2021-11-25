@@ -90,7 +90,7 @@ html_favicon = "_static/favicon.jpg"
 html_extra_path = [".nojekyll"]  # TODO: "CNAME",
 html_use_smartypants = True
 pygments_style = "friendly"
-html_permalinks = ""
+html_permalinks = False
 
 # Theme config
 
