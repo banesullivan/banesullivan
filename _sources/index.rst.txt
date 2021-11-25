@@ -61,18 +61,18 @@ to joining Kitware*).
 
       <ul class="fa-ul project-icons">
          <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
-            <a href="https://github.com/pyvista/pyvista">pyvista/pyvista</a>
+            <a href="https://github.com/pyvista/pyvista" target="_blank">pyvista/pyvista</a>
          </li>
          <li><i class="fa-li fa fa-book fa-fw" title="Documentation"></i>
-            <a href="https://docs.pyvista.org">docs.pyvista.org</a>
+            <a href="https://docs.pyvista.org" target="_blank">docs.pyvista.org</a>
          </li>
          <li><i class="fa-li fas fa-bookmark fa-fw" title="Publication"></i>
-            doi: <a href="https://doi.org/10.21105/joss.01450">10.21105/joss.01450</a>
+            doi: <a href="https://doi.org/10.21105/joss.01450" target="_blank">10.21105/joss.01450</a>
          </li>
          <li><i class="fa-li fa fa-check fa-fw" style="color: green" title="Project status"></i>
             Stable and ready for use
          </li>
-         <li><i class="fas fa-graduation-cap" style="color: blue" title="Was this effort personal or professional?"></i>
+         <li><i class="fa-li fas fa-graduation-cap" style="color: blue" title="Was this effort personal or professional?"></i>
             Originated as my M.Sc. thesis
          </li>
       </ul>
@@ -88,12 +88,12 @@ to joining Kitware*).
 
       <ul class="fa-ul project-icons">
          <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
-            <a href="https://github.com/banesullivan/flask-tileserver">banesullivan/flask-tileserver</a>
+            <a href="https://github.com/banesullivan/flask-tileserver" target="_blank">banesullivan/flask-tileserver</a>
          </li>
          <li><i class="fa-li fa fa-sync-alt fa-fw" style="color: green" title="Project status"></i>
             Ready for use but still changing
          </li>
-         <li><i class="fas fa-hat-cowboy" style="color: brown" title="Was this effort personal or professional?"></i>
+         <li><i class="fa-li fas fa-hat-cowboy" style="color: brown" title="Was this effort personal or professional?"></i>
             Personal project
          </li>
       </ul>
@@ -109,12 +109,12 @@ to joining Kitware*).
 
       <ul class="fa-ul project-icons">
          <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
-            <a href="https://github.com/ResonantGeoData">ResonantGeoData</a>
+            <a href="https://github.com/ResonantGeoData" target="_blank">ResonantGeoData</a>
          </li>
          <li><i class="fa-li fa fa-sync-alt fa-fw" style="color: green" title="Project status"></i>
             Ready for use but still changing
          </li>
-         <li><i class="fas fa-building" style="color: green" title="Was this effort personal or professional?"></i>
+         <li><i class="fa-li fas fa-building" style="color: green" title="Was this effort personal or professional?"></i>
             Professional work at Kitware
          </li>
       </ul>
@@ -133,12 +133,12 @@ to joining Kitware*).
 
       <ul class="fa-ul project-icons">
          <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
-            <a href="https://github.com/banesullivan/scooby">banesullivan/scooby</a>
+            <a href="https://github.com/banesullivan/scooby" target="_blank">banesullivan/scooby</a>
          </li>
          <li><i class="fa-li fa fa-check fa-fw" style="color: green" title="Project status"></i>
             Stable and ready for use
          </li>
-         <li><i class="fas fa-hat-cowboy" style="color: brown" title="Was this effort personal or professional?"></i>
+         <li><i class="fa-li fas fa-hat-cowboy" style="color: brown" title="Was this effort personal or professional?"></i>
             Personal project
          </li>
       </ul>
@@ -156,12 +156,12 @@ to joining Kitware*).
 
       <ul class="fa-ul project-icons">
          <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
-            <a href="https://github.com/Kitware/ipyvtklink">Kitware/ipyvtklink</a>
+            <a href="https://github.com/Kitware/ipyvtklink" target="_blank">Kitware/ipyvtklink</a>
          </li>
          <li><i class="fa-li fa fa-check fa-fw" style="color: green" title="Project status"></i>
             Stable and ready for use
          </li>
-         <li><i class="fas fa-building" style="color: green" title="Was this effort personal or professional?"></i>
+         <li><i class="fa-li fas fa-building" style="color: green" title="Was this effort personal or professional?"></i>
             Professional work at Kitware
          </li>
       </ul>
@@ -177,19 +177,19 @@ to joining Kitware*).
 
       <ul class="fa-ul project-icons">
          <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
-            <a href="https://github.com/OpenGeoVis/PVGeo">OpenGeoVis/PVGeo</a>
+            <a href="https://github.com/OpenGeoVis/PVGeo" target="_blank">OpenGeoVis/PVGeo</a>
          </li>
          <li><i class="fa-li fa fa-book fa-fw" title="Documentation"></i>
-            <a href="https://pvgeo.org/">pvgeo.org</a>
+            <a href="https://pvgeo.org/" target="_blank">pvgeo.org</a>
          </li>
          <li><i class="fa-li fas fa-bookmark fa-fw" title="Publication"></i>
-            doi: <a href="https://doi.org/10.21105/joss.01451">10.21105/joss.01451</a>
+            doi: <a href="https://doi.org/10.21105/joss.01451" target="_blank">10.21105/joss.01451</a>
          </li>
          <li><i class="fa-li fa fa-check fa-fw" style="color: green" title="Project status"></i>
             Stable and ready for use
          </li>
-         <li><i class="fas fa-graduation-cap" style="color: blue" title="Was this effort personal or professional?"></i>
-            Research project during my B.Sc.
+         <li><i class="fa-li fas fa-graduation-cap" style="color: blue" title="Was this effort personal or professional?"></i>
+            B.Sc. research project
          </li>
       </ul>
 

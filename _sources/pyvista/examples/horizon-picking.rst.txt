@@ -157,7 +157,7 @@ See `enable_horizon_picking` for more details
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.313 seconds)
+   **Total running time of the script:** ( 0 minutes  3.353 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_horizon-picking.py:
