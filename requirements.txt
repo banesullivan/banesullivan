@@ -7,7 +7,7 @@ sphinx-gallery
 pydata-sphinx-theme
 sphinx-panels
 numpy
-git+git://github.com/pyvista/pyvista@master
+pyvista
 pandas
 matplotlib
 pypistats

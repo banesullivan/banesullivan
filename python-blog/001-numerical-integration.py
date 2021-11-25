@@ -341,7 +341,7 @@ left
 ###############################################################################
 # Well that's not very good as we know the true value for the left side to be
 # 0.164619 `from Wolfram Alpha <https://www.wolframalpha.com/input/?i=integrate+sin+1%2Fx+dx+from+x%3D0+to+2%2Fpi+>`_.
-# Let's see if incresing the discretization helps.
+# Let's see if increasing the discretization helps.
 
 
 left = compute_left(0.0001)
