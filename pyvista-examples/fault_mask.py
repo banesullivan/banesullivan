@@ -76,7 +76,8 @@ p.add_mesh(masked, scalars="point_mask", opacity=0.5)
 p.show()
 
 ###############################################################################
-
+# And here is how you might use that mask to do some sort of fancy modeling.
+# In my example, I'm going to use a rather sophisticated distance calculation:
 ids = np.argwhere(masked["point_mask"] == 1).ravel()
 pts = grid.points[ids]
 len(pts)
