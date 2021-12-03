@@ -266,7 +266,7 @@ Once we have those structured coordinates, we can create a
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.923 seconds)
+   **Total running time of the script:** ( 0 minutes  4.765 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_terrain-mesh.py:
