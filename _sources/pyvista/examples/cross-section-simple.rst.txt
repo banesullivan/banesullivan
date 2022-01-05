@@ -125,6 +125,15 @@ Now make a poly data mesh of these points
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/utilities/helpers.py:477: UserWarning: Points is not a float type. This can cause issues when transforming or applying filters. Casting to ``np.float32``. Disable this by passing ``force_float=False``.
+      'Points is not a float type. This can cause issues when '
+
 
 
 
@@ -165,7 +174,7 @@ Map the texture to the mesh.
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/core/dataset.py:497: PyvistaDeprecationWarning: Use of `DataSet.t_coords` is deprecated. Use `DataSet.active_t_coords` instead.
+    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/core/dataset.py:508: PyvistaDeprecationWarning: Use of `DataSet.t_coords` is deprecated. Use `DataSet.active_t_coords` instead.
       PyvistaDeprecationWarning
 
 
@@ -218,7 +227,7 @@ Plot it up!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.141 seconds)
+   **Total running time of the script:** ( 0 minutes  2.411 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_cross-section-simple.py:
