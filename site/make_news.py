@@ -34,6 +34,12 @@ class News:
 ###############################################################################
 
 articles = dict(
+    radiant_earth=News(
+        title="Radiant Earth Foundation's ML4EO Market News",
+        description="My hobby project, localtileserver, was featured in Radiant Earth Foundation's ML4EO Market News.",
+        link="https://www.radiant.earth/2022/01/04/december-2021-ml4eo-market-news/",
+        image="radiant-earth.png",
+    ),
     transform_2021=News(
         title="Transform 2021 Workshop",
         description="I instructed a workshop introducing PyVista as a visualization toolkit for geoscientists.",

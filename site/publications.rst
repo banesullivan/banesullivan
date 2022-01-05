@@ -40,6 +40,17 @@ Keep up with with my latest activities! I use this as a place to archive article
 .. panels::
 
 
+    ---
+    :img-top: _static/news/radiant-earth.png
+
+    My hobby project, localtileserver, was featured in Radiant Earth Foundation's ML4EO Market News.
+
+    .. link-button:: https://www.radiant.earth/2022/01/04/december-2021-ml4eo-market-news/
+        :type: url
+        :text: Radiant Earth Foundation's ML4EO Market News
+        :classes: btn-outline-primary btn-block stretched-link
+
+
 
     ---
     :img-top: _static/news/transform-2021.png
