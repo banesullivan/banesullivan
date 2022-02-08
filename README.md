@@ -12,5 +12,4 @@ Some of my ramblings:
 ---
 
 *Do you also like rocks 🪨 and computers 🖥️?*
-[**Join the Software Underground!**](https://swu.ng/slack)  
-[<img src="https://github.com/softwareunderground/brand/blob/master/logos/swung_logo_vector_cutout_colour.svg" width=250px />](https://swu.ng/slack)
+[**Join the Software Underground!**](https://swu.ng/slack)
