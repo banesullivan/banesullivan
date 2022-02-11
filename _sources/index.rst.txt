@@ -90,6 +90,9 @@ to joining Kitware*).
          <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
             <a href="https://github.com/banesullivan/localtileserver" target="_blank">banesullivan/localtileserver</a>
          </li>
+         <li><i class="fa-li fa fa-book fa-fw" title="Documentation"></i>
+            <a href="https://localtileserver.banesullivan.com" target="_blank">localtileserver.banesullivan.com</a>
+         </li>
          <li><i class="fa-li fa fa-sync-alt fa-fw" style="color: orange" title="Project status"></i>
             Ready for use but still changing
          </li>
