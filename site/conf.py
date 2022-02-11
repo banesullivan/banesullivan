@@ -47,7 +47,7 @@ warnings.filterwarnings(
 # -- Project information -----------------------------------------------------
 year = datetime.date.today().year
 project = "Bane Sullivan"
-copyright = "{:d}, Bane Sullivan".format(year)
+copyright = "2018-{:d}, Bane Sullivan".format(year)
 author = "Bane Sullivan"
 
 # The full version, including alpha/beta/rc tags
