@@ -7,7 +7,7 @@ sphinx-gallery
 pydata-sphinx-theme
 sphinx-panels
 numpy
-pyvista==0.33.2
+pyvista
 pandas
 matplotlib
 pypistats
