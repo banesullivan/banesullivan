@@ -76,8 +76,8 @@ For this project, we have two data archives in the `Open Mining Format (OMF) <ht
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/core/dataset.py:1544: PyvistaDeprecationWarning: Use of `cell_arrays` is deprecated. Use `cell_data` instead.
-      PyvistaDeprecationWarning
+    /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:1541: PyvistaDeprecationWarning: Use of `cell_arrays` is deprecated. Use `cell_data` instead.
+      warnings.warn(
 
 
 .. raw:: html
@@ -464,7 +464,7 @@ Resulting Visualization
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  19.813 seconds)
+   **Total running time of the script:** ( 1 minutes  50.097 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_kriging.py:
