@@ -1,11 +1,16 @@
 name: Build
 on:
+  workflow_dispatch:
   push:
+    tags: "*"
     branches:
-      - '*'
+      - master
+  pull_request:
 
 env:
   SHELLOPTS: 'errexit:pipefail'
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   doc:
@@ -27,16 +32,16 @@ jobs:
         run: make html
       - name: Get Notebooks
         run: |
-          mkdir _notebooks
-          cp site/pyvista/examples/*.ipynb _notebooks/
+          mkdir notebooks
+          cp site/pyvista/examples/*.ipynb notebooks/
       - uses: actions/upload-artifact@v2
         with:
           name: docs-build
           path: site/_build/html
       - uses: actions/upload-artifact@v2
         with:
-          name: pyvista-notebooks
-          path: _notebooks
+          name: notebooks
+          path: notebooks
 
   deploy:
     name: Publish Documentation
@@ -54,3 +59,35 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: site/_build/html
+
+  docker:
+    name: Build Docker Image with Notebooks
+    needs: doc
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' ||
+        ( github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository )
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v2
+        with:
+          name: notebooks
+          path: notebooks
+      - name: Log into the Container registry
+        uses: docker/login-action@v1
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: token
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Extract metadata for the Jupyter Docker image
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+      - name: Build and push the Jupyter Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: Dockerfile
+          push: ${{ github.actor != 'dependabot[bot]' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}

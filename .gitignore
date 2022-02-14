@@ -5,3 +5,4 @@ site/news.rst
 site/python-blog
 *.pyc
 **/*__pycache__
+notebooks
