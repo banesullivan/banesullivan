@@ -54,8 +54,8 @@ to joining Kitware*).
     ---
     :img-top: _static/pyvista-logo.png
 
-    The PyVista project is a collection of Free Licensed Open Source
-    Software (FLOSS) around 3D visualization and mesh analysis in Python.
+    The PyVista project is a collection of Open Source Software making 3D
+    visualization and analysis more approachable in Python.
 
     .. raw:: html
 
