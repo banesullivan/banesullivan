@@ -4,37 +4,27 @@ on:
     branches:
       - '*'
 
+env:
+  SHELLOPTS: 'errexit:pipefail'
+
 jobs:
   doc:
     name: Build Website
     runs-on: ubuntu-latest
-    env:
-      DISPLAY: ':99.0'
-      PYVISTA_OFF_SCREEN: 'True'
-      ALLOW_PLOTTING: true
-      SHELLOPTS: 'errexit:pipefail'
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
-          python-version: '3.7'
-      - name: Setup Headless Display
-        run: |
-          sudo apt-get update
-          sudo apt-get install libgl1-mesa-glx
-          sudo apt-get install -y xvfb
-          Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-          sleep 3
+          python-version: '3.8'
+      - name: Setup headless display
+        uses: pyvista/setup-headless-display-action@v1
       - name: Install Dependencies
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
       - name: PyVista Report
         run: python -c "import pyvista;print(pyvista.Report())"
       - name: Build Site
-        run: |
-          cd ./site;
-          make html;
-          cd ..;
+        working-directory: site
+        run: make html
       - name: Get Notebooks
         run: |
           mkdir _notebooks
@@ -47,6 +37,7 @@ jobs:
         with:
           name: pyvista-notebooks
           path: _notebooks
+
   deploy:
     name: Publish Documentation
     runs-on: ubuntu-latest
@@ -59,7 +50,7 @@ jobs:
           name: docs-build
           path: site/_build/html
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
-          folder: site/_build/html
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: site/_build/html
