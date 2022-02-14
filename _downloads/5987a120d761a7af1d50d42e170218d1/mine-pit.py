@@ -12,7 +12,7 @@ import numpy as np
 # sphinx_gallery_thumbnail_number = 2
 import pyvista as pv
 from pyvista import examples
-import xarray as xr
+import rioxarray
 
 ###############################################################################
 path, _ = examples.downloads._download_file("Sio020320.csv")
@@ -33,7 +33,7 @@ surf = cloud.delaunay_2d(progress_bar=True)
 # Open the GeoTIFF
 url = "https://dl.dropbox.com/s/pqgme8qsl95u9un/Sio020320_transparent_mosaic_group1.tif?dl=0"
 path, _ = examples.downloads._retrieve_file(url, "Sio020320_transparent_mosaic_group1.tif.csv")
-ds = xr.open_rasterio(path)
+ds = rioxarray.open_rasterio(path)
 
 # Fetch the texture as an image
 image = np.moveaxis(ds.values, 0, -1)

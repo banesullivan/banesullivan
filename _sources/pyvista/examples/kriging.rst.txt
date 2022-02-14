@@ -203,9 +203,9 @@ Visually inspect the kriging grid in relation to data
     p.add_mesh(
         project["Observed Temperature"],
         cmap="coolwarm",
-        stitle="Temperature (C)",
         point_size=15,
         render_points_as_spheres=True,
+        scalar_bar_args={"title": "Temperature (C)"},
     )
     p.camera_position = [
         (303509.4197523619, 4279629.689766085, 8053.049483835099),
@@ -222,22 +222,6 @@ Visually inspect the kriging grid in relation to data
    :srcset: /pyvista/examples/images/sphx_glr_kriging_002.png
    :class: sphx-glr-single-img
 
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1948: PyvistaDeprecationWarning: 
-    "stitle" is a depreciated keyword and will be removed in a future
-    release.
-
-    Use ``scalar_bar_args`` instead.  For example:
-
-    scalar_bar_args={'title': 'Scalar Bar Title'}
-
-      warnings.warn(USE_SCALAR_BAR_ARGS, PyvistaDeprecationWarning)
 
 
 
@@ -434,13 +418,13 @@ Resulting Visualization
         p.add_mesh(project["Negro Mag Fault"], color="lightblue", opacity=0.75)
 
         p.add_mesh(
-            subsurface.ctp().contour([175, 225], scalars='temperature (C)'),
+            subsurface.ctp().contour([175, 225], scalars="temperature (C)"),
             name="the model",
             scalars="temperature (C)",
             cmap="coolwarm",
             clim=[10, 270],
             opacity=0.9,
-            stitle="Temperature (C)",
+            scalar_bar_args={"title": "Temperature (C)"},
         )
         p.add_mesh(
             project["Observed Temperature"],
@@ -448,7 +432,7 @@ Resulting Visualization
             clim=[10, 270],
             render_points_as_spheres=True,
             point_size=10,
-            stitle="Temperature (C)",
+            scalar_bar_args={"title": "Temperature (C)"},
         )
 
         return
@@ -474,29 +458,13 @@ Resulting Visualization
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1948: PyvistaDeprecationWarning: 
-    "stitle" is a depreciated keyword and will be removed in a future
-    release.
-
-    Use ``scalar_bar_args`` instead.  For example:
-
-    scalar_bar_args={'title': 'Scalar Bar Title'}
-
-      warnings.warn(USE_SCALAR_BAR_ARGS, PyvistaDeprecationWarning)
-
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  0.677 seconds)
+   **Total running time of the script:** ( 2 minutes  16.619 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_kriging.py:

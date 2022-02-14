@@ -87,20 +87,11 @@ Create PyVista mesh
 .. code-block:: default
 
     grid = pv.StructuredGrid(x, y, z)
-    grid.cell_arrays["lsm"] = np.array(lsm).ravel(order="F")
+    grid.cell_data["lsm"] = np.array(lsm).ravel(order="F")
 
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/core/dataset.py:1544: PyvistaDeprecationWarning: Use of `cell_arrays` is deprecated. Use `cell_data` instead.
-      PyvistaDeprecationWarning
 
 
 
@@ -129,7 +120,7 @@ Visualize!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.354 seconds)
+   **Total running time of the script:** ( 0 minutes  1.128 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_spherical.py:

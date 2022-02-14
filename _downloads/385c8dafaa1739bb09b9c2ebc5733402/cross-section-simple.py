@@ -5,6 +5,7 @@ Geological Cross Section
 Plot a geological cross section in 3D space.
 
 We have a cross section PNG image and we know three coordinates along that section:
+
 * This section goes from +200m to -2000m in vertical extent
 * Coordinates of the start point: 32362837 5769796
 * Coordinates of the bend: 32368424 5765456 (the bending point is indicated with a * "K" at around half the section)
@@ -29,7 +30,9 @@ bend = [
 end = [32374114, 5763507]
 
 ###############################################################################
-# Make a surface mesh representing that coverage/ This mesh consists of 6 points. Generate them:
+# Make a surface mesh representing that coverage/ This mesh consists of 6
+# points. Generate them:
+
 #   a-----b-----e
 #   |     |     |
 #   |     |     |
@@ -55,7 +58,7 @@ f = end + [
 
 ###############################################################################
 # Now make a poly data mesh of these points
-points = np.array([a, b, c, d, e, f])
+points = np.array([a, b, c, d, e, f]).astype(float)
 faces = np.array([4, 0, 1, 2, 3, 4, 1, 4, 5, 2])
 surface = pv.PolyData(points, faces)
 
@@ -78,7 +81,7 @@ t_coords = np.array(
         [1, 0],
     ]
 )
-surface.t_coords = t_coords
+surface.active_t_coords = t_coords
 
 ###############################################################################
 # Load the texture image

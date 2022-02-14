@@ -485,9 +485,9 @@ The open-source, Python software <a class="reference external" href="https://geo
 <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span>
     <span class="n">project</span><span class="p">[</span><span class="s2">&quot;Observed Temperature&quot;</span><span class="p">],</span>
     <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">,</span>
-    <span class="n">stitle</span><span class="o">=</span><span class="s2">&quot;Temperature (C)&quot;</span><span class="p">,</span>
     <span class="n">point_size</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
     <span class="n">render_points_as_spheres</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Temperature (C)&quot;</span><span class="p">},</span>
 <span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">(</span><span class="mf">303509.4197523619</span><span class="p">,</span> <span class="mf">4279629.689766085</span><span class="p">,</span> <span class="mf">8053.049483835099</span><span class="p">),</span>
@@ -497,19 +497,7 @@ The open-source, Python software <a class="reference external" href="https://geo
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_kriging_002.png" srcset="../../_images/sphx_glr_kriging_002.png" alt="kriging" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1948: PyvistaDeprecationWarning:
-&quot;stitle&quot; is a depreciated keyword and will be removed in a future
-release.
-
-Use ``scalar_bar_args`` instead.  For example:
-
-scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
-
-  warnings.warn(USE_SCALAR_BAR_ARGS, PyvistaDeprecationWarning)
-</pre></div>
-</div>
-</section>
+<img src="../../_images/sphx_glr_kriging_002.png" srcset="../../_images/sphx_glr_kriging_002.png" alt="kriging" class = "sphx-glr-single-img"/></section>
 <section id="variogram-analysis">
 <h3>Variogram Analysis</h3>
 <p>Next, we need to compute a variogram for the temperature probe data and fit that variogram to an exponential model</p>
@@ -615,13 +603,13 @@ scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
     <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">project</span><span class="p">[</span><span class="s2">&quot;Negro Mag Fault&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
 
     <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span>
-        <span class="n">subsurface</span><span class="o">.</span><span class="n">ctp</span><span class="p">()</span><span class="o">.</span><span class="n">contour</span><span class="p">([</span><span class="mi">175</span><span class="p">,</span> <span class="mi">225</span><span class="p">],</span> <span class="n">scalars</span><span class="o">=</span><span class="s1">&#39;temperature (C)&#39;</span><span class="p">),</span>
+        <span class="n">subsurface</span><span class="o">.</span><span class="n">ctp</span><span class="p">()</span><span class="o">.</span><span class="n">contour</span><span class="p">([</span><span class="mi">175</span><span class="p">,</span> <span class="mi">225</span><span class="p">],</span> <span class="n">scalars</span><span class="o">=</span><span class="s2">&quot;temperature (C)&quot;</span><span class="p">),</span>
         <span class="n">name</span><span class="o">=</span><span class="s2">&quot;the model&quot;</span><span class="p">,</span>
         <span class="n">scalars</span><span class="o">=</span><span class="s2">&quot;temperature (C)&quot;</span><span class="p">,</span>
         <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">,</span>
         <span class="n">clim</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">270</span><span class="p">],</span>
         <span class="n">opacity</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
-        <span class="n">stitle</span><span class="o">=</span><span class="s2">&quot;Temperature (C)&quot;</span><span class="p">,</span>
+        <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Temperature (C)&quot;</span><span class="p">},</span>
     <span class="p">)</span>
     <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span>
         <span class="n">project</span><span class="p">[</span><span class="s2">&quot;Observed Temperature&quot;</span><span class="p">],</span>
@@ -629,7 +617,7 @@ scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
         <span class="n">clim</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">270</span><span class="p">],</span>
         <span class="n">render_points_as_spheres</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">point_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-        <span class="n">stitle</span><span class="o">=</span><span class="s2">&quot;Temperature (C)&quot;</span><span class="p">,</span>
+        <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Temperature (C)&quot;</span><span class="p">},</span>
     <span class="p">)</span>
 
     <span class="k">return</span>
@@ -648,19 +636,7 @@ scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_kriging_004.png" srcset="../../_images/sphx_glr_kriging_004.png" alt="kriging" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1948: PyvistaDeprecationWarning:
-&quot;stitle&quot; is a depreciated keyword and will be removed in a future
-release.
-
-Use ``scalar_bar_args`` instead.  For example:
-
-scalar_bar_args={&#39;title&#39;: &#39;Scalar Bar Title&#39;}
-
-  warnings.warn(USE_SCALAR_BAR_ARGS, PyvistaDeprecationWarning)
-</pre></div>
-</div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  0.677 seconds)</p>
+<img src="../../_images/sphx_glr_kriging_004.png" srcset="../../_images/sphx_glr_kriging_004.png" alt="kriging" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  16.619 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-kriging-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/2d610c305fc51adb26a96810638bb8ad/kriging.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">kriging.py</span></code></a></p>

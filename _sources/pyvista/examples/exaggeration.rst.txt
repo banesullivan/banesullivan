@@ -73,7 +73,7 @@ Load data files using PVGeo
         render_points_as_spheres=True,
         cmap="bwr",
         clim=[-50, 110],
-        stitle="Residuals",
+        scalar_bar_args={"title": "Residuals"},
     )
     sargs = dict(cmap="gist_earth")
 
@@ -97,22 +97,6 @@ Load data files using PVGeo
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1948: PyvistaDeprecationWarning: 
-    "stitle" is a depreciated keyword and will be removed in a future
-    release.
-
-    Use ``scalar_bar_args`` instead.  For example:
-
-    scalar_bar_args={'title': 'Scalar Bar Title'}
-
-      warnings.warn(USE_SCALAR_BAR_ARGS, PyvistaDeprecationWarning)
-
 
 
 
@@ -134,29 +118,13 @@ Load data files using PVGeo
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/plotting/plotting.py:1948: PyvistaDeprecationWarning: 
-    "stitle" is a depreciated keyword and will be removed in a future
-    release.
-
-    Use ``scalar_bar_args`` instead.  For example:
-
-    scalar_bar_args={'title': 'Scalar Bar Title'}
-
-      warnings.warn(USE_SCALAR_BAR_ARGS, PyvistaDeprecationWarning)
-
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.002 seconds)
+   **Total running time of the script:** ( 0 minutes  3.781 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_exaggeration.py:

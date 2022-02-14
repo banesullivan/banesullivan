@@ -32,7 +32,7 @@ Use xarray and rasterio to load a raster into a StructuredGrid.
     import pyvista as pv
     from pyvista import examples
     from rasterio.warp import transform
-    import xarray as xr
+    import rioxarray
 
 
 
@@ -46,7 +46,7 @@ Use xarray and rasterio to load a raster into a StructuredGrid.
 The following is a function you can use to load just about any geospatial
 raster.
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-48
+.. GENERATED FROM PYTHON SOURCE LINES 17-50
 
 .. code-block:: default
 
@@ -58,9 +58,11 @@ raster.
         This will handle coordinate transformations.
         """
         # Read in the data
-        data = xr.open_rasterio(filename)
+        filename = path
+        data = rioxarray.open_rasterio(filename)
         values = np.asarray(data)
-        nans = values == data.nodatavals
+        data.rio.nodata
+        nans = values == data.rio.nodata
         if np.any(nans):
             # values = np.ma.masked_where(nans, values)
             values[nans] = np.nan
@@ -74,7 +76,7 @@ raster.
             zz = np.zeros_like(xx)
         mesh = pv.StructuredGrid(xx, yy, zz)
         pts = mesh.points
-        lon, lat = transform(data.crs, out_crs, pts[:, 0], pts[:, 1])
+        lon, lat = transform(data.rio.crs, out_crs, pts[:, 0], pts[:, 1])
         mesh.points[:, 0] = lon
         mesh.points[:, 1] = lat
         mesh["data"] = values.reshape(mesh.n_points, -1, order="F")
@@ -88,11 +90,11 @@ raster.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-50
+.. GENERATED FROM PYTHON SOURCE LINES 51-52
 
 Download a sample GeoTiff to demonstrate
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-52
+.. GENERATED FROM PYTHON SOURCE LINES 52-54
 
 .. code-block:: default
 
@@ -105,11 +107,11 @@ Download a sample GeoTiff to demonstrate
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-54
+.. GENERATED FROM PYTHON SOURCE LINES 55-56
 
 Use the utility function to load that file.
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-57
+.. GENERATED FROM PYTHON SOURCE LINES 56-59
 
 .. code-block:: default
 
@@ -119,15 +121,6 @@ Use the utility function to load that file.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/runner/work/banesullivan/banesullivan/pyvista-examples/raster.py:25: DeprecationWarning: open_rasterio is Deprecated in favor of rioxarray. For information about transitioning, see: https://corteva.github.io/rioxarray/stable/getting_started/getting_started.html
-      data = xr.open_rasterio(filename)
 
 
 .. raw:: html
@@ -156,7 +149,7 @@ Use the utility function to load that file.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-59
+.. GENERATED FROM PYTHON SOURCE LINES 60-61
 
 .. code-block:: default
 
@@ -176,7 +169,7 @@ Use the utility function to load that file.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  21.224 seconds)
+   **Total running time of the script:** ( 0 minutes  22.774 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_raster.py:

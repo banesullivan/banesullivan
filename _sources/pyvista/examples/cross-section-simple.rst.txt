@@ -24,6 +24,7 @@ Geological Cross Section
 Plot a geological cross section in 3D space.
 
 We have a cross section PNG image and we know three coordinates along that section:
+
 * This section goes from +200m to -2000m in vertical extent
 * Coordinates of the start point: 32362837 5769796
 * Coordinates of the bend: 32368424 5765456 (the bending point is indicated with a * "K" at around half the section)
@@ -32,7 +33,7 @@ We have a cross section PNG image and we know three coordinates along that secti
 
 Originally posted: https://github.com/pyvista/pyvista-support/issues/272
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-21
+.. GENERATED FROM PYTHON SOURCE LINES 17-22
 
 .. code-block:: default
 
@@ -48,11 +49,11 @@ Originally posted: https://github.com/pyvista/pyvista-support/issues/272
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-23
+.. GENERATED FROM PYTHON SOURCE LINES 23-24
 
 Parameters for cross section
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-31
+.. GENERATED FROM PYTHON SOURCE LINES 24-32
 
 .. code-block:: default
 
@@ -71,18 +72,20 @@ Parameters for cross section
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-37
+.. GENERATED FROM PYTHON SOURCE LINES 33-35
 
-Make a surface mesh representing that coverage/ This mesh consists of 6 points. Generate them:
-  a-----b-----e
-  |     |     |
-  |     |     |
-  d-----c-----f
+Make a surface mesh representing that coverage/ This mesh consists of 6
+points. Generate them:
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-56
+.. GENERATED FROM PYTHON SOURCE LINES 35-59
 
 .. code-block:: default
 
+
+    #   a-----b-----e
+    #   |     |     |
+    #   |     |     |
+    #   d-----c-----f
     a = start + [
         zrng[1],
     ]
@@ -109,15 +112,15 @@ Make a surface mesh representing that coverage/ This mesh consists of 6 points. 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-58
+.. GENERATED FROM PYTHON SOURCE LINES 60-61
 
 Now make a poly data mesh of these points
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-62
+.. GENERATED FROM PYTHON SOURCE LINES 61-65
 
 .. code-block:: default
 
-    points = np.array([a, b, c, d, e, f])
+    points = np.array([a, b, c, d, e, f]).astype(float)
     faces = np.array([4, 0, 1, 2, 3, 4, 1, 4, 5, 2])
     surface = pv.PolyData(points, faces)
 
@@ -125,26 +128,17 @@ Now make a poly data mesh of these points
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/utilities/helpers.py:477: UserWarning: Points is not a float type. This can cause issues when transforming or applying filters. Casting to ``np.float32``. Disable this by passing ``force_float=False``.
-      'Points is not a float type. This can cause issues when '
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 63-67
+.. GENERATED FROM PYTHON SOURCE LINES 66-70
 
 Map the texture to the mesh.
 - We know the tcoords of a, d, e, & f, but not necessarily b & c
 - to find them, scale by cell sizes:
 - Get the width of the two cells to find those coords
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-83
+.. GENERATED FROM PYTHON SOURCE LINES 70-86
 
 .. code-block:: default
 
@@ -162,29 +156,20 @@ Map the texture to the mesh.
             [1, 0],
         ]
     )
-    surface.t_coords = t_coords
+    surface.active_t_coords = t_coords
 
 
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pyvista/core/dataset.py:508: PyvistaDeprecationWarning: Use of `DataSet.t_coords` is deprecated. Use `DataSet.active_t_coords` instead.
-      PyvistaDeprecationWarning
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 84-85
+.. GENERATED FROM PYTHON SOURCE LINES 87-88
 
 Load the texture image
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-88
+.. GENERATED FROM PYTHON SOURCE LINES 88-91
 
 .. code-block:: default
 
@@ -198,11 +183,11 @@ Load the texture image
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-90
+.. GENERATED FROM PYTHON SOURCE LINES 92-93
 
 Plot it up!
 
-.. GENERATED FROM PYTHON SOURCE LINES 90-96
+.. GENERATED FROM PYTHON SOURCE LINES 93-99
 
 .. code-block:: default
 
@@ -227,7 +212,7 @@ Plot it up!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.617 seconds)
+   **Total running time of the script:** ( 0 minutes  2.359 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_cross-section-simple.py:
