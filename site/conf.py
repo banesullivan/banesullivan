@@ -24,7 +24,6 @@ import pyvista
 # make_news.make_news_gallery()
 
 
-
 # Manage errors
 pyvista.set_error_output_file("errors.txt")
 # Ensure that offscreen rendering is used for docs generation

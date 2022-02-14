@@ -17,5 +17,6 @@ gstools
 netcdf4
 rasterio
 xarray
+rioxarray
 tqdm
 vtk

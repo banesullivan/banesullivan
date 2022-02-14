@@ -86,9 +86,9 @@ p.add_mesh(project["Terrain"], texture="geo_aer", opacity=0.75)
 p.add_mesh(
     project["Observed Temperature"],
     cmap="coolwarm",
-    stitle="Temperature (C)",
     point_size=15,
     render_points_as_spheres=True,
+    scalar_bar_args={"title": "Temperature (C)"},
 )
 p.camera_position = [
     (303509.4197523619, 4279629.689766085, 8053.049483835099),
@@ -175,13 +175,13 @@ def add_contents(p):
     p.add_mesh(project["Negro Mag Fault"], color="lightblue", opacity=0.75)
 
     p.add_mesh(
-        subsurface.ctp().contour([175, 225], scalars='temperature (C)'),
+        subsurface.ctp().contour([175, 225], scalars="temperature (C)"),
         name="the model",
         scalars="temperature (C)",
         cmap="coolwarm",
         clim=[10, 270],
         opacity=0.9,
-        stitle="Temperature (C)",
+        scalar_bar_args={"title": "Temperature (C)"},
     )
     p.add_mesh(
         project["Observed Temperature"],
@@ -189,7 +189,7 @@ def add_contents(p):
         clim=[10, 270],
         render_points_as_spheres=True,
         point_size=10,
-        stitle="Temperature (C)",
+        scalar_bar_args={"title": "Temperature (C)"},
     )
 
     return

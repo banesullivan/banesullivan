@@ -27,7 +27,7 @@ gargs = dict(
     render_points_as_spheres=True,
     cmap="bwr",
     clim=[-50, 110],
-    stitle="Residuals",
+    scalar_bar_args={"title": "Residuals"},
 )
 sargs = dict(cmap="gist_earth")
 

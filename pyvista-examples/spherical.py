@@ -38,7 +38,7 @@ z = radius * np.sin(yy)
 ###############################################################################
 # Create PyVista mesh
 grid = pv.StructuredGrid(x, y, z)
-grid.cell_arrays["lsm"] = np.array(lsm).ravel(order="F")
+grid.cell_data["lsm"] = np.array(lsm).ravel(order="F")
 
 ###############################################################################
 # Visualize!

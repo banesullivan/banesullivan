@@ -9,7 +9,7 @@ import numpy as np
 import pyvista as pv
 from pyvista import examples
 from rasterio.warp import transform
-import xarray as xr
+import rioxarray
 
 ##############################################################################
 # The following is a function you can use to load just about any geospatial
@@ -22,9 +22,11 @@ def read_raster(filename, out_crs="EPSG:3857", use_z=False):
     This will handle coordinate transformations.
     """
     # Read in the data
-    data = xr.open_rasterio(filename)
+    filename = path
+    data = rioxarray.open_rasterio(filename)
     values = np.asarray(data)
-    nans = values == data.nodatavals
+    data.rio.nodata
+    nans = values == data.rio.nodata
     if np.any(nans):
         # values = np.ma.masked_where(nans, values)
         values[nans] = np.nan
@@ -38,7 +40,7 @@ def read_raster(filename, out_crs="EPSG:3857", use_z=False):
         zz = np.zeros_like(xx)
     mesh = pv.StructuredGrid(xx, yy, zz)
     pts = mesh.points
-    lon, lat = transform(data.crs, out_crs, pts[:, 0], pts[:, 1])
+    lon, lat = transform(data.rio.crs, out_crs, pts[:, 0], pts[:, 1])
     mesh.points[:, 0] = lon
     mesh.points[:, 1] = lat
     mesh["data"] = values.reshape(mesh.n_points, -1, order="F")
