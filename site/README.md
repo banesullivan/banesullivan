@@ -3,12 +3,10 @@
 Please be careful if you copy this source... lots of little things will need
 to be changed.
 
-Build Status: [![Build Status](https://travis-ci.org/banesullivan/mywebsite.svg?branch=master)](https://travis-ci.org/banesullivan/mywebsite)
-
 ## Gallery
 
-If you are searching for the source code for an example in my [gallery](https://banesullivan.com/python-blog/index.html),
-head into [the gallery directory](https://github.com/banesullivan/mywebsite/tree/master/pyvista-examples)
+If you are searching for the source code for an example in my [gallery](file:///Users/bane/Software/personal/banesullivan/site/_build/html/pyvista/examples/index.html),
+head into [the gallery directory](https://github.com/banesullivan/mywebsite/tree/main/pyvista-examples)
 
 ### License
 

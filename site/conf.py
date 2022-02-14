@@ -100,7 +100,7 @@ html_logo = None
 html_context = {
     "github_user": "banesullivan",
     "github_repo": "mywebsite",
-    "github_version": "master",
+    "github_version": "main",
     "doc_path": "site",
     "last_updated": str(datetime.date.today()),
 }
