@@ -68,7 +68,7 @@ Load the project into an :class:`pyvista.MultiBlock` dataset
 
     /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:1541: PyvistaDeprecationWarning: Use of `cell_arrays` is deprecated. Use `cell_data` instead.
       warnings.warn(
-    MultiBlock (0x7f41457bc4c0)
+    MultiBlock (0x7f6754de6760)
       N Blocks:     9
       X Bounds:     443941.105, 447059.611
       Y Bounds:     491941.536, 495059.859
@@ -180,7 +180,7 @@ Then apply a filtering tool from ``pyvista`` to the volumetric data:
 
  .. code-block:: none
 
-    UnstructuredGrid (0x7f421fbab280)
+    UnstructuredGrid (0x7f66d5eb3fa0)
       N Cells:      92525
       N Points:     107807
       X Bounds:     4.447e+05, 4.457e+05
@@ -239,7 +239,7 @@ Then you can put it all in one environment!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  15.006 seconds)
+   **Total running time of the script:** ( 0 minutes  17.571 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_wolf-creek.py:

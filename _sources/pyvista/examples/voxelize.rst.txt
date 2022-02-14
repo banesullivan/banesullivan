@@ -91,7 +91,7 @@ Seee also https://pvgeo.org/examples/filters-general/voxelize-points.html#voxeli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.648 seconds)
+   **Total running time of the script:** ( 0 minutes  1.738 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_voxelize.py:
