@@ -39,7 +39,7 @@ Anyways, let's look at some code and especially some 3D visualizations!
 import pyvista as pv
 from pyvista import examples
 
-# Load OMF archive as PyVista MulitBlock dataset
+# Load OMF archive as PyVista MultiBlock dataset
 model = examples.download_damavand_volcano()
 model
 
