@@ -115,7 +115,7 @@ np.sum(g(yy) * dy)
 
 ###############################################################################
 # Now that's much better! as we decrease the :math:`\Delta x` value, we see the
-# apprximationm start to converge on the analtical answer for the integral.
+# approximation start to converge on the analytical answer for the integral.
 # The rectangles appear to be consistently overestimating the integral.
 #
 # Integrating a Complex Function
@@ -156,7 +156,7 @@ plt.ylabel("$f(x)$")
 plt.show()
 
 ###############################################################################
-# Huh, that's weird. The function behaves quite different from a typical :math:`\sin`
+# Huh, that's weird. The function behaves quite differently from a typical :math:`\sin`
 # function and we appear to see some sort of decay - let's look into that a bit
 # more. *At what x value are we seeing a change from oscillatory behavior to
 # a decay?*
@@ -181,7 +181,7 @@ plt.ylabel("$f(x)$")
 plt.show()
 
 ###############################################################################
-# So now we know that have a speration point in our function - this might come
+# So now we know that have a separation point in our function - this might come
 # in handy later. as we may have to treat those two regions of the function
 # separately when numerically integrating.
 #
@@ -251,7 +251,7 @@ plt.show()
 
 
 ###############################################################################
-# It appears that the equation :math:`\frac{2}{n \pi}` captures the oscilatory
+# It appears that the equation :math:`\frac{2}{n \pi}` captures the oscillatory
 # behavior of :math:`f(x)` quite well! We see that it marks the minimums, maximums,
 # and zero-cross points for every period of :math:`f(x)`. This is just what we need
 # to effectively integrate :math:`f(x)`.
