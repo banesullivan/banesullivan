@@ -64,6 +64,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: site/_build/html
+          cname: banesullivan.com
 
   docker:
     name: Build Docker Image with Notebooks
