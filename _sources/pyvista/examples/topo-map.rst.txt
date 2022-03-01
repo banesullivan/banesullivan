@@ -78,7 +78,7 @@ Let's inspect the imagery that we just loaded
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7fc6f93977c0>
+    <matplotlib.image.AxesImage object at 0x7f141af7fb20>
 
 
 
@@ -215,7 +215,7 @@ and plotting the texture mapped local topography and the outside area
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  24.556 seconds)
+   **Total running time of the script:** ( 0 minutes  22.328 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_topo-map.py:
