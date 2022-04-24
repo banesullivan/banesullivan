@@ -124,6 +124,29 @@ to joining Kitware*).
 
     ---
 
+    🩻 🗺️ django-large-image
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+
+    ``django-large-image`` provides a dynamic tile server with
+    ``django-rest-framework`` viewset mixins for endpoints to work with large
+    images (geospatial or medical image formats) in Django.
+
+    .. raw:: html
+
+      <ul class="fa-ul project-icons">
+         <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
+            <a href="https://github.com/girder/django-large-image" target="_blank">girder/django-large-image</a>
+         </li>
+         <li><i class="fa-li fa fa-check fa-fw" style="color: green" title="Project status"></i>
+            Stable and ready for use
+         </li>
+         <li><i class="fa-li fas fa-building" style="color: green" title="Was this effort personal or professional?"></i>
+            Professional work at Kitware
+         </li>
+      </ul>
+
+    ---
+
     🐶🕵 ️Scooby
     ^^^^^^^^^^
 
