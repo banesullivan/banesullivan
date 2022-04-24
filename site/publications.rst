@@ -41,6 +41,16 @@ Keep up with with my latest activities! I use this as a place to archive article
 
 
     ---
+    :img-top: _static/news/cloud_native_outreach_22.png
+
+    I presented on dynamic tile serving in Django as a part of my work at Kitware at the Cloud-Native Geospatial Outreach Event
+
+    .. link-button:: https://youtu.be/v3e2ODCK9Co?t=31247
+        :type: url
+        :text: Cloud-Native Geospatial Outreach Event
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
     :img-top: _static/news/radiant-earth.png
 
     My hobby project, localtileserver, was featured in Radiant Earth Foundation's ML4EO Market News.
