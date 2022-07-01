@@ -4,7 +4,13 @@ I am currently a Research Software Engineer [@Kitware](https://github.com/Kitwar
 
 Learn more about me at [banesullivan.com](https://banesullivan.com/) and keep up to date by [following me on Twitter](https://twitter.com/banesullivan)
 
-Some of my ramblings:
+
+## Open Source Office Hours
+
+I host ***Open Source Office Hours*** on Thursdays each week. These are an opportunity for anyone to book time with me to talk Python, geoscience, and/or share/seek help with what you’re working on. [Schedule to come say hi!](https://calendly.com/bane-sullivan-kitware/open-source-office-hours)
+
+
+## Some of My Ramblings
 
 - [📄 How to write a good README](https://github.com/banesullivan/README)
 - [🌍 A guide to PyVista for geoscientists](https://banesullivan.com/pyvista/index.html)
