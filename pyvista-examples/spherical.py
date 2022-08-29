@@ -8,13 +8,14 @@ See also https://docs.pyvista.org/examples/02-plot/spherical.html
 """
 
 import numpy as np
+import pooch
 import pyvista as pv
-from pyvista import examples
 import xarray as xr
 
-path, _ = examples.downloads._download_file("lsm_4x5.nc")
+url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/lsm_4x5.nc"
+file_path = pooch.retrieve(url=url, known_hash=None)
 
-lsm = xr.open_dataarray(path)
+lsm = xr.open_dataarray(file_path)
 
 xx, yy, zz = np.meshgrid(
     np.radians(

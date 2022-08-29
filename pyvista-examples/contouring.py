@@ -5,16 +5,16 @@ Creating a Contour Map
 Creating a contour map from a DEM mesh
 
 """
+# sphinx_gallery_thumbnail_number = 2
 import matplotlib.pyplot as plt
 import numpy as np
-
-# sphinx_gallery_thumbnail_number = 2
+import pooch
 import pyvista as pv
-from pyvista import examples
 
 ###############################################################################
-path, _ = examples.downloads._download_file("Sio020320.vtp")
-mesh = pv.read(path).elevation()
+url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/Sio020320.vtp"
+file_path = pooch.retrieve(url=url, known_hash=None)
+mesh = pv.read(file_path).elevation()
 mesh
 
 ###############################################################################

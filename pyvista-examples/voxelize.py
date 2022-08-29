@@ -11,12 +11,13 @@ Seee also https://pvgeo.org/examples/filters-general/voxelize-points.html#voxeli
 
 import PVGeo
 import numpy as np
+import pooch
 import pyvista as pv
-from pyvista import examples
 
-path, _ = examples.downloads._download_file("points3d.txt")
+url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/points3d.txt"
+file_path = pooch.retrieve(url=url, known_hash=None)
 
-points = np.loadtxt(path)
+points = np.loadtxt(file_path)
 pc = pv.PolyData(points)
 
 ###############################################################################

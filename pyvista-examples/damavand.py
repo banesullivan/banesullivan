@@ -19,16 +19,17 @@ See LinkedIn posts for more details:
 
 Originally posted: https://github.com/banesullivan/damavand-volcano
 """
-import numpy as np
-
 # sphinx_gallery_thumbnail_number = 6
+import numpy as np
+import pooch
 import pyvista as pv
 from pyvista import examples
 
 ###############################################################################
-a, _ = examples.downloads._download_file("gebco7510_49cl.stl")
-b, _ = examples.downloads._download_file("gebco7510_55cl.stl")
-c, _ = examples.downloads._download_file("AOI.Damavand.32639.vtp")
+base_url = r"https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/{}"
+a = pooch.retrieve(url=base_url.format("gebco7510_49cl.stl"), known_hash=None)
+b = pooch.retrieve(url=base_url.format("gebco7510_55cl.stl"), known_hash=None)
+c = pooch.retrieve(url=base_url.format("AOI.Damavand.32639.vtp"), known_hash=None)
 
 gebco = examples.download_damavand_volcano()
 gebco_a = pv.read(a)
