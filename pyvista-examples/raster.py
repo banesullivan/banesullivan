@@ -6,8 +6,8 @@ Use xarray and rasterio to load a raster into a StructuredGrid.
 """
 
 import numpy as np
+import pooch
 import pyvista as pv
-from pyvista import examples
 from rasterio.warp import transform
 import rioxarray
 
@@ -22,7 +22,6 @@ def read_raster(filename, out_crs="EPSG:3857", use_z=False):
     This will handle coordinate transformations.
     """
     # Read in the data
-    filename = path
     data = rioxarray.open_rasterio(filename)
     values = np.asarray(data)
     data.rio.nodata
@@ -49,11 +48,12 @@ def read_raster(filename, out_crs="EPSG:3857", use_z=False):
 
 ##############################################################################
 # Download a sample GeoTiff to demonstrate
-path, _ = examples.downloads._download_file("Elevation.tif")
+url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/Elevation.tif"
+file_path = pooch.retrieve(url=url, known_hash=None)
 
 ##############################################################################
 # Use the utility function to load that file.
-topo = read_raster(path, use_z=True)
+topo = read_raster(file_path, use_z=True)
 topo
 
 ##############################################################################

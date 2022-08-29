@@ -7,17 +7,17 @@ mine pit.
 
 Originally posted: https://github.com/pyvista/pyvista-support/issues/159
 """
-import numpy as np
-
 # sphinx_gallery_thumbnail_number = 2
+import numpy as np
+import pooch
 import pyvista as pv
-from pyvista import examples
 import rioxarray
 
 ###############################################################################
-path, _ = examples.downloads._download_file("Sio020320.csv")
+url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/Sio020320.csv"
+file_path = pooch.retrieve(url=url, known_hash=None)
 
-points = np.loadtxt(path, skiprows=1, delimiter=",")[:, 1:]
+points = np.loadtxt(file_path, skiprows=1, delimiter=",")[:, 1:]
 cloud = pv.PolyData(points)
 # Plot the point cloud with a special rendering technique
 cloud.plot(eye_dome_lighting=True)
@@ -32,7 +32,7 @@ surf = cloud.delaunay_2d(progress_bar=True)
 ###############################################################################
 # Open the GeoTIFF
 url = "https://dl.dropbox.com/s/pqgme8qsl95u9un/Sio020320_transparent_mosaic_group1.tif?dl=0"
-path, _ = examples.downloads._retrieve_file(url, "Sio020320_transparent_mosaic_group1.tif.csv")
+path = pooch.retrieve(url=url, known_hash=None)
 ds = rioxarray.open_rasterio(path)
 
 # Fetch the texture as an image

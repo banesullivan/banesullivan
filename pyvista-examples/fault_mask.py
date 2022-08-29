@@ -10,15 +10,15 @@ of the fault - but still have a single modeling grid.
 
 Let's get to it!
 """
-import numpy as np
-
 # sphinx_gallery_thumbnail_number = 4
+import numpy as np
+import pooch
 import pyvista as pv
-from pyvista import examples
 
 ###############################################################################
-path, _ = examples.downloads._download_file("opal_mound_fault.vtk")
-fault = pv.read(path)
+url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/opal_mound_fault.vtk"
+file_path = pooch.retrieve(url=url, known_hash=None)
+fault = pv.read(file_path)
 fault
 
 
