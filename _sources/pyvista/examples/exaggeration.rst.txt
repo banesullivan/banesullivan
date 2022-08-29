@@ -30,8 +30,8 @@ Originally posted: https://github.com/pyvista/pyvista-support/issues/8
     import PVGeo
 
     # sphinx_gallery_thumbnail_number = 2
+    import pooch
     import pyvista as pv
-    from pyvista import examples
 
 
 
@@ -44,12 +44,14 @@ Originally posted: https://github.com/pyvista/pyvista-support/issues/8
 
 Load data files using PVGeo
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-24
+.. GENERATED FROM PYTHON SOURCE LINES 15-26
 
 .. code-block:: default
 
-    gpath, _ = examples.downloads._download_file("gravi.txt")
-    ppath, _ = examples.downloads._download_file("surf.txt")
+    url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/gravi.txt"
+    gpath = pooch.retrieve(url=url, known_hash=None)
+    url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/surf.txt"
+    ppath = pooch.retrieve(url=url, known_hash=None)
 
     gravi = PVGeo.ubc.GravObsReader().apply(gpath)
     psurf = PVGeo.ubc.TopoReader().apply(ppath)
@@ -64,7 +66,7 @@ Load data files using PVGeo
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-45
+.. GENERATED FROM PYTHON SOURCE LINES 27-47
 
 .. code-block:: default
 
@@ -100,7 +102,7 @@ Load data files using PVGeo
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-51
+.. GENERATED FROM PYTHON SOURCE LINES 48-53
 
 .. code-block:: default
 
@@ -124,28 +126,23 @@ Load data files using PVGeo
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.362 seconds)
+   **Total running time of the script:** ( 0 minutes  3.792 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_exaggeration.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: exaggeration.py <exaggeration.py>`
 
-     :download:`Download Python source code: exaggeration.py <exaggeration.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: exaggeration.ipynb <exaggeration.ipynb>`
+      :download:`Download Jupyter notebook: exaggeration.ipynb <exaggeration.ipynb>`
 
 
 .. only:: html

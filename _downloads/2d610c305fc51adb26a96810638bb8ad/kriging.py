@@ -8,15 +8,15 @@ The goal of this workflow is to create a 3D temperature model by kriging the *Ob
 The open-source, Python software `GSTools <https://geostat-framework.github.io/>`_ is used to perform variogram analysis and kriging of the temperature data onto a PyVista mesh to create the 3D model.
 """
 import PVGeo
+
+# sphinx_gallery_thumbnail_number = 4
 from gstools import Exponential, krige, vario_estimate_unstructured
 from gstools.covmodel.plot import plot_variogram
 import matplotlib.pyplot as plt
 import numpy as np
 import omfvista
-
-# sphinx_gallery_thumbnail_number = 4
+import pooch
 import pyvista as pv
-from pyvista import examples
 
 ###############################################################################
 # Load the Data
@@ -25,7 +25,7 @@ from pyvista import examples
 # For this project, we have two data archives in the `Open Mining Format (OMF) <https://github.com/gmggroup/omf>`_ specification and we will use one of PyVista's companion projects, `omfvista <https://opengeovis.github.io/omfvista/>`_ to load those data archives into PyVista a ``MultiBlock`` dataset.
 
 url = "https://dl.dropbox.com/s/3cuxvurj8zubchb/FORGE.omf?dl=0"
-path, _ = examples.downloads._retrieve_file(url, "FORGE.omf")
+path = pooch.retrieve(url=url, known_hash=None)
 
 project = omfvista.load_project(path)
 project

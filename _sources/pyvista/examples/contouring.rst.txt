@@ -23,16 +23,15 @@ Creating a Contour Map
 
 Creating a contour map from a DEM mesh
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-15
+.. GENERATED FROM PYTHON SOURCE LINES 8-14
 
 .. code-block:: default
-
-    import matplotlib.pyplot as plt
-    import numpy as np
 
     # sphinx_gallery_thumbnail_number = 2
+    import matplotlib.pyplot as plt
+    import numpy as np
+    import pooch
     import pyvista as pv
-    from pyvista import examples
 
 
 
@@ -41,17 +40,26 @@ Creating a contour map from a DEM mesh
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-20
+.. GENERATED FROM PYTHON SOURCE LINES 15-20
 
 .. code-block:: default
 
-    path, _ = examples.downloads._download_file("Sio020320.vtp")
-    mesh = pv.read(path).elevation()
+    url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/Sio020320.vtp"
+    file_path = pooch.retrieve(url=url, known_hash=None)
+    mesh = pv.read(file_path).elevation()
     mesh
 
 
 
 
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Downloading data from 'https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/Sio020320.vtp' to file '/home/runner/.cache/pooch/c0c6a619beaa06db63dfe7593cb5578f-Sio020320.vtp'.
+    SHA256 hash of downloaded file: eb4df0c0e1925f972023f798d81fd778027985ad9c25a2c57b49242fbeb74b16
+    Use this value as the 'known_hash' argument of 'pooch.retrieve' to ensure that the file hasn't changed if it is downloaded again in the future.
 
 
 .. raw:: html
@@ -97,8 +105,6 @@ Get a min/max range of the elevation
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
 
@@ -123,8 +129,6 @@ create values to contour at
 
 
 .. rst-class:: sphx-glr-script-out
-
- Out:
 
  .. code-block:: none
 
@@ -201,40 +205,33 @@ Create a 2D contour map
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
 
-    <matplotlib.collections.PathCollection object at 0x7f82074bf970>
+    <matplotlib.collections.PathCollection object at 0x7f5463248760>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.593 seconds)
+   **Total running time of the script:** ( 0 minutes  4.789 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_contouring.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: contouring.py <contouring.py>`
 
-     :download:`Download Python source code: contouring.py <contouring.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: contouring.ipynb <contouring.ipynb>`
+      :download:`Download Jupyter notebook: contouring.ipynb <contouring.ipynb>`
 
 
 .. only:: html

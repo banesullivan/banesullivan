@@ -16,8 +16,8 @@ Originally posted: https://github.com/pyvista/pyvista-support/issues/272
 """
 
 import numpy as np
+import pooch
 import pyvista as pv
-from pyvista import examples
 
 ###############################################################################
 # Parameters for cross section
@@ -85,8 +85,9 @@ surface.active_t_coords = t_coords
 
 ###############################################################################
 # Load the texture image
-path, _ = examples.downloads._download_file("geo-cross-section.png")
-texture = pv.Texture(path)
+url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/geo-cross-section.png"
+file_path = pooch.retrieve(url=url, known_hash=None)
+texture = pv.Texture(file_path)
 
 ###############################################################################
 # Plot it up!

@@ -29,15 +29,14 @@ of the fault - but still have a single modeling grid.
 
 Let's get to it!
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-19
+.. GENERATED FROM PYTHON SOURCE LINES 13-18
 
 .. code-block:: default
-
-    import numpy as np
 
     # sphinx_gallery_thumbnail_number = 4
+    import numpy as np
+    import pooch
     import pyvista as pv
-    from pyvista import examples
 
 
 
@@ -46,12 +45,13 @@ Let's get to it!
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-25
+.. GENERATED FROM PYTHON SOURCE LINES 19-25
 
 .. code-block:: default
 
-    path, _ = examples.downloads._download_file("opal_mound_fault.vtk")
-    fault = pv.read(path)
+    url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/opal_mound_fault.vtk"
+    file_path = pooch.retrieve(url=url, known_hash=None)
+    fault = pv.read(file_path)
     fault
 
 
@@ -233,8 +233,6 @@ In my example, I'm going to use a rather sophisticated distance calculation:
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
 
@@ -279,8 +277,6 @@ Add those results back to the source grid
 
 
 .. rst-class:: sphx-glr-script-out
-
- Out:
 
  .. code-block:: none
 
@@ -340,28 +336,23 @@ Visualize one side of the masked grid
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.049 seconds)
+   **Total running time of the script:** ( 0 minutes  5.460 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_fault_mask.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: fault_mask.py <fault_mask.py>`
 
-     :download:`Download Python source code: fault_mask.py <fault_mask.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: fault_mask.ipynb <fault_mask.ipynb>`
+      :download:`Download Jupyter notebook: fault_mask.ipynb <fault_mask.ipynb>`
 
 
 .. only:: html

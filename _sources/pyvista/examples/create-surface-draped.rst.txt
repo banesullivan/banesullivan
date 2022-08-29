@@ -116,8 +116,6 @@ mesh "draping" down from those coordinates to hold the GPR image data.
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
 
@@ -210,28 +208,23 @@ mesh and the possibilities are endless with PyVista
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  12.081 seconds)
+   **Total running time of the script:** ( 0 minutes  16.922 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_create-surface-draped.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: create-surface-draped.py <create-surface-draped.py>`
 
-     :download:`Download Python source code: create-surface-draped.py <create-surface-draped.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: create-surface-draped.ipynb <create-surface-draped.ipynb>`
+      :download:`Download Jupyter notebook: create-surface-draped.ipynb <create-surface-draped.ipynb>`
 
 
 .. only:: html

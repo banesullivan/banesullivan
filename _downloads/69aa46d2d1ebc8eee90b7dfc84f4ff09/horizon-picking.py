@@ -5,11 +5,12 @@ Picking Horizons
 Pick a horizon along a 2.5D cross section of GPR imagery.
 
 """
+import pooch
 import pyvista as pv
-from pyvista import examples
 
-path, _ = examples.downloads._download_file("gpr-line.vtu")
-mesh = pv.read(path)
+url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/gpr-line.vtu"
+file_path = pooch.retrieve(url=url, known_hash=None)
+mesh = pv.read(file_path)
 
 ###############################################################################
 p = pv.Plotter()

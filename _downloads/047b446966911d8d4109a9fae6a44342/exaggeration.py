@@ -7,13 +7,15 @@ Originally posted: https://github.com/pyvista/pyvista-support/issues/8
 import PVGeo
 
 # sphinx_gallery_thumbnail_number = 2
+import pooch
 import pyvista as pv
-from pyvista import examples
 
 ###############################################################################
 # Load data files using PVGeo
-gpath, _ = examples.downloads._download_file("gravi.txt")
-ppath, _ = examples.downloads._download_file("surf.txt")
+url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/gravi.txt"
+gpath = pooch.retrieve(url=url, known_hash=None)
+url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/surf.txt"
+ppath = pooch.retrieve(url=url, known_hash=None)
 
 gravi = PVGeo.ubc.GravObsReader().apply(gpath)
 psurf = PVGeo.ubc.TopoReader().apply(ppath)

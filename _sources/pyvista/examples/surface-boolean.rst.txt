@@ -175,28 +175,23 @@ the surface with the value 2.0
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.271 seconds)
+   **Total running time of the script:** ( 0 minutes  4.200 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_surface-boolean.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: surface-boolean.py <surface-boolean.py>`
 
-     :download:`Download Python source code: surface-boolean.py <surface-boolean.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: surface-boolean.ipynb <surface-boolean.ipynb>`
+      :download:`Download Jupyter notebook: surface-boolean.ipynb <surface-boolean.ipynb>`
 
 
 .. only:: html

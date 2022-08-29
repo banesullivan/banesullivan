@@ -29,8 +29,8 @@ Use xarray and rasterio to load a raster into a StructuredGrid.
 
 
     import numpy as np
+    import pooch
     import pyvista as pv
-    from pyvista import examples
     from rasterio.warp import transform
     import rioxarray
 
@@ -46,7 +46,7 @@ Use xarray and rasterio to load a raster into a StructuredGrid.
 The following is a function you can use to load just about any geospatial
 raster.
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-50
+.. GENERATED FROM PYTHON SOURCE LINES 17-49
 
 .. code-block:: default
 
@@ -58,7 +58,6 @@ raster.
         This will handle coordinate transformations.
         """
         # Read in the data
-        filename = path
         data = rioxarray.open_rasterio(filename)
         values = np.asarray(data)
         data.rio.nodata
@@ -90,15 +89,16 @@ raster.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-52
+.. GENERATED FROM PYTHON SOURCE LINES 50-51
 
 Download a sample GeoTiff to demonstrate
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-54
+.. GENERATED FROM PYTHON SOURCE LINES 51-54
 
 .. code-block:: default
 
-    path, _ = examples.downloads._download_file("Elevation.tif")
+    url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/Elevation.tif"
+    file_path = pooch.retrieve(url=url, known_hash=None)
 
 
 
@@ -115,7 +115,7 @@ Use the utility function to load that file.
 
 .. code-block:: default
 
-    topo = read_raster(path, use_z=True)
+    topo = read_raster(file_path, use_z=True)
     topo
 
 
@@ -169,28 +169,23 @@ Use the utility function to load that file.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  21.560 seconds)
+   **Total running time of the script:** ( 0 minutes  29.436 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_raster.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: raster.py <raster.py>`
 
-     :download:`Download Python source code: raster.py <raster.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: raster.ipynb <raster.ipynb>`
+      :download:`Download Jupyter notebook: raster.ipynb <raster.ipynb>`
 
 
 .. only:: html

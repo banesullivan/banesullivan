@@ -42,9 +42,9 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 .. code-block:: default
 
-    import numpy as np
-
     # sphinx_gallery_thumbnail_number = 6
+    import numpy as np
+    import pooch
     import pyvista as pv
     from pyvista import examples
 
@@ -55,13 +55,14 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-38
+.. GENERATED FROM PYTHON SOURCE LINES 29-39
 
 .. code-block:: default
 
-    a, _ = examples.downloads._download_file("gebco7510_49cl.stl")
-    b, _ = examples.downloads._download_file("gebco7510_55cl.stl")
-    c, _ = examples.downloads._download_file("AOI.Damavand.32639.vtp")
+    base_url = r"https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/{}"
+    a = pooch.retrieve(url=base_url.format("gebco7510_49cl.stl"), known_hash=None)
+    b = pooch.retrieve(url=base_url.format("gebco7510_55cl.stl"), known_hash=None)
+    c = pooch.retrieve(url=base_url.format("AOI.Damavand.32639.vtp"), known_hash=None)
 
     gebco = examples.download_damavand_volcano()
     gebco_a = pv.read(a)
@@ -75,7 +76,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-52
+.. GENERATED FROM PYTHON SOURCE LINES 40-53
 
 .. code-block:: default
 
@@ -104,7 +105,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-60
+.. GENERATED FROM PYTHON SOURCE LINES 54-61
 
 .. code-block:: default
 
@@ -127,7 +128,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-70
+.. GENERATED FROM PYTHON SOURCE LINES 62-71
 
 .. code-block:: default
 
@@ -152,7 +153,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-74
+.. GENERATED FROM PYTHON SOURCE LINES 72-75
 
 .. code-block:: default
 
@@ -189,7 +190,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-77
+.. GENERATED FROM PYTHON SOURCE LINES 76-78
 
 .. code-block:: default
 
@@ -207,7 +208,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-82
+.. GENERATED FROM PYTHON SOURCE LINES 79-83
 
 .. code-block:: default
 
@@ -227,7 +228,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-101
+.. GENERATED FROM PYTHON SOURCE LINES 84-102
 
 .. code-block:: default
 
@@ -264,28 +265,23 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  13.138 seconds)
+   **Total running time of the script:** ( 0 minutes  17.225 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_damavand.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: damavand.py <damavand.py>`
 
-     :download:`Download Python source code: damavand.py <damavand.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: damavand.ipynb <damavand.ipynb>`
+      :download:`Download Jupyter notebook: damavand.ipynb <damavand.ipynb>`
 
 
 .. only:: html

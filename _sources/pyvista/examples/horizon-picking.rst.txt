@@ -23,24 +23,25 @@ Picking Horizons
 
 Pick a horizon along a 2.5D cross section of GPR imagery.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-14
+.. GENERATED FROM PYTHON SOURCE LINES 8-15
 
 .. code-block:: default
 
+    import pooch
     import pyvista as pv
-    from pyvista import examples
 
-    path, _ = examples.downloads._download_file("gpr-line.vtu")
-    mesh = pv.read(path)
-
-
+    url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/gpr-line.vtu"
+    file_path = pooch.retrieve(url=url, known_hash=None)
+    mesh = pv.read(file_path)
 
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-26
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 16-27
 
 .. code-block:: default
 
@@ -67,19 +68,19 @@ Pick a horizon along a 2.5D cross section of GPR imagery.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-28
+.. GENERATED FROM PYTHON SOURCE LINES 28-29
 
 .. image:: ../images/gpr-line.gif
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-32
+.. GENERATED FROM PYTHON SOURCE LINES 32-33
 
 Then you can access the picked surface via ``p.picked_horizon``
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-36
+.. GENERATED FROM PYTHON SOURCE LINES 36-37
 
 See `enable_horizon_picking` for more details
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-37
+.. GENERATED FROM PYTHON SOURCE LINES 37-38
 
 .. code-block:: default
 
@@ -89,8 +90,6 @@ See `enable_horizon_picking` for more details
 
 
 .. rst-class:: sphx-glr-script-out
-
- Out:
 
  .. code-block:: none
 
@@ -157,28 +156,23 @@ See `enable_horizon_picking` for more details
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.153 seconds)
+   **Total running time of the script:** ( 0 minutes  4.453 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_horizon-picking.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: horizon-picking.py <horizon-picking.py>`
 
-     :download:`Download Python source code: horizon-picking.py <horizon-picking.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: horizon-picking.ipynb <horizon-picking.ipynb>`
+      :download:`Download Jupyter notebook: horizon-picking.ipynb <horizon-picking.ipynb>`
 
 
 .. only:: html

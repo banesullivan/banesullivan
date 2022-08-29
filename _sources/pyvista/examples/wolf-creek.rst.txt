@@ -25,15 +25,14 @@ Load and visualize an OMF project file
 
 Originally from: https://opengeovis.github.io/omfvista/examples/load-project.html
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-15
+.. GENERATED FROM PYTHON SOURCE LINES 9-14
 
 .. code-block:: default
 
-    import omfvista
-
     # sphinx_gallery_thumbnail_number = 3
+    import omfvista
+    import pooch
     import pyvista as pv
-    from pyvista import examples
 
 
 
@@ -42,18 +41,19 @@ Originally from: https://opengeovis.github.io/omfvista/examples/load-project.htm
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-17
+.. GENERATED FROM PYTHON SOURCE LINES 15-16
 
 Load the project into an :class:`pyvista.MultiBlock` dataset
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-23
+.. GENERATED FROM PYTHON SOURCE LINES 16-23
 
 .. code-block:: default
 
 
-    path, _ = examples.downloads._download_file("test_file.omf")
+    url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/test_file.omf"
+    file_path = pooch.retrieve(url=url, known_hash=None)
 
-    project = omfvista.load_project(path)
+    project = omfvista.load_project(file_path)
     print(project)
 
 
@@ -62,11 +62,9 @@ Load the project into an :class:`pyvista.MultiBlock` dataset
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
-    MultiBlock (0x7f8160c62a00)
+    MultiBlock (0x7f5427532580)
       N Blocks:     9
       X Bounds:     443941.105, 447059.611
       Y Bounds:     491941.536, 495059.859
@@ -174,11 +172,9 @@ Then apply a filtering tool from ``pyvista`` to the volumetric data:
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
-    UnstructuredGrid (0x7f81c15104c0)
+    UnstructuredGrid (0x7f54275a82e0)
       N Cells:      92525
       N Points:     107807
       X Bounds:     4.447e+05, 4.457e+05
@@ -237,28 +233,23 @@ Then you can put it all in one environment!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  14.211 seconds)
+   **Total running time of the script:** ( 0 minutes  20.365 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_wolf-creek.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: wolf-creek.py <wolf-creek.py>`
 
-     :download:`Download Python source code: wolf-creek.py <wolf-creek.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: wolf-creek.ipynb <wolf-creek.ipynb>`
+      :download:`Download Jupyter notebook: wolf-creek.ipynb <wolf-creek.ipynb>`
 
 
 .. only:: html

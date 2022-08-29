@@ -353,16 +353,17 @@ to download the full example code</p>
 <p>To overlay an image/map from a GeoTIFF on to a topography surface, it’s necessary to have texture coordinates (“texture mapping”) matching the proper extents of the mesh/surface you’d like to drape the texture (GeoTIFF) on.</p>
 <p>We can do this by using the spatial reference of the GeoTIFF itself, as this allows you to preserve the entire mesh that the texture is being draped on without having to clip out the parts where you don’t have imagery. In this example, we explicitly set the texture extents onto a topography surface where the texture/GeoTIFF has a much larger extent than the topography surface.</p>
 <p>Originally posted here: <a class="reference external" href="https://github.com/pyvista/pyvista-support/issues/14">https://github.com/pyvista/pyvista-support/issues/14</a></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># sphinx_gallery_thumbnail_number = 2</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pooch</span>
 <span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
 <span class="kn">import</span> <span class="nn">rasterio</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">path</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">downloads</span><span class="o">.</span><span class="n">_download_file</span><span class="p">(</span><span class="s2">&quot;topo_clean.vtk&quot;</span><span class="p">)</span>
-<span class="n">topo</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/topo_clean.vtk&quot;</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">known_hash</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">topo</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
 <span class="n">topo</span>
 </pre></div>
 </div>
@@ -384,12 +385,11 @@ to download the full example code</p>
 <br /><p>Load the GeoTIFF/texture
 <a class="reference external" href="https://dl.dropbox.com/s/emsg3h7hww1r779/Geologic_map_on_air_photo.tif?dl=0">https://dl.dropbox.com/s/emsg3h7hww1r779/Geologic_map_on_air_photo.tif?dl=0</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://dl.dropbox.com/s/emsg3h7hww1r779/Geologic_map_on_air_photo.tif?dl=0&quot;</span>
-<span class="n">filename</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">downloads</span><span class="o">.</span><span class="n">_retrieve_file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;Geologic_map_on_air_photo.tif&quot;</span><span class="p">)</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">known_hash</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">filename</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;/home/runner/.local/share/pyvista/examples/Geologic_map_on_air_photo.tif&#39;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;/home/runner/.cache/pooch/283a4c8495d964af0cfed0f875375923-Geologic_map_on_air_photo.tif&#39;
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_gcps</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
@@ -447,8 +447,8 @@ to download the full example code</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_geological-map_002.png" srcset="../../_images/sphx_glr_geological-map_002.png" alt="geological map" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  13.452 seconds)</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-geological-map-py">
+<img src="../../_images/sphx_glr_geological-map_002.png" srcset="../../_images/sphx_glr_geological-map_002.png" alt="geological map" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  21.216 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-geological-map-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/9dba1d6b7fb1e9f63042a72b9dd57478/geological-map.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">geological-map.py</span></code></a></p>
 </div>

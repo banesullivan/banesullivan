@@ -39,8 +39,8 @@ Originally posted: https://github.com/pyvista/pyvista-support/issues/272
 
 
     import numpy as np
+    import pooch
     import pyvista as pv
-    from pyvista import examples
 
 
 
@@ -169,12 +169,13 @@ Map the texture to the mesh.
 
 Load the texture image
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-91
+.. GENERATED FROM PYTHON SOURCE LINES 88-92
 
 .. code-block:: default
 
-    path, _ = examples.downloads._download_file("geo-cross-section.png")
-    texture = pv.Texture(path)
+    url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/geo-cross-section.png"
+    file_path = pooch.retrieve(url=url, known_hash=None)
+    texture = pv.Texture(file_path)
 
 
 
@@ -183,11 +184,11 @@ Load the texture image
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-93
+.. GENERATED FROM PYTHON SOURCE LINES 93-94
 
 Plot it up!
 
-.. GENERATED FROM PYTHON SOURCE LINES 93-99
+.. GENERATED FROM PYTHON SOURCE LINES 94-100
 
 .. code-block:: default
 
@@ -212,28 +213,23 @@ Plot it up!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.300 seconds)
+   **Total running time of the script:** ( 0 minutes  2.439 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_cross-section-simple.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: cross-section-simple.py <cross-section-simple.py>`
 
-     :download:`Download Python source code: cross-section-simple.py <cross-section-simple.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: cross-section-simple.ipynb <cross-section-simple.ipynb>`
+      :download:`Download Jupyter notebook: cross-section-simple.ipynb <cross-section-simple.ipynb>`
 
 
 .. only:: html

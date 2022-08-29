@@ -1,9 +1,5 @@
 :orphan:
 
-
-
-.. _sphx_glr_pyvista_examples:
-
 Examples
 ========
 
@@ -27,14 +23,314 @@ Please feel free to use and extend these examples. I simply ask that you please 
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Creating a contour map from a DEM mesh">
 
 .. only:: html
 
- .. figure:: /pyvista/examples/images/thumb/sphx_glr_contouring_thumb.png
-     :alt: Creating a Contour Map
+  .. image:: /pyvista/examples/images/thumb/sphx_glr_contouring_thumb.png
+    :alt: Creating a Contour Map
 
-     :ref:`sphx_glr_pyvista_examples_contouring.py`
+  :ref:`sphx_glr_pyvista_examples_contouring.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Creating a Contour Map</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Drape a surface (2D array) from a line in 3D space.">
+
+.. only:: html
+
+  .. image:: /pyvista/examples/images/thumb/sphx_glr_create-surface-draped_thumb.png
+    :alt: Drape 2D Surface From Line
+
+  :ref:`sphx_glr_pyvista_examples_create-surface-draped.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Drape 2D Surface From Line</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Plot a geological cross section in 3D space.">
+
+.. only:: html
+
+  .. image:: /pyvista/examples/images/thumb/sphx_glr_cross-section-simple_thumb.png
+    :alt: Geological Cross Section
+
+  :ref:`sphx_glr_pyvista_examples_cross-section-simple.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Geological Cross Section</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Visualize 3D models of Damavand Volcano, Alborz, Iran.">
+
+.. only:: html
+
+  .. image:: /pyvista/examples/images/thumb/sphx_glr_damavand_thumb.png
+    :alt: Damavand Volcano
+
+  :ref:`sphx_glr_pyvista_examples_damavand.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Damavand Volcano</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Originally posted: https://github.com/pyvista/pyvista-support/issues/8">
+
+.. only:: html
+
+  .. image:: /pyvista/examples/images/thumb/sphx_glr_exaggeration_thumb.png
+    :alt: Vertical Exaggeration
+
+  :ref:`sphx_glr_pyvista_examples_exaggeration.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Vertical Exaggeration</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example will demonstrate how to add a cell data field to an input data set that defines wh...">
+
+.. only:: html
+
+  .. image:: /pyvista/examples/images/thumb/sphx_glr_extract-topography_thumb.png
+    :alt: Extract Topography
+
+  :ref:`sphx_glr_pyvista_examples_extract-topography.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Extract Topography</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example, I demonstrate how to use a surface mesh of a fault in the subsurface to create...">
+
+.. only:: html
+
+  .. image:: /pyvista/examples/images/thumb/sphx_glr_fault_mask_thumb.png
+    :alt: Masked Grid for Two Sides of a Fault
+
+  :ref:`sphx_glr_pyvista_examples_fault_mask.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Masked Grid for Two Sides of a Fault</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Texture mapping for a GeoTIFF on a topography surface.">
+
+.. only:: html
+
+  .. image:: /pyvista/examples/images/thumb/sphx_glr_geological-map_thumb.png
+    :alt: Geological Map on Topography
+
+  :ref:`sphx_glr_pyvista_examples_geological-map.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Geological Map on Topography</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Pick a horizon along a 2.5D cross section of GPR imagery.">
+
+.. only:: html
+
+  .. image:: /pyvista/examples/images/thumb/sphx_glr_horizon-picking_thumb.png
+    :alt: Picking Horizons
+
+  :ref:`sphx_glr_pyvista_examples_horizon-picking.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Picking Horizons</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example utilizes data available from the `FORGE geothermal reserach site &lt;https://utahforg...">
+
+.. only:: html
+
+  .. image:: /pyvista/examples/images/thumb/sphx_glr_kriging_thumb.png
+    :alt: Kriging with GSTools
+
+  :ref:`sphx_glr_pyvista_examples_kriging.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Kriging with GSTools</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Triangulate a surface from a point cloud of points and overlay imagery of a mine pit.">
+
+.. only:: html
+
+  .. image:: /pyvista/examples/images/thumb/sphx_glr_mine-pit_thumb.png
+    :alt: Mine Pit Imagery
+
+  :ref:`sphx_glr_pyvista_examples_mine-pit.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Mine Pit Imagery</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use xarray and rasterio to load a raster into a StructuredGrid.">
+
+.. only:: html
+
+  .. image:: /pyvista/examples/images/thumb/sphx_glr_raster_thumb.png
+    :alt: Read a raster using xarray
+
+  :ref:`sphx_glr_pyvista_examples_raster.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Read a raster using xarray</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Originally posted: https://github.com/pyvista/pyvista-support/issues/67">
+
+.. only:: html
+
+  .. image:: /pyvista/examples/images/thumb/sphx_glr_spherical_thumb.png
+    :alt: Spherical Data
+
+  :ref:`sphx_glr_pyvista_examples_spherical.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Spherical Data</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use a surface inside a volume to set scalar values on an array in the volume.">
+
+.. only:: html
+
+  .. image:: /pyvista/examples/images/thumb/sphx_glr_surface-boolean_thumb.png
+    :alt: Surface Boolean Logic
+
+  :ref:`sphx_glr_pyvista_examples_surface-boolean.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Surface Boolean Logic</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use a topographic surface to create a 3D terrain-following mesh.">
+
+.. only:: html
+
+  .. image:: /pyvista/examples/images/thumb/sphx_glr_terrain-mesh_thumb.png
+    :alt: Terrain Following Mesh
+
+  :ref:`sphx_glr_pyvista_examples_terrain-mesh.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Terrain Following Mesh</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Plot a map from a GeoTIFF on top of a topography mesh.">
+
+.. only:: html
+
+  .. image:: /pyvista/examples/images/thumb/sphx_glr_topo-map_thumb.png
+    :alt: Topographic Map
+
+  :ref:`sphx_glr_pyvista_examples_topo-map.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Topographic Map</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Create voxels/blocks for eavery point in a gridded point cloud">
+
+.. only:: html
+
+  .. image:: /pyvista/examples/images/thumb/sphx_glr_voxelize_thumb.png
+    :alt: Voxelize Points
+
+  :ref:`sphx_glr_pyvista_examples_voxelize.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Voxelize Points</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Load and visualize an OMF project file">
+
+.. only:: html
+
+  .. image:: /pyvista/examples/images/thumb/sphx_glr_wolf-creek_thumb.png
+    :alt: Load OMF Project
+
+  :ref:`sphx_glr_pyvista_examples_wolf-creek.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Load OMF Project</div>
+    </div>
+
 
 .. raw:: html
 
@@ -45,366 +341,23 @@ Please feel free to use and extend these examples. I simply ask that you please 
    :hidden:
 
    /pyvista/examples/contouring
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Drape a surface (2D array) from a line in 3D space.">
-
-.. only:: html
-
- .. figure:: /pyvista/examples/images/thumb/sphx_glr_create-surface-draped_thumb.png
-     :alt: Drape 2D Surface From Line
-
-     :ref:`sphx_glr_pyvista_examples_create-surface-draped.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /pyvista/examples/create-surface-draped
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Plot a geological cross section in 3D space.">
-
-.. only:: html
-
- .. figure:: /pyvista/examples/images/thumb/sphx_glr_cross-section-simple_thumb.png
-     :alt: Geological Cross Section
-
-     :ref:`sphx_glr_pyvista_examples_cross-section-simple.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /pyvista/examples/cross-section-simple
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Visualize 3D models of Damavand Volcano, Alborz, Iran.">
-
-.. only:: html
-
- .. figure:: /pyvista/examples/images/thumb/sphx_glr_damavand_thumb.png
-     :alt: Damavand Volcano
-
-     :ref:`sphx_glr_pyvista_examples_damavand.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /pyvista/examples/damavand
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Originally posted: https://github.com/pyvista/pyvista-support/issues/8">
-
-.. only:: html
-
- .. figure:: /pyvista/examples/images/thumb/sphx_glr_exaggeration_thumb.png
-     :alt: Vertical Exaggeration
-
-     :ref:`sphx_glr_pyvista_examples_exaggeration.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /pyvista/examples/exaggeration
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example will demonstrate how to add a cell data field to an input data set that defines wh...">
-
-.. only:: html
-
- .. figure:: /pyvista/examples/images/thumb/sphx_glr_extract-topography_thumb.png
-     :alt: Extract Topography
-
-     :ref:`sphx_glr_pyvista_examples_extract-topography.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /pyvista/examples/extract-topography
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="In this example, I demonstrate how to use a surface mesh of a fault in the subsurface to create...">
-
-.. only:: html
-
- .. figure:: /pyvista/examples/images/thumb/sphx_glr_fault_mask_thumb.png
-     :alt: Masked Grid for Two Sides of a Fault
-
-     :ref:`sphx_glr_pyvista_examples_fault_mask.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /pyvista/examples/fault_mask
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Texture mapping for a GeoTIFF on a topography surface.">
-
-.. only:: html
-
- .. figure:: /pyvista/examples/images/thumb/sphx_glr_geological-map_thumb.png
-     :alt: Geological Map on Topography
-
-     :ref:`sphx_glr_pyvista_examples_geological-map.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /pyvista/examples/geological-map
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Pick a horizon along a 2.5D cross section of GPR imagery.">
-
-.. only:: html
-
- .. figure:: /pyvista/examples/images/thumb/sphx_glr_horizon-picking_thumb.png
-     :alt: Picking Horizons
-
-     :ref:`sphx_glr_pyvista_examples_horizon-picking.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /pyvista/examples/horizon-picking
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example utilizes data available from the `FORGE geothermal reserach site &lt;https://utahforg...">
-
-.. only:: html
-
- .. figure:: /pyvista/examples/images/thumb/sphx_glr_kriging_thumb.png
-     :alt: Kriging with GSTools
-
-     :ref:`sphx_glr_pyvista_examples_kriging.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /pyvista/examples/kriging
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Triangulate a surface from a point cloud of points and overlay imagery of a mine pit.">
-
-.. only:: html
-
- .. figure:: /pyvista/examples/images/thumb/sphx_glr_mine-pit_thumb.png
-     :alt: Mine Pit Imagery
-
-     :ref:`sphx_glr_pyvista_examples_mine-pit.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /pyvista/examples/mine-pit
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Use xarray and rasterio to load a raster into a StructuredGrid.">
-
-.. only:: html
-
- .. figure:: /pyvista/examples/images/thumb/sphx_glr_raster_thumb.png
-     :alt: Read a raster using xarray
-
-     :ref:`sphx_glr_pyvista_examples_raster.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /pyvista/examples/raster
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Originally posted: https://github.com/pyvista/pyvista-support/issues/67">
-
-.. only:: html
-
- .. figure:: /pyvista/examples/images/thumb/sphx_glr_spherical_thumb.png
-     :alt: Spherical Data
-
-     :ref:`sphx_glr_pyvista_examples_spherical.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /pyvista/examples/spherical
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Use a surface inside a volume to set scalar values on an array in the volume.">
-
-.. only:: html
-
- .. figure:: /pyvista/examples/images/thumb/sphx_glr_surface-boolean_thumb.png
-     :alt: Surface Boolean Logic
-
-     :ref:`sphx_glr_pyvista_examples_surface-boolean.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /pyvista/examples/surface-boolean
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Use a topographic surface to create a 3D terrain-following mesh.">
-
-.. only:: html
-
- .. figure:: /pyvista/examples/images/thumb/sphx_glr_terrain-mesh_thumb.png
-     :alt: Terrain Following Mesh
-
-     :ref:`sphx_glr_pyvista_examples_terrain-mesh.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /pyvista/examples/terrain-mesh
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Plot a map from a GeoTIFF on top of a topography mesh.">
-
-.. only:: html
-
- .. figure:: /pyvista/examples/images/thumb/sphx_glr_topo-map_thumb.png
-     :alt: Topographic Map
-
-     :ref:`sphx_glr_pyvista_examples_topo-map.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /pyvista/examples/topo-map
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Create voxels/blocks for eavery point in a gridded point cloud">
-
-.. only:: html
-
- .. figure:: /pyvista/examples/images/thumb/sphx_glr_voxelize_thumb.png
-     :alt: Voxelize Points
-
-     :ref:`sphx_glr_pyvista_examples_voxelize.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /pyvista/examples/voxelize
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Load and visualize an OMF project file">
-
-.. only:: html
-
- .. figure:: /pyvista/examples/images/thumb/sphx_glr_wolf-creek_thumb.png
-     :alt: Load OMF Project
-
-     :ref:`sphx_glr_pyvista_examples_wolf-creek.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /pyvista/examples/wolf-creek
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
 
 
 

@@ -10,23 +10,24 @@ We can do this by using the spatial reference of the GeoTIFF itself, as this all
 
 Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 """
-import numpy as np
-
 # sphinx_gallery_thumbnail_number = 2
+import numpy as np
+import pooch
 import pyvista as pv
 from pyvista import examples
 import rasterio
 
 ###############################################################################
-path, _ = examples.downloads._download_file("topo_clean.vtk")
-topo = pv.read(path)
+url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/topo_clean.vtk"
+file_path = pooch.retrieve(url=url, known_hash=None)
+topo = pv.read(file_path)
 topo
 
 ###############################################################################
 # Load the GeoTIFF/texture
 # https://dl.dropbox.com/s/emsg3h7hww1r779/Geologic_map_on_air_photo.tif?dl=0
 url = "https://dl.dropbox.com/s/emsg3h7hww1r779/Geologic_map_on_air_photo.tif?dl=0"
-filename, _ = examples.downloads._retrieve_file(url, "Geologic_map_on_air_photo.tif")
+filename = pooch.retrieve(url=url, known_hash=None)
 filename
 
 ###############################################################################

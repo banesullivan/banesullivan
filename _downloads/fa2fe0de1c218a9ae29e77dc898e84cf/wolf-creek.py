@@ -6,18 +6,18 @@ Load and visualize an OMF project file
 
 Originally from: https://opengeovis.github.io/omfvista/examples/load-project.html
 """
-import omfvista
-
 # sphinx_gallery_thumbnail_number = 3
+import omfvista
+import pooch
 import pyvista as pv
-from pyvista import examples
 
 ###############################################################################
 # Load the project into an :class:`pyvista.MultiBlock` dataset
 
-path, _ = examples.downloads._download_file("test_file.omf")
+url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/test_file.omf"
+file_path = pooch.retrieve(url=url, known_hash=None)
 
-project = omfvista.load_project(path)
+project = omfvista.load_project(file_path)
 print(project)
 
 ###############################################################################

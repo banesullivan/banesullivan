@@ -359,8 +359,8 @@ to download the full example code</p>
 </ul>
 <p>Originally posted: <a class="reference external" href="https://github.com/pyvista/pyvista-support/issues/272">https://github.com/pyvista/pyvista-support/issues/272</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pooch</span>
 <span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
-<span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
 </pre></div>
 </div>
 <p>Parameters for cross section</p>
@@ -427,8 +427,9 @@ points. Generate them:</p>
 </pre></div>
 </div>
 <p>Load the texture image</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">path</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">downloads</span><span class="o">.</span><span class="n">_download_file</span><span class="p">(</span><span class="s2">&quot;geo-cross-section.png&quot;</span><span class="p">)</span>
-<span class="n">texture</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Texture</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/geo-cross-section.png&quot;</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">known_hash</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">texture</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Texture</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Plot it up!</p>
@@ -440,8 +441,8 @@ points. Generate them:</p>
 <span class="n">surface</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">texture</span><span class="o">=</span><span class="n">texture</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="n">cpos</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_cross-section-simple_001.png" srcset="../../_images/sphx_glr_cross-section-simple_001.png" alt="cross section simple" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.300 seconds)</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-cross-section-simple-py">
+<img src="../../_images/sphx_glr_cross-section-simple_001.png" srcset="../../_images/sphx_glr_cross-section-simple_001.png" alt="cross section simple" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.439 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-cross-section-simple-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/385c8dafaa1739bb09b9c2ebc5733402/cross-section-simple.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">cross-section-simple.py</span></code></a></p>
 </div>

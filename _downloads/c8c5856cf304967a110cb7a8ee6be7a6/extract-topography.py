@@ -20,14 +20,13 @@ cells field.
 
 Also posted on PVGeo: https://pvgeo.org/examples/grids/extract-topography.html
 """
+# sphinx_gallery_thumbnail_number = 6
 import os
 
 from PVGeo.grids import ExtractTopography
 from PVGeo.model_build import CreateTensorMesh
-
-# sphinx_gallery_thumbnail_number = 6
+import pooch
 import pyvista
-from pyvista import examples
 
 ###############################################################################
 # For the grid data set, let's use one of the Model Building sources
@@ -49,10 +48,14 @@ mesh.plot(show_grid=True, color=True, show_edges=True)
 
 ###############################################################################
 # Now load the topography file from the example data:
-link = "https://dl.dropbox.com/s/gw5v3tiq68oge3l/Example-Extract-Topo.zip?dl=0"
-examples.downloads._retrieve_file(link, "Example-Extract-Topo.zip")
-topo = pyvista.read(os.path.join(pyvista.EXAMPLES_PATH, "topo.vtk"))
+url = "https://dl.dropbox.com/s/gw5v3tiq68oge3l/Example-Extract-Topo.zip?dl=0"
+file_paths = pooch.retrieve(url=url, known_hash=None, processor=pooch.Unzip())
+file_path = [f for f in file_paths if os.path.basename(f) == "topo.vtk"][0]
 
+topo = pyvista.read(file_path)
+topo
+
+###############################################################################
 p = pyvista.Plotter()
 p.add_mesh(topo, cmap="terrain")
 p.add_mesh(mesh, color=True, show_edges=False, opacity=0.75)

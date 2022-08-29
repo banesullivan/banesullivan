@@ -25,19 +25,20 @@ Originally posted: https://github.com/pyvista/pyvista-support/issues/67
 
 See also https://docs.pyvista.org/examples/02-plot/spherical.html
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-31
+.. GENERATED FROM PYTHON SOURCE LINES 9-32
 
 .. code-block:: default
 
 
     import numpy as np
+    import pooch
     import pyvista as pv
-    from pyvista import examples
     import xarray as xr
 
-    path, _ = examples.downloads._download_file("lsm_4x5.nc")
+    url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/lsm_4x5.nc"
+    file_path = pooch.retrieve(url=url, known_hash=None)
 
-    lsm = xr.open_dataarray(path)
+    lsm = xr.open_dataarray(file_path)
 
     xx, yy, zz = np.meshgrid(
         np.radians(
@@ -58,11 +59,11 @@ See also https://docs.pyvista.org/examples/02-plot/spherical.html
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-33
+.. GENERATED FROM PYTHON SOURCE LINES 33-34
 
 Transform to spherical coordinates
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-38
+.. GENERATED FROM PYTHON SOURCE LINES 34-39
 
 .. code-block:: default
 
@@ -78,11 +79,11 @@ Transform to spherical coordinates
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-40
+.. GENERATED FROM PYTHON SOURCE LINES 40-41
 
 Create PyVista mesh
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-43
+.. GENERATED FROM PYTHON SOURCE LINES 41-44
 
 .. code-block:: default
 
@@ -96,11 +97,11 @@ Create PyVista mesh
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-45
+.. GENERATED FROM PYTHON SOURCE LINES 45-46
 
 Visualize!
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-46
+.. GENERATED FROM PYTHON SOURCE LINES 46-47
 
 .. code-block:: default
 
@@ -120,28 +121,23 @@ Visualize!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.018 seconds)
+   **Total running time of the script:** ( 0 minutes  1.214 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_spherical.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: spherical.py <spherical.py>`
 
-     :download:`Download Python source code: spherical.py <spherical.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: spherical.ipynb <spherical.ipynb>`
+      :download:`Download Jupyter notebook: spherical.ipynb <spherical.ipynb>`
 
 
 .. only:: html

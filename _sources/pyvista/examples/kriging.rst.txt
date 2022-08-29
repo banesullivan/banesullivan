@@ -31,15 +31,15 @@ The open-source, Python software `GSTools <https://geostat-framework.github.io/>
 .. code-block:: default
 
     import PVGeo
+
+    # sphinx_gallery_thumbnail_number = 4
     from gstools import Exponential, krige, vario_estimate_unstructured
     from gstools.covmodel.plot import plot_variogram
     import matplotlib.pyplot as plt
     import numpy as np
     import omfvista
-
-    # sphinx_gallery_thumbnail_number = 4
+    import pooch
     import pyvista as pv
-    from pyvista import examples
 
 
 
@@ -61,7 +61,7 @@ For this project, we have two data archives in the `Open Mining Format (OMF) <ht
 
 
     url = "https://dl.dropbox.com/s/3cuxvurj8zubchb/FORGE.omf?dl=0"
-    path, _ = examples.downloads._retrieve_file(url, "FORGE.omf")
+    path = pooch.retrieve(url=url, known_hash=None)
 
     project = omfvista.load_project(path)
     project
@@ -303,14 +303,12 @@ After instantiating the kriging operator, we can have it operate on the nodes of
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
 
-    (array([116.47265074, 117.61411552, 118.68557645, ...,  38.1424618 ,
-            39.55113379,  40.95430639]), array([8097.98172712, 7671.56003983, 7233.88759711, ..., 8755.22454388,
-           9108.52222446, 9445.12934547]))
+    (array([116.47008157, 117.61158345, 118.68310243, ...,  38.15069459,
+            39.5596414 ,  40.96307076]), array([8098.01350521, 7671.63868665, 7234.00736005, ..., 8755.16955356,
+           9108.41407123, 9444.96476497]))
 
 
 
@@ -455,28 +453,23 @@ Resulting Visualization
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  47.043 seconds)
+   **Total running time of the script:** ( 2 minutes  13.144 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_kriging.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: kriging.py <kriging.py>`
 
-     :download:`Download Python source code: kriging.py <kriging.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: kriging.ipynb <kriging.ipynb>`
+      :download:`Download Jupyter notebook: kriging.ipynb <kriging.ipynb>`
 
 
 .. only:: html

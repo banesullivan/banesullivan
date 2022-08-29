@@ -27,19 +27,20 @@ Originally posted: https://github.com/pyvista/pyvista-support/issues/178
 
 Seee also https://pvgeo.org/examples/filters-general/voxelize-points.html#voxelize-points
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-22
+.. GENERATED FROM PYTHON SOURCE LINES 11-23
 
 .. code-block:: default
 
 
     import PVGeo
     import numpy as np
+    import pooch
     import pyvista as pv
-    from pyvista import examples
 
-    path, _ = examples.downloads._download_file("points3d.txt")
+    url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/points3d.txt"
+    file_path = pooch.retrieve(url=url, known_hash=None)
 
-    points = np.loadtxt(path)
+    points = np.loadtxt(file_path)
     pc = pv.PolyData(points)
 
 
@@ -49,7 +50,7 @@ Seee also https://pvgeo.org/examples/filters-general/voxelize-points.html#voxeli
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-25
+.. GENERATED FROM PYTHON SOURCE LINES 24-26
 
 .. code-block:: default
 
@@ -62,7 +63,7 @@ Seee also https://pvgeo.org/examples/filters-general/voxelize-points.html#voxeli
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-36
+.. GENERATED FROM PYTHON SOURCE LINES 27-37
 
 .. code-block:: default
 
@@ -91,28 +92,23 @@ Seee also https://pvgeo.org/examples/filters-general/voxelize-points.html#voxeli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.322 seconds)
+   **Total running time of the script:** ( 0 minutes  1.659 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_voxelize.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: voxelize.py <voxelize.py>`
 
-     :download:`Download Python source code: voxelize.py <voxelize.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: voxelize.ipynb <voxelize.ipynb>`
+      :download:`Download Jupyter notebook: voxelize.ipynb <voxelize.ipynb>`
 
 
 .. only:: html

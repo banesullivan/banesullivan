@@ -33,9 +33,9 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 
 .. code-block:: default
 
-    import numpy as np
-
     # sphinx_gallery_thumbnail_number = 2
+    import numpy as np
+    import pooch
     import pyvista as pv
     from pyvista import examples
     import rasterio
@@ -47,12 +47,13 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-25
+.. GENERATED FROM PYTHON SOURCE LINES 21-26
 
 .. code-block:: default
 
-    path, _ = examples.downloads._download_file("topo_clean.vtk")
-    topo = pv.read(path)
+    url = "https://raw.githubusercontent.com/pyvista/vtk-data/master/Data/topo_clean.vtk"
+    file_path = pooch.retrieve(url=url, known_hash=None)
+    topo = pv.read(file_path)
     topo
 
 
@@ -79,17 +80,17 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-28
+.. GENERATED FROM PYTHON SOURCE LINES 27-29
 
 Load the GeoTIFF/texture
 https://dl.dropbox.com/s/emsg3h7hww1r779/Geologic_map_on_air_photo.tif?dl=0
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-32
+.. GENERATED FROM PYTHON SOURCE LINES 29-33
 
 .. code-block:: default
 
     url = "https://dl.dropbox.com/s/emsg3h7hww1r779/Geologic_map_on_air_photo.tif?dl=0"
-    filename, _ = examples.downloads._retrieve_file(url, "Geologic_map_on_air_photo.tif")
+    filename = pooch.retrieve(url=url, known_hash=None)
     filename
 
 
@@ -98,16 +99,14 @@ https://dl.dropbox.com/s/emsg3h7hww1r779/Geologic_map_on_air_photo.tif?dl=0
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
 
-    '/home/runner/.local/share/pyvista/examples/Geologic_map_on_air_photo.tif'
+    '/home/runner/.cache/pooch/283a4c8495d964af0cfed0f875375923-Geologic_map_on_air_photo.tif'
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-75
+.. GENERATED FROM PYTHON SOURCE LINES 34-76
 
 .. code-block:: default
 
@@ -165,11 +164,11 @@ https://dl.dropbox.com/s/emsg3h7hww1r779/Geologic_map_on_air_photo.tif?dl=0
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-77
+.. GENERATED FROM PYTHON SOURCE LINES 77-78
 
 Read the GeoTIFF as a ``Texture`` in PyVista:
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-89
+.. GENERATED FROM PYTHON SOURCE LINES 78-90
 
 .. code-block:: default
 
@@ -200,28 +199,23 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  13.452 seconds)
+   **Total running time of the script:** ( 0 minutes  21.216 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_geological-map.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: geological-map.py <geological-map.py>`
 
-     :download:`Download Python source code: geological-map.py <geological-map.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: geological-map.ipynb <geological-map.ipynb>`
+      :download:`Download Jupyter notebook: geological-map.ipynb <geological-map.ipynb>`
 
 
 .. only:: html
