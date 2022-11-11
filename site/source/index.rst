@@ -52,7 +52,7 @@ to joining Kitware*).
 .. panels::
 
     ---
-    :img-top: _static/pyvista-logo.png
+    :img-top: ../_static/pyvista-logo.png
 
     The PyVista project is a collection of Open Source Software making 3D
     visualization and analysis more approachable in Python.
@@ -78,7 +78,7 @@ to joining Kitware*).
       </ul>
 
     ---
-    :img-top: _static/tile-diagram.png
+    :img-top: ../_static/tile-diagram.png
 
     ``localtileserver`` is a minimalist tile server for local, large
     geospatial images. This package enables visualization of geospatial
@@ -102,7 +102,7 @@ to joining Kitware*).
       </ul>
 
     ---
-    :img-top: _static/resonantgeodata.png
+    :img-top: ../_static/resonantgeodata.png
 
     As a part of my work at Kitware, I am the lead developer of Resonant
     GeoData (RGD): a series of Django applications built for cataloging and

@@ -41,7 +41,7 @@ Keep up with with my latest activities! I use this as a place to archive article
 
 
     ---
-    :img-top: _static/news/cloud_native_outreach_22.png
+    :img-top: ../_static/news/cloud_native_outreach_22.png
 
     I presented on dynamic tile serving in Django as a part of my work at Kitware at the Cloud-Native Geospatial Outreach Event
 
@@ -51,7 +51,7 @@ Keep up with with my latest activities! I use this as a place to archive article
         :classes: btn-outline-primary btn-block stretched-link
 
     ---
-    :img-top: _static/news/radiant-earth.png
+    :img-top: ../_static/news/radiant-earth.png
 
     My hobby project, localtileserver, was featured in Radiant Earth Foundation's ML4EO Market News.
 
@@ -63,7 +63,7 @@ Keep up with with my latest activities! I use this as a place to archive article
 
 
     ---
-    :img-top: _static/news/transform-2021.png
+    :img-top: ../_static/news/transform-2021.png
 
     I instructed a workshop introducing PyVista as a visualization toolkit for geoscientists.
 
@@ -75,7 +75,7 @@ Keep up with with my latest activities! I use this as a place to archive article
 
 
     ---
-    :img-top: _static/news/csm-geophysics.png
+    :img-top: ../_static/news/csm-geophysics.png
 
     I received the Mendenhall Prize for outstanding MSc Student in Geophysics (May 2020).
 
@@ -87,7 +87,7 @@ Keep up with with my latest activities! I use this as a place to archive article
 
 
     ---
-    :img-top: _static/news/presenting-b.jpg
+    :img-top: ../_static/news/presenting-b.jpg
 
     I recently sat down with Seequent to discuss the future of geovisualization and how I became involved in the 3D visualization and open-source software space.
 
@@ -99,7 +99,7 @@ Keep up with with my latest activities! I use this as a place to archive article
 
 
     ---
-    :img-top: _static/news/subsurface-frontiers.png
+    :img-top: ../_static/news/subsurface-frontiers.png
 
     Here I appear in an informative video about the new Subsurface Frontiers Project.
 
@@ -111,7 +111,7 @@ Keep up with with my latest activities! I use this as a place to archive article
 
 
     ---
-    :img-top: _static/news/undersampled.png
+    :img-top: ../_static/news/undersampled.png
 
     I joined Matt and Gram on Undersampled Radio to talk about my work building next generation geoscience visualization technology. Tune in to the episode to hear us discuss viz, and more specifically geoviz.
 
@@ -123,7 +123,7 @@ Keep up with with my latest activities! I use this as a place to archive article
 
 
     ---
-    :img-top: _static/news/omfvista-demo.gif
+    :img-top: ../_static/news/omfvista-demo.gif
 
     The Global Mining Guidelines Group recently interviewed me about efforts around the Open Mining Format. It's a neat article highlighting my work and the importance of open-source software in the geosciences!
 
@@ -135,7 +135,7 @@ Keep up with with my latest activities! I use this as a place to archive article
 
 
     ---
-    :img-top: _static/news/gsc_banner.jpg
+    :img-top: ../_static/news/gsc_banner.jpg
 
     I lead a team that placed 2nd in the U.S. Department of Energy’s 2019 Geothermal Student Competition.
 
@@ -147,7 +147,7 @@ Keep up with with my latest activities! I use this as a place to archive article
 
 
     ---
-    :img-top: _static/news/agu-profile.png
+    :img-top: ../_static/news/agu-profile.png
 
     I briefly share some of my work bringing geophysical data into Virtual Reality for communication of findings.
 
@@ -159,7 +159,7 @@ Keep up with with my latest activities! I use this as a place to archive article
 
 
     ---
-    :img-top: _static/news/simpeg-meeting.png
+    :img-top: ../_static/news/simpeg-meeting.png
 
     I share my work on PVGeo, an open-source platform for visualizing geoscientific information and demo how this software is interoperable with the SimPEG projects.
 
@@ -171,7 +171,7 @@ Keep up with with my latest activities! I use this as a place to archive article
 
 
     ---
-    :img-top: _static/news/senior-reflections.png
+    :img-top: ../_static/news/senior-reflections.png
 
     As a Colorado School of Mines senior, I reflect on my time at Mines, and give some insight into where I will go next.
 
