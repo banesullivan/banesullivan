@@ -1,7 +1,7 @@
 _build
 *.swp
 *.DS_Store
-site/news.rst
+site/source/news.rst
 site/python-blog
 *.pyc
 **/*__pycache__

@@ -52,6 +52,8 @@ author = "Bane Sullivan"
 # The full version, including alpha/beta/rc tags
 release = "0.0.0"
 
+master_doc = 'index'
+
 
 # -- General configuration ---------------------------------------------------
 
@@ -98,11 +100,12 @@ html_theme = "pydata_sphinx_theme"
 html_logo = None
 # html_theme_path = [pydata_sphinx_theme.get_html_theme_path()]
 html_context = {
-    "github_user": "banesullivan",
-    "github_repo": "mywebsite",
-    "github_version": "main",
-    "doc_path": "site",
+    # "github_user": "banesullivan",
+    # "github_repo": "mywebsite",
+    # "github_version": "main",
+    # "doc_path": "site",
     "last_updated": str(datetime.date.today()),
+    "default_mode": "light",
 }
 html_theme_options = {
     "google_analytics_id": "UA-115959679-2",
@@ -121,6 +124,8 @@ html_theme_options = {
             "icon": "fab fa-twitter",
         },
     ],
+    "use_edit_page_button": False,
+    "navbar_end": ["navbar-icon-links"],
 }
 
 html_sidebars = {
@@ -141,8 +146,8 @@ from sphinx_gallery.sorting import FileNameSortKey
 sphinx_gallery_conf = {
     # path to your examples scripts
     "examples_dirs": [
-        # "../python-blog/",
-        "../pyvista-examples/",
+        # "../../python-blog/",
+        "../../pyvista-examples/",
     ],
     # path where to save gallery generated examples
     "gallery_dirs": [
