@@ -7,7 +7,7 @@ def format_icon(title, description, link, image):
     body = f"""
 
     ---
-    :img-top: _static/news/{image}
+    :img-top: ../_static/news/{image}
 
     {description}
 
@@ -109,7 +109,7 @@ articles = dict(
 
 
 def make_news_gallery():
-    filename = "./news.rst"
+    filename = "./source/news.rst"
     if os.path.exists(filename):
         os.remove(filename)
     with open(filename, "w") as f:

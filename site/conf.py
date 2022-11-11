@@ -52,6 +52,8 @@ author = "Bane Sullivan"
 # The full version, including alpha/beta/rc tags
 release = "0.0.0"
 
+master_doc = 'source/index'
+
 
 # -- General configuration ---------------------------------------------------
 
@@ -147,7 +149,7 @@ sphinx_gallery_conf = {
     # path where to save gallery generated examples
     "gallery_dirs": [
         # "python-blog",
-        "pyvista/examples",
+        "source/pyvista/examples",
     ],
     # Patter to search for example files
     "filename_pattern": r"\.py",
