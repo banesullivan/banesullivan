@@ -173,6 +173,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
     <tr><th>PolyData</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>49181</td></tr>
     <tr><td>N Points</td><td>25586</td></tr>
+    <tr><td>N Strips</td><td>0</td></tr>
     <tr><td>X Bounds</td><td>5.880e+05, 6.130e+05</td></tr>
     <tr><td>Y Bounds</td><td>3.969e+06, 3.996e+06</td></tr>
     <tr><td>Z Bounds</td><td>-2.015e+04, 4.949e+03</td></tr>
@@ -265,7 +266,7 @@ Originally posted: https://github.com/banesullivan/damavand-volcano
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.225 seconds)
+   **Total running time of the script:** ( 0 minutes  11.913 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_damavand.py:

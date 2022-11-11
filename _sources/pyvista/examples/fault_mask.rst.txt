@@ -68,6 +68,7 @@ Let's get to it!
     <tr><th>PolyData</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>3834</td></tr>
     <tr><td>N Points</td><td>2029</td></tr>
+    <tr><td>N Strips</td><td>0</td></tr>
     <tr><td>X Bounds</td><td>3.361e+05, 3.389e+05</td></tr>
     <tr><td>Y Bounds</td><td>4.258e+06, 4.264e+06</td></tr>
     <tr><td>Z Bounds</td><td>-2.606e+03, 2.906e+03</td></tr>
@@ -336,7 +337,7 @@ Visualize one side of the masked grid
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.460 seconds)
+   **Total running time of the script:** ( 0 minutes  4.059 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_fault_mask.py:

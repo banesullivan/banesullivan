@@ -122,6 +122,7 @@ Now load the topography file from the example data:
     <tr><th>PolyData</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>39764</td></tr>
     <tr><td>N Points</td><td>20164</td></tr>
+    <tr><td>N Strips</td><td>0</td></tr>
     <tr><td>X Bounds</td><td>7.937e+05, 8.078e+05</td></tr>
     <tr><td>Y Bounds</td><td>9.194e+06, 9.208e+06</td></tr>
     <tr><td>Z Bounds</td><td>1.182e+03, 2.690e+03</td></tr>
@@ -299,7 +300,7 @@ Note that there are other extraction operations like an ``'intersection'``:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  13.315 seconds)
+   **Total running time of the script:** ( 0 minutes  9.104 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_extract-topography.py:

@@ -12,31 +12,55 @@
         </div>
     </div>
 
-.. panels::
-    :column: col-lg-6 col-md-6 col-sm-12 col-xs-12 p-3
 
-    .. raw:: html
+Me in brief
+-----------
 
-      <center><h2><i class="fas fa-school fa-2x"></i></h2></center>
+* Hydrologically minded geophysicist turned research software engineer
+* Helped create the `PyVista Project <https://www.pyvista.org>`_
+* Builds impactful software used across domains in idustry and academia
+* Passionate about open-source software
+* R&D Engineer at Kitware reimagining scientific collaboration tools
 
-    *M.Sc.* in Hydrology and *B.Sc.* in Geophysical Engineering from the Colorado School of Mines
 
+Around the Interweb
+-------------------
 
-    ---
+Most of my output is available around the internet, usually through Github
+repositories. You can find me and my research, code, articles, and data at:
 
-    .. raw:: html
+* `GitHub <https://github.com/banesullivan>`_: *my biggest presence is on GitHub, follow me and my projects there!*
+* `ORCID <https://orcid.org/0000-0001-8628-4566>`_ (0000-0001-8628-4566): *all of my scientific output with DOIs*
+* `Google Scholar <https://scholar.google.com/citations?hl=en&user=jslLe0cAAAAJ&scilu=&scisig=AMD79ooAAAAAXvVZvMFal5_HO-ThFOb-6f9LFraN-va0&gmla=AJsN-F4GmpwzCs151EoMS1Z3zPWub6IFKgOwjgk_Aa_nxv4iaf2mgpAP1P3JcTLz2LQ88DbquPeAAGJVeXvSbcX9coVvPAarWfRg0UOP-N1D2FFeKavRr8c&sciund=7142037744319316062>`_: *list of research content*
+* `Research Gate <https://www.researchgate.net/profile/Bane_Sullivan>`_: *academic social network*
+* `Twitter <https://twitter.com/banesullivan>`_: *Follow me!*
 
-      <center><h2><i class="fas fa-laptop-code fa-2x"></i></h2></center>
+Summary
+-------
 
-    My professional passions include 3D visualization, open-source software development, & reproducible research
+I am currently a research & development engineer in `Kitware's Data & Analytics Team <https://www.kitware.com/data-analytics/>`_, where I develop software for scientific research applications.
+
+My background is primarily in applied earth sciences, earning a B.Sc. in Geophysics and an M.Sc. in Hydrological Science from the Colorado School of Mines.
+Through my graduate research, I explored the intersection of 3D visualization, geoscience, and reproducible workflows.
+My focus has been helping geoscientists visualize their 3D/4D data, communicate their spatial findings, and enable data traceability in their research.
+These efforts lead me to create geovisualization and data management software to streamline reproducible computing workflows in the geosciences, particularly the `PyVista project <https://www.pyvista.org>`_.
+
+I am most proud of my contributions to `PyVista <https://www.pyvista.org>`_, an open-source Python package for 3D visualization and spatial data analysis.
+Beyond PyVista, I am an active contributor to many open-source software, and I am always looking for ways to make an impact in my work.
+I genuinely believe that scientific findings should be reproducible, not only by other researchers but also by stakeholders of the science at hand; I carry this sentiment in my efforts to develop research software.
+
+Beyond all the coding and science, I'm an avid rock climber, trail runner, and general human-powered adventure enthusiast! When I'm not coding up super cool 3D visualization software, you can find me trail running or climbing.
+
+Please feel free to reach out to me (email is in the icons at the top)! I am happy to talk about anything in the realm of earth science computing, open-source research software, or epic outdoor activities.
 
 
 Software
 --------
 
-My passion is building open-source software focusing around earth science, 3D
-visualization, and reproducible science. These are some of my notable projects,
-but for the most up-to-date information, `follow me on GitHub <https://github.com/banesullivan>`_!
+My passion is building impactful, open-source software focusing around earth
+science, 3D visualization, and reproducible science. These are some of my
+notable projects, but for the most up-to-date information,
+`follow me on GitHub <https://github.com/banesullivan>`_!
 
 I am a co-creator of the `PyVista project <http://www.pyvista.org>`_ - an
 effort devoted to making 3D visualization and analysis tools more accessible
@@ -226,6 +250,5 @@ to joining Kitware*).
 .. toctree::
    :hidden:
 
-   about
    pyvista/index
    publications

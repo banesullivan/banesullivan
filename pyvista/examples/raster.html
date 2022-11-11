@@ -7,22 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Read a raster using xarray &#8212; Bane Sullivan</title>
-<script>
-  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
-</script>
-
+  <script>
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
 
-
+  
   <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css" />
@@ -33,9 +35,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -43,33 +45,52 @@
     <script src="../../_static/doctools.js"></script>
     <script async="async" src="https://www.google-analytics.com/analytics.js"></script>
     <script>
-                window.ga = window.ga || function () {
-                    (ga.q = ga.q || []).push(arguments) };
-                ga.l = +new Date;
-                ga('create', 'UA-115959679-2', 'auto');
-                ga('set', 'anonymizeIp', true);
-                ga('send', 'pageview');
-            </script>
+                    window.ga = window.ga || function () {
+                        (ga.q = ga.q || []).push(arguments) };
+                    ga.l = +new Date;
+                    ga('create', 'UA-115959679-2', 'auto');
+                    ga('set', 'anonymizeIp', true);
+                    ga('send', 'pageview');
+                </script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pyvista/examples/raster';</script>
     <link rel="shortcut icon" href="../../_static/favicon.jpg"/>
-    <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Spherical Data" href="spherical.html" />
     <link rel="prev" title="Mine Pit Imagery" href="mine-pit.html" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="None">
   </head>
   
   
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
-    <div class="bd-header-announcement container-fluid" id="banner">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="light">
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
       
-
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
     </div>
+  </div>
 
-    
-    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
-
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
   <div id="navbar-start">
     
     
@@ -77,9 +98,15 @@
 
 
 <a class="navbar-brand logo" href="../../index.html">
+
   
   
   
+  
+  
+  
+  
+
   
   
     <p class="title logo__title">Bane Sullivan</p>
@@ -88,62 +115,77 @@
     
   </div>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="fas fa-bars"></span>
-  </button>
-
   
-  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+  <div class="col-lg-9 navbar-header-items">
     <div id="navbar-center" class="mr-auto">
       
       <div class="navbar-center-item">
-        <ul id="navbar-main-elements" class="navbar-nav">
-    <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../about.html">
-  About
- </a>
-</li>
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item current active">
+                    <a class="nav-link" href="../index.html">
+                        PyVista
+                    </a>
+                </li>
+                
 
-<li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="../index.html">
-  PyVista
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../publications.html">
-  Publications
- </a>
-</li>
-
-    
-</ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../publications.html">
+                        Publications
+                    </a>
+                </li>
+                
+    </ul>
+</nav>
       </div>
       
     </div>
 
     <div id="navbar-end">
-      
-      <div class="navbar-end-item">
-        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
-    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
-    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
-    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
-</span>
+      <div class="navbar-end-item navbar-end__search-button-container">
+        
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
       </div>
       
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/banesullivan" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/banesullivan" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="mailto:banesullivan@gmail.com" rel="noopener" target="_blank" title="Email"><span><i class="fas fa-envelope"></i></span>
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:banesullivan@gmail.com" title="Email" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fas fa-envelope"></i></span>
             <label class="sr-only">Email</label></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/banesullivan" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter"></i></span>
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/banesullivan" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-twitter"></i></span>
             <label class="sr-only">Twitter</label></a>
         </li>
       </ul>
@@ -151,197 +193,173 @@
       
     </div>
   </div>
+
+
+  
+  <div class="search-button-container--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+  </div>
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
 </div>
-    </nav>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item current active">
+                    <a class="nav-link" href="../index.html">
+                        PyVista
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../../publications.html">
+                        Publications
+                    </a>
+                </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+      </div>
     
 
-    <div class="bd-container container-xl">
-      <div class="bd-container__inner row">
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
           
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/banesullivan" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:banesullivan@gmail.com" title="Email" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fas fa-envelope"></i></span>
+            <label class="sr-only">Email</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/banesullivan" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
 
-<!-- Only show if we have sidebars configured, else just a small margin  -->
-<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
-  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <div class="bd-toc-item active">
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">
+    Section Navigation
+  </p>
+  <div class="bd-toc-item navbar-nav">
     <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../overview.html">
-   3D Geoscience
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Introducing PyVista
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workflows.html">
-   Reproducible Workflows
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../wrapup.html">
-   Wrap Up
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="index.html">
-   Examples
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="contouring.html">
-     Creating a Contour Map
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="create-surface-draped.html">
-     Drape 2D Surface From Line
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cross-section-simple.html">
-     Geological Cross Section
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="damavand.html">
-     Damavand Volcano
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="exaggeration.html">
-     Vertical Exaggeration
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="extract-topography.html">
-     Extract Topography
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="fault_mask.html">
-     Masked Grid for Two Sides of a Fault
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="geological-map.html">
-     Geological Map on Topography
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="horizon-picking.html">
-     Picking Horizons
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="kriging.html">
-     Kriging with GSTools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="mine-pit.html">
-     Mine Pit Imagery
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Read a raster using xarray
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="spherical.html">
-     Spherical Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="surface-boolean.html">
-     Surface Boolean Logic
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="terrain-mesh.html">
-     Terrain Following Mesh
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="topo-map.html">
-     Topographic Map
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="voxelize.html">
-     Voxelize Points
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="wolf-creek.html">
-     Load OMF Project
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://doi.org/10.21105/joss.01450">
-   The Paper
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://docs.pyvista.org">
-   The Documentation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../references.html">
-   References
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">3D Geoscience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introducing PyVista</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflows.html">Reproducible Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wrapup.html">Wrap Up</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Examples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="contouring.html">Creating a Contour Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create-surface-draped.html">Drape 2D Surface From Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cross-section-simple.html">Geological Cross Section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="damavand.html">Damavand Volcano</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exaggeration.html">Vertical Exaggeration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extract-topography.html">Extract Topography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fault_mask.html">Masked Grid for Two Sides of a Fault</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geological-map.html">Geological Map on Topography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="horizon-picking.html">Picking Horizons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kriging.html">Kriging with GSTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mine-pit.html">Mine Pit Imagery</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Read a raster using xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spherical.html">Spherical Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surface-boolean.html">Surface Boolean Logic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terrain-mesh.html">Terrain Following Mesh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topo-map.html">Topographic Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="voxelize.html">Voxelize Points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wolf-creek.html">Load OMF Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.21105/joss.01450">The Paper</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.pyvista.org">The Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 </ul>
 
   </div>
 </nav>
-  </div>
-  <div class="sidebar-end-items">
-  </div>
-</div>
-
-
-          
-
-
-<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
-  
-    
-    <div class="toc-item">
-      
-
-<nav id="bd-toc-nav">
-    
-</nav>
     </div>
-    
-    <div class="toc-item">
-      
-    </div>
-    
+  </div>
   
-</div>
 
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
 
-          
-          
-          <div class="bd-content col-12 col-md-9 col-xl-7">
-              
-              <article class="bd-article" role="main">
+      </div>
+      <main class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
                 
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p>Click <a class="reference internal" href="#sphx-glr-download-pyvista-examples-raster-py"><span class="std std-ref">here</span></a>
@@ -424,7 +442,7 @@ raster.</p>
 <br /><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">topo</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_raster_001.png" srcset="../../_images/sphx_glr_raster_001.png" alt="raster" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  29.436 seconds)</p>
+<img src="../../_images/sphx_glr_raster_001.png" srcset="../../_images/sphx_glr_raster_001.png" alt="raster" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  17.129 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-raster-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/95aa8e7612c09a436f2a26b5f4c11fb6/raster.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">raster.py</span></code></a></p>
@@ -437,35 +455,75 @@ raster.</p>
 </section>
 
 
-              </article>
-              
-
-              
+            </article>
+            
+            
+            
           </div>
           
-      </div>
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div id="searchbox"></div>
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+<div class="tocsection sourcelink">
+    <a href="../../_sources/pyvista/examples/raster.rst.txt">
+        <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
     </div>
+  </div>
 
   
-  
+    
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536"></script>
 
-<footer class="bd-footer"><div class="bd-footer__inner container">
+  <footer class="bd-footer"><div class="bd-footer__inner container">
   
   <div class="footer-item">
-    <p class="copyright">
+    
+<p class="copyright">
+
     &copy; Copyright 2018-2022, Bane Sullivan.<br>
+
 </p>
+
   </div>
   
   <div class="footer-item">
-    <p class="sphinx-version">
+    
+<p class="sphinx-version">
 Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
+
   </div>
   
 </div>
-</footer>
+  </footer>
   </body>
 </html>
