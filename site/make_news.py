@@ -7,7 +7,7 @@ def format_icon(title, description, link, image):
     body = f"""
 
     ---
-    :img-top: ../_static/news/{image}
+    :img-top: _static/news/{image}
 
     {description}
 
