@@ -52,7 +52,7 @@ author = "Bane Sullivan"
 # The full version, including alpha/beta/rc tags
 release = "0.0.0"
 
-master_doc = 'source/index'
+master_doc = 'index'
 
 
 # -- General configuration ---------------------------------------------------
@@ -123,6 +123,8 @@ html_theme_options = {
             "icon": "fab fa-twitter",
         },
     ],
+    "use_edit_page_button": False,
+    "default_mode": "light",
 }
 
 html_sidebars = {
@@ -143,13 +145,13 @@ from sphinx_gallery.sorting import FileNameSortKey
 sphinx_gallery_conf = {
     # path to your examples scripts
     "examples_dirs": [
-        # "../python-blog/",
-        "../pyvista-examples/",
+        # "../../python-blog/",
+        "../../pyvista-examples/",
     ],
     # path where to save gallery generated examples
     "gallery_dirs": [
         # "python-blog",
-        "source/pyvista/examples",
+        "pyvista/examples",
     ],
     # Patter to search for example files
     "filename_pattern": r"\.py",
