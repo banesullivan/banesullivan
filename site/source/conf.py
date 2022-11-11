@@ -100,11 +100,12 @@ html_theme = "pydata_sphinx_theme"
 html_logo = None
 # html_theme_path = [pydata_sphinx_theme.get_html_theme_path()]
 html_context = {
-    "github_user": "banesullivan",
-    "github_repo": "mywebsite",
-    "github_version": "main",
-    "doc_path": "site",
+    # "github_user": "banesullivan",
+    # "github_repo": "mywebsite",
+    # "github_version": "main",
+    # "doc_path": "site",
     "last_updated": str(datetime.date.today()),
+    "default_mode": "light",
 }
 html_theme_options = {
     "google_analytics_id": "UA-115959679-2",
@@ -124,7 +125,7 @@ html_theme_options = {
         },
     ],
     "use_edit_page_button": False,
-    "default_mode": "light",
+    "navbar_end": ["navbar-icon-links"],
 }
 
 html_sidebars = {
