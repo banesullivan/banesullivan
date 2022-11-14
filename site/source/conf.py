@@ -93,6 +93,7 @@ html_extra_path = [".nojekyll"]  # TODO: "CNAME",
 html_use_smartypants = True
 pygments_style = "friendly"
 html_permalinks = False
+html_show_sourcelink = False
 
 # Theme config
 
