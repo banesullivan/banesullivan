@@ -99,6 +99,9 @@ to joining Kitware*).
          <li><i class="fa-li fas fa-graduation-cap" style="color: blue" title="Was this effort personal or professional?"></i>
             A part of my M.Sc. thesis
          </li>
+         <li><i class="fa-li fas fa-building" style="color: green" title="Was this effort personal or professional?"></i>
+            Continuing work at Kitware
+         </li>
       </ul>
 
     ---
