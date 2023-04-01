@@ -1,4 +1,4 @@
-FROM ghcr.io/pyvista/pyvista:v0.37.0
+FROM ghcr.io/pyvista/pyvista:v0.38.5
 MAINTAINER "Bane Sullivan"
 
 COPY requirements.txt $HOME
