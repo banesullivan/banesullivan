@@ -88,7 +88,6 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 html_title = project
 html_short_title = ""
-html_favicon = "_static/favicon.jpg"
 html_extra_path = [".nojekyll"]  # TODO: "CNAME",
 html_use_smartypants = True
 pygments_style = "friendly"
@@ -127,6 +126,10 @@ html_theme_options = {
     ],
     "use_edit_page_button": False,
     "navbar_end": ["navbar-icon-links"],
+    "logo": {
+        "image_light": "logo-light.png",
+        "image_dark": "logo-dark.png",
+   }
 }
 
 html_sidebars = {
