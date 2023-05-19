@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_pyvista_examples_terrain-mesh.py>`
+        :ref:`Go to the end <sphx_glr_download_pyvista_examples_terrain-mesh.py>`
         to download the full example code
 
 .. rst-class:: sphx-glr-example-title
@@ -266,7 +266,7 @@ Once we have those structured coordinates, we can create a
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.379 seconds)
+   **Total running time of the script:** ( 0 minutes  2.752 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_terrain-mesh.py:
@@ -274,6 +274,8 @@ Once we have those structured coordinates, we can create a
 .. only:: html
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
+
+
 
 
     .. container:: sphx-glr-download sphx-glr-download-python

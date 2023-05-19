@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_pyvista_examples_horizon-picking.py>`
+        :ref:`Go to the end <sphx_glr_download_pyvista_examples_horizon-picking.py>`
         to download the full example code
 
 .. rst-class:: sphx-glr-example-title
@@ -95,7 +95,7 @@ See `enable_horizon_picking` for more details
 
     Help on method enable_horizon_picking in module pyvista.plotting.picking:
 
-    enable_horizon_picking(callback=None, normal=(0, 0, 1), width=None, show_message=True, font_size=18, color='pink', point_size=10, line_width=5, show_path=True, opacity=0.75, show_horizon=True, **kwargs) method of pyvista.plotting.plotting.Plotter instance
+    enable_horizon_picking(callback=None, normal=(0.0, 0.0, 1.0), width=None, show_message=True, font_size=18, color='pink', point_size=10, line_width=5, show_path=True, opacity=0.75, show_horizon=True, **kwargs) method of pyvista.plotting.plotting.Plotter instance
         Enable horizon picking.
     
         Helper for the ``enable_path_picking`` method to also show a
@@ -105,11 +105,11 @@ See `enable_horizon_picking` for more details
         Parameters
         ----------
         callback : callable, optional
-            When given, calls this function after a pick is made.  The
+            When given, calls this callable after a pick is made.  The
             entire picked path is passed as the only parameter to this
-            function.
+            callable.
     
-        normal : tuple(float), optional
+        normal : sequence[float], default: (0.0, 0.0, 1.0)
             The normal to the horizon surface's projection plane.
     
         width : float, optional
@@ -117,32 +117,31 @@ See `enable_horizon_picking` for more details
             dynamically change the surface width depending on its
             length.
     
-        show_message : bool or str, optional
+        show_message : bool | str, default: True
             Show the message about how to use the horizon picking
             tool. If this is a string, that will be the message shown.
     
-        font_size : int, optional
+        font_size : int, default: 18
             Sets the font size of the message.
     
-        color : color_like, optional
+        color : ColorLike, default: "pink"
             The color of the horizon surface if shown.
     
-        point_size : int, optional
-            Size of picked points if ``show_horizon`` is
-            ``True``. Default 10.
+        point_size : int, default: 10
+            Size of picked points if ``show_horizon`` is ``True``.
     
-        line_width : float, optional
+        line_width : float, default: 5.0
             Thickness of path representation if ``show_horizon`` is
-            ``True``.  Default 5.
+            ``True``.
     
-        show_path : bool, optional
+        show_path : bool, default: True
             Show the picked path that the horizon is built from
             interactively.
     
-        opacity : float, optional
+        opacity : float, default: 0.75
             The opacity of the horizon surface if shown.
     
-        show_horizon : bool, optional
+        show_horizon : bool, default: True
             Show the picked horizon surface interactively.
     
         **kwargs : dict, optional
@@ -156,7 +155,7 @@ See `enable_horizon_picking` for more details
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.314 seconds)
+   **Total running time of the script:** ( 0 minutes  2.757 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_horizon-picking.py:
@@ -164,6 +163,8 @@ See `enable_horizon_picking` for more details
 .. only:: html
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
+
+
 
 
     .. container:: sphx-glr-download sphx-glr-download-python

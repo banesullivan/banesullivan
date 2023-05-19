@@ -20,7 +20,7 @@ Me in brief
 * Helped create the `PyVista Project <https://www.pyvista.org>`_
 * Builds impactful software used across domains in idustry and academia
 * Passionate about open-source software
-* R&D Engineer at Kitware reimagining scientific collaboration tools
+* Senior R&D Engineer at Kitware reimagining scientific collaboration tools
 
 
 Around the Interweb
@@ -38,7 +38,7 @@ repositories. You can find me and my research, code, articles, and data at:
 Summary
 -------
 
-I am currently a research & development engineer in `Kitware's Data & Analytics Team <https://www.kitware.com/data-analytics/>`_, where I develop software for scientific research applications.
+I am currently a Senior R&D Engineer in `Kitware's Data & Analytics Team <https://www.kitware.com/data-analytics/>`_, where I develop software for scientific research applications.
 
 My background is primarily in applied earth sciences, earning a B.Sc. in Geophysics and an M.Sc. in Hydrological Science from the Colorado School of Mines.
 Through my graduate research, I explored the intersection of 3D visualization, geoscience, and reproducible workflows.

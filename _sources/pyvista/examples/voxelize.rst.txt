@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_pyvista_examples_voxelize.py>`
+        :ref:`Go to the end <sphx_glr_download_pyvista_examples_voxelize.py>`
         to download the full example code
 
 .. rst-class:: sphx-glr-example-title
@@ -92,7 +92,7 @@ Seee also https://pvgeo.org/examples/filters-general/voxelize-points.html#voxeli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.991 seconds)
+   **Total running time of the script:** ( 0 minutes  1.466 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_voxelize.py:
@@ -100,6 +100,8 @@ Seee also https://pvgeo.org/examples/filters-general/voxelize-points.html#voxeli
 .. only:: html
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
+
+
 
 
     .. container:: sphx-glr-download sphx-glr-download-python

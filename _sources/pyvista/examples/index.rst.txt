@@ -33,7 +33,7 @@ Please feel free to use and extend these examples. I simply ask that you please 
 .. only:: html
 
   .. image:: /pyvista/examples/images/thumb/sphx_glr_contouring_thumb.png
-    :alt: Creating a Contour Map
+    :alt:
 
   :ref:`sphx_glr_pyvista_examples_contouring.py`
 
@@ -50,7 +50,7 @@ Please feel free to use and extend these examples. I simply ask that you please 
 .. only:: html
 
   .. image:: /pyvista/examples/images/thumb/sphx_glr_create-surface-draped_thumb.png
-    :alt: Drape 2D Surface From Line
+    :alt:
 
   :ref:`sphx_glr_pyvista_examples_create-surface-draped.py`
 
@@ -67,7 +67,7 @@ Please feel free to use and extend these examples. I simply ask that you please 
 .. only:: html
 
   .. image:: /pyvista/examples/images/thumb/sphx_glr_cross-section-simple_thumb.png
-    :alt: Geological Cross Section
+    :alt:
 
   :ref:`sphx_glr_pyvista_examples_cross-section-simple.py`
 
@@ -84,7 +84,7 @@ Please feel free to use and extend these examples. I simply ask that you please 
 .. only:: html
 
   .. image:: /pyvista/examples/images/thumb/sphx_glr_damavand_thumb.png
-    :alt: Damavand Volcano
+    :alt:
 
   :ref:`sphx_glr_pyvista_examples_damavand.py`
 
@@ -96,29 +96,12 @@ Please feel free to use and extend these examples. I simply ask that you please 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Originally posted: https://github.com/pyvista/pyvista-support/issues/8">
-
-.. only:: html
-
-  .. image:: /pyvista/examples/images/thumb/sphx_glr_exaggeration_thumb.png
-    :alt: Vertical Exaggeration
-
-  :ref:`sphx_glr_pyvista_examples_exaggeration.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Vertical Exaggeration</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example will demonstrate how to add a cell data field to an input data set that defines wh...">
 
 .. only:: html
 
   .. image:: /pyvista/examples/images/thumb/sphx_glr_extract-topography_thumb.png
-    :alt: Extract Topography
+    :alt:
 
   :ref:`sphx_glr_pyvista_examples_extract-topography.py`
 
@@ -135,7 +118,7 @@ Please feel free to use and extend these examples. I simply ask that you please 
 .. only:: html
 
   .. image:: /pyvista/examples/images/thumb/sphx_glr_fault_mask_thumb.png
-    :alt: Masked Grid for Two Sides of a Fault
+    :alt:
 
   :ref:`sphx_glr_pyvista_examples_fault_mask.py`
 
@@ -152,7 +135,7 @@ Please feel free to use and extend these examples. I simply ask that you please 
 .. only:: html
 
   .. image:: /pyvista/examples/images/thumb/sphx_glr_geological-map_thumb.png
-    :alt: Geological Map on Topography
+    :alt:
 
   :ref:`sphx_glr_pyvista_examples_geological-map.py`
 
@@ -169,7 +152,7 @@ Please feel free to use and extend these examples. I simply ask that you please 
 .. only:: html
 
   .. image:: /pyvista/examples/images/thumb/sphx_glr_horizon-picking_thumb.png
-    :alt: Picking Horizons
+    :alt:
 
   :ref:`sphx_glr_pyvista_examples_horizon-picking.py`
 
@@ -181,12 +164,12 @@ Please feel free to use and extend these examples. I simply ask that you please 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example utilizes data available from the `FORGE geothermal reserach site &lt;https://utahforg...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example utilizes data available from the FORGE geothermal reserach site&#x27;s 2019 Geothermal ...">
 
 .. only:: html
 
   .. image:: /pyvista/examples/images/thumb/sphx_glr_kriging_thumb.png
-    :alt: Kriging with GSTools
+    :alt:
 
   :ref:`sphx_glr_pyvista_examples_kriging.py`
 
@@ -203,7 +186,7 @@ Please feel free to use and extend these examples. I simply ask that you please 
 .. only:: html
 
   .. image:: /pyvista/examples/images/thumb/sphx_glr_mine-pit_thumb.png
-    :alt: Mine Pit Imagery
+    :alt:
 
   :ref:`sphx_glr_pyvista_examples_mine-pit.py`
 
@@ -220,7 +203,7 @@ Please feel free to use and extend these examples. I simply ask that you please 
 .. only:: html
 
   .. image:: /pyvista/examples/images/thumb/sphx_glr_raster_thumb.png
-    :alt: Read a raster using xarray
+    :alt:
 
   :ref:`sphx_glr_pyvista_examples_raster.py`
 
@@ -237,7 +220,7 @@ Please feel free to use and extend these examples. I simply ask that you please 
 .. only:: html
 
   .. image:: /pyvista/examples/images/thumb/sphx_glr_spherical_thumb.png
-    :alt: Spherical Data
+    :alt:
 
   :ref:`sphx_glr_pyvista_examples_spherical.py`
 
@@ -254,7 +237,7 @@ Please feel free to use and extend these examples. I simply ask that you please 
 .. only:: html
 
   .. image:: /pyvista/examples/images/thumb/sphx_glr_surface-boolean_thumb.png
-    :alt: Surface Boolean Logic
+    :alt:
 
   :ref:`sphx_glr_pyvista_examples_surface-boolean.py`
 
@@ -271,7 +254,7 @@ Please feel free to use and extend these examples. I simply ask that you please 
 .. only:: html
 
   .. image:: /pyvista/examples/images/thumb/sphx_glr_terrain-mesh_thumb.png
-    :alt: Terrain Following Mesh
+    :alt:
 
   :ref:`sphx_glr_pyvista_examples_terrain-mesh.py`
 
@@ -288,7 +271,7 @@ Please feel free to use and extend these examples. I simply ask that you please 
 .. only:: html
 
   .. image:: /pyvista/examples/images/thumb/sphx_glr_topo-map_thumb.png
-    :alt: Topographic Map
+    :alt:
 
   :ref:`sphx_glr_pyvista_examples_topo-map.py`
 
@@ -305,7 +288,7 @@ Please feel free to use and extend these examples. I simply ask that you please 
 .. only:: html
 
   .. image:: /pyvista/examples/images/thumb/sphx_glr_voxelize_thumb.png
-    :alt: Voxelize Points
+    :alt:
 
   :ref:`sphx_glr_pyvista_examples_voxelize.py`
 
@@ -322,7 +305,7 @@ Please feel free to use and extend these examples. I simply ask that you please 
 .. only:: html
 
   .. image:: /pyvista/examples/images/thumb/sphx_glr_wolf-creek_thumb.png
-    :alt: Load OMF Project
+    :alt:
 
   :ref:`sphx_glr_pyvista_examples_wolf-creek.py`
 
@@ -344,7 +327,6 @@ Please feel free to use and extend these examples. I simply ask that you please 
    /pyvista/examples/create-surface-draped
    /pyvista/examples/cross-section-simple
    /pyvista/examples/damavand
-   /pyvista/examples/exaggeration
    /pyvista/examples/extract-topography
    /pyvista/examples/fault_mask
    /pyvista/examples/geological-map

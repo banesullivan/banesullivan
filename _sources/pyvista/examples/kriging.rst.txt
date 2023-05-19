@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_pyvista_examples_kriging.py>`
+        :ref:`Go to the end <sphx_glr_download_pyvista_examples_kriging.py>`
         to download the full example code
 
 .. rst-class:: sphx-glr-example-title
@@ -306,9 +306,9 @@ After instantiating the kriging operator, we can have it operate on the nodes of
  .. code-block:: none
 
 
-    (array([116.47265074, 117.61411552, 118.68557645, ...,  38.1424618 ,
-            39.55113379,  40.95430639]), array([8097.98172712, 7671.56003983, 7233.88759711, ..., 8755.22454388,
-           9108.52222446, 9445.12934547]))
+    (array([116.47283434, 117.61429646, 118.68575325, ...,  38.14187354,
+            39.55052588,  40.95368015]), array([8097.97806581, 7671.55310286, 7233.87779749, ..., 8755.22696965,
+           9108.52838828, 9445.1394835 ]))
 
 
 
@@ -453,7 +453,7 @@ Resulting Visualization
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  43.174 seconds)
+   **Total running time of the script:** ( 1 minutes  49.825 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_kriging.py:
@@ -461,6 +461,8 @@ Resulting Visualization
 .. only:: html
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
+
+
 
 
     .. container:: sphx-glr-download sphx-glr-download-python

@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_pyvista_examples_wolf-creek.py>`
+        :ref:`Go to the end <sphx_glr_download_pyvista_examples_wolf-creek.py>`
         to download the full example code
 
 .. rst-class:: sphx-glr-example-title
@@ -64,12 +64,11 @@ Load the project into an :class:`pyvista.MultiBlock` dataset
 
  .. code-block:: none
 
-    MultiBlock (0x7f582618b280)
-      N Blocks:     9
-      X Bounds:     443941.105, 447059.611
-      Y Bounds:     491941.536, 495059.859
-      Z Bounds:     2330.000, 3555.942
-
+    MultiBlock (0x7fa3ff403700)
+      N Blocks    9
+      X Bounds    443941.105, 447059.611
+      Y Bounds    491941.536, 495059.859
+      Z Bounds    2330.000, 3555.942
 
 
 
@@ -174,14 +173,13 @@ Then apply a filtering tool from ``pyvista`` to the volumetric data:
 
  .. code-block:: none
 
-    UnstructuredGrid (0x7f582276af40)
-      N Cells:      92525
-      N Points:     107807
-      X Bounds:     4.447e+05, 4.457e+05
-      Y Bounds:     4.929e+05, 4.942e+05
-      Z Bounds:     2.330e+03, 3.110e+03
-      N Arrays:     1
-
+    UnstructuredGrid (0x7fa3ca1cfac0)
+      N Cells:    92525
+      N Points:   107807
+      X Bounds:   4.447e+05, 4.457e+05
+      Y Bounds:   4.929e+05, 4.942e+05
+      Z Bounds:   2.330e+03, 3.110e+03
+      N Arrays:   1
 
 
 
@@ -233,7 +231,7 @@ Then you can put it all in one environment!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.534 seconds)
+   **Total running time of the script:** ( 0 minutes  8.149 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_wolf-creek.py:
@@ -241,6 +239,8 @@ Then you can put it all in one environment!
 .. only:: html
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
+
+
 
 
     .. container:: sphx-glr-download sphx-glr-download-python
