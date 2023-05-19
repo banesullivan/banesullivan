@@ -126,10 +126,6 @@ html_theme_options = {
     ],
     "use_edit_page_button": False,
     "navbar_end": ["navbar-icon-links"],
-    "logo": {
-        "image_light": "logo-light.png",
-        "image_dark": "logo-dark.png",
-   }
 }
 
 html_sidebars = {
