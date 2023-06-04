@@ -12,8 +12,10 @@ I host ***Open Source Office Hours*** on Thursdays each week. These are an oppor
 
 ## Some of My Ramblings
 
+- [📰 My Personal Blogs](https://medium.com/@banesullivan/)
 - [📄 How to write a good README](https://github.com/banesullivan/README)
 - [🌍 A guide to PyVista for geoscientists](https://banesullivan.com/pyvista/index.html)
+- [🏢 My Kitware Blogs](https://www.kitware.com/author/bane-sullivan/)
 
 ---
 
