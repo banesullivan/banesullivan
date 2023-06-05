@@ -1,26 +1,14 @@
-.. title:: 👋
-
-.. raw:: html
-
-    <div class="container-fluid banner">
-        <div class="container">
-            <div class="row">
-                <center>
-                <h2><i>At the intersection of geoscience and 3D visualization</i></h2>
-                </center>
-            </div>
-        </div>
-    </div>
+.. title:: Overview
 
 
 Me in brief
 -----------
 
 * Hydrologically minded geophysicist turned research software engineer
-* Helped create the `PyVista Project <https://www.pyvista.org>`_
-* Builds impactful software used across domains in idustry and academia
-* Passionate about open-source software
-* Senior R&D Engineer at Kitware reimagining scientific collaboration tools
+* Helped create `PyVista <https://docs.pyvista.org>`_, a NumFOCUS affiliated Project
+* Builds software for impactful
+* Passionate about open source
+* 3D and geospatial visualization geek
 
 
 Around the Interweb
@@ -30,10 +18,11 @@ Most of my output is available around the internet, usually through Github
 repositories. You can find me and my research, code, articles, and data at:
 
 * `GitHub <https://github.com/banesullivan>`_: *my biggest presence is on GitHub, follow me and my projects there!*
-* `ORCID <https://orcid.org/0000-0001-8628-4566>`_ (0000-0001-8628-4566): *all of my scientific output with DOIs*
-* `Google Scholar <https://scholar.google.com/citations?hl=en&user=jslLe0cAAAAJ&scilu=&scisig=AMD79ooAAAAAXvVZvMFal5_HO-ThFOb-6f9LFraN-va0&gmla=AJsN-F4GmpwzCs151EoMS1Z3zPWub6IFKgOwjgk_Aa_nxv4iaf2mgpAP1P3JcTLz2LQ88DbquPeAAGJVeXvSbcX9coVvPAarWfRg0UOP-N1D2FFeKavRr8c&sciund=7142037744319316062>`_: *list of research content*
-* `Research Gate <https://www.researchgate.net/profile/Bane_Sullivan>`_: *academic social network*
 * `Twitter <https://twitter.com/banesullivan>`_: *Follow me!*
+* `Personal Blog <https://blog.banesullivan.com>`_: My personal writings.
+* `Kitware Blog <https://www.kitware.com/author/bane-sullivan/>`_: My writings about my work at Kitware.
+* `Google Scholar <https://scholar.google.com/citations?hl=en&user=jslLe0cAAAAJ&scilu=&scisig=AMD79ooAAAAAXvVZvMFal5_HO-ThFOb-6f9LFraN-va0&gmla=AJsN-F4GmpwzCs151EoMS1Z3zPWub6IFKgOwjgk_Aa_nxv4iaf2mgpAP1P3JcTLz2LQ88DbquPeAAGJVeXvSbcX9coVvPAarWfRg0UOP-N1D2FFeKavRr8c&sciund=7142037744319316062>`_: *list of research content*
+* `ORCID <https://orcid.org/0000-0001-8628-4566>`_ (0000-0001-8628-4566): *all of my scientific output with DOIs*
 
 Summary
 -------
@@ -42,10 +31,10 @@ I am currently a Senior R&D Engineer in `Kitware's Data & Analytics Team <https:
 
 My background is primarily in applied earth sciences, earning a B.Sc. in Geophysics and an M.Sc. in Hydrological Science from the Colorado School of Mines.
 Through my graduate research, I explored the intersection of 3D visualization, geoscience, and reproducible workflows.
-My focus has been helping geoscientists visualize their 3D/4D data, communicate their spatial findings, and enable data traceability in their research.
-These efforts lead me to create geovisualization and data management software to streamline reproducible computing workflows in the geosciences, particularly the `PyVista project <https://www.pyvista.org>`_.
+My focus has been helping geoscientists visualize their 2D/3D/4D data, communicate their spatial findings, and enable data traceability in their research.
+These efforts lead me to create various visualization and data management software to streamline reproducible computing workflows in the geosciences.
 
-I am most proud of my contributions to `PyVista <https://www.pyvista.org>`_, an open-source Python package for 3D visualization and spatial data analysis.
+I am most proud of my contributions to `PyVista <https://docs.pyvista.org>`_, an open-source Python package for 3D visualization and spatial data analysis.
 Beyond PyVista, I am an active contributor to many open-source software, and I am always looking for ways to make an impact in my work.
 I genuinely believe that scientific findings should be reproducible, not only by other researchers but also by stakeholders of the science at hand; I carry this sentiment in my efforts to develop research software.
 
@@ -58,19 +47,18 @@ Software
 --------
 
 My passion is building impactful, open-source software focusing around earth
-science, 3D visualization, and reproducible science. These are some of my
+science, visualization, and reproducible science. These are some of my
 notable projects, but for the most up-to-date information,
 `follow me on GitHub <https://github.com/banesullivan>`_!
 
-I am a co-creator of the `PyVista project <http://www.pyvista.org>`_ - an
+I am a co-creator of `PyVista <http://docs.pyvista.org>`_ - an
 effort devoted to making 3D visualization and analysis tools more accessible
 to researchers. I am also the founder of
 `OpenGeoVis <http://opengeovis.org/>`_, a similar, offshoot
 project focusing on geoscience applications.
 
 Prior to joining Kitware, most of my contributions to open-source software were
-a part of my efforts with the PyVista ecosystem (*I developed PyVista prior
-to joining Kitware*).
+a part of my efforts with the PyVista ecosystem.
 
 
 .. panels::
@@ -174,7 +162,7 @@ to joining Kitware*).
 
     ---
 
-    🐶🕵 ️Scooby
+    🐶🕵 Scooby
     ^^^^^^^^^^
 
 
@@ -196,28 +184,6 @@ to joining Kitware*).
          </li>
       </ul>
 
-    ---
-
-    🔗 ``ipyvtklink``
-    ^^^^^^^^^^^^^^^^^
-
-    A minimalist ``ipywidget`` for connecting to any ``vtkRenderWindow`` to
-    enable powerful, server-side 3D rendering in Jupyer notebooks. This tool
-    is widely used by Python-VTK and PyVista communities.
-
-    .. raw:: html
-
-      <ul class="fa-ul project-icons">
-         <li><i class="fa-li fab fa-github fa-fw" title="Github repository"></i>
-            <a href="https://github.com/Kitware/ipyvtklink" target="_blank">Kitware/ipyvtklink</a>
-         </li>
-         <li><i class="fa-li fa fa-check fa-fw" style="color: green" title="Project status"></i>
-            Stable and ready for use
-         </li>
-         <li><i class="fa-li fas fa-building" style="color: green" title="Was this effort personal or professional?"></i>
-            Professional work at Kitware
-         </li>
-      </ul>
     ---
 
     🌍 PVGeo
@@ -253,5 +219,5 @@ to joining Kitware*).
 .. toctree::
    :hidden:
 
-   pyvista/index
    publications
+   pyvista/index

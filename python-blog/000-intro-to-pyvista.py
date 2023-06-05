@@ -5,7 +5,7 @@ Intro to PyVista
 I don't have all that many posts in the gallery yet, so I thought I'd put this
 very basic introduction to PyVista in here.
 
-`PyVista <https://www.pyvista.org>`_ is a 3D data management, visualization,
+`PyVista <https://docs.pyvista.org>`_ is a 3D data management, visualization,
 and mesh analysis framework in Python, and yours truly is one of its creators!
 PyVista is capable of handling 3D spatial data structures with arbitrary
 geometries. As such, it is able to represent just about any 3D spatially

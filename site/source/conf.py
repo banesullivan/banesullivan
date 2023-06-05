@@ -108,10 +108,13 @@ html_context = {
     "default_mode": "light",
 }
 html_theme_options = {
-    "google_analytics_id": "UA-115959679-2",
+    # "google_analytics_id": "UA-115959679-2",
     "show_prev_next": False,
     "navigation_with_keys": False,
     "github_url": "https://github.com/banesullivan",
+    "external_links": [
+        {"name": "Blog", "url": "https://blog.banesullivan.com"},
+    ],
     "icon_links": [
         {
             "name": "Email",
