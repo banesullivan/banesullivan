@@ -6,7 +6,7 @@ Me in brief
 
 * Hydrologically minded geophysicist turned research software engineer
 * Helped create `PyVista <https://docs.pyvista.org>`_, a NumFOCUS affiliated Project
-* Builds software for impactful
+* Builds software for impact
 * Passionate about open source
 * 3D and geospatial visualization geek
 
@@ -26,8 +26,6 @@ repositories. You can find me and my research, code, articles, and data at:
 
 Summary
 -------
-
-I am currently a Senior R&D Engineer in `Kitware's Data & Analytics Team <https://www.kitware.com/data-analytics/>`_, where I develop software for scientific research applications.
 
 My background is primarily in applied earth sciences, earning a B.Sc. in Geophysics and an M.Sc. in Hydrological Science from the Colorado School of Mines.
 Through my graduate research, I explored the intersection of 3D visualization, geoscience, and reproducible workflows.
@@ -57,9 +55,6 @@ to researchers. I am also the founder of
 `OpenGeoVis <http://opengeovis.org/>`_, a similar, offshoot
 project focusing on geoscience applications.
 
-Prior to joining Kitware, most of my contributions to open-source software were
-a part of my efforts with the PyVista ecosystem.
-
 
 .. panels::
 
@@ -88,7 +83,7 @@ a part of my efforts with the PyVista ecosystem.
             A part of my M.Sc. thesis
          </li>
          <li><i class="fa-li fas fa-building" style="color: green" title="Was this effort personal or professional?"></i>
-            Continuing work at Kitware
+            Continually developed
          </li>
       </ul>
 
@@ -119,8 +114,7 @@ a part of my efforts with the PyVista ecosystem.
     ---
     :img-top: _static/resonantgeodata.png
 
-    As a part of my work at Kitware, I am the lead developer of Resonant
-    GeoData (RGD): a series of Django applications built for cataloging and
+    I previously lead development of ResonantGeoData (RGD): a series of Django applications built for cataloging and
     searching cloud-hosted geospatial data.
 
     .. raw:: html
