@@ -35,8 +35,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -447,7 +447,7 @@ of the fault - but still have a single modeling grid.</p>
 </div>
 <div class="output_subarea output_html rendered_html output_result">
 
-<table>
+<table style='width: 100%;'>
 <tr><th>PolyData</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>3834</td></tr>
 <tr><td>N Points</td><td>2029</td></tr>
@@ -472,9 +472,13 @@ of the fault - but still have a single modeling grid.</p>
 <span class="n">grid</span>
 </pre></div>
 </div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/grid.py:873: PyVistaDeprecationWarning: `UniformGrid` is deprecated. Use `ImageData` instead.
+  warnings.warn(
+</pre></div>
+</div>
 <div class="output_subarea output_html rendered_html output_result">
 
-<table>
+<table style='width: 100%;'>
 <tr><th>UniformGrid</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>8874</td></tr>
 <tr><td>N Points</td><td>10500</td></tr>
@@ -530,7 +534,11 @@ plane outward.</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_fault_mask_002.png" srcset="../../_images/sphx_glr_fault_mask_002.png" alt="fault mask" class = "sphx-glr-single-img"/><p>And here is how you might use that mask to do some sort of fancy modeling.
+<img src="../../_images/sphx_glr_fault_mask_002.png" srcset="../../_images/sphx_glr_fault_mask_002.png" alt="fault mask" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/grid.py:873: PyVistaDeprecationWarning: `UniformGrid` is deprecated. Use `ImageData` instead.
+  warnings.warn(
+</pre></div>
+</div>
+<p>And here is how you might use that mask to do some sort of fancy modeling.
 In my example, I’m going to use a rather sophisticated distance calculation:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">masked</span><span class="p">[</span><span class="s2">&quot;point_mask&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
 <span class="n">pts</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="n">ids</span><span class="p">]</span>
@@ -569,7 +577,7 @@ In my example, I’m going to use a rather sophisticated distance calculation:</
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_fault_mask_004.png" srcset="../../_images/sphx_glr_fault_mask_004.png" alt="fault mask" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.097 seconds)</p>
+<img src="../../_images/sphx_glr_fault_mask_004.png" srcset="../../_images/sphx_glr_fault_mask_004.png" alt="fault mask" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.679 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-fault-mask-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/5f9e1e5ba49586f466d76ec075574026/fault_mask.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">fault_mask.py</span></code></a></p>

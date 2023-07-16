@@ -70,11 +70,28 @@ For this project, we have two data archives in the `Open Mining Format (OMF) <ht
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+      warnings.warn(
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+      warnings.warn(
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+      warnings.warn(
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+      warnings.warn(
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+      warnings.warn(
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+      warnings.warn(
+
 
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <table><tr><th>Information</th><th>Blocks</th></tr><tr><td>
+    <table style='width: 100%;'><tr><th>Information</th><th>Blocks</th></tr><tr><td>
     <table>
     <tr><th>MultiBlock</th><th>Values</th></tr>
     <tr><td>N Blocks</td><td>7</td></tr>
@@ -142,6 +159,15 @@ Now we can go ahead and create an integrated visualization of all of the data av
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+      warnings.warn(
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+      warnings.warn(
+
 
 
 
@@ -176,6 +202,13 @@ We start out by creating the 3D model space as a PyVista `UniformGrid` that enco
 
 
 
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/grid.py:873: PyVistaDeprecationWarning: `UniformGrid` is deprecated. Use `ImageData` instead.
+      warnings.warn(
 
 
 
@@ -213,6 +246,15 @@ Visually inspect the kriging grid in relation to data
    :srcset: /pyvista/examples/images/sphx_glr_kriging_002.png
    :class: sphx-glr-single-img
 
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+      warnings.warn(
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+      warnings.warn(
 
 
 
@@ -333,7 +375,7 @@ And now the `grid` model has the temperature scalar field and kriging variance a
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <table><tr><th>Information</th><th>Blocks</th></tr><tr><td>
+    <table style='width: 100%;'><tr><th>Information</th><th>Blocks</th></tr><tr><td>
     <table>
     <tr><th>MultiBlock</th><th>Values</th></tr>
     <tr><td>N Blocks</td><td>8</td></tr>
@@ -447,13 +489,22 @@ Resulting Visualization
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+      warnings.warn(
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+      warnings.warn(
+
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  49.636 seconds)
+   **Total running time of the script:** ( 1 minutes  47.359 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_kriging.py:

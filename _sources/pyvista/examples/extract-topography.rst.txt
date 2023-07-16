@@ -55,6 +55,15 @@ Also posted on PVGeo: https://pvgeo.org/examples/grids/extract-topography.html
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/utilities/__init__.py:69: PyVistaDeprecationWarning: The `pyvista.utilities` module has been deprecated. `convert_string_array` is now imported as: `from pyvista.core.utilities import convert_string_array`.
+      warnings.warn(
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/utilities/__init__.py:69: PyVistaDeprecationWarning: The `pyvista.utilities` module has been deprecated. `get_vtk_type` is now imported as: `from pyvista.core.utilities import get_vtk_type`.
+      warnings.warn(
+
 
 
 
@@ -117,8 +126,8 @@ Now load the topography file from the example data:
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-    <table>
+    <table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+    <table style='width: 100%;'>
     <tr><th>PolyData</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>39764</td></tr>
     <tr><td>N Points</td><td>20164</td></tr>
@@ -130,7 +139,7 @@ Now load the topography file from the example data:
     </table>
 
     </td><td>
-    <table>
+    <table style='width: 100%;'>
     <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
     <tr><td><b>elevation</b></td><td>Points</td><td>float64</td><td>1</td><td>1.182e+03</td><td>2.690e+03</td></tr>
     <tr><td>column integer</td><td>Points</td><td>float32</td><td>1</td><td>1.000e+00</td><td>1.420e+02</td></tr>
@@ -300,7 +309,7 @@ Note that there are other extraction operations like an ``'intersection'``:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.380 seconds)
+   **Total running time of the script:** ( 0 minutes  9.950 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_extract-topography.py:

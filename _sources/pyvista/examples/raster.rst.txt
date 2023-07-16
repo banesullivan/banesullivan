@@ -126,8 +126,8 @@ Use the utility function to load that file.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-    <table>
+    <table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+    <table style='width: 100%;'>
     <tr><th>StructuredGrid</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>8126580</td></tr>
     <tr><td>N Points</td><td>8132409</td></tr>
@@ -139,7 +139,7 @@ Use the utility function to load that file.
     </table>
 
     </td><td>
-    <table>
+    <table style='width: 100%;'>
     <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
     <tr><td><b>data</b></td><td>Points</td><td>float32</td><td>1</td><td>2.360e+03</td><td>4.346e+03</td></tr>
     </table>
@@ -169,7 +169,7 @@ Use the utility function to load that file.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  16.154 seconds)
+   **Total running time of the script:** ( 0 minutes  13.966 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_raster.py:

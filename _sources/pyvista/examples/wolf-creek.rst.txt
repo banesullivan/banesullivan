@@ -64,7 +64,11 @@ Load the project into an :class:`pyvista.MultiBlock` dataset
 
  .. code-block:: none
 
-    MultiBlock (0x7ff40e4fa4c0)
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+      warnings.warn(
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+      warnings.warn(
+    MultiBlock (0x7f0da4d80a00)
       N Blocks    9
       X Bounds    443941.105, 447059.611
       Y Bounds    491941.536, 495059.859
@@ -149,6 +153,15 @@ project:
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+      warnings.warn(
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+      warnings.warn(
+
 
 
 
@@ -173,7 +186,7 @@ Then apply a filtering tool from ``pyvista`` to the volumetric data:
 
  .. code-block:: none
 
-    UnstructuredGrid (0x7ff482c62a60)
+    UnstructuredGrid (0x7f0da4d80880)
       N Cells:    92525
       N Points:   107807
       X Bounds:   4.447e+05, 4.457e+05
@@ -225,13 +238,22 @@ Then you can put it all in one environment!
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+      warnings.warn(
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+      warnings.warn(
+
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.778 seconds)
+   **Total running time of the script:** ( 0 minutes  8.243 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_wolf-creek.py:

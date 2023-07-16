@@ -35,8 +35,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -450,9 +450,9 @@ triangulated): this is common for DEMs.</p>
 </pre></div>
 </div>
 <div class="output_subarea output_html rendered_html output_result">
-<table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-<table>
-<tr><th>UniformGrid</th><th>Information</th></tr>
+<table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+<table style='width: 100%;'>
+<tr><th>ImageData</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>1677401</td></tr>
 <tr><td>N Points</td><td>1680000</td></tr>
 <tr><td>X Bounds</td><td>1.810e+06, 1.831e+06</td></tr>
@@ -464,7 +464,7 @@ triangulated): this is common for DEMs.</p>
 </table>
 
 </td><td>
-<table>
+<table style='width: 100%;'>
 <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
 <tr><td><b>scalar1of1</b></td><td>Points</td><td>float64</td><td>1</td><td>7.339e+02</td><td>2.787e+03</td></tr>
 </table>
@@ -487,8 +487,8 @@ make a 3D surface of that DEM:</p>
 </pre></div>
 </div>
 <div class="output_subarea output_html rendered_html output_result">
-<table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-<table>
+<table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+<table style='width: 100%;'>
 <tr><th>StructuredGrid</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>6400</td></tr>
 <tr><td>N Points</td><td>6561</td></tr>
@@ -500,7 +500,7 @@ make a 3D surface of that DEM:</p>
 </table>
 
 </td><td>
-<table>
+<table style='width: 100%;'>
 <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
 <tr><td><b>scalar1of1</b></td><td>Points</td><td>float64</td><td>1</td><td>1.441e+03</td><td>2.769e+03</td></tr>
 </table>
@@ -530,8 +530,8 @@ Once we have those structured coordinates, we can create a
 </pre></div>
 </div>
 <div class="output_subarea output_html rendered_html output_result">
-<table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-<table>
+<table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+<table style='width: 100%;'>
 <tr><th>StructuredGrid</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>70400</td></tr>
 <tr><td>N Points</td><td>78732</td></tr>
@@ -543,7 +543,7 @@ Once we have those structured coordinates, we can create a
 </table>
 
 </td><td>
-<table>
+<table style='width: 100%;'>
 <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
 <tr><td><b>Elevation</b></td><td>Points</td><td>float64</td><td>1</td><td>9.364e+02</td><td>2.744e+03</td></tr>
 </table>
@@ -560,7 +560,7 @@ Once we have those structured coordinates, we can create a
 <span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">lighting</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="n">cpos</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_terrain-mesh_003.png" srcset="../../_images/sphx_glr_terrain-mesh_003.png" alt="terrain mesh" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.969 seconds)</p>
+<img src="../../_images/sphx_glr_terrain-mesh_003.png" srcset="../../_images/sphx_glr_terrain-mesh_003.png" alt="terrain mesh" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.721 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-terrain-mesh-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/d5fee3b90fb3957a0776f80b50fba230/terrain-mesh.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">terrain-mesh.py</span></code></a></p>

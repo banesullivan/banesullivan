@@ -35,8 +35,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -448,6 +448,12 @@ cells field.</p>
 <span class="kn">import</span> <span class="nn">pyvista</span>
 </pre></div>
 </div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/utilities/__init__.py:69: PyVistaDeprecationWarning: The `pyvista.utilities` module has been deprecated. `convert_string_array` is now imported as: `from pyvista.core.utilities import convert_string_array`.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/utilities/__init__.py:69: PyVistaDeprecationWarning: The `pyvista.utilities` module has been deprecated. `get_vtk_type` is now imported as: `from pyvista.core.utilities import get_vtk_type`.
+  warnings.warn(
+</pre></div>
+</div>
 <p>For the grid data set, let’s use one of the Model Building sources
 with the following parameters:</p>
 <ul class="simple">
@@ -476,8 +482,8 @@ with the following parameters:</p>
 </pre></div>
 </div>
 <div class="output_subarea output_html rendered_html output_result">
-<table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-<table>
+<table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+<table style='width: 100%;'>
 <tr><th>PolyData</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>39764</td></tr>
 <tr><td>N Points</td><td>20164</td></tr>
@@ -489,7 +495,7 @@ with the following parameters:</p>
 </table>
 
 </td><td>
-<table>
+<table style='width: 100%;'>
 <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
 <tr><td><b>elevation</b></td><td>Points</td><td>float64</td><td>1</td><td>1.182e+03</td><td>2.690e+03</td></tr>
 <tr><td>column integer</td><td>Points</td><td>float32</td><td>1</td><td>1.000e+00</td><td>1.420e+02</td></tr>
@@ -548,7 +554,7 @@ topographic surface, you can set a tolerance:</p>
 <span class="n">extracted</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_extract-topography_007.png" srcset="../../_images/sphx_glr_extract-topography_007.png" alt="extract topography" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  10.380 seconds)</p>
+<img src="../../_images/sphx_glr_extract-topography_007.png" srcset="../../_images/sphx_glr_extract-topography_007.png" alt="extract topography" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  9.950 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-extract-topography-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/c8c5856cf304967a110cb7a8ee6be7a6/extract-topography.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">extract-topography.py</span></code></a></p>

@@ -64,7 +64,7 @@ Let's get to it!
 
     <div class="output_subarea output_html rendered_html output_result">
 
-    <table>
+    <table style='width: 100%;'>
     <tr><th>PolyData</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>3834</td></tr>
     <tr><td>N Points</td><td>2029</td></tr>
@@ -101,12 +101,19 @@ Create the modelling grid if you don't already have one
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/grid.py:873: PyVistaDeprecationWarning: `UniformGrid` is deprecated. Use `ImageData` instead.
+      warnings.warn(
+
 
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
 
-    <table>
+    <table style='width: 100%;'>
     <tr><th>UniformGrid</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>8874</td></tr>
     <tr><td>N Points</td><td>10500</td></tr>
@@ -211,6 +218,13 @@ Let's run it and take a look at the result!
    :srcset: /pyvista/examples/images/sphx_glr_fault_mask_002.png
    :class: sphx-glr-single-img
 
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/grid.py:873: PyVistaDeprecationWarning: `UniformGrid` is deprecated. Use `ImageData` instead.
+      warnings.warn(
 
 
 
@@ -337,7 +351,7 @@ Visualize one side of the masked grid
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.097 seconds)
+   **Total running time of the script:** ( 0 minutes  3.679 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_fault_mask.py:

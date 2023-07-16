@@ -35,8 +35,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -443,7 +443,11 @@ to download the full example code</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">project</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>MultiBlock (0x7ff40e4fa4c0)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+  warnings.warn(
+MultiBlock (0x7f0da4d80a00)
   N Blocks    9
   X Bounds    443941.105, 447059.611
   Y Bounds    491941.536, 495059.859
@@ -479,13 +483,19 @@ project:</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_wolf-creek_002.png" srcset="../../_images/sphx_glr_wolf-creek_002.png" alt="wolf creek" class = "sphx-glr-single-img"/><p>Then apply a filtering tool from <code class="docutils literal notranslate"><span class="pre">pyvista</span></code> to the volumetric data:</p>
+<img src="../../_images/sphx_glr_wolf-creek_002.png" srcset="../../_images/sphx_glr_wolf-creek_002.png" alt="wolf creek" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+  warnings.warn(
+</pre></div>
+</div>
+<p>Then apply a filtering tool from <code class="docutils literal notranslate"><span class="pre">pyvista</span></code> to the volumetric data:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Threshold the volumetric data</span>
 <span class="n">thresh_vol</span> <span class="o">=</span> <span class="n">vol</span><span class="o">.</span><span class="n">threshold</span><span class="p">([</span><span class="mf">1.09</span><span class="p">,</span> <span class="mf">4.20</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">thresh_vol</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>UnstructuredGrid (0x7ff482c62a60)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>UnstructuredGrid (0x7f0da4d80880)
   N Cells:    92525
   N Points:   107807
   X Bounds:   4.447e+05, 4.457e+05
@@ -520,7 +530,13 @@ project:</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_wolf-creek_003.png" srcset="../../_images/sphx_glr_wolf-creek_003.png" alt="wolf creek" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.778 seconds)</p>
+<img src="../../_images/sphx_glr_wolf-creek_003.png" srcset="../../_images/sphx_glr_wolf-creek_003.png" alt="wolf creek" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+  warnings.warn(
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.243 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-wolf-creek-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/fa2fe0de1c218a9ae29e77dc898e84cf/wolf-creek.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">wolf-creek.py</span></code></a></p>

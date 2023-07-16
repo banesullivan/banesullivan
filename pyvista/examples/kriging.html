@@ -35,8 +35,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -456,8 +456,22 @@ The open-source, Python software <a class="reference external" href="https://geo
 <span class="n">project</span>
 </pre></div>
 </div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+  warnings.warn(
+</pre></div>
+</div>
 <div class="output_subarea output_html rendered_html output_result">
-<table><tr><th>Information</th><th>Blocks</th></tr><tr><td>
+<table style='width: 100%;'><tr><th>Information</th><th>Blocks</th></tr><tr><td>
 <table>
 <tr><th>MultiBlock</th><th>Values</th></tr>
 <tr><td>N Blocks</td><td>7</td></tr>
@@ -506,7 +520,13 @@ The open-source, Python software <a class="reference external" href="https://geo
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_kriging_001.png" srcset="../../_images/sphx_glr_kriging_001.png" alt="kriging" class = "sphx-glr-single-img"/></section>
+<img src="../../_images/sphx_glr_kriging_001.png" srcset="../../_images/sphx_glr_kriging_001.png" alt="kriging" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+  warnings.warn(
+</pre></div>
+</div>
+</section>
 <section id="kriging">
 <h2>Kriging</h2>
 <p>Now we will use an external library, [<cite>gstools</cite>](<a class="reference external" href="https://geostat-framework.github.io">https://geostat-framework.github.io</a>), to krige the temperature probe data into a 3D temperature model of the subsurface.</p>
@@ -521,6 +541,10 @@ The open-source, Python software <a class="reference external" href="https://geo
 <span class="n">grid</span><span class="o">.</span><span class="n">spacing</span> <span class="o">=</span> <span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 <span class="c1"># Number of cells in each direction</span>
 <span class="n">grid</span><span class="o">.</span><span class="n">dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/grid.py:873: PyVistaDeprecationWarning: `UniformGrid` is deprecated. Use `ImageData` instead.
+  warnings.warn(
 </pre></div>
 </div>
 <p>Visually inspect the kriging grid in relation to data</p>
@@ -542,7 +566,13 @@ The open-source, Python software <a class="reference external" href="https://geo
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_kriging_002.png" srcset="../../_images/sphx_glr_kriging_002.png" alt="kriging" class = "sphx-glr-single-img"/></section>
+<img src="../../_images/sphx_glr_kriging_002.png" srcset="../../_images/sphx_glr_kriging_002.png" alt="kriging" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+  warnings.warn(
+</pre></div>
+</div>
+</section>
 <section id="variogram-analysis">
 <h3>Variogram Analysis</h3>
 <p>Next, we need to compute a variogram for the temperature probe data and fit that variogram to an exponential model</p>
@@ -595,7 +625,7 @@ The open-source, Python software <a class="reference external" href="https://geo
 </pre></div>
 </div>
 <div class="output_subarea output_html rendered_html output_result">
-<table><tr><th>Information</th><th>Blocks</th></tr><tr><td>
+<table style='width: 100%;'><tr><th>Information</th><th>Blocks</th></tr><tr><td>
 <table>
 <tr><th>MultiBlock</th><th>Values</th></tr>
 <tr><td>N Blocks</td><td>8</td></tr>
@@ -680,7 +710,13 @@ The open-source, Python software <a class="reference external" href="https://geo
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_kriging_004.png" srcset="../../_images/sphx_glr_kriging_004.png" alt="kriging" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  49.636 seconds)</p>
+<img src="../../_images/sphx_glr_kriging_004.png" srcset="../../_images/sphx_glr_kriging_004.png" alt="kriging" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
+  warnings.warn(
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  47.359 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-pyvista-examples-kriging-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/2d610c305fc51adb26a96810638bb8ad/kriging.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">kriging.py</span></code></a></p>
