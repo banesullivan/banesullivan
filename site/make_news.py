@@ -3,7 +3,7 @@ import os
 
 
 def format_icon(title, description, link, image):
-    under = "+" * len(title)
+    # under = "+" * len(title)
     body = f"""
 
     ---

@@ -8,7 +8,6 @@ Adopted from https://docs.pyvista.org/examples/01-filter/clipping-with-surface.h
 """
 import numpy as np
 import pyvista as pv
-from pyvista import _vtk as vtk
 
 ###############################################################################
 # Make a gridded volume
