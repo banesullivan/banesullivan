@@ -2,7 +2,7 @@ gstools
 matplotlib
 netcdf4
 numpy
-omfvista
+omfvista>=0.3.0
 pandas
 pooch
 PVGeo
