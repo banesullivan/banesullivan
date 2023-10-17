@@ -48,8 +48,9 @@ v = ds.x.min(), ds.y.max(), 0.0  # Lop left
 # Use the GCPs to map the tex coords
 mapped_surf = surf.texture_map_to_plane(o, u, v)
 
-# Associate the texture with the mapped mesh
-mapped_surf.textures["aerial"] = pv.numpy_to_texture(image)
+###############################################################################
+# Load the image as a texture to drape over the mesh
+aerial_texture = pv.numpy_to_texture(image)
 
 ###############################################################################
 # Plot it up in 3D and enjoy!
@@ -58,4 +59,4 @@ cpos = [
     (469928.4268006842, 1321916.1316302174, 5171.6505267522025),
     (0.08372003361058433, 0.13788753708579846, 0.986903228836878),
 ]
-mapped_surf.plot(texture="aerial", cpos=cpos)
+mapped_surf.plot(texture=aerial_texture, cpos=cpos)
