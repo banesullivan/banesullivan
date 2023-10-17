@@ -40,6 +40,7 @@ p.add_mesh(grid, opacity=0.5)
 p.add_mesh(fault, color="orange")
 p.show()
 
+
 ###############################################################################
 # You may notice that the modeling grid's extent is far greater than that of
 # the fault -- not to worry! PyVista's `clip_surface` filter and the utility

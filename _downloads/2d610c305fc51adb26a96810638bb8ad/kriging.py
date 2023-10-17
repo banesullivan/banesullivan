@@ -38,7 +38,7 @@ project
 
 p = pv.Plotter(window_size=np.array([1024, 768]) * 2)
 p.add_mesh(project["Site Boundary"], color="yellow", render_lines_as_tubes=True, line_width=10)
-p.add_mesh(project["Terrain"], texture="geo_aer", opacity=0.7, lighting=False)
+p.add_mesh(project["Terrain"], opacity=0.7, lighting=False)
 p.add_mesh(project["Opal Mound Fault"], color="brown", opacity=0.7)
 p.add_mesh(project["Negro Mag Fault"], color="lightblue", opacity=0.7)
 p.add_mesh(
@@ -82,7 +82,7 @@ grid.dimensions = (60, 75, 100)
 # Visually inspect the kriging grid in relation to data
 p = pv.Plotter(window_size=np.array([1024, 768]) * 2)
 p.add_mesh(grid, opacity=0.5, color=True)
-p.add_mesh(project["Terrain"], texture="geo_aer", opacity=0.75)
+p.add_mesh(project["Terrain"], opacity=0.75)
 p.add_mesh(
     project["Observed Temperature"],
     cmap="coolwarm",
@@ -162,6 +162,7 @@ subsurface = extractor.apply(grid, project["Terrain"])
 # Resulting Visualization
 # +++++++++++++++++++++++
 
+
 # Create the main figure
 def add_contents(p):
     """A helper to add data to scenes."""
@@ -169,7 +170,7 @@ def add_contents(p):
         project["Site Boundary"].tube(50),
         color="yellow",
     )
-    p.add_mesh(project["Terrain"], texture="geo_aer", opacity=0.7, lighting=False)
+    p.add_mesh(project["Terrain"], opacity=0.7, lighting=False)
 
     p.add_mesh(project["Opal Mound Fault"], color="brown", opacity=0.75)
     p.add_mesh(project["Negro Mag Fault"], color="lightblue", opacity=0.75)

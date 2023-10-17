@@ -105,7 +105,7 @@ Create the modelling grid if you don't already have one
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/grid.py:873: PyVistaDeprecationWarning: `UniformGrid` is deprecated. Use `ImageData` instead.
+    /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pyvista/core/grid.py:912: PyVistaDeprecationWarning: `UniformGrid` is deprecated. Use `ImageData` instead.
       warnings.warn(
 
 
@@ -134,7 +134,7 @@ Create the modelling grid if you don't already have one
 
 Take a quick preview to see where the fault is inside of the grid
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-43
+.. GENERATED FROM PYTHON SOURCE LINES 38-44
 
 .. code-block:: default
 
@@ -142,6 +142,7 @@ Take a quick preview to see where the fault is inside of the grid
     p.add_mesh(grid, opacity=0.5)
     p.add_mesh(fault, color="orange")
     p.show()
+
 
 
 
@@ -155,7 +156,7 @@ Take a quick preview to see where the fault is inside of the grid
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-50
+.. GENERATED FROM PYTHON SOURCE LINES 45-51
 
 You may notice that the modeling grid's extent is far greater than that of
 the fault -- not to worry! PyVista's `clip_surface` filter and the utility
@@ -164,7 +165,7 @@ plane outward.
 
 This is a reusable utility for performing the mask:
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-70
+.. GENERATED FROM PYTHON SOURCE LINES 51-71
 
 .. code-block:: default
 
@@ -195,11 +196,11 @@ This is a reusable utility for performing the mask:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-72
+.. GENERATED FROM PYTHON SOURCE LINES 72-73
 
 Let's run it and take a look at the result!
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-79
+.. GENERATED FROM PYTHON SOURCE LINES 73-80
 
 .. code-block:: default
 
@@ -223,18 +224,18 @@ Let's run it and take a look at the result!
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/grid.py:873: PyVistaDeprecationWarning: `UniformGrid` is deprecated. Use `ImageData` instead.
+    /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pyvista/core/grid.py:912: PyVistaDeprecationWarning: `UniformGrid` is deprecated. Use `ImageData` instead.
       warnings.warn(
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-82
+.. GENERATED FROM PYTHON SOURCE LINES 81-83
 
 And here is how you might use that mask to do some sort of fancy modeling.
 In my example, I'm going to use a rather sophisticated distance calculation:
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-86
+.. GENERATED FROM PYTHON SOURCE LINES 83-87
 
 .. code-block:: default
 
@@ -255,11 +256,11 @@ In my example, I'm going to use a rather sophisticated distance calculation:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-88
+.. GENERATED FROM PYTHON SOURCE LINES 88-89
 
 Compute distance from TNE corner
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-91
+.. GENERATED FROM PYTHON SOURCE LINES 89-92
 
 .. code-block:: default
 
@@ -273,11 +274,11 @@ Compute distance from TNE corner
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-93
+.. GENERATED FROM PYTHON SOURCE LINES 93-94
 
 Add those results back to the source grid
 
-.. GENERATED FROM PYTHON SOURCE LINES 93-99
+.. GENERATED FROM PYTHON SOURCE LINES 94-100
 
 .. code-block:: default
 
@@ -300,11 +301,11 @@ Add those results back to the source grid
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-101
+.. GENERATED FROM PYTHON SOURCE LINES 101-102
 
 Display!
 
-.. GENERATED FROM PYTHON SOURCE LINES 101-103
+.. GENERATED FROM PYTHON SOURCE LINES 102-104
 
 .. code-block:: default
 
@@ -322,11 +323,11 @@ Display!
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-105
+.. GENERATED FROM PYTHON SOURCE LINES 105-106
 
 Visualize one side of the masked grid
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-111
+.. GENERATED FROM PYTHON SOURCE LINES 106-112
 
 .. code-block:: default
 
@@ -351,7 +352,7 @@ Visualize one side of the masked grid
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.679 seconds)
+   **Total running time of the script:** (0 minutes 6.443 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_fault_mask.py:

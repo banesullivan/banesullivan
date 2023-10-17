@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html data-theme="light">
+<html lang="en" data-theme="light">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Computation times &#8212; Bane Sullivan</title>
   
@@ -19,39 +18,39 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css?v=efc38b36" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-dropdown.css?v=995e94df" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.min.css?v=21c0b90a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=525cde36"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'pyvista/examples/sg_execution_times';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="2023-10-17"/>
   </head>
   
   
@@ -60,6 +59,15 @@
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -100,7 +108,8 @@
     <span class="fa-solid fa-bars"></span>
   </label>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
   
@@ -116,7 +125,6 @@
 </a></div>
     
   </div>
-  
   
   <div class="col-lg-9 navbar-header-items">
     
@@ -161,13 +169,15 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
@@ -182,8 +192,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/banesullivan" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/banesullivan" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -194,8 +204,8 @@ document.write(`
           
           
           
-          <a href="mailto:banesullivan@gmail.com" title="Email" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-envelope"></i></span>
-            <label class="sr-only">Email</label></a>
+          <a href="mailto:banesullivan@gmail.com" title="Email" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Email</span></a>
         </li>
         <li class="nav-item">
           
@@ -206,8 +216,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/banesullivan" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/banesullivan" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
 </ul></div>
       
@@ -217,13 +227,15 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
@@ -293,8 +305,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/banesullivan" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/banesullivan" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -305,8 +317,8 @@ document.write(`
           
           
           
-          <a href="mailto:banesullivan@gmail.com" title="Email" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-envelope"></i></span>
-            <label class="sr-only">Email</label></a>
+          <a href="mailto:banesullivan@gmail.com" title="Email" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Email</span></a>
         </li>
         <li class="nav-item">
           
@@ -317,8 +329,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/banesullivan" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/banesullivan" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
 </ul></div>
         
@@ -350,8 +362,8 @@ document.write(`
 
 
 
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="../../index.html" class="nav-link" aria-label="Home">
@@ -377,80 +389,75 @@ document.write(`
                   
   <section id="computation-times">
 <span id="sphx-glr-pyvista-examples-sg-execution-times"></span><h1>Computation times</h1>
-<p><strong>04:59.237</strong> total execution time for <strong>pyvista_examples</strong> files:</p>
+<p><strong>06:14.828</strong> total execution time for <strong>pyvista_examples</strong> files:</p>
 <table class="table">
-<colgroup>
-<col style="width: 83%" />
-<col style="width: 10%" />
-<col style="width: 7%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="kriging.html#sphx-glr-pyvista-examples-kriging-py"><span class="std std-ref">Kriging with GSTools</span></a> (<code class="docutils literal notranslate"><span class="pre">kriging.py</span></code>)</p></td>
-<td><p>01:47.359</p></td>
+<td><p>01:48.193</p></td>
 <td><p>0.0 MB</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="mine-pit.html#sphx-glr-pyvista-examples-mine-pit-py"><span class="std std-ref">Mine Pit Imagery</span></a> (<code class="docutils literal notranslate"><span class="pre">mine-pit.py</span></code>)</p></td>
-<td><p>01:23.695</p></td>
+<td><p>01:24.226</p></td>
 <td><p>0.0 MB</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="topo-map.html#sphx-glr-pyvista-examples-topo-map-py"><span class="std std-ref">Topographic Map</span></a> (<code class="docutils literal notranslate"><span class="pre">topo-map.py</span></code>)</p></td>
-<td><p>00:17.184</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="raster.html#sphx-glr-pyvista-examples-raster-py"><span class="std std-ref">Read a raster using xarray</span></a> (<code class="docutils literal notranslate"><span class="pre">raster.py</span></code>)</p></td>
+<td><p>00:31.324</p></td>
 <td><p>0.0 MB</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="damavand.html#sphx-glr-pyvista-examples-damavand-py"><span class="std std-ref">Damavand Volcano</span></a> (<code class="docutils literal notranslate"><span class="pre">damavand.py</span></code>)</p></td>
-<td><p>00:17.157</p></td>
+<td><p>00:23.204</p></td>
 <td><p>0.0 MB</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="geological-map.html#sphx-glr-pyvista-examples-geological-map-py"><span class="std std-ref">Geological Map on Topography</span></a> (<code class="docutils literal notranslate"><span class="pre">geological-map.py</span></code>)</p></td>
-<td><p>00:14.182</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="topo-map.html#sphx-glr-pyvista-examples-topo-map-py"><span class="std std-ref">Topographic Map</span></a> (<code class="docutils literal notranslate"><span class="pre">topo-map.py</span></code>)</p></td>
+<td><p>00:21.655</p></td>
 <td><p>0.0 MB</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="raster.html#sphx-glr-pyvista-examples-raster-py"><span class="std std-ref">Read a raster using xarray</span></a> (<code class="docutils literal notranslate"><span class="pre">raster.py</span></code>)</p></td>
-<td><p>00:13.966</p></td>
-<td><p>0.0 MB</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="extract-topography.html#sphx-glr-pyvista-examples-extract-topography-py"><span class="std std-ref">Extract Topography</span></a> (<code class="docutils literal notranslate"><span class="pre">extract-topography.py</span></code>)</p></td>
-<td><p>00:09.950</p></td>
-<td><p>0.0 MB</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="wolf-creek.html#sphx-glr-pyvista-examples-wolf-creek-py"><span class="std std-ref">Load OMF Project</span></a> (<code class="docutils literal notranslate"><span class="pre">wolf-creek.py</span></code>)</p></td>
-<td><p>00:08.243</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="geological-map.html#sphx-glr-pyvista-examples-geological-map-py"><span class="std std-ref">Geological Map on Topography</span></a> (<code class="docutils literal notranslate"><span class="pre">geological-map.py</span></code>)</p></td>
+<td><p>00:20.068</p></td>
 <td><p>0.0 MB</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="create-surface-draped.html#sphx-glr-pyvista-examples-create-surface-draped-py"><span class="std std-ref">Drape 2D Surface From Line</span></a> (<code class="docutils literal notranslate"><span class="pre">create-surface-draped.py</span></code>)</p></td>
-<td><p>00:07.588</p></td>
+<td><p>00:19.272</p></td>
+<td><p>0.0 MB</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="wolf-creek.html#sphx-glr-pyvista-examples-wolf-creek-py"><span class="std std-ref">Load OMF Project</span></a> (<code class="docutils literal notranslate"><span class="pre">wolf-creek.py</span></code>)</p></td>
+<td><p>00:17.137</p></td>
+<td><p>0.0 MB</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="extract-topography.html#sphx-glr-pyvista-examples-extract-topography-py"><span class="std std-ref">Extract Topography</span></a> (<code class="docutils literal notranslate"><span class="pre">extract-topography.py</span></code>)</p></td>
+<td><p>00:16.343</p></td>
 <td><p>0.0 MB</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="fault_mask.html#sphx-glr-pyvista-examples-fault-mask-py"><span class="std std-ref">Masked Grid for Two Sides of a Fault</span></a> (<code class="docutils literal notranslate"><span class="pre">fault_mask.py</span></code>)</p></td>
-<td><p>00:03.679</p></td>
-<td><p>0.0 MB</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="contouring.html#sphx-glr-pyvista-examples-contouring-py"><span class="std std-ref">Creating a Contour Map</span></a> (<code class="docutils literal notranslate"><span class="pre">contouring.py</span></code>)</p></td>
-<td><p>00:03.402</p></td>
-<td><p>0.0 MB</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="surface-boolean.html#sphx-glr-pyvista-examples-surface-boolean-py"><span class="std std-ref">Surface Boolean Logic</span></a> (<code class="docutils literal notranslate"><span class="pre">surface-boolean.py</span></code>)</p></td>
-<td><p>00:03.295</p></td>
+<td><p>00:06.443</p></td>
 <td><p>0.0 MB</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="horizon-picking.html#sphx-glr-pyvista-examples-horizon-picking-py"><span class="std std-ref">Picking Horizons</span></a> (<code class="docutils literal notranslate"><span class="pre">horizon-picking.py</span></code>)</p></td>
-<td><p>00:02.785</p></td>
+<td><p>00:05.417</p></td>
 <td><p>0.0 MB</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="terrain-mesh.html#sphx-glr-pyvista-examples-terrain-mesh-py"><span class="std std-ref">Terrain Following Mesh</span></a> (<code class="docutils literal notranslate"><span class="pre">terrain-mesh.py</span></code>)</p></td>
-<td><p>00:02.721</p></td>
+<td><p>00:05.101</p></td>
+<td><p>0.0 MB</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="contouring.html#sphx-glr-pyvista-examples-contouring-py"><span class="std std-ref">Creating a Contour Map</span></a> (<code class="docutils literal notranslate"><span class="pre">contouring.py</span></code>)</p></td>
+<td><p>00:05.023</p></td>
+<td><p>0.0 MB</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="surface-boolean.html#sphx-glr-pyvista-examples-surface-boolean-py"><span class="std std-ref">Surface Boolean Logic</span></a> (<code class="docutils literal notranslate"><span class="pre">surface-boolean.py</span></code>)</p></td>
+<td><p>00:05.020</p></td>
 <td><p>0.0 MB</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="cross-section-simple.html#sphx-glr-pyvista-examples-cross-section-simple-py"><span class="std std-ref">Geological Cross Section</span></a> (<code class="docutils literal notranslate"><span class="pre">cross-section-simple.py</span></code>)</p></td>
-<td><p>00:01.819</p></td>
+<td><p>00:02.633</p></td>
 <td><p>0.0 MB</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="voxelize.html#sphx-glr-pyvista-examples-voxelize-py"><span class="std std-ref">Voxelize Points</span></a> (<code class="docutils literal notranslate"><span class="pre">voxelize.py</span></code>)</p></td>
-<td><p>00:01.457</p></td>
+<td><p>00:02.225</p></td>
 <td><p>0.0 MB</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="spherical.html#sphx-glr-pyvista-examples-spherical-py"><span class="std std-ref">Spherical Data</span></a> (<code class="docutils literal notranslate"><span class="pre">spherical.py</span></code>)</p></td>
-<td><p>00:00.756</p></td>
+<td><p>00:01.544</p></td>
 <td><p>0.0 MB</p></td>
 </tr>
 </tbody>
@@ -459,6 +466,8 @@ document.write(`
 
 
                 </article>
+              
+              
               
               
               
@@ -477,8 +486,8 @@ document.write(`
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -496,7 +505,7 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
     <br/>
   </p>
 </div>
@@ -504,10 +513,11 @@ document.write(`
     </div>
   
   
+  
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.1.
 </p></div>
       
     </div>

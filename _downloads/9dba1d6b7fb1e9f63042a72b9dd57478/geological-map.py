@@ -14,7 +14,6 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 import numpy as np
 import pooch
 import pyvista as pv
-from pyvista import examples
 import rasterio
 
 ###############################################################################

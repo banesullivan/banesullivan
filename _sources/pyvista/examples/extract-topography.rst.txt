@@ -59,9 +59,9 @@ Also posted on PVGeo: https://pvgeo.org/examples/grids/extract-topography.html
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/utilities/__init__.py:69: PyVistaDeprecationWarning: The `pyvista.utilities` module has been deprecated. `convert_string_array` is now imported as: `from pyvista.core.utilities import convert_string_array`.
+    /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pyvista/utilities/__init__.py:69: PyVistaDeprecationWarning: The `pyvista.utilities` module has been deprecated. `convert_string_array` is now imported as: `from pyvista.core.utilities import convert_string_array`.
       warnings.warn(
-    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/utilities/__init__.py:69: PyVistaDeprecationWarning: The `pyvista.utilities` module has been deprecated. `get_vtk_type` is now imported as: `from pyvista.core.utilities import get_vtk_type`.
+    /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pyvista/utilities/__init__.py:69: PyVistaDeprecationWarning: The `pyvista.utilities` module has been deprecated. `get_vtk_type` is now imported as: `from pyvista.core.utilities import get_vtk_type`.
       warnings.warn(
 
 
@@ -309,7 +309,7 @@ Note that there are other extraction operations like an ``'intersection'``:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.950 seconds)
+   **Total running time of the script:** (0 minutes 16.343 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_extract-topography.py:

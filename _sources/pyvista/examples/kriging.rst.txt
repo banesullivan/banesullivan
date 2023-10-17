@@ -70,23 +70,6 @@ For this project, we have two data archives in the `Open Mining Format (OMF) <ht
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
-      warnings.warn(
-    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
-      warnings.warn(
-    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
-      warnings.warn(
-    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
-      warnings.warn(
-    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
-      warnings.warn(
-    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
-      warnings.warn(
-
 
 .. raw:: html
 
@@ -131,7 +114,7 @@ Now we can go ahead and create an integrated visualization of all of the data av
 
     p = pv.Plotter(window_size=np.array([1024, 768]) * 2)
     p.add_mesh(project["Site Boundary"], color="yellow", render_lines_as_tubes=True, line_width=10)
-    p.add_mesh(project["Terrain"], texture="geo_aer", opacity=0.7, lighting=False)
+    p.add_mesh(project["Terrain"], opacity=0.7, lighting=False)
     p.add_mesh(project["Opal Mound Fault"], color="brown", opacity=0.7)
     p.add_mesh(project["Negro Mag Fault"], color="lightblue", opacity=0.7)
     p.add_mesh(
@@ -158,15 +141,6 @@ Now we can go ahead and create an integrated visualization of all of the data av
    :srcset: /pyvista/examples/images/sphx_glr_kriging_001.png
    :class: sphx-glr-single-img
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
-      warnings.warn(
-    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
-      warnings.warn(
 
 
 
@@ -207,7 +181,7 @@ We start out by creating the 3D model space as a PyVista `UniformGrid` that enco
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/grid.py:873: PyVistaDeprecationWarning: `UniformGrid` is deprecated. Use `ImageData` instead.
+    /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pyvista/core/grid.py:912: PyVistaDeprecationWarning: `UniformGrid` is deprecated. Use `ImageData` instead.
       warnings.warn(
 
 
@@ -223,7 +197,7 @@ Visually inspect the kriging grid in relation to data
 
     p = pv.Plotter(window_size=np.array([1024, 768]) * 2)
     p.add_mesh(grid, opacity=0.5, color=True)
-    p.add_mesh(project["Terrain"], texture="geo_aer", opacity=0.75)
+    p.add_mesh(project["Terrain"], opacity=0.75)
     p.add_mesh(
         project["Observed Temperature"],
         cmap="coolwarm",
@@ -246,15 +220,6 @@ Visually inspect the kriging grid in relation to data
    :srcset: /pyvista/examples/images/sphx_glr_kriging_002.png
    :class: sphx-glr-single-img
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
-      warnings.warn(
-    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
-      warnings.warn(
 
 
 
@@ -431,9 +396,10 @@ We can use a filter from PVGeo to extract the region of the temperature model th
 Resulting Visualization
 +++++++++++++++++++++++
 
-.. GENERATED FROM PYTHON SOURCE LINES 164-209
+.. GENERATED FROM PYTHON SOURCE LINES 164-210
 
 .. code-block:: default
+
 
 
     # Create the main figure
@@ -443,7 +409,7 @@ Resulting Visualization
             project["Site Boundary"].tube(50),
             color="yellow",
         )
-        p.add_mesh(project["Terrain"], texture="geo_aer", opacity=0.7, lighting=False)
+        p.add_mesh(project["Terrain"], opacity=0.7, lighting=False)
 
         p.add_mesh(project["Opal Mound Fault"], color="brown", opacity=0.75)
         p.add_mesh(project["Negro Mag Fault"], color="lightblue", opacity=0.75)
@@ -489,22 +455,13 @@ Resulting Visualization
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:556: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
-      warnings.warn(
-    /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/pyvista/core/dataset.py:516: PyVistaDeprecationWarning: Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
-      warnings.warn(
-
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  47.359 seconds)
+   **Total running time of the script:** (1 minutes 48.193 seconds)
 
 
 .. _sphx_glr_download_pyvista_examples_kriging.py:
