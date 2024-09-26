@@ -4,8 +4,6 @@ I'm a geophysicist/hydrologist by training, but I've found my niche in open sour
 
 Learn more about me at [banesullivan.com](https://banesullivan.com/) and keep up to date by [following me on Twitter](https://twitter.com/banesullivan)
 
-This is my primary, public profile for open source. My work profile is separate: [@banesullivan-kobold](https://github.com/banesullivan-kobold)
-
 ## Some of My Ramblings
 
 - [📰 My Personal Blogs](https://medium.com/@banesullivan/)
