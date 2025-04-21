@@ -1,8 +1,8 @@
-hi :wave: I'm Bane! I helped create [@PyVista](https://github.com/pyvista) and my passion is open source software for data visualization
+hi :wave: I'm Bane! I helped create [@PyVista](https://github.com/pyvista) (with a lot of help!) and my passion is open source software for data visualization
 
-I'm a geophysicist/hydrologist by training, but I've found my niche in open source software development. Check out the following pinned projects to see some of the work I am most eager to share!
+I'm a geophysicist/hydrologist by training, but I've found my niche in spatial visualization (geospatial and 3D). Check out the following pinned projects to see some of the work I am most eager to share!
 
-Learn more about me at [banesullivan.com](https://banesullivan.com/) and keep up to date by [following me on Twitter](https://twitter.com/banesullivan)
+Learn more about me at [banesullivan.com](https://banesullivan.com/)
 
 ## Some of My Ramblings
 
