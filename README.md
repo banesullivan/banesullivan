@@ -2,6 +2,8 @@ hi :wave: I'm Bane! I co-created [@PyVista](https://github.com/pyvista) and I bu
 
 ***[Sponsoring me](https://github.com/sponsors/banesullivan) supports ongoing maintenance, new features, and/or direct help with your visualization challenges.***
 
+[![Sponsor](https://img.shields.io/badge/Sponsor%20Bane%20Sullivan-🚀-green?style=for-the-badge)](https://github.com/sponsors/banesullivan)
+
 I'm a geophysicist/hydrologist by training, but I've found my niche in spatial visualization (geospatial and 3D). Check out the following pinned projects to see some of the work I am most eager to share!
 
 Learn more about me at [banesullivan.com](https://banesullivan.com/)
