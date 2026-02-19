@@ -85,7 +85,7 @@ pts = grid.points[ids]
 len(pts)
 
 ###############################################################################
-# Compute distance from TNE corner
+# Compute distance from THE corner
 compute = lambda a, b: np.sqrt(np.sum((b - a) ** 2, axis=1))
 dist = compute(pts, np.repeat([masked.bounds[1::2]], pts.shape[0], axis=0))
 

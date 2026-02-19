@@ -1,8 +1,20 @@
-_build
+# Astro
+dist/
+.astro/
+
+# Dependencies
+node_modules/
+
+# Editor
+.vscode/
+.idea/
 *.swp
-*.DS_Store
-site/source/news.rst
-site/python-blog
-*.pyc
-**/*__pycache__
-notebooks
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.*

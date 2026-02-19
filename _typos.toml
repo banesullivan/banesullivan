@@ -1,0 +1,6 @@
+[default.extend-words]
+# Add any false positives here
+# e.g., "word" = "word"
+
+[files]
+extend-exclude = ["node_modules/", "dist/", ".astro/", "package-lock.json"]

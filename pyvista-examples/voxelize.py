@@ -6,7 +6,7 @@ Create voxels/blocks for eavery point in a gridded point cloud
 
 Originally posted: https://github.com/pyvista/pyvista-support/issues/178
 
-Seee also https://pvgeo.org/examples/filters-general/voxelize-points.html#voxelize-points
+See also https://pvgeo.org/examples/filters-general/voxelize-points.html#voxelize-points
 """
 
 import PVGeo

@@ -2,7 +2,7 @@
 Kriging with GSTools
 ~~~~~~~~~~~~~~~~~~~~
 
-This example utilizes data available from the `FORGE geothermal reserach site <https://utahforge.com>`_'s `2019 Geothermal Design Challenge <https://utahforge.com/studentcomp/>`_. In this example, the data is archived in the `Open Mining Format v1 (OMF) <https://github.com/gmggroup/omf>`_ specification and the `omfvista <https://opengeovis.github.io/omfvista/>`_ software is leverage to load those data into a PyVista ``MultiBlock`` data structure.
+This example utilizes data available from the `FORGE geothermal research site <https://utahforge.com>`_'s `2019 Geothermal Design Challenge <https://utahforge.com/studentcomp/>`_. In this example, the data is archived in the `Open Mining Format v1 (OMF) <https://github.com/gmggroup/omf>`_ specification and the `omfvista <https://opengeovis.github.io/omfvista/>`_ software is leverage to load those data into a PyVista ``MultiBlock`` data structure.
 
 The goal of this workflow is to create a 3D temperature model by kriging the *Observed Temperature* data (sparse observational data).
 The open-source, Python software `GSTools <https://geostat-framework.github.io/>`_ is used to perform variogram analysis and kriging of the temperature data onto a PyVista mesh to create the 3D model.

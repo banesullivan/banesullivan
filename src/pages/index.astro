@@ -1,0 +1,149 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base
+  title="Bane Sullivan"
+  description="Senior engineer, geophysicist, and open-source developer building tools that make 3D and geospatial visualization intuitive and powerful."
+>
+  <!-- Hero -->
+  <div class="hero">
+    <img src="/profile.jpeg" alt="Bane Sullivan" width="96" height="96" />
+    <div class="hero-text">
+      <h1>Bane Sullivan</h1>
+      <p class="tagline">Senior Engineer &middot; Geophysicist &middot; Open-Source Developer</p>
+    </div>
+  </div>
+
+  <!-- Links -->
+  <nav class="nav-links">
+    <a href="https://github.com/banesullivan">GitHub</a>
+    <a href="https://www.linkedin.com/in/bane-sullivan">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=jslLe0cAAAAJ">Google Scholar</a>
+    <a href="https://blog.banesullivan.com">Blog</a>
+    <a href="mailto:banesullivan@gmail.com">Email</a>
+  </nav>
+
+  <!-- About -->
+  <section class="section intro">
+    <p>
+      I build tools and platforms that make complex spatial data intuitive and
+      accessible. My open-source work is used by thousands of researchers and engineers
+      worldwide, with projects reaching 500k+ monthly downloads and adoption across
+      2,000+ codebases.
+    </p>
+    <p>
+      My background is in applied earth sciences (B.Sc. Geophysics, M.Sc. Hydrology, both from
+      Colorado School of Mines). That foundation led me to the intersection of 3D visualization,
+      geospatial data, and reproducible workflows, which eventually led me to building software
+      platforms full-time. I've shipped products at research-driven startups and enterprise R&D
+      organizations, from early prototypes to production systems used across entire companies.
+    </p>
+    <p>
+      I genuinely believe that scientific findings should be reproducible, not only by other
+      researchers but also by the stakeholders of the science at hand. I carry this sentiment in
+      everything I build.
+    </p>
+  </section>
+
+  <hr />
+
+  <!-- Experience -->
+  <section class="section">
+    <h2>Experience</h2>
+
+    <div class="experience-item">
+      <h3>KoBold Metals <span class="role">Senior Software Engineer</span></h3>
+      <div class="dates">2023 &ndash; 2025</div>
+      <p>
+        Developed and deployed a collaborative analysis and 3D visualization platform
+        bridging geologists and data scientists. Pushed adoption of cloud-native geospatial
+        standards (STAC) and streamlined access to computational tools across the organization.
+      </p>
+    </div>
+
+    <div class="experience-item">
+      <h3>Kitware, Inc. <span class="role">Senior R&D Engineer</span></h3>
+      <div class="dates">2020 &ndash; 2023</div>
+      <p>
+        Lead developer for Pan3D (3D visualization for PanGeo) and ResonantGeoData
+        (geospatial data management). Built enterprise-scale systems and helped
+        procure $1.8M+ in commercial contracts and government grants.
+      </p>
+    </div>
+
+    <div class="experience-item">
+      <h3>Colorado School of Mines <span class="role">Graduate Researcher</span></h3>
+      <div class="dates">2018 &ndash; 2020</div>
+      <p>
+        Explored the intersection of 3D visualization, geoscience, and reproducible workflows.
+        Created PyVista and other open-source tools to make 3D scientific computing accessible.
+        Awarded the Mendenhall Prize for outstanding M.Sc. student in Geophysics.
+      </p>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- Projects -->
+  <section class="section">
+    <h2>Open Source</h2>
+
+    <div class="project-item">
+      <h3><a href="https://docs.pyvista.org">PyVista</a></h3>
+      <p class="project-meta">Creator & lead maintainer &middot; NumFOCUS affiliated &middot; 500k+ monthly downloads</p>
+      <p>
+        3D visualization and mesh analysis through a streamlined interface for VTK.
+        Used by 2,000+ open-source projects and 600+ downstream packages across
+        engineering, geophysics, and scientific computing.
+      </p>
+    </div>
+
+    <div class="project-item">
+      <h3><a href="https://github.com/banesullivan/localtileserver">localtileserver</a></h3>
+      <p class="project-meta">Creator &middot; 50k+ monthly downloads &middot; used in 600+ projects</p>
+      <p>
+        Dynamic tile serving for interactive visualization of large geospatial rasters
+        directly in Jupyter notebooks.
+      </p>
+    </div>
+
+    <div class="project-item">
+      <h3><a href="https://github.com/ResonantGeoData">ResonantGeoData</a></h3>
+      <p class="project-meta">Lead developer at Kitware</p>
+      <p>
+        Geospatial data management and search API built on Django, designed for cataloging
+        and serving large imagery assets in machine learning pipelines.
+      </p>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- Education -->
+  <section class="section">
+    <h2>Education</h2>
+
+    <div class="education-item">
+      <h3>M.Sc. Hydrology</h3>
+      <p class="details">Colorado School of Mines &middot; 2018&ndash;2020 &middot; Hydrological Science & Engineering</p>
+    </div>
+
+    <div class="education-item">
+      <h3>B.Sc. Geophysics</h3>
+      <p class="details">Colorado School of Mines &middot; 2014&ndash;2018 &middot; Minor in Computer Science</p>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- Closing -->
+  <section class="section intro">
+    <p>
+      Beyond all the coding and science, I'm a trail runner, mountain biker, and general
+      human-powered adventure enthusiast. Feel free to
+      <a href="mailto:banesullivan@gmail.com">reach out</a>, I'm always happy to talk about
+      earth science computing, open-source software, or epic outdoor activities.
+    </p>
+  </section>
+</Base>
