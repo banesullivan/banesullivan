@@ -1,20 +1,23 @@
-const MAX_PARTICLES = 4000;
-const AREA_PER_PARTICLE = 600;
+const MAX_PARTICLES = 6000;
+const AREA_PER_PARTICLE = 400;
 const TRAIL_SAMPLES = 16;
 const TRAIL_SECONDS = 1.1;
 const LIFETIME_SECONDS = 7;
 const MAX_STEP_SECONDS = 0.05;
-const POINTER_POOL = 4;
+const POOL_STRIDE = 4;
 const POINTER_SEED_RADIUS = 60;
+const BURST_SECONDS = 0.25;
 const PARKED = -1e5;
 
 const COMMON = /* wgsl */ `
 struct Uniforms {
   size: vec2f,
   pointer: vec2f,
+  click: vec2f,
   time: f32,
   dt: f32,
   activity: f32,
+  click_age: f32,
   count: f32,
   line_width: f32,
   alpha: f32,
@@ -40,13 +43,18 @@ fn rand3(id: u32, generation: u32, salt: u32) -> vec3f {
   return vec3f(pcg3d(vec3u(id, generation, salt))) / 4294967295.0;
 }
 
-// Pool particles seed around the pointer while it moves and wait off screen otherwise.
-fn pooled(id: u32) -> bool {
-  return id % ${POINTER_POOL}u == 0u;
+// Two pools wait off screen: one seeds around the moving pointer, one bursts out of a click.
+fn follows_pointer(id: u32) -> bool {
+  return id % ${POOL_STRIDE}u == 0u;
+}
+
+fn bursts(id: u32) -> bool {
+  return id % ${POOL_STRIDE}u == 1u;
 }
 
 fn lifetime(id: u32) -> f32 {
-  return LIFETIME * (0.6 + 0.8 * rand3(id, 0u, 91u).x) * select(1.0, 0.5, pooled(id));
+  let scale = select(select(1.0, 0.5, follows_pointer(id)), 0.4, bursts(id));
+  return scale * LIFETIME * (0.6 + 0.8 * rand3(id, 0u, 91u).x);
 }
 `;
 
@@ -58,6 +66,7 @@ ${COMMON}
 const STALL_SPEED = 1.5;
 const MARGIN = 40.0;
 const SEED_RADIUS: f32 = ${POINTER_SEED_RADIUS};
+const BURST_SECONDS: f32 = ${BURST_SECONDS};
 const TAU = 6.2832;
 
 // Stream function: its curl is the velocity, so the field is divergence free.
@@ -76,11 +85,31 @@ fn velocity(p: vec2f) -> vec2f {
   return vec2f(dy, -dx) * 0.5;
 }
 
-fn rk4(p: vec2f, h: f32) -> vec2f {
-  let k1 = velocity(p);
-  let k2 = velocity(p + 0.5 * h * k1);
-  let k3 = velocity(p + 0.5 * h * k2);
-  let k4 = velocity(p + h * k3);
+// Small fast eddies, the curl of three plane waves, that only a burst feels.
+fn eddy(p: vec2f) -> vec2f {
+  var waves = array<vec3f, 3>(
+    vec3f(0.071, 0.023, 1.9), vec3f(-0.031, 0.064, -2.6), vec3f(0.045, -0.058, 3.3),
+  );
+  var v = vec2f(0.0);
+  for (var i = 0; i < 3; i++) {
+    let k = waves[i].xy;
+    v += cos(dot(k, p) + waves[i].z * u.time) * vec2f(k.y, -k.x);
+  }
+  return 420.0 * v;
+}
+
+// A burst leaves as a jet along the flow (surge) and is stirred by the eddies (gust).
+fn drift(p: vec2f, surge: f32, gust: f32) -> vec2f {
+  var v = surge * velocity(p);
+  if (gust > 0.0) { v += gust * eddy(p); }
+  return v;
+}
+
+fn rk4(p: vec2f, h: f32, surge: f32, gust: f32) -> vec2f {
+  let k1 = drift(p, surge, gust);
+  let k2 = drift(p + 0.5 * h * k1, surge, gust);
+  let k3 = drift(p + 0.5 * h * k2, surge, gust);
+  let k4 = drift(p + h * k3, surge, gust);
   return p + h * (k1 + 2.0 * k2 + 2.0 * k3 + k4) / 6.0;
 }
 
@@ -92,10 +121,15 @@ fn main(@builtin(global_invocation_id) gid: vec3u) {
   var st = state[id];  // age, time since last trail boundary, generation, speed
   var head = trail[base];
 
+  // Both fade with age, so a burst ends up riding the field like any other particle.
+  let burst = rand3(id, u32(st.z), 23u);
+  let surge = select(1.0, 1.0 + mix(1.5, 6.0, burst.x) * exp(-st.x / 0.6), bursts(id));
+  let gust = select(0.0, mix(0.4, 1.6, burst.y) * exp(-st.x / 1.5), bursts(id));
+
   var remaining = u.dt;
   for (var n = 0; n < 8 && remaining > 0.0; n++) {
     let h = min(remaining, QUANTUM - st.y);
-    head = rk4(head, h);
+    head = rk4(head, h, surge, gust);
     st.y += h;
     remaining -= h;
     if (st.y >= QUANTUM - 1e-6) {
@@ -111,7 +145,12 @@ fn main(@builtin(global_invocation_id) gid: vec3u) {
   if (outside || st.w < STALL_SPEED || st.x > lifetime(id)) {
     st.z += 1.0;
     let generation = u32(st.z);
-    if (pooled(id)) {
+    if (bursts(id)) {
+      let r = rand3(id, generation, 17u);
+      let seed = u.click + 5.0 * r.x * vec2f(cos(TAU * r.y), sin(TAU * r.y));
+      let release = u.dt / max(BURST_SECONDS - u.click_age, u.dt);
+      head = select(vec2f(${PARKED}), seed, u.click_age < BURST_SECONDS && r.z < release);
+    } else if (follows_pointer(id)) {
       let r = rand3(id, generation, 13u);
       let radius = SEED_RADIUS * sqrt(-2.0 * log(max(r.x, 1e-6)));
       let seed = u.pointer + radius * vec2f(cos(TAU * r.y), sin(TAU * r.y));
@@ -167,13 +206,13 @@ fn vs(@builtin(vertex_index) vi: u32, @builtin(instance_index) ii: u32) -> VOut 
   let life = lifetime(id);
   let life_fade = smoothstep(0.0, life / 20.0, st.x) * (1.0 - smoothstep(0.8 * life, life, st.x));
   let column_fade = mix(0.3, 1.0, smoothstep(0.0, 140.0, abs(p.x - 0.5 * u.size.x) - u.column));
-  let boost = select(1.0, 1.5, pooled(id));
+  let boost = select(select(1.0, 1.5, follows_pointer(id)), 2.0, bursts(id));
 
   var out: VOut;
   out.position = vec4f(p / u.size * vec2f(2.0, -2.0) + vec2f(-1.0, 1.0), 0.0, 1.0);
   out.across = corner.y * half_width;
   out.alpha = tail * tail * life_fade * column_fade * boost * u.alpha;
-  out.color = mix(u.slow, u.fast, clamp(st.w / 90.0, 0.0, 1.0));
+  out.color = mix(u.slow, u.fast, select(clamp(st.w / 90.0, 0.0, 1.0), 1.0, bursts(id)));
   return out;
 }
 
@@ -191,12 +230,12 @@ function hexToRgb(hex) {
 }
 
 async function start(canvas) {
-  const adapter = await navigator.gpu?.requestAdapter({ powerPreference: 'low-power' });
+  const adapter = await navigator.gpu?.requestAdapter({ powerPreference: "low-power" });
   if (!adapter) return;
   const device = await adapter.requestDevice();
-  const context = canvas.getContext('webgpu');
+  const context = canvas.getContext("webgpu");
   const format = navigator.gpu.getPreferredCanvasFormat();
-  context.configure({ device, format, alphaMode: 'premultiplied' });
+  context.configure({ device, format, alphaMode: "premultiplied" });
 
   let width, height, count;
   const resize = () => {
@@ -205,14 +244,14 @@ async function start(canvas) {
     height = Math.max(canvas.clientHeight, 1);
     canvas.width = Math.round(width * dpr);
     canvas.height = Math.round(height * dpr);
-    count = Math.min(MAX_PARTICLES, Math.max(300, Math.round((width * height) / AREA_PER_PARTICLE)));
+    count = Math.min(MAX_PARTICLES, Math.round((width * height) / AREA_PER_PARTICLE));
   };
   resize();
 
   const trailData = new Float32Array(MAX_PARTICLES * TRAIL_SAMPLES * 2);
   const stateData = new Float32Array(MAX_PARTICLES * 4);
   for (let i = 0; i < MAX_PARTICLES; i++) {
-    const pooled = i % POINTER_POOL === 0;
+    const pooled = i % POOL_STRIDE < 2;
     const x = pooled ? PARKED : Math.random() * width;
     const y = pooled ? PARKED : Math.random() * height;
     for (let j = 0; j < TRAIL_SAMPLES; j++) trailData.set([x, y], (i * TRAIL_SAMPLES + j) * 2);
@@ -231,20 +270,19 @@ async function start(canvas) {
   const trailBuffer = storage(trailData);
   const stateBuffer = storage(stateData);
 
-  const uniforms = new Float32Array(20);
   const uniformBuffer = device.createBuffer({
-    size: uniforms.byteLength,
+    size: 96,
     usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
   });
 
   const stepPipeline = device.createComputePipeline({
-    layout: 'auto',
+    layout: "auto",
     compute: { module: device.createShaderModule({ code: STEP }) },
   });
   const drawModule = device.createShaderModule({ code: DRAW });
-  const blend = { srcFactor: 'one', dstFactor: 'one-minus-src-alpha' };
+  const blend = { srcFactor: "one", dstFactor: "one-minus-src-alpha" };
   const drawPipeline = device.createRenderPipeline({
-    layout: 'auto',
+    layout: "auto",
     vertex: { module: drawModule },
     fragment: { module: drawModule, targets: [{ format, blend: { color: blend, alpha: blend } }] },
   });
@@ -259,22 +297,28 @@ async function start(canvas) {
   const stepBind = bind(stepPipeline);
   const drawBind = bind(drawPipeline);
 
+  let theme;
   const readTheme = () => {
     const style = getComputedStyle(document.documentElement);
     const number = (name) => parseFloat(style.getPropertyValue(name));
-    uniforms.set([number('--flow-width'), number('--flow-alpha'), number('--max-width') / 2 + 24], 8);
-    uniforms.set(hexToRgb(style.getPropertyValue('--flow-slow')), 12);
-    uniforms.set(hexToRgb(style.getPropertyValue('--flow-fast')), 16);
+    theme = [
+      ...[number("--flow-width"), number("--flow-alpha"), number("--max-width") / 2 + 24, 0, 0],
+      ...[...hexToRgb(style.getPropertyValue("--flow-slow")), 0],
+      ...[...hexToRgb(style.getPropertyValue("--flow-fast")), 0],
+    ];
   };
   readTheme();
 
   const pointer = { x: PARKED, y: PARKED, activity: 0, stamp: 0 };
+  const click = { x: PARKED, y: PARKED, age: BURST_SECONDS, held: false };
   let time = Math.random() * 100;
 
   const frame = (dt, draw = true) => {
     time += dt;
-    uniforms.set([width, height, pointer.x, pointer.y, time, dt, pointer.activity, count]);
-    device.queue.writeBuffer(uniformBuffer, 0, uniforms);
+    // In the order of the Uniforms struct; the zeros in theme pad its vec3f fields.
+    const uniforms = [width, height, pointer.x, pointer.y, click.x, click.y, time, dt];
+    uniforms.push(pointer.activity, click.age, count, ...theme);
+    device.queue.writeBuffer(uniformBuffer, 0, new Float32Array(uniforms));
 
     const encoder = device.createCommandEncoder();
     if (dt > 0) {
@@ -287,7 +331,7 @@ async function start(canvas) {
     if (draw) {
       const pass = encoder.beginRenderPass({
         colorAttachments: [
-          { view: context.getCurrentTexture().createView(), loadOp: 'clear', storeOp: 'store' },
+          { view: context.getCurrentTexture().createView(), loadOp: "clear", storeOp: "store" },
         ],
       });
       pass.setPipeline(drawPipeline);
@@ -298,7 +342,7 @@ async function start(canvas) {
     device.queue.submit([encoder.finish()]);
   };
 
-  const still = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const still = window.matchMedia("(prefers-reduced-motion: reduce)");
   let raf = 0;
   let last = 0;
 
@@ -306,6 +350,7 @@ async function start(canvas) {
     const dt = Math.min(Math.max(now - last, 0) / 1000, MAX_STEP_SECONDS);
     last = now;
     pointer.activity *= Math.exp(-dt / 2);
+    click.age = click.held ? 0 : click.age + dt;
     frame(dt);
     raf = requestAnimationFrame(tick);
   };
@@ -322,36 +367,41 @@ async function start(canvas) {
     }
   };
 
-  still.addEventListener('change', run);
-  window.addEventListener('resize', () => {
+  still.addEventListener("change", run);
+  window.addEventListener("resize", () => {
     resize();
     frame(0);
   });
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
     readTheme();
     frame(0);
   });
-  window.addEventListener(
-    'pointermove',
-    (event) => {
-      if (event.timeStamp - pointer.stamp < 250) {
-        const moved = Math.hypot(event.clientX - pointer.x, event.clientY - pointer.y);
-        pointer.activity = Math.min(1, pointer.activity + moved / 120);
-      }
-      pointer.x = event.clientX;
-      pointer.y = event.clientY;
-      pointer.stamp = event.timeStamp;
-    },
-    { passive: true },
-  );
+  window.addEventListener("pointermove", (event) => {
+    const { clientX: x, clientY: y, timeStamp: stamp } = event;
+    if (stamp - pointer.stamp < 250) {
+      const moved = Math.hypot(x - pointer.x, y - pointer.y);
+      pointer.activity = Math.min(1, pointer.activity + moved / 120);
+    }
+    Object.assign(pointer, { x, y, stamp });
+    if (click.held) Object.assign(click, { x, y });
+  });
+  window.addEventListener("pointerdown", (event) => {
+    if (event.button !== 0 || event.target.closest("main, footer")) return;
+    Object.assign(click, { x: event.clientX, y: event.clientY, age: 0, held: true });
+  });
+  const release = () => (click.held = false);
+  window.addEventListener("pointerup", release);
+  window.addEventListener("pointercancel", release);
+  window.addEventListener("blur", release);
+  document.addEventListener("selectstart", (event) => click.held && event.preventDefault());
   device.lost.then(() => {
     cancelAnimationFrame(raf);
     canvas.remove();
   });
 
   run();
-  canvas.dataset.ready = '';
+  canvas.dataset.ready = "";
 }
 
-const canvas = document.getElementById('flow');
+const canvas = document.getElementById("flow");
 start(canvas).catch(() => canvas.remove());
