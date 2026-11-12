@@ -39,6 +39,10 @@ const { title, description } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <canvas id="flow" aria-hidden="true"></canvas>
+    <script>
+      import "../scripts/flow.js";
+    </script>
     <main>
       <slot />
     </main>
@@ -73,10 +77,17 @@ const { title, description } = Astro.props;
     --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       sans-serif;
     --font-mono: "JetBrains Mono", "Fira Code", monospace;
+    --flow-slow: #8a9099;
+    --flow-fast: #0066cc;
+    --flow-alpha: 0.5;
+    --flow-width: 1.25;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
+      --flow-slow: #6b7280;
+      --flow-fast: #6aa9ff;
+      --flow-alpha: 0.45;
       --color-text: #e8e8e8;
       --color-text-secondary: #b0b0b0;
       --color-text-muted: #808080;
@@ -101,6 +112,21 @@ const { title, description } = Astro.props;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+  }
+
+  #flow {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+  }
+
+  #flow[data-ready] {
+    opacity: 1;
   }
 
   /* --------------------------------------------------------
@@ -267,6 +293,34 @@ const { title, description } = Astro.props;
     font-weight: 400;
     color: var(--color-text-secondary);
     font-size: 0.9rem;
+  }
+
+  .experience-item h3 .visit {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.15rem 0.6rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--color-link);
+    text-decoration: none;
+    transition: border-color 0.15s, background-color 0.15s;
+  }
+
+  .experience-item h3 .visit:hover {
+    border-color: var(--color-link);
+    background: color-mix(in srgb, var(--color-link) 8%, transparent);
+  }
+
+  .experience-item h3 .visit svg {
+    transition: transform 0.15s;
+  }
+
+  .experience-item h3 .visit:hover svg {
+    transform: translate(1px, -1px);
   }
 
   .experience-item .dates {

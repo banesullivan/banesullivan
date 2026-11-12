@@ -4,14 +4,14 @@ import Base from "../layouts/Base.astro";
 
 <Base
   title="Bane Sullivan"
-  description="Senior engineer, geophysicist, and open-source developer building tools that make 3D and geospatial visualization intuitive and powerful."
+  description="Co-creator of PyVista and co-founder and CEO of CoDimensional, building software for 3D and physical world data."
 >
   <!-- Hero -->
   <div class="hero">
     <img src="/profile.jpeg" alt="Bane Sullivan" width="96" height="96" />
     <div class="hero-text">
       <h1>Bane Sullivan</h1>
-      <p class="tagline">Geophysicist turned software engineer and creator of PyVista</p>
+      <p class="tagline">Co-creator of PyVista. Co-founder and CEO of CoDimensional.</p>
     </div>
   </div>
 
@@ -20,29 +20,27 @@ import Base from "../layouts/Base.astro";
     <a href="https://github.com/banesullivan">GitHub</a>
     <a href="https://www.linkedin.com/in/bane-sullivan">LinkedIn</a>
     <a href="https://scholar.google.com/citations?user=jslLe0cAAAAJ">Google Scholar</a>
-    <a href="https://blog.banesullivan.com">Blog</a>
-    <a href="mailto:banesullivan@gmail.com">Email</a>
+    <a href="https://codimensional.com/news/">Blog</a>
+    <a href="mailto:bane@codimensional.com">Email</a>
   </nav>
 
   <!-- About -->
   <section class="section intro">
     <p>
       I build software that makes complex spatial data intuitive and
-      accessible. My open-source work is used by thousands of researchers and engineers
-      worldwide, with projects reaching 1M+ monthly downloads and adoption across
-      thousands of open source codebases.
+      accessible. My open-source work is downloaded more than a million times per month and helps
+      researchers, engineers, and their agents work with physical world data.
     </p>
     <p>
-      My background is in applied earth sciences (B.Sc. Geophysics, M.Sc. Hydrology, both from
-      Colorado School of Mines). That foundation led me to the intersection of 3D visualization,
-      geospatial data, and reproducible workflows, which eventually led me to building software
-      platforms full-time. I've shipped products at research-driven startups and enterprise R&D
-      organizations, from early prototypes to production systems used across entire companies.
+      My background in geophysics (applied earth sciences) led me to the intersection of 3D visualization,
+      geospatial data, and reproducible workflows, and from there to building software platforms
+      full-time. I've shipped products at research-driven startups and enterprise R&D
+      organizations.
     </p>
     <p>
-      I genuinely believe that scientific findings should be reproducible, not only by other
-      researchers but also by the stakeholders of the science at hand. I carry this sentiment in
-      everything I build.
+      I believe that scientific and engineering findings should be reproducible, not only by other
+      practitioners but also by the stakeholders of the problem at hand. That matters more now
+      that agents are starting to lead engineering workflows.
     </p>
   </section>
 
@@ -53,10 +51,17 @@ import Base from "../layouts/Base.astro";
     <h2>Experience</h2>
 
     <div class="experience-item">
-      <h3>CoDimensional PBC <span class="role">Co-Founder & CEO</span></h3>
+      <h3>
+        CoDimensional PBC <span class="role">Co-Founder & CEO</span>
+        <a class="visit" href="https://codimensional.com">
+          codimensional.com
+          <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M5 11 L11 5 M6 5 H11 V10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </h3>
       <div class="dates">2026 &ndash; Present</div>
       <p>
-        Learn more at <a href="https://codimensional.com">codimensional.com</a>
+        Building the place where agents work on physical world data, which simulations and
+        sensors now produce at a scale the tools built for tables can't analyze.
       </p>
     </div>
 
@@ -99,11 +104,12 @@ import Base from "../layouts/Base.astro";
 
     <div class="project-item">
       <h3><a href="https://pyvista.org">PyVista</a></h3>
-      <p class="project-meta">Creator & lead maintainer &middot; NumFOCUS affiliated &middot; 1M+ monthly downloads</p>
+      <p class="project-meta">Co-creator & lead maintainer &middot; NumFOCUS affiliated &middot; 1M+ monthly downloads</p>
       <p>
         3D visualization and mesh analysis through a streamlined interface for VTK.
-        Used by 2,000+ open-source projects and 600+ downstream packages across
-        engineering, geophysics, and scientific computing.
+        Used by thousands of open-source projects and packages across
+        engineering, geophysics, and scientific computing. It is the foundation my
+        work at CoDimensional grew from.
       </p>
     </div>
 
@@ -116,14 +122,6 @@ import Base from "../layouts/Base.astro";
       </p>
     </div>
 
-    <div class="project-item">
-      <h3><a href="https://github.com/ResonantGeoData">ResonantGeoData</a></h3>
-      <p class="project-meta">Lead developer at Kitware</p>
-      <p>
-        Geospatial data management and search API built on Django, designed for cataloging
-        and serving large imagery assets in machine learning pipelines.
-      </p>
-    </div>
   </section>
 
   <hr />
@@ -149,8 +147,8 @@ import Base from "../layouts/Base.astro";
   <section class="section intro">
     <p>
       Beyond all the coding and science, I'm a trail runner, mountain biker, and general
-      human-powered adventure enthusiast. Feel free to <a href="mailto:banesullivan@gmail.com">reach out</a>,
-      I'm always happy to talk about earth science computing, open-source software, or epic outdoor activities.
+      human-powered adventure enthusiast. Feel free to <a href="mailto:bane@codimensional.com">reach out</a>.
+      I'm always happy to talk about 3D data that has outgrown its tools, open-source software, or epic outdoor activities.
     </p>
   </section>
 </Base>
