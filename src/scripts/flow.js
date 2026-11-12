@@ -297,12 +297,17 @@ async function start(canvas) {
   const stepBind = bind(stepPipeline);
   const drawBind = bind(drawPipeline);
 
+  const root = document.documentElement;
+  const playing = () => root.hasAttribute("data-play");
+
   let theme;
   const readTheme = () => {
-    const style = getComputedStyle(document.documentElement);
+    const style = getComputedStyle(root);
     const number = (name) => parseFloat(style.getPropertyValue(name));
+    // With the page hidden there is no text column to dim the flow behind.
+    const column = playing() ? -1e4 : number("--max-width") / 2 + 24;
     theme = [
-      ...[number("--flow-width"), number("--flow-alpha"), number("--max-width") / 2 + 24, 0, 0],
+      ...[number("--flow-width"), number("--flow-alpha"), column, 0, 0],
       ...[...hexToRgb(style.getPropertyValue("--flow-slow")), 0],
       ...[...hexToRgb(style.getPropertyValue("--flow-fast")), 0],
     ];
@@ -386,7 +391,8 @@ async function start(canvas) {
     if (click.held) Object.assign(click, { x, y });
   });
   window.addEventListener("pointerdown", (event) => {
-    if (event.button !== 0 || event.target.closest("main, footer")) return;
+    const off = playing() ? ".flow-toggle" : "main, footer";
+    if (event.button !== 0 || event.target.closest(off)) return;
     Object.assign(click, { x: event.clientX, y: event.clientY, age: 0, held: true });
   });
   const release = () => (click.held = false);
@@ -394,7 +400,21 @@ async function start(canvas) {
   window.addEventListener("pointercancel", release);
   window.addEventListener("blur", release);
   document.addEventListener("selectstart", (event) => click.held && event.preventDefault());
+
+  // Play mode hides the page so the whole screen sprays, by mouse or touch.
+  const toggle = document.querySelector(".flow-toggle");
+  const play = (on) => {
+    root.toggleAttribute("data-play", on);
+    document.querySelector("main").inert = on;
+    toggle.ariaPressed = on;
+    release();
+    readTheme();
+  };
+  toggle.addEventListener("click", () => play(!playing()));
+  window.addEventListener("keydown", (event) => event.key === "Escape" && play(false));
+
   device.lost.then(() => {
+    play(false);
     cancelAnimationFrame(raf);
     canvas.remove();
   });

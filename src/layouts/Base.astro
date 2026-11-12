@@ -48,6 +48,7 @@ const { title, description } = Astro.props;
     </main>
     <footer>
       <p>&copy; {new Date().getFullYear()} Bane Sullivan</p>
+      <button class="flow-toggle" type="button" aria-label="Play with the background" aria-pressed="false"></button>
     </footer>
   </body>
 </html>
@@ -127,6 +128,73 @@ const { title, description } = Astro.props;
 
   #flow[data-ready] {
     opacity: 1;
+  }
+
+  .flow-toggle {
+    display: none;
+    width: 2rem;
+    height: 2rem;
+    margin-top: 0.75rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    background: none;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+      color 0.15s ease,
+      border-color 0.15s ease;
+  }
+
+  .flow-toggle::before {
+    content: "\224B";
+  }
+
+  .flow-toggle:hover {
+    color: var(--color-link);
+    border-color: var(--color-link);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    #flow[data-ready] ~ footer .flow-toggle {
+      display: inline-flex;
+    }
+  }
+
+  main,
+  footer p {
+    transition: opacity 0.4s ease;
+  }
+
+  html[data-play] {
+    overflow: hidden;
+    overscroll-behavior: none;
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  [data-play] main,
+  [data-play] footer p {
+    opacity: 0;
+  }
+
+  [data-play] footer {
+    border-color: transparent;
+  }
+
+  [data-play] .flow-toggle {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    translate: -50% 0;
+  }
+
+  [data-play] .flow-toggle::before {
+    content: "\2715";
   }
 
   /* --------------------------------------------------------
